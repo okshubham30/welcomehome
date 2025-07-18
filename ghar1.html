@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>House 1 Details</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e0e0e;
+      color: #f1f1f1;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1de41d;
+      text-shadow: 0 0 8px #1de41d;
+    }
+
+    .house-details {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .description {
+      margin-bottom: 20px;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Overlay + Zoom */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      overflow: auto;
+      cursor: zoom-in;
+    }
+
+    .overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .zoomed {
+      transform: scale(2);
+      cursor: zoom-out;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>House 1 Details</h1>
+
+  <div class="house-details">
+    <img src="images/house1_main.jpg" alt="Main House Image" class="main-image" onclick="openOverlay(this.src)" />
+
+    <div class="description">
+      <p><strong>Location:</strong> Lucknow</p>
+      <p><strong>Rent:</strong> ₹15,000 / month</p>
+      <p><strong>Type:</strong> 3 BHK Independent House</p>
+      <p><strong>Nearby:</strong> Metro station, local market, schools</p>
+      <p><strong>Description:</strong> Spacious and well-ventilated home with modern amenities. Includes modular kitchen, 24x7 water supply, and reserved parking space.</p>
+    </div>
+
+    <div class="image-gallery">
+      <img src="images/house_1.jpg" alt="House image 1" onclick="openOverlay(this.src)" />
+      <img src="images/house_1.jpg" alt="House image 2" onclick="openOverlay(this.src)" />
+      <img src="images/house1_3.jpg" alt="House image 3" onclick="openOverlay(this.src)" />
+      <img src="images/house1_4.jpg" alt="House image 4" onclick="openOverlay(this.src)" />
+    </div>
+  </div>
+
+  <!-- Fullscreen Overlay -->
+  <div class="overlay" id="imageOverlay" onclick="toggleZoom()">
+    <img id="overlayImage" src="">
+  </div>
+
+  <script>
+  const overlay = document.getElementById('imageOverlay');
+  const overlayImg = document.getElementById('overlayImage');
+
+  let scale = 1;
+  let isDragging = false;
+  let startX, startY;
+  let originX = 0, originY = 0;
+
+  function openOverlay(src) {
+    overlayImg.src = src;
+    overlay.style.display = 'flex';
+    scale = 1;
+    overlayImg.style.transform = `scale(1) translate(0px, 0px)`;
+    originX = 0;
+    originY = 0;
+  }
+
+  // Click to zoom in/out toggle
+  overlay.addEventListener('click', function () {
+    scale = scale === 1 ? 2 : 1;
+    overlayImg.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
+  });
+
+  // Scroll to zoom in/out
+  overlay.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      scale += 0.1;
+    } else {
+      scale = Math.max(1, scale - 0.1);
+    }
+    overlayImg.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
+  });
+
+  // Drag to move image
+  overlayImg.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    originX += dx;
+    originY += dy;
+    startX = e.clientX;
+    startY = e.clientY;
+    overlayImg.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
+  });
+
+  // ESC to close
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      overlay.style.display = 'none';
+      overlayImg.style.transform = '';
+      scale = 1;
+      originX = originY = 0;
+    }
+  });
+</script>
+
+</body>
+</html>

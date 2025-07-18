@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House 1 - Full Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #151515;
+      border-bottom: 2px solid #0dda29;
+      box-shadow: 0 0 10px #0dda29;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #2ecc71;
+    }
+
+    .section {
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: #1abc9c;
+      margin-bottom: 15px;
+    }
+
+    .image-gallery {
+      display: grid;
+      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .image-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #333;
+      object-fit: cover;
+      height: 200px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    p {
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #151515;
+      border-top: 2px solid #0dda29;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* Fullscreen Image Popup */
+    #fullscreen {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 3px solid #0dda29;
+      border-radius: 10px;
+    }
+
+    #fullscreen span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>House 1 - 2 BHK in Lucknow</h1>
+    <p>₹12,000 / month | Near Metro Station and Market</p>
+  </header>
+
+  <section class="section">
+    <h2>Photo Gallery</h2>
+    <div class="image-gallery">
+      <img src="images/house_1.JPG" alt="Main Gate">
+      <img src="images/house_1.JPG" alt="Living Room">
+      <img src="images/ghar1_3.jpg" alt="Kitchen">
+      <img src="images/ghar1_4.jpg" alt="Bedroom">
+      <!-- Add more images if needed -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>House Details</h2>
+    <ul>
+      <li>2 Bedrooms + Hall + Kitchen</li>
+      <li>2 Bathrooms</li>
+      <li>24x7 Water and Electricity</li>
+      <li>Partially Furnished</li>
+      <li>Parking Available</li>
+      <li>Public Transport Accessible</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Location</h2>
+    <p>Area: Rajajipuram, Lucknow</p>
+    <p>Nearest Metro: Charbagh (2.5 km)</p>
+    <p>Nearby Market, School, and Hospital</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Backbencher Hack Real Estate</p>
+  </footer>
+
+  <!-- Fullscreen Viewer -->
+  <div id="fullscreen">
+    <span onclick="closeFullscreen()">×</span>
+    <img id="full-img" src="" alt="Full Image">
+  </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll('.image-gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+      });
+    });
+
+    function closeFullscreen() {
+      fullscreen.style.display = 'none';
+      fullImg.src = '';
+    }
+
+    // Optional: Close on ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeFullscreen();
+    });
+  </script>
+
+</body>
+</html>

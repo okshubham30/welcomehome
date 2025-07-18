@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House 1 Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e0e0e;
+      color: #f1f1f1;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #1de41d;
+      text-shadow: 0 0 8px #1de41d;
+    }
+
+    .house-details {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .description {
+      margin-bottom: 20px;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Fullscreen overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .overlay img {
+      max-width: 95%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>House 1 Details</h1>
+  </header>
+
+  <div class="house-details">
+    <img src="images/house1_main.jpg" alt="Main House Image" class="main-image" onclick="openOverlay(this.src)" />
+
+    <div class="description">
+      <p><strong>Location:</strong> Lucknow</p>
+      <p><strong>Rent:</strong> ₹15,000 / month</p>
+      <p><strong>Type:</strong> 3 BHK Independent House</p>
+      <p><strong>Nearby:</strong> Metro station, local market, schools</p>
+      <p><strong>Description:</strong> Spacious and well-ventilated home with modern amenities. Includes modular kitchen, 24x7 water supply, and reserved parking space.</p>
+    </div>
+
+    <div class="image-gallery">
+      <img src="images/house_1.JPG" alt="House image 1" onclick="openOverlay(this.src)" />
+      <img src="images/DSC01472.JPG" alt="House image 2" onclick="openOverlay(this.src)" />
+      <img src="images/DSC01472.JPG" alt="House image 3" onclick="openOverlay(this.src)" />
+      <img src="images/DSC01472.JPG" alt="House image 4" onclick="openOverlay(this.src)" />
+    </div>
+  </div>
+
+  <!-- Fullscreen Image Overlay -->
+  <div class="overlay" id="imgOverlay" onclick="closeOverlay()">
+    <img id="overlayImg" src="" alt="Full view" />
+  </div>
+
+  <script>
+    function openOverlay(src) {
+      document.getElementById('overlayImg').src = src;
+      document.getElementById('imgOverlay').style.display = 'flex';
+    }
+
+    function closeOverlay() {
+      document.getElementById('imgOverlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
