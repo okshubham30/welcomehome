@@ -7,12 +7,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #000000, #0c0c0c);
@@ -24,7 +18,6 @@
       text-align: center;
       padding: 40px 20px;
       background: rgba(0, 255, 128, 0.05);
-      backdrop-filter: blur(6px);
       border-bottom: 2px solid #00ff9d;
       box-shadow: 0 0 10px #00ffbf80;
     }
@@ -60,19 +53,25 @@
       gap: 20px;
     }
 
-    .image-gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid #111;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .tilt {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #00ffcc55;
+      box-shadow: 0 0 15px #00ffc833;
+      transition: box-shadow 0.3s ease, border 0.3s ease;
       cursor: pointer;
     }
 
-    .image-gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #00ffcc88;
+    .tilt:hover {
+      box-shadow: 0 0 25px #00ffc8, 0 0 40px #00ffc8aa;
+      border: 2px solid #00ffc8;
+    }
+
+    .tilt img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
     }
 
     ul {
@@ -95,8 +94,7 @@
       color: #888;
       font-size: 0.9rem;
       border-top: 2px solid #00ffb3;
-      position: relative;
-      bottom: 0;
+      margin-top: 30px;
     }
 
     /* Fullscreen Image Popup */
@@ -127,34 +125,27 @@
       color: #fff;
       cursor: pointer;
     }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      .section h2 {
-        font-size: 1.5rem;
-      }
-    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>House 1 - 2 BHK in kota</h1>
+    <h1>House 1 - 2 BHK in Kota</h1>
     <p>₹12,000 / month | Near Metro Station and Market</p>
   </header>
 
+  <!-- Photo Gallery -->
   <section class="section">
     <h2>Photo Gallery</h2>
     <div class="image-gallery">
-      <img src="images/home26.jpg" alt="Main Gate">
-      <img src="images/home22.jpg" alt="Living Room">
-      <img src="images/home23.jpg" alt="Kitchen">
-      <img src="images/home25.jpg" alt="Bedroom">
+      <div class="tilt"><img src="images/home26.jpg" alt="Main Gate"></div>
+      <div class="tilt"><img src="images/home22.jpg" alt="Living Room"></div>
+      <div class="tilt"><img src="images/home23.jpg" alt="Kitchen"></div>
+      <div class="tilt"><img src="images/home25.jpg" alt="Bedroom"></div>
     </div>
   </section>
 
+  <!-- House Details -->
   <section class="section">
     <h2>House Details</h2>
     <ul>
@@ -167,6 +158,7 @@
     </ul>
   </section>
 
+  <!-- Location Details -->
   <section class="section">
     <h2>Location</h2>
     <p>Area: Rajajipuram, Chandauli</p>
@@ -184,7 +176,10 @@
     <img id="full-img" src="" alt="Full Image">
   </div>
 
+  <!-- VanillaTilt Library -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <script>
+    // Fullscreen Image
     const galleryImages = document.querySelectorAll('.image-gallery img');
     const fullscreen = document.getElementById('fullscreen');
     const fullImg = document.getElementById('full-img');
@@ -203,6 +198,14 @@
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeFullscreen();
+    });
+
+    // Tilt Effect
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 20,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.4
     });
   </script>
 
