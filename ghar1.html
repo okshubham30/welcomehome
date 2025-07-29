@@ -3,191 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>House 1 Details</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <title>House 1 - Full Details</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #0a0a0a;
-      color: #f1f1f1;
-      padding: 20px;
+      background: linear-gradient(135deg, #000000, #0c0c0c);
+      color: #ffffff;
+      padding-bottom: 100px;
     }
 
-    h1 {
+    header {
       text-align: center;
-      color: #00ffc8;
-      font-family: 'Orbitron', sans-serif;
-      text-shadow: 0 0 10px #00ffc8, 0 0 20px #00ffc8;
-      margin-bottom: 30px;
+      padding: 40px 20px;
+      background: rgba(0, 255, 128, 0.05);
+      border-bottom: 2px solid #00ff9d;
+      box-shadow: 0 0 10px #00ffbf80;
     }
 
-    .house-details {
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffd5;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
     }
 
-    .main-image {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 12px;
+    .section h2 {
+      font-size: 1.8rem;
       margin-bottom: 20px;
-      cursor: pointer;
-      box-shadow: 0 0 12px #00ffc850;
-    }
-
-    .description {
-      margin-bottom: 20px;
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .description p {
-      margin-bottom: 10px;
-      color: #d1fdf6;
+      color: #00ffaa;
+      border-left: 5px solid #00ff99;
+      padding-left: 12px;
     }
 
     .image-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    .image-gallery img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
+    .tilt {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #00ffcc55;
+      box-shadow: 0 0 15px #00ffc833;
+      transition: box-shadow 0.3s ease, border 0.3s ease;
       cursor: pointer;
-      box-shadow: 0 0 10px #00ffc830;
-      transition: transform 0.3s ease;
     }
 
-    .image-gallery img:hover {
-      transform: scale(1.05);
+    .tilt:hover {
+      box-shadow: 0 0 25px #00ffc8, 0 0 40px #00ffc8aa;
+      border: 2px solid #00ffc8;
     }
 
-    /* Overlay */
-    .overlay {
+    .tilt img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 25px;
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    p {
+      color: #bbb;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #101010;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 2px solid #00ffb3;
+      margin-top: 30px;
+    }
+
+    /* Fullscreen Image Popup */
+    #fullscreen {
+      display: none;
       position: fixed;
       top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background-color: rgba(0, 0, 0, 0.95);
-      display: none;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      overflow: hidden;
-      padding: 10px;
     }
 
-    .overlay img {
+    #fullscreen img {
       max-width: 90%;
       max-height: 90%;
-      transition: transform 0.3s ease;
-      border: 3px solid #00ffcc;
-      border-radius: 12px;
-      box-shadow: 0 0 30px #00ffcc88;
+      border: 3px solid #00ffc8;
+      border-radius: 10px;
     }
 
-    @media (max-width: 600px) {
-      .main-image { height: 200px; }
-      .image-gallery img { height: 120px; }
+    #fullscreen span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <h1>🏠 House 1 - Lucknow</h1>
+  <header>
+    <h1>House 1 - Lucknow</h1>
+    <p>₹15,000 / month | 3 BHK Independent House</p>
+  </header>
 
-  <div class="house-details">
-    <img src="images/house1_main.jpg" alt="Main House Image" class="main-image" onclick="openOverlay(this.src)" />
-
-    <div class="description">
-      <p><strong>Location:</strong> Lucknow</p>
-      <p><strong>Rent:</strong> ₹15,000 / month</p>
-      <p><strong>Type:</strong> 3 BHK Independent House</p>
-      <p><strong>Nearby:</strong> Metro station, market, schools</p>
-      <p><strong>Description:</strong> Spacious and well-ventilated home with modern amenities like modular kitchen, 24x7 water supply & reserved parking.</p>
-    </div>
-
+  <!-- Photo Gallery -->
+  <section class="section">
+    <h2>Photo Gallery</h2>
     <div class="image-gallery">
-      <img src="images/house_1.jpg" alt="House image 1" onclick="openOverlay(this.src)" />
-      <img src="images/home11.jpg" alt="House image 2" onclick="openOverlay(this.src)" />
-      <img src="images/home12.jpg" alt="House image 3" onclick="openOverlay(this.src)" />
-      <img src="images/home13.jpg" alt="House image 4" onclick="openOverlay(this.src)" />
+      <div class="tilt"><img src="images/house1_main.jpg" alt="Main Gate"></div>
+      <div class="tilt"><img src="images/house_1.jpg" alt="House image 1"></div>
+      <div class="tilt"><img src="images/home11.jpg" alt="House image 2"></div>
+      <div class="tilt"><img src="images/home12.jpg" alt="House image 3"></div>
+      <div class="tilt"><img src="images/home13.jpg" alt="House image 4"></div>
     </div>
+  </section>
+
+  <!-- House Details -->
+  <section class="section">
+    <h2>House Details</h2>
+    <ul>
+      <li>3 Bedrooms + Hall + Kitchen</li>
+      <li>2 Bathrooms</li>
+      <li>24x7 Water and Electricity</li>
+      <li>Modular Kitchen</li>
+      <li>Reserved Parking</li>
+      <li>Near Metro, Market, and Schools</li>
+    </ul>
+  </section>
+
+  <!-- Location Details -->
+  <section class="section">
+    <h2>Location</h2>
+    <p>City: Lucknow</p>
+    <p>Nearby: Metro Station, Market, Schools</p>
+    <p>Description: Spacious and well-ventilated home with modern amenities like modular kitchen, 24x7 water supply & reserved parking.</p>
+  </section>
+
+  <footer>
+  <p>
+     THIS WEBSITE IS READY FOR SALE. FOR PURCHASING, PLEASE SEND US AN EMAIL →
+    <br>
+    email:
+    <a href="mailto:shubham16maury@gmail.com?subject=Website%20Purchase%20Inquiry&body=Hi%20Shubham," 
+   style="color:#00ffcc; text-decoration:none;">
+   shubham16maury@gmail.com
+</a>
+  </p>
+</footer>
+
+  <!-- Fullscreen Viewer -->
+  <div id="fullscreen">
+    <span onclick="closeFullscreen()">×</span>
+    <img id="full-img" src="" alt="Full Image">
   </div>
 
-  <!-- Overlay -->
-  <div class="overlay" id="imageOverlay" onclick="closeOverlay()">
-    <img id="overlayImage" src="">
-  </div>
-
+  <!-- VanillaTilt Library -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <script>
-    const overlay = document.getElementById('imageOverlay');
-    const overlayImg = document.getElementById('overlayImage');
-    let scale = 1;
-    let originX = 0, originY = 0;
-    let isDragging = false;
-    let startX, startY;
+    // Fullscreen Image
+    const galleryImages = document.querySelectorAll('.image-gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
 
-    function openOverlay(src) {
-      overlayImg.src = src;
-      overlay.style.display = 'flex';
-      scale = 1;
-      originX = 0;
-      originY = 0;
-      overlayImg.style.transform = `scale(1) translate(0px, 0px)`;
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+      });
+    });
+
+    function closeFullscreen() {
+      fullscreen.style.display = 'none';
+      fullImg.src = '';
     }
-
-    function closeOverlay() {
-      overlay.style.display = 'none';
-      scale = 1;
-      originX = 0;
-      originY = 0;
-    }
-
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) {
-        closeOverlay();
-      }
-    });
-
-    overlayImg.addEventListener('click', (e) => {
-      e.stopPropagation();
-      scale = scale === 1 ? 2 : 1;
-      overlayImg.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
-    });
-
-    overlay.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      scale += e.deltaY < 0 ? 0.1 : -0.1;
-      scale = Math.max(1, scale);
-      overlayImg.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
-    });
-
-    overlayImg.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      startX = e.clientX;
-      startY = e.clientY;
-    });
-
-    document.addEventListener('mouseup', () => isDragging = false);
-
-    document.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      originX += e.clientX - startX;
-      originY += e.clientY - startY;
-      startX = e.clientX;
-      startY = e.clientY;
-      overlayImg.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
-    });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeOverlay();
+      if (e.key === 'Escape') closeFullscreen();
+    });
+
+    // Tilt Effect
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 20,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.4
     });
   </script>
 

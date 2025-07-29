@@ -2,124 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>House 1 - Full Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House 3 - Full Details</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle, #000000 0%, #0a0a0a 100%);
-      color: #fff;
-      margin: 0;
-      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000000, #0c0c0c);
+      color: #ffffff;
+      padding-bottom: 100px;
     }
 
     header {
       text-align: center;
       padding: 40px 20px;
-      background: linear-gradient(90deg, #00ff9d, #00ffe5);
-      color: #000;
-      box-shadow: 0 0 20px #00ffe5;
-      text-shadow: 1px 1px 2px #000;
+      background: rgba(0, 255, 128, 0.05);
+      border-bottom: 2px solid #00ff9d;
+      box-shadow: 0 0 10px #00ffbf80;
     }
 
-    h1 {
+    header h1 {
       font-size: 2.5rem;
-      margin: 0;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffd5;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1.1rem;
     }
 
     .section {
       padding: 40px 20px;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: auto;
     }
 
     .section h2 {
-      color: #0ff;
-      border-bottom: 2px solid #0ff;
-      padding-bottom: 5px;
+      font-size: 1.8rem;
       margin-bottom: 20px;
+      color: #00ffaa;
+      border-left: 5px solid #00ff99;
+      padding-left: 12px;
     }
 
     .image-gallery {
       display: grid;
-      gap: 20px;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    .image-gallery img {
-      width: 100%;
-      border-radius: 15px;
-      border: 3px solid #0ff;
-      object-fit: cover;
-      height: 200px;
+    .tilt {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #00ffcc55;
+      box-shadow: 0 0 15px #00ffc833;
+      transition: box-shadow 0.3s ease, border 0.3s ease;
       cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .image-gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #00ffe5;
+    .tilt:hover {
+      box-shadow: 0 0 25px #00ffc8, 0 0 40px #00ffc8aa;
+      border: 2px solid #00ffc8;
+    }
+
+    .tilt img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
     }
 
     ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li::before {
-      content: "\2022";
-      color: #00ffcc;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-
-    ul li {
+      list-style-type: square;
+      padding-left: 25px;
       color: #ccc;
-      margin-bottom: 10px;
-      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
     p {
-      color: #aaa;
-      font-size: 1.1rem;
+      color: #bbb;
+      line-height: 1.6;
+      margin-bottom: 10px;
     }
 
     footer {
       text-align: center;
-      padding: 25px;
-      background: #0a0a0a;
-      border-top: 2px solid #00ffcc;
+      padding: 20px;
+      background-color: #101010;
       color: #888;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      border-top: 2px solid #00ffb3;
+      margin-top: 30px;
     }
 
+    /* Fullscreen Image Popup */
     #fullscreen {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0,0,0,0.95);
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
-      z-index: 1000;
+      z-index: 9999;
     }
 
     #fullscreen img {
       max-width: 90%;
       max-height: 90%;
-      border: 4px solid #0ff;
-      border-radius: 12px;
+      border: 3px solid #00ffc8;
+      border-radius: 10px;
     }
 
     #fullscreen span {
       position: absolute;
-      top: 30px;
-      right: 40px;
-      font-size: 50px;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
       color: #fff;
       cursor: pointer;
     }
@@ -128,20 +130,22 @@
 <body>
 
   <header>
-    <h1>House 1 - 2 BHK in Chandauli</h1>
-    <p>Rs. 12,000 / month | Near Metro Station & Market</p>
+    <h1>House 3 - 2 BHK in Chandauli</h1>
+    <p>₹12,000 / month | Near Metro Station & Market</p>
   </header>
 
+  <!-- Photo Gallery -->
   <section class="section">
     <h2>Photo Gallery</h2>
     <div class="image-gallery">
-      <img src="images/home11.jpg" alt="Main Gate">
-      <img src="images/home12.jpg" alt="Living Room">
-      <img src="images/home13.jpg" alt="Kitchen">
-      <img src="images/home14.jpg" alt="Bedroom">
+      <div class="tilt"><img src="images/home11.jpg" alt="Main Gate"></div>
+      <div class="tilt"><img src="images/home12.jpg" alt="Living Room"></div>
+      <div class="tilt"><img src="images/home13.jpg" alt="Kitchen"></div>
+      <div class="tilt"><img src="images/home14.jpg" alt="Bedroom"></div>
     </div>
   </section>
 
+  <!-- House Details -->
   <section class="section">
     <h2>House Details</h2>
     <ul>
@@ -155,6 +159,7 @@
     </ul>
   </section>
 
+  <!-- Location Details -->
   <section class="section">
     <h2>Location</h2>
     <p><strong>Area:</strong> Rajajipuram, Lucknow</p>
@@ -163,33 +168,54 @@
   </section>
 
   <footer>
-    &copy; 2025 Backbencher Hack Real Estate
-  </footer>
+  <p>
+     THIS WEBSITE IS READY FOR SALE. FOR PURCHASING, PLEASE SEND US AN EMAIL →
+    <br>
+    email:
+    <a href="mailto:shubham16maury@gmail.com?subject=Website%20Purchase%20Inquiry&body=Hi%20Shubham," 
+   style="color:#00ffcc; text-decoration:none;">
+   shubham16maury@gmail.com
+</a>
 
+  </p>
+</footer>
+
+  <!-- Fullscreen Viewer -->
   <div id="fullscreen">
-    <span onclick="closeFullscreen()">&times;</span>
+    <span onclick="closeFullscreen()">×</span>
     <img id="full-img" src="" alt="Full Image">
   </div>
 
+  <!-- VanillaTilt Library -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <script>
-    const images = document.querySelectorAll('.image-gallery img');
-    const fullView = document.getElementById('fullscreen');
+    // Fullscreen Image
+    const galleryImages = document.querySelectorAll('.image-gallery img');
+    const fullscreen = document.getElementById('fullscreen');
     const fullImg = document.getElementById('full-img');
 
-    images.forEach(img => {
+    galleryImages.forEach(img => {
       img.addEventListener('click', () => {
         fullImg.src = img.src;
-        fullView.style.display = 'flex';
+        fullscreen.style.display = 'flex';
       });
     });
 
     function closeFullscreen() {
-      fullView.style.display = 'none';
+      fullscreen.style.display = 'none';
       fullImg.src = '';
     }
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeFullscreen();
+    });
+
+    // Tilt Effect
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 20,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.4
     });
   </script>
 

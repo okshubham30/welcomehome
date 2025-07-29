@@ -3,182 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>House 1 - Hacker Grid</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <title>House 4 - Full Details</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #000000;
-      color: #00ffcc;
-      padding: 20px;
+      background: linear-gradient(135deg, #000000, #0c0c0c);
+      color: #ffffff;
+      padding-bottom: 100px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 30px;
+      padding: 40px 20px;
+      background: rgba(0, 255, 128, 0.05);
+      border-bottom: 2px solid #00ff9d;
+      box-shadow: 0 0 10px #00ffbf80;
     }
 
     header h1 {
-      font-family: 'Orbitron', sans-serif;
       font-size: 2.5rem;
-      text-shadow: 0 0 12px #00ffcc;
-      color: #00ffc8;
-      animation: glow 2s ease-in-out infinite alternate;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffd5;
     }
 
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #00ffc8, 0 0 20px #00ffc8;
-      }
-      to {
-        text-shadow: 0 0 25px #00ffc8, 0 0 50px #00ffc8;
-      }
+    header p {
+      color: #ccc;
+      font-size: 1.1rem;
     }
 
-    .house-details {
-      max-width: 1100px;
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
       margin: auto;
-      background: #0a0a0a;
-      border: 2px solid #00ffcc33;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 0 25px #00ffcc33;
     }
 
-    .main-image {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 0 20px #00ffc820;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .main-image:hover {
-      transform: scale(1.02);
-    }
-
-    .description p {
-      font-size: 1rem;
-      margin-bottom: 10px;
-      line-height: 1.7;
-      color: #cffff3;
-    }
-
-    .description p strong {
-      color: #00ffe1;
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #00ffaa;
+      border-left: 5px solid #00ff99;
+      padding-left: 12px;
     }
 
     .image-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      margin-top: 20px;
     }
 
-    .image-gallery .img-box {
-      background-color: #111;
+    .tilt {
       border-radius: 12px;
       overflow: hidden;
-      border: 2px solid #00ffc820;
-      box-shadow: 0 0 12px #00ffcc30;
-      transition: transform 0.3s, box-shadow 0.3s;
+      border: 2px solid #00ffcc55;
+      box-shadow: 0 0 15px #00ffc833;
+      transition: box-shadow 0.3s ease, border 0.3s ease;
       cursor: pointer;
     }
 
-    .image-gallery .img-box:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 20px #00ffe0;
+    .tilt:hover {
+      box-shadow: 0 0 25px #00ffc8, 0 0 40px #00ffc8aa;
+      border: 2px solid #00ffc8;
     }
 
-    .image-gallery img {
+    .tilt img {
       width: 100%;
       height: 200px;
       object-fit: cover;
       display: block;
     }
 
-    /* Fullscreen Overlay */
-    .overlay {
+    ul {
+      list-style-type: square;
+      padding-left: 25px;
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    p {
+      color: #bbb;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #101010;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 2px solid #00ffb3;
+      margin-top: 30px;
+    }
+
+    /* Fullscreen Image Popup */
+    #fullscreen {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.95);
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
       z-index: 9999;
     }
 
-    .overlay img {
+    #fullscreen img {
       max-width: 90%;
       max-height: 90%;
-      border-radius: 12px;
-      border: 3px solid #00ffcc;
-      box-shadow: 0 0 30px #00ffcc;
+      border: 3px solid #00ffc8;
+      border-radius: 10px;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
+    #fullscreen span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>🏠 Lucknow</h1>
+    <h1>House 4 - Lucknow</h1>
+    <p>₹15,000 / month | Metro station, local market, schools</p>
   </header>
 
-  <div class="house-details">
-    <img src="images/house1_main.jpg" alt="Main House Image" class="main-image" onclick="openOverlay(this.src)" />
-
-    <div class="description">
-      <p><strong>Location:</strong> Lucknow</p>
-      <p><strong>Rent:</strong> ₹15,000 / month</p>
-      <p><strong>Type:</strong> 3 BHK Independent House</p>
-      <p><strong>Nearby:</strong> Metro station, local market, schools</p>
-      <p><strong>Description:</strong> Spacious and well-ventilated home with modern amenities. Includes modular kitchen, 24x7 water supply, and reserved parking space.</p>
-    </div>
-
+  <!-- Photo Gallery -->
+  <section class="section">
+    <h2>Photo Gallery</h2>
     <div class="image-gallery">
-      <div class="img-box"><img src="images/house_1.JPG" alt="Image 1" onclick="openOverlay(this.src)" /></div>
-      <div class="img-box"><img src="images/home12.jpg" alt="Image 2" onclick="openOverlay(this.src)" /></div>
-      <div class="img-box"><img src="images/home15.jpg" alt="Image 3" onclick="openOverlay(this.src)" /></div>
-      <div class="img-box"><img src="images/home25.jpg" alt="Image 4" onclick="openOverlay(this.src)" /></div>
+      <div class="tilt"><img src="images/house1_main.jpg" alt="Main House Image"></div>
+      <div class="tilt"><img src="images/house_1.JPG" alt="Image 1"></div>
+      <div class="tilt"><img src="images/home12.jpg" alt="Image 2"></div>
+      <div class="tilt"><img src="images/home15.jpg" alt="Image 3"></div>
+      <div class="tilt"><img src="images/home25.jpg" alt="Image 4"></div>
     </div>
-  </div>
+  </section>
+
+  <!-- House Details -->
+  <section class="section">
+    <h2>House Details</h2>
+    <ul>
+      <li>3 BHK Independent House</li>
+      <li>Spacious and well-ventilated home with modern amenities</li>
+      <li>Modular kitchen setup</li>
+      <li>24x7 water supply & reserved parking space</li>
+    </ul>
+  </section>
+
+  <!-- Location Details -->
+  <section class="section">
+    <h2>Location</h2>
+    <p><strong>Area:</strong> Lucknow</p>
+    <p><strong>Nearby:</strong> Metro station, local market, schools</p>
+  </section>
+
+  <footer>
+  <p>
+     THIS WEBSITE IS READY FOR SALE. FOR PURCHASING, PLEASE SEND US AN EMAIL →
+    <br>
+    email:
+    <a href="mailto:shubham16maury@gmail.com?subject=Website%20Purchase%20Inquiry&body=Hi%20Shubham," 
+   style="color:#00ffcc; text-decoration:none;">
+   shubham16maury@gmail.com
+</a>
+  </p>
+</footer>
 
   <!-- Fullscreen Viewer -->
-  <div class="overlay" id="imgOverlay" onclick="closeOverlay()">
-    <img id="overlayImg" src="" alt="Full Image"/>
+  <div id="fullscreen">
+    <span onclick="closeFullscreen()">×</span>
+    <img id="full-img" src="" alt="Full Image">
   </div>
 
+  <!-- VanillaTilt Library -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <script>
-    function openOverlay(src) {
-      document.getElementById("overlayImg").src = src;
-      document.getElementById("imgOverlay").style.display = "flex";
+    // Fullscreen Image
+    const galleryImages = document.querySelectorAll('.image-gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+      });
+    });
+
+    function closeFullscreen() {
+      fullscreen.style.display = 'none';
+      fullImg.src = '';
     }
 
-    function closeOverlay() {
-      document.getElementById("imgOverlay").style.display = "none";
-    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeFullscreen();
+    });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeOverlay();
+    // Tilt Effect
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 20,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.4
     });
   </script>
+
 </body>
 </html>
-
-
