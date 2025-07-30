@@ -69,7 +69,7 @@ h2 {
   flex: 1;
   padding: 15px 20px;
   font-size: 18px;
-  border: 2px solid #2ecc71;
+  border: 2px solid #2dc228;
   border-right: none;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -192,4 +192,11 @@ footer {
     margin: 5px 0;
     border-radius: 20px !important;
   }
+}
+
+#typingText1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #a6f074;
+  font-family: 'Poppins', sans-serif;
 }

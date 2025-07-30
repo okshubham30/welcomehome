@@ -46,3 +46,33 @@ searchInput.addEventListener("keypress", function (e) {
     searchHouses();
   }
 });
+
+//typing effect
+window.addEventListener("DOMContentLoaded", function() {
+    const text = "Search Homes in Your Preferred Location";
+    const typingElement = document.getElementById("typingText1");
+    let index = 0;
+    let deleting = false;
+
+    function typeEffect() {
+        if (!deleting && index <= text.length) {
+            typingElement.textContent = text.substring(0, index);
+            index++;
+            setTimeout(typeEffect, 100);
+        } else if (deleting && index >= 0) {
+            typingElement.textContent = text.substring(0, index);
+            index--;
+            setTimeout(typeEffect, 50);
+        }
+
+        if (index > text.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1000);
+        } else if (deleting && index === 0) {
+            deleting = false;
+            setTimeout(typeEffect, 500);
+        }
+    }
+
+    typeEffect();
+});
