@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homes Available for Rent</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🏠Homes Available for Rent </h1>
+    <p id="typingText1"></p>
+  </header>
+
+  <!-- Search box -->
+  <div class="search-box-container">
+  <input type="text" id="searchInput" placeholder="Search by location or type..." />
+  <button onclick="searchHouses()">Search</button>
+</div>
+
+  <hr class="colorful-hr">
+  <h2>Available Houses</h2>
+  <hr class="colorful-hr">
+
+  <!-- Available houses section -->
+  <section>
+    <!-- ghar 1 -->
+    <a href="ghar1.html" class="house-card" id="ghar1">
+    <img src="images/varanasi.jpg" alt="3 BHK House in Varanasi">
+    <h3>Location: Varanasi</h3>
+    <p>₹ 23,000 / month | 2 BHK</p>
+    <p>Clean and peaceful neighborhood</p>
+    </a>
+
+    <!-- ghar 2 -->
+    <a href="ghar2.html" class="house-card" id="ghar2">
+      <img src="images/kota.jpg" alt="3 BHK Rental House in Kota">
+    <h3>Location: Kota</h3>
+    <p>₹ 15,000 / month | 3 BHK</p>
+    <p>Near Dakhaniya Railway Station</p>
+
+    </a>
+    <!-- ghar 3 -->
+    <a href="ghar3.html" class="house-card" id="ghar1">
+      <img src="images/chandauli.webp" alt="2 BHK House in Chandauli">
+    <h3>Location: Chandauli</h3>
+    <p>₹ 10,000 / month | 2 BHK</p>
+    <p>Clean and peaceful neighborhood</p>
+    </a>
+
+    <!-- ghar 4 -->
+    <a href="ghar4.html" class="house-card" id="ghar2">
+      <img src="images/lucknow.jpg" alt="3 BHK Rental House in Lucknow">
+    <h3>Location: Lucknow</h3>
+    <p>₹ 22,000 / month | 3 BHK</p>
+    <p>Close to metro and market</p>
+
+    </a>
+
+   <!-- ghar 5 -->
+     <a href="ghar5.html" class="house-card" id="ghar1">
+      <img src="images/allahabad.webp" alt="">
+      <h3>Location: Allahabad</h3>
+    <p>₹ 13,000 / month | 2 BHK</p>
+    <p>Close to airport</p>
+
+    </a>
+
+    <!-- ghar 6 -->
+    <a href="ghar6.html" class="house-card" id="ghar2">
+      <img src="images/bhopal.jpg" alt="">
+      <h3>Location: Bhopal</h3>
+    <p>₹ 19,000 / month | 3 BHK</p>
+    <p>Close to metro and market</p>
+
+    </a>
+
+  <!-- ghar 7 -->
+     <a href="ghar7.html" class="house-card" id="ghar1">
+      <img src="images/jaipur.jpg" alt="">
+      <h3>Location: Jaipur</h3>
+    <p>₹ 17,000 / month | 3 BHK</p>
+    <p>Close to Hawamahal</p>
+    </a>
+
+    <!-- ghar 8 -->
+    <a href="ghar8.html" class="house-card" id="ghar2">
+      <img src="images/mughalsarai.jpg" alt="">
+      <h3>Location: Mughal Sarai</h3>
+    <p>₹ 12,000 / month | 3 BHK</p>
+    <p>Close to railway station</p>
+    </a>
+
+     <!-- ghar 9 -->
+    <a href="ghar9.html" class="house-card" id="ghar2">
+      <img src="images/commingsoon.png" alt="">
+      <h3>COMING SOON</h3>
+      <p></p>
+      <p></p>
+    </a>
+
+  <!-- ghar 10 -->
+     <a href="ghar10.html" class="house-card" id="ghar1">
+      <img src="images/commingsoon.png" alt="">
+      <h3>COMING SOON</h3>
+      <p></p>
+      <p></p>
+    </a>
+
+    <!-- ghar 11 -->
+    <a href="ghar11.html" class="house-card" id="ghar2">
+      <img src="images/commingsoon.png" alt="">
+      <h3>COMING SOON</h3>
+      <p></p>
+      <p></p>
+    </a>
+
+     <!-- ghar 11 -->
+    <a href="ghar11.html" class="house-card" id="ghar2">
+      <img src="images/commingsoon.png" alt="">
+      <h3>COMING SOON</h3>
+      <p></p>
+      <p></p>
+    </a>
+
+
+    <!-- additional houses can be added here -->
+  </section>
+
+
+    <footer style="background:#111; color:#fff; text-align:center; padding:20px;">
+    <p id="typingText" style="font-size:18px; color:#54eb19; font-weight:bold;"></p>
+
+    <script>
+        const text = "THIS WEBSITE IS READY FOR SALE. FOR PURCHASING, SEND US AN EMAIL/MESSAGE →";
+        const typingElement = document.getElementById("typingText");
+        let index = 0;
+        let repeatCount = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                typingElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, 50);
+            } else {
+                repeatCount++;
+                if (repeatCount < 2) {  // sirf 2 baar chale
+                    setTimeout(() => {
+                        typingElement.textContent = "";
+                        index = 0;
+                        typeText();
+                    }, 1000);
+                }
+            }
+        }
+        typeText();
+    </script>
+
+ <a href="https://www.linkedin.com/in/ok_shubham_32" 
+       target="_blank" 
+       style="color:#0e76a8; text-decoration:none; font-size:18px; margin-top:10px; display:inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
+             alt="LinkedIn" 
+             style="width:24px; vertical-align:middle; margin-right:8px;">
+        LinkedIn
+    </a>
+ <br>
+<a href="mailto:shubham16maury@gmail.com"
+       style="color:#1da8e9; text-decoration:none; font-size:18px; display:inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+             alt="Email"
+             style="width:24px; vertical-align:middle; margin-right:8px;">
+        Email
+    </a>
+<br>
+    <a href="https://twitter.com/ok_shubham_32"
+       target="_blank"
+       style="color:#1DA1F2; text-decoration:none; font-size:18px; display:inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+             alt="Twitter"
+             style="width:24px; vertical-align:middle; margin-right:8px;">
+        Twitter
+    </a>
+  </p>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -3,187 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homes Available for Rent</title>
+  <title>Welcome | Homes Portal</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Slider Styling */
+    .slider-container {
+      max-width: 900px;
+      margin: 30px auto 10px auto;
+      position: relative;
+    }
+    .slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,255,255,0.3);
+    }
+    .slider .slide {
+      width: 100%;
+      display: none;
+      border-radius: 12px;
+    }
+    .slider .slide.active {
+      display: block;
+      animation: fadeSlide 1s;
+    }
+    @keyframes fadeSlide {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #444;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .dot.active,
+    .dot:hover {
+      background-color: #30ec1f;
+    }
+
+    /* Option Cards (as earlier) */
+    .option-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      padding: 50px 20px;
+    }
+    .option-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 200px;
+      background: #1a1a1a;
+      border-radius: 15px;
+      text-decoration: none;
+      color: #30ec1f;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .option-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    }
+
+    @media (max-width: 480px) {
+      .option-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .option-card {
+        width: 90%;
+        height: 150px;
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>🏠Homes Available for Rent </h1>
-    <p id="typingText1"></p>
+    <h1>🏠 Welcome to Our Home Portal</h1>
+    <p>Select your desired option below</p>
   </header>
 
-  <!-- Search box -->
-  <div class="search-box-container">
-  <input type="text" id="searchInput" placeholder="Search by location or type..." />
-  <button onclick="searchHouses()">Search</button>
-</div>
+  <!-- Image Slider -->
+  <div class="slider-container">
+    <div class="slider">
+      <img src="images/varanasi.jpg" alt="Slide 1" class="slide active">
+      <img src="images/varanasi1.jpg" alt="Slide 2" class="slide">
+      <img src="images/bhopal.jpg" alt="Slide 3" class="slide">
+      <img src="images/delhi.jpg" alt="Slide 1" class="slide active">
+      <img src="images/kota.jpg" alt="Slide 2" class="slide">
+      <img src="images/chandauli.webp" alt="Slide 3" class="slide">
+    </div>
+    <div class="dots">
+      <span class="dot active" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+     <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+
+
+    </div>
+  </div>
 
   <hr class="colorful-hr">
-  <h2>Available Houses</h2>
+  <h2>Choose an Option</h2>
   <hr class="colorful-hr">
 
-  <!-- Available houses section -->
-  <section>
-    <!-- ghar 1 -->
-    <a href="ghar1.html" class="house-card" id="ghar1">
-    <img src="images/varanasi.jpg" alt="3 BHK House in Varanasi">
-    <h3>Location: Varanasi</h3>
-    <p>₹ 23,000 / month | 2 BHK</p>
-    <p>Clean and peaceful neighborhood</p>
-    </a>
+  <!-- Option Cards -->
+  <div class="option-container">
+    <a href="index2.html" class="option-card">Homes for Rent</a>
+    <a href="index1.html" class="option-card">Purchase Homes</a>
+    <a href="index3.html" class="option-card">Purchess property</a>
+  </div>
 
-    <!-- ghar 2 -->
-    <a href="ghar2.html" class="house-card" id="ghar2">
-      <img src="images/kota.jpg" alt="3 BHK Rental House in Kota">
-    <h3>Location: Kota</h3>
-    <p>₹ 15,000 / month | 3 BHK</p>
-    <p>Near Dakhaniya Railway Station</p>
-
-    </a>
-    <!-- ghar 3 -->
-    <a href="ghar3.html" class="house-card" id="ghar1">
-      <img src="images/chandauli.webp" alt="2 BHK House in Chandauli">
-    <h3>Location: Chandauli</h3>
-    <p>₹ 10,000 / month | 2 BHK</p>
-    <p>Clean and peaceful neighborhood</p>
-    </a>
-
-    <!-- ghar 4 -->
-    <a href="ghar4.html" class="house-card" id="ghar2">
-      <img src="images/lucknow.jpg" alt="3 BHK Rental House in Lucknow">
-    <h3>Location: Lucknow</h3>
-    <p>₹ 22,000 / month | 3 BHK</p>
-    <p>Close to metro and market</p>
-
-    </a>
-
-   <!-- ghar 5 -->
-     <a href="ghar5.html" class="house-card" id="ghar1">
-      <img src="images/allahabad.webp" alt="">
-      <h3>Location: Allahabad</h3>
-    <p>₹ 13,000 / month | 2 BHK</p>
-    <p>Close to airport</p>
-
-    </a>
-
-    <!-- ghar 6 -->
-    <a href="ghar6.html" class="house-card" id="ghar2">
-      <img src="images/bhopal.jpg" alt="">
-      <h3>Location: Bhopal</h3>
-    <p>₹ 19,000 / month | 3 BHK</p>
-    <p>Close to metro and market</p>
-
-    </a>
-
-  <!-- ghar 7 -->
-     <a href="ghar7.html" class="house-card" id="ghar1">
-      <img src="images/jaipur.jpg" alt="">
-      <h3>Location: Jaipur</h3>
-    <p>₹ 17,000 / month | 3 BHK</p>
-    <p>Close to Hawamahal</p>
-    </a>
-
-    <!-- ghar 8 -->
-    <a href="ghar8.html" class="house-card" id="ghar2">
-      <img src="images/mughalsarai.jpg" alt="">
-      <h3>Location: Mughal Sarai</h3>
-    <p>₹ 12,000 / month | 3 BHK</p>
-    <p>Close to railway station</p>
-    </a>
-
-     <!-- ghar 9 -->
-    <a href="ghar9.html" class="house-card" id="ghar2">
-      <img src="images/commingsoon.png" alt="">
-      <h3>COMING SOON</h3>
-      <p></p>
-      <p></p>
-    </a>
-
-  <!-- ghar 10 -->
-     <a href="ghar10.html" class="house-card" id="ghar1">
-      <img src="images/commingsoon.png" alt="">
-      <h3>COMING SOON</h3>
-      <p></p>
-      <p></p>
-    </a>
-
-    <!-- ghar 11 -->
-    <a href="ghar11.html" class="house-card" id="ghar2">
-      <img src="images/commingsoon.png" alt="">
-      <h3>COMING SOON</h3>
-      <p></p>
-      <p></p>
-    </a>
-
-     <!-- ghar 11 -->
-    <a href="ghar11.html" class="house-card" id="ghar2">
-      <img src="images/commingsoon.png" alt="">
-      <h3>COMING SOON</h3>
-      <p></p>
-      <p></p>
-    </a>
-
-
-    <!-- additional houses can be added here -->
-  </section>
-
-
-    <footer style="background:#111; color:#fff; text-align:center; padding:20px;">
+  <footer>
     <p id="typingText" style="font-size:18px; color:#54eb19; font-weight:bold;"></p>
-
     <script>
-        const text = "THIS WEBSITE IS READY FOR SALE. FOR PURCHASING, SEND US AN EMAIL/MESSAGE →";
-        const typingElement = document.getElementById("typingText");
-        let index = 0;
-        let repeatCount = 0;
-
-        function typeText() {
-            if (index < text.length) {
-                typingElement.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeText, 50);
-            } else {
-                repeatCount++;
-                if (repeatCount < 2) {  // sirf 2 baar chale
-                    setTimeout(() => {
-                        typingElement.textContent = "";
-                        index = 0;
-                        typeText();
-                    }, 1000);
-                }
-            }
+      const text = "THIS WEBSITE IS READY FOR SALE. FOR PURCHASING, SEND US AN EMAIL/MESSAGE →";
+      const typingElement = document.getElementById("typingText");
+      let index = 0;
+      function typeText() {
+        if (index < text.length) {
+          typingElement.textContent += text.charAt(index);
+          index++;
+          setTimeout(typeText, 50);
         }
-        typeText();
+      }
+      typeText();
     </script>
+  </footer>
 
- <a href="https://www.linkedin.com/in/ok_shubham_32" 
-       target="_blank" 
-       style="color:#0e76a8; text-decoration:none; font-size:18px; margin-top:10px; display:inline-block;">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
-             alt="LinkedIn" 
-             style="width:24px; vertical-align:middle; margin-right:8px;">
-        LinkedIn
-    </a>
- <br>
-<a href="mailto:shubham16maury@gmail.com"
-       style="color:#1da8e9; text-decoration:none; font-size:18px; display:inline-block;">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
-             alt="Email"
-             style="width:24px; vertical-align:middle; margin-right:8px;">
-        Email
-    </a>
-<br>
-    <a href="https://twitter.com/ok_shubham_32"
-       target="_blank"
-       style="color:#1DA1F2; text-decoration:none; font-size:18px; display:inline-block;">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
-             alt="Twitter"
-             style="width:24px; vertical-align:middle; margin-right:8px;">
-        Twitter
-    </a>
-  </p>
-</footer>
-
-  <script src="script.js"></script>
+  <!-- Slider Script -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    function showSlides() {
+      slides.forEach((s, i) => {
+        s.classList.remove('active');
+        dots[i].classList.remove('active');
+      });
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add('active');
+      dots[slideIndex].classList.add('active');
+      setTimeout(showSlides, 4000);
+    }
+    function currentSlide(n) {
+      slideIndex = n - 1;
+      showSlides();
+    }
+    showSlides();
+  </script>
 </body>
 </html>

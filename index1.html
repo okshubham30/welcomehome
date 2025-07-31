@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homes Available for Purchase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🏠Homes Available for Purchase</h1>
+    <p id="typingText1"></p>
+  </header>
+
+  <!-- Search box -->
+  <div class="search-box-container">
+    <input type="text" id="searchInput" placeholder="Search by location or type..." />
+    <button onclick="searchHouses()">Search</button>
+  </div>
+
+  <hr class="colorful-hr">
+  <h2>Available Plots</h2>
+  <hr class="colorful-hr">
+
+  <!-- Available plots section -->
+  <section>
+    <!-- plot 1 -->
+    <a href="plot1.html" class="house-card" id="ghar1">
+      <img src="images/plot1.jpg" alt="Residential Plot in Varanasi">
+      <h3>Location: Varanasi</h3>
+      <p>₹ 45,00,000 | 1800 Sqft</p>
+      <p>Residential zone with road access</p>
+    </a>
+
+    <!-- plot 2 -->
+    <a href="plot2.html" class="house-card" id="ghar2">
+      <img src="images/plot2.jpg" alt="Commercial Plot in Lucknow">
+      <h3>Location: Lucknow</h3>
+      <p>₹ 75,00,000 | 2500 Sqft</p>
+      <p>Near metro and shopping hub</p>
+    </a>
+
+    <!-- plot 3 -->
+    <a href="plot3.html" class="house-card" id="ghar1">
+      <img src="images/plot3.jpg" alt="Plot in Jaipur">
+      <h3>Location: Jaipur</h3>
+      <p>₹ 38,00,000 | 1500 Sqft</p>
+      <p>Close to Hawamahal</p>
+    </a>
+
+    <!-- plot 4 -->
+    <a href="plot4.html" class="house-card" id="ghar2">
+      <img src="images/plot4.jpg" alt="Plot in Bhopal">
+      <h3>Location: Bhopal</h3>
+      <p>₹ 55,00,000 | 2000 Sqft</p>
+      <p>Good road connectivity</p>
+    </a>
+
+    <!-- plot 5 -->
+    <a href="plot5.html" class="house-card" id="ghar1">
+      <img src="images/plot5.jpg" alt="Plot in Mughal Sarai">
+      <h3>Location: Mughal Sarai</h3>
+      <p>₹ 28,00,000 | 1200 Sqft</p>
+      <p>Peaceful area near station</p>
+    </a>
+
+    <!-- Coming Soon -->
+    <a href="plot6.html" class="house-card" id="ghar2">
+      <img src="images/commingsoon.png" alt="Coming Soon">
+      <h3>COMING SOON</h3>
+      <p></p>
+      <p></p>
+    </a>
+  </section>
+
+  <footer style="background:#111; color:#fff; text-align:center; padding:20px;">
+    <p id="typingText" style="font-size:18px; color:#54eb19; font-weight:bold;"></p>
+    <script>
+      const text = "THIS WEBSITE IS READY FOR SALE. FOR PURCHASING, SEND US AN EMAIL/MESSAGE →";
+      const typingElement = document.getElementById("typingText");
+      let index = 0, repeatCount = 0;
+      function typeText() {
+        if (index < text.length) {
+          typingElement.textContent += text.charAt(index);
+          index++;
+          setTimeout(typeText, 50);
+        } else {
+          repeatCount++;
+          if (repeatCount < 2) {
+            setTimeout(() => {
+              typingElement.textContent = "";
+              index = 0;
+              typeText();
+            }, 1000);
+          }
+        }
+      }
+      typeText();
+    </script>
+
+    <a href="https://www.linkedin.com/in/ok_shubham_32" target="_blank"
+       style="color:#0e76a8; text-decoration:none; font-size:18px; margin-top:10px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+           alt="LinkedIn"
+           style="width:24px; vertical-align:middle; margin-right:8px;"> LinkedIn
+    </a>
+    <br>
+    <a href="mailto:shubham16maury@gmail.com"
+       style="color:#1da8e9; text-decoration:none; font-size:18px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+           alt="Email"
+           style="width:24px; vertical-align:middle; margin-right:8px;"> Email
+    </a>
+    <br>
+    <a href="https://twitter.com/ok_shubham_32" target="_blank"
+       style="color:#1DA1F2; text-decoration:none; font-size:18px; display:inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+           alt="Twitter"
+           style="width:24px; vertical-align:middle; margin-right:8px;"> Twitter
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

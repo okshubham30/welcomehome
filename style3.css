@@ -1,0 +1,172 @@
+/* === Font & Reset === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === Body === */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* === Header === */
+header {
+  background: #111;
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 2px solid #15da1f;
+  box-shadow: 0 0 15px rgba(0,255,255,0.4);
+  position: relative;
+}
+header h1 {
+  font-size: 2.5rem;
+  color: #30ec1f;
+  text-shadow: 0 0 10px #09c509;
+}
+.lang-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #2ecc71;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.lang-btn:hover { background: #27ae60; }
+
+/* === Section Titles === */
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: #30ec1f;
+  text-shadow: 0 0 5px #09c509;
+}
+
+/* === Rainbow Line === */
+.colorful-hr {
+  border: none;
+  height: 4px;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 400%;
+  animation: rainbowFlow 5s linear infinite;
+  border-radius: 4px;
+  margin: 20px auto;
+  width: 80%;
+}
+@keyframes rainbowFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* === Search Box === */
+.search-box-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 600px;
+}
+.search-box-container input {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: 2px solid #2dc228;
+  border-right: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.search-box-container button {
+  padding: 15px 30px;
+  background: #2ecc71;
+  color: #fff;
+  font-size: 18px;
+  border: 2px solid #2ecc71;
+  border-left: none;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  cursor: pointer;
+}
+.search-box-container button:hover { background: #27ae60; }
+
+/* === Properties Container === */
+.properties-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* === Property Card === */
+.property-card {
+  width: 300px;
+  background: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0,255,255,0.2);
+  border: 1px solid transparent;
+}
+.property-card:hover {
+  border: 1px solid #00e0ff;
+  box-shadow: 0 0 15px #00e0ff;
+}
+.property-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.property-info { padding: 15px; }
+.property-details {
+  display: none;
+  padding: 15px;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+/* === Expanded Card (Vertical) === */
+.property-card.expanded {
+  width: 300px; /* Horizontal size fixed */
+  max-width: 300px;
+  transform: scale(1.05);
+}
+.property-card.expanded .property-details {
+  display: block;
+}
+
+/* === No Results === */
+#noResultMsg {
+  text-align: center;
+  color: red;
+  font-size: 18px;
+  display: none;
+  margin-top: 10px;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  background: #111;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9rem;
+  border-top: 2px solid #0dda29;
+}
+
+/* === Responsive === */
+@media(max-width: 480px) {
+  .property-card { width: 90%; }
+  .search-box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-box-container input, .search-box-container button {
+    width: 90%;
+    margin: 5px 0;
+    border-radius: 20px !important;
+  }
+}
