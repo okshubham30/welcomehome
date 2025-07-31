@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #111;
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 2px solid #15da1f;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #30ec1f;
+  text-shadow: 0 0 10px #09c509;
+}
+
+header p {
+  color: #aaa;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: #30ec1f;
+  text-shadow: 0 0 5px #09c509;
+}
+
+/* Animated colorful horizontal line */
+.colorful-hr {
+  border: none;
+  height: 4px;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 400%;
+  animation: rainbowFlow 5s linear infinite;
+  border-radius: 4px;
+  margin: 20px auto;
+  width: 80%;
+}
+
+@keyframes rainbowFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Search Box */
+.search-box-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.search-box-container input {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: 2px solid #2dc228;
+  border-right: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  outline: none;
+  transition: all 0.3s ease;
+  color: #2c3e50;
+}
+
+.search-box-container input:focus {
+  box-shadow: 0 0 10px #2ecc71;
+}
+
+.search-box-container button {
+  padding: 15px 30px;
+  background-color: #2ecc71;
+  color: white;
+  font-size: 18px;
+  border: 2px solid #2ecc71;
+  border-left: none;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-box-container button:hover {
+  background-color: #27ae60;
+}
+
+/* House Cards */
+.house-card {
+  display: block;
+  width: 280px;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 15px;
+  transition: 0.4s ease;
+  border-left: 4px solid transparent;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  margin: 20px auto;
+}
+
+.house-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.house-card h3 {
+  font-size: 1.2rem;
+  color: #2cdb14;
+}
+
+.house-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+/* Hover Effects Per House */
+#ghar1:hover {
+  border-left: 4px solid #5adb1e;
+  box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+#ghar2:hover {
+  border-left: 4px solid #1e90ff;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+  transform: translateY(-5px);
+}
+
+/* Responsive Grid Section */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #111;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9rem;
+  border-top: 2px solid #0dda29;
+  box-shadow: 0 -2px 10px rgba(0, 255, 255, 0.2);
+}
+
+/* Optional: Highlighted Search Results */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+}
+@media (max-width: 480px) {
+  .house-card {
+    width: 90%;
+    margin: 15px auto;
+  }
+
+  .search-box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-box-container input,
+  .search-box-container button {
+    width: 90%;
+    margin: 5px 0;
+    border-radius: 20px !important;
+  }
+}
+
+#typingText1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #a6f074;
+  font-family: 'Poppins', sans-serif;
+}
