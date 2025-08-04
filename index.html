@@ -131,22 +131,70 @@
     <a href="index3.html" class="option-card">Purchess property</a>
   </div>
 
-  <footer>
+  <footer style="background:#111; color:#fff; text-align:center; padding:20px;">
     <p id="typingText" style="font-size:18px; color:#54eb19; font-weight:bold;"></p>
+
     <script>
-      const text = "THIS WEBSITE IS READY FOR SALE. FOR PURCHASING, SEND US AN EMAIL/MESSAGE →";
-      const typingElement = document.getElementById("typingText");
-      let index = 0;
-      function typeText() {
-        if (index < text.length) {
-          typingElement.textContent += text.charAt(index);
-          index++;
-          setTimeout(typeText, 50);
+        const text = "THIS WEBSITE IS READY FOR SALE. FOR PURCHASING, SEND US AN EMAIL/MESSAGE →";
+        const typingElement = document.getElementById("typingText");
+        let index = 0;
+        let repeatCount = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                typingElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, 50);
+            } else {
+                repeatCount++;
+                if (repeatCount < 99) {  // sirf 2 baar chale
+                    setTimeout(() => {
+                        typingElement.textContent = "";
+                        index = 0;
+                        typeText();
+                    }, 1000);
+                }
+            }
         }
-      }
-      typeText();
+        typeText();
     </script>
-  </footer>
+
+ <a href="https://www.linkedin.com/in/ok_shubham_32" 
+       target="_blank" 
+       style="color:#0e76a8; text-decoration:none; font-size:18px; margin-top:10px; display:inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
+             alt="LinkedIn" 
+             style="width:24px; vertical-align:middle; margin-right:8px;">
+        LinkedIn
+    </a>
+ <br>
+<a href="mailto:shubham16maury@gmail.com"
+       style="color:#1da8e9; text-decoration:none; font-size:18px; display:inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+             alt="Email"
+             style="width:24px; vertical-align:middle; margin-right:8px;">
+        Email
+    </a>
+<br>
+    <a href="https://twitter.com/ok_shubham_32"
+       target="_blank"
+       style="color:#1DA1F2; text-decoration:none; font-size:18px; display:inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+             alt="Twitter"
+             style="width:24px; vertical-align:middle; margin-right:8px;">
+        Twitter
+    </a>
+<br> 
+<a href="https://t.me/ok_shubham_32" 
+   target="_blank" 
+   style="color:#0088cc; text-decoration:none; font-size:18px; margin-top:10px; display:inline-block;">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" 
+         alt="Telegram" 
+         style="width:24px; vertical-align:middle; margin-right:8px;">
+    Telegram
+</a>
+  </p>
+</footer>
 
   <!-- Slider Script -->
   <script>
