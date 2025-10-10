@@ -3,220 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome | Homes Portal</title>
-  <link rel="stylesheet" href="style2.css">
-  <style>
-    /* Slider Styling */
-    .slider-container {
-      max-width: 900px;
-      margin: 30px auto 10px auto;
-      position: relative;
-    }
-    .slider {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,255,255,0.3);
-    }
-    .slider .slide {
-      width: 100%;
-      display: none;
-      border-radius: 12px;
-    }
-    .slider .slide.active {
-      display: block;
-      animation: fadeSlide 1s;
-    }
-    @keyframes fadeSlide {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    .dots {
-      text-align: center;
-      margin-top: 10px;
-    }
-    .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 5px;
-      background-color: #444;
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .dot.active,
-    .dot:hover {
-      background-color: #30ec1f;
-    }
+  <title>OK VARANASI</title>
 
-    /* Option Cards (as earlier) */
-    .option-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 50px;
-      padding: 50px 20px;
-    }
-    .option-card {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 300px;
-      height: 200px;
-      background: #1a1a1a;
-      border-radius: 15px;
-      text-decoration: none;
-      color: #30ec1f;
-      font-size: 24px;
-      font-weight: bold;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .option-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
-    }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    @media (max-width: 480px) {
-      .option-container {
-        flex-direction: column;
-        gap: 20px;
-      }
-      .option-card {
-        width: 90%;
-        height: 150px;
-        font-size: 20px;
-      }
-    }
-  </style>
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🏠 Welcome to Our Home Portal</h1>
-    <p>Select your desired option below</p>
+
+  <!-- Header Slider -->
+  <header class="header-slider">
+    <div class="navbar">
+      <div class="logo">OK VARANASI</div>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">MENU</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+
+    <div class="header-content">WELCOME TO VARANASI</div>
+
+    <div class="slide active" style="background-image: url('images/varanasi.jpg');"></div>
+    <div class="slide" style="background-image: url('images/varanasi1.jpg');"></div>
+    <div class="slide" style="background-image: url('images/bhopal.jpg');"></div>
+    <div class="slide" style="background-image: url('images/delhi.jpg');"></div>
+    <div class="slide" style="background-image: url('images/kota.jpg');"></div>
+    <div class="slide" style="background-image: url('images/chandauli.webp');"></div>
   </header>
 
-  <!-- Image Slider -->
-  <div class="slider-container">
-    <div class="slider">
-      <img src="images/varanasi.jpg" alt="Slide 1" class="slide active">
-      <img src="images/varanasi1.jpg" alt="Slide 2" class="slide">
-      <img src="images/bhopal.jpg" alt="Slide 3" class="slide">
-      <img src="images/delhi.jpg" alt="Slide 1" class="slide active">
-      <img src="images/kota.jpg" alt="Slide 2" class="slide">
-      <img src="images/chandauli.webp" alt="Slide 3" class="slide">
-    </div>
-    <div class="dots">
-      <span class="dot active" onclick="currentSlide(0)"></span>
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-     <span class="dot" onclick="currentSlide(3)"></span>
-      <span class="dot" onclick="currentSlide(4)"></span>
-      <span class="dot" onclick="currentSlide(5)"></span>
-
-
-    </div>
+  <!-- Search Box -->
+  <div class="search-container">
+    <input id="searchInput" type="text" placeholder="Search homes, shops, hostels...">
   </div>
-
-  <hr class="colorful-hr">
-  <h2>Choose an Option</h2>
-  <hr class="colorful-hr">
 
   <!-- Option Cards -->
-  <div class="option-container">
-    <a href="index2.html" class="option-card">Homes for Rent</a>
-    <a href="index1.html" class="option-card">Purchase Homes</a>
-    <a href="index3.html" class="option-card">Purchess property</a>
+  <div class="option-container" id="optionContainer">
+    <a href="index2.html" class="option-card">
+      <img src="images/agra.jpg" alt="Homes" class="option-image">
+      <span>Homes for Rent</span>
+    </a>
+    <a href="index1.html" class="option-card">
+      <img src="images/delhi.jpg" alt="Purchase" class="option-image">
+      <span>Purchase Homes</span>
+    </a>
+    <a href="index3.html" class="option-card">
+      <img src="images/jaipur.jpg" alt="Property" class="option-image">
+      <span>Purchase Property</span>
+    </a>
+    <a href="index4.html" class="option-card">
+      <img src="images/bhopal.jpg" alt="Coaching" class="option-image">
+      <span>Coaching Institutes</span>
+    </a>
   </div>
 
-  <footer style="background:#111; color:#fff; text-align:center; padding:20px;">
-    <p id="typingText" style="font-size:18px; color:#54eb19; font-weight:bold;"></p>
+  <!-- Footer -->
+  <footer class="footer">
+    <p id="typingText"></p>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>OK VARANASI</h3>
+        <p>Contact for adding your House, Homes, Shops, Coaching Institutes, and Hostels.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="https://www.linkedin.com/in/ok_shubham_32" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        </a>
+        <a href="mailto:shubham16maury@gmail.com">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+        </a>
+        <a href="https://twitter.com/ok_shubham_32" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+        </a>
+        <a href="https://t.me/ok_shubham_32" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+        </a>
+        <a href="https://www.instagram.com/ok_shubham_32" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@ok_shubham_32" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 OK VARANASI. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-    <script>
-        const text = "THIS WEBSITE IS READY FOR SALE. FOR PURCHASING, SEND US AN EMAIL/MESSAGE →";
-        const typingElement = document.getElementById("typingText");
-        let index = 0;
-        let repeatCount = 0;
-
-        function typeText() {
-            if (index < text.length) {
-                typingElement.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeText, 50);
-            } else {
-                repeatCount++;
-                if (repeatCount < 99) {  // sirf 2 baar chale
-                    setTimeout(() => {
-                        typingElement.textContent = "";
-                        index = 0;
-                        typeText();
-                    }, 1000);
-                }
-            }
-        }
-        typeText();
-    </script>
-
- <a href="https://www.linkedin.com/in/ok_shubham_32" 
-       target="_blank" 
-       style="color:#0e76a8; text-decoration:none; font-size:18px; margin-top:10px; display:inline-block;">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
-             alt="LinkedIn" 
-             style="width:24px; vertical-align:middle; margin-right:8px;">
-        LinkedIn
-    </a>
- <br>
-<a href="mailto:shubham16maury@gmail.com"
-       style="color:#1da8e9; text-decoration:none; font-size:18px; display:inline-block;">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
-             alt="Email"
-             style="width:24px; vertical-align:middle; margin-right:8px;">
-        Email
-    </a>
-<br>
-    <a href="https://twitter.com/ok_shubham_32"
-       target="_blank"
-       style="color:#1DA1F2; text-decoration:none; font-size:18px; display:inline-block;">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
-             alt="Twitter"
-             style="width:24px; vertical-align:middle; margin-right:8px;">
-        Twitter
-    </a>
-<br> 
-<a href="https://t.me/ok_shubham_32" 
-   target="_blank" 
-   style="color:#0088cc; text-decoration:none; font-size:18px; margin-top:10px; display:inline-block;">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" 
-         alt="Telegram" 
-         style="width:24px; vertical-align:middle; margin-right:8px;">
-    Telegram
-</a>
-  </p>
-</footer>
-
-  <!-- Slider Script -->
-  <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    
-    function showSlides() {
-      slides.forEach((s, i) => {
-        s.classList.remove('active');
-        dots[i].classList.remove('active');
-      });
-      slideIndex = (slideIndex + 1) % slides.length;
-      slides[slideIndex].classList.add('active');
-      dots[slideIndex].classList.add('active');
-      setTimeout(showSlides, 4000);
-    }
-    function currentSlide(n) {
-      slideIndex = n - 1;
-      showSlides();
-    }
-    showSlides();
-  </script>
+  <!-- Link JS -->
+  <script src="script.js"></script>
 </body>
 </html>
