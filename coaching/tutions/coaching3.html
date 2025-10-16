@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aakash Institute Details</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ====== General Styles ====== */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #000000, #0c0c0c); color:#fff; padding-bottom:100px; }
+    a { color:#00ffcc; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    /* ====== HEADER ====== */
+    header { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background: rgba(0,0,0,0.95); border-bottom:2px solid #00ff9d; box-shadow:0 0 10px #00ffbf80; }
+    header .left-qr img { width:120px; height:120px; border-radius:8px; border:none; }
+    header .center-header { text-align:center; flex:1; }
+    header h1 { font-size:2.2rem; color:#00ffcc; text-shadow:0 0 10px #00ffd5; animation:wave 2s ease forwards; }
+    header p { color:#ccc; font-size:1rem; margin-top:5px; }
+    header .nav-links a { margin-left:15px; font-weight:600; }
+
+    @keyframes wave { 0%{transform:translateY(0);}10%{transform:translateY(-10px);}20%{transform:translateY(0);}30%{transform:translateY(-5px);}40%{transform:translateY(0);}100%{transform:translateY(0);} }
+
+    /* ====== SECTIONS ====== */
+    .section { max-width:1000px; margin:30px auto; padding:0 20px; }
+    .section h2 { font-size:1.8rem; margin-bottom:15px; color:#00ffaa; border-left:5px solid #00ff99; padding-left:12px; }
+    .section h3 { font-size:1.4rem; margin-top:15px; margin-bottom:8px; color:#00ffbb; }
+    .section p, .section ul { color:#bbb; line-height:1.6; margin-bottom:10px; }
+    ul { list-style-type:square; padding-left:25px; line-height:1.8; }
+
+    /* ====== IMAGE GALLERY ====== */
+    .image-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; }
+    .tilt { border-radius:12px; overflow:hidden; border:2px solid #00ffcc55; box-shadow:0 0 15px #00ffc833; cursor:pointer; transition: box-shadow 0.3s ease, border 0.3s ease; }
+    .tilt:hover { box-shadow:0 0 25px #00ffc8,0 0 40px #00ffc8aa; border:2px solid #00ffc8; }
+    .tilt img { width:100%; height:200px; object-fit:cover; display:block; }
+
+    /* ====== FULLSCREEN VIEWER ====== */
+    #fullscreen { display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; flex-direction:column; }
+    #fullscreen img { max-width:90%; max-height:80%; border:3px solid #00ffc8; border-radius:10px; transition: transform 0.3s ease; }
+    #fullscreen span { position:absolute; top:20px; right:30px; font-size:40px; color:#fff; cursor:pointer; }
+    #fullscreen button { padding:5px 12px; margin:5px; font-weight:600; cursor:pointer; background:#000; color:#00ffcc; border:2px solid #00ffcc; border-radius:5px; }
+
+    /* ====== FOOTER ====== */
+    footer { background-color:#000; color:#888; font-size:0.9rem; margin-top:30px; padding-top:20px; border-top:2px solid #00ffb3; }
+    footer a { color:#ffcc00; }
+    footer img { border:none; }
+  </style>
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header>
+    <div class="left-qr">
+      <img src="../coachingimages/qr1.png" alt="QR Code">
+    </div>
+    <div class="center-header">
+      <h1>Aakash Institute</h1>
+      <p>Varanasi Branch • Established 2010</p>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+    </div>
+  </header>
+
+  <!-- ====== GALLERY ====== -->
+  <section class="section">
+    <h2>Coaching Gallery</h2>
+    <div class="image-gallery">
+      <div class="tilt"><img src="../coachingimages/akash1.png" alt="Khajuri Center"></div>
+      <div class="tilt"><img src="../coachingimages/akash2.png" alt="Durgakund Center"></div>
+      <div class="tilt"><img src="../coachingimages/akash3.png" alt="Classroom"></div>
+      <div class="tilt"><img src="../coachingimages/akash4.png" alt="Library"></div>
+      <div class="tilt"><img src="../coachingimages/akash5.png" alt="Lab"></div>
+    </div>
+  </section>
+
+  <!-- ====== AAKASH BRANCHES IN VARANASI (ENGLISH) ====== -->
+  <section class="section">
+    <h2>Aakash Branches in Varanasi</h2>
+    <p>There are 3 active branches of Aakash Institute in Varanasi. Among these, the Durgakund branch is considered the oldest and main center.</p>
+
+    <h3>1. Durgakund Center (Main Branch)</h3>
+    <ul>
+      <li>Address: <a href="https://www.google.com/maps/search/?api=1&query=B27%2F97%2C+2nd+Floor%2C+Dharam+Sang+Shiksha+Mandal%2C+Near+Durgakund+Petrol+Pump%2C+Durga+Kund%2C+Varanasi+221005" target="_blank">B27/97, 2nd Floor, Dharam Sang Shiksha Mandal, Near Durgakund Petrol Pump, Durga Kund, Varanasi - 221005</a></li>
+      <li>Phone: +91-7617016155</li>
+      <li>Speciality: Oldest and main center; maximum batches for JEE, NEET, Olympiad, NTSE, Foundation courses run here.</li>
+    </ul>
+
+    <h3>2. Khajuri Center</h3>
+    <ul>
+      <li>Address: <a href="https://www.google.com/maps/search/?api=1&query=S8%2F110%2C+C6%2C+1st+Floor%2C+Muqubal+Alam+Road%2C+Khajuri%2C+Varanasi+221001" target="_blank">S8/110, C6, 1st Floor, Muqubal Alam Road, Khajuri, Near Shubham Hospital, Varanasi - 221001</a></li>
+      <li>Phone: +91-8601880004, +91-8601880006</li>
+      <li>Courses: JEE, NEET, Foundation/Board, Olympiad</li>
+    </ul>
+
+    <h3>3. Sigra Center</h3>
+    <ul>
+      <li>Address: <a href="https://www.google.com/maps/search/?api=1&query=D59%2F107D%2C+Chandrika+Nagar%2C+Sigra%2C+Varanasi+221010" target="_blank">D59/107D, Chandrika Nagar, Sigra, Varanasi - 221010</a></li>
+      <li>Phone: +91-7617016153</li>
+      <li>Courses: JEE, NEET, Foundation/Board, Olympiad</li>
+    </ul>
+
+    <p><strong>Main branch:</strong> Durgakund Center is considered the main branch in Varanasi. It has the highest student enrollment and older batches.</p>
+  </section>
+
+  <!-- ====== LOCATION ====== -->
+  <section class="section">
+    <h2>Location & Contact</h2>
+    <p><strong>Khajuri Center:</strong> <a href="https://www.google.com/maps/search/?api=1&query=S8%2F110%2C+C6%2C+1st+Floor%2C+Muqubal+Alam+Road%2C+Khajuri%2C+Varanasi+221001" target="_blank">1st Floor, S.8/110, C-6, Muqubal Alam Road, Khajuri, Varanasi</a><br>Phone: +91-8601880004, +91-8601880006</p>
+    <p><strong>Durgakund Center:</strong> <a href="https://www.google.com/maps/search/?api=1&query=B27%2F97%2C+2nd+Floor%2C+Dharam+Sang+Shiksha+Mandal%2C+Near+Durgakund+Petrol+Pump%2C+Durga+Kund%2C+Varanasi+221005" target="_blank">No B27/97, 2nd Floor, Dharam Sang Shiksha Mandal, Near Durgakund Petrol Pump</a><br>Phone: +91-7617016155</p>
+    <p><strong>Sigra Center:</strong> <a href="https://www.google.com/maps/search/?api=1&query=D59%2F107D%2C+Chandrika+Nagar%2C+Sigra%2C+Varanasi+221010" target="_blank">D59/107D, Chandrika Nagar, Sigra, Varanasi</a><br>Phone: +91-7617016153</p>
+    <p>Website: <a href="https://www.aakash.ac.in/varanasi" target="_blank">www.aakash.ac.in/varanasi</a></p>
+  </section>
+
+  <!-- ====== DETAILS ====== -->
+  <section class="section">
+    <h2>Coaching Details</h2>
+    <ul>
+      <li>Courses: Long-term, Short-term, Foundation, NEET, IIT-JEE, Olympiads, NTSE, KVPY</li>
+      <li>Teaching: Integrated teaching, tech-enabled, focused learning</li>
+      <li>Strength: 275+ centers in India, 2,50,000+ students yearly</li>
+      <li>Facilities: Smart classrooms, iTutor, library, labs</li>
+      <li>Fee: ₹1,04,000 - ₹2,20,000</li>
+      <li>Scholarships: Up to 100% + cash awards</li>
+      <li>Highlights: High NEET & JEE success, small batches, reputed faculty</li>
+    </ul>
+  </section>
+
+   <!-- ====== DISCLAIMER ====== -->
+  <section class="section">
+    <h2>Disclaimer</h2>
+    <p style="color:#bbb; font-size:0.95rem;">
+      For more and latest information about Aakash Institute Varanasi branches, please contact the coaching center directly.
+    </p>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div style="display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; padding:20px;">
+      <div style="display:flex; gap:30px; margin-bottom:15px;">
+        <img src="../coachingimages/qr1.png" alt="QR Code 1" style="width:150px; height:150px;">
+        <img src="../coachingimages/qr2.png" alt="QR Code 2" style="width:150px; height:150px;">
+      </div>
+      <div style="text-align:center; color:#ccc; max-width:300px;">
+        <p style="margin:5px 0;">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
+          <a href="mailto:okvaranasii@gamil.com"></a>
+        </p>
+        <p style="margin:5px 0; font-size:0.85rem; color:#bbb;">
+          "For any problem or suggestion, please contact us by email."
+        </p>
+      </div>
+    </div>
+    <p style="color:#888; font-size:0.85rem; margin-top:15px; text-align: center;">THANKS FOR VISITING OK VARANASI</p>
+  </footer>
+
+  <!-- ====== FULLSCREEN IMAGE VIEWER ====== -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+    <div style="margin-top:15px;">
+      <button id="zoomIn">Zoom In</button>
+      <button id="zoomOut">Zoom Out</button>
+    </div>
+  </div>
+
+  <!-- ====== JS: IMAGE VIEWER ====== -->
+  <script>
+    const tiltImages = document.querySelectorAll('.tilt img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
+    const zoomIn = document.getElementById('zoomIn');
+    const zoomOut = document.getElementById('zoomOut');
+    let currentScale = 1;
+
+    tiltImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+        currentScale = 1;
+        fullImg.style.transform = `scale(${currentScale})`;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
+    zoomIn.addEventListener('click', () => { currentScale += 0.2; fullImg.style.transform = `scale(${currentScale})`; });
+    zoomOut.addEventListener('click', () => { currentScale = Math.max(0.2, currentScale - 0.2); fullImg.style.transform = `scale(${currentScale})`; });
+    window.addEventListener('keydown', e => { if(e.key === "Escape") fullscreen.style.display = 'none'; });
+  </script>
+
+</body>
+</html>

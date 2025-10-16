@@ -67,8 +67,8 @@ body {
   transform: translate(-50%, -50%);
   font-size: 40px;
   font-weight: bold;
-  color: #30ec1f;
-  text-shadow: 0 0 8px #30ec1f;
+  color: #4310ce;
+  text-shadow: 0 0 8px #2486e2;
 }
 
 /* ================= SEARCH BAR ================= */
@@ -104,7 +104,7 @@ body {
   height: 180px;
   position: relative;
   background: #1a1a1a;
-  color: #30ec1f;
+  color: #bbe2d8;
   font-size: 22px;
   display: flex;
   justify-content: center;
@@ -151,7 +151,7 @@ body {
 
 .footer h3,
 .footer h4 {
-  color: #30ec1f;
+  color: #1f2dec;
   margin-bottom: 8px;
 }
 
@@ -170,7 +170,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: #30ec1f;
+  color: #592dd1;
 }
 
 .footer-social a img {
@@ -197,7 +197,7 @@ body {
 
 #typingText {
   font-size: 16px;
-  color: #54eb19;
+  color: #392cf0;
   text-align: center;
   margin-bottom: 8px;
 }

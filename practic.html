@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OK VARANASI</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .header-slider {
+      width: 100%;
+      height: 30vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: 1s;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .header-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      font-weight: bold;
+      color: #1e90ff;
+      text-shadow: 0 0 8px #1e90ff;
+    }
+
+    .search-container {
+      max-width: 500px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-container input {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      background: #1a1a1a;
+      color: white;
+    }
+
+    .option-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .option-card {
+      width: 280px;
+      height: 180px;
+      position: relative;
+      background: #1a1a1a;
+      color: #1e90ff;
+      font-size: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      transition: 0.3s;
+      box-shadow: 0 0 8px rgba(0,144,255,0.2);
+    }
+
+    .option-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0,144,255,0.5);
+    }
+
+    .option-image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+      opacity: 0.3;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .option-card:hover .option-image {
+      opacity: 0.5;
+    }
+
+    .footer {
+      background: #111;
+      padding: 30px 20px;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .footer h3,
+    .footer h4 {
+      color: #1e90ff;
+      margin-bottom: 8px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 6px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #1e90ff;
+    }
+
+    .footer-social a img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      margin-right: 8px;
+      transition: 0.3s;
+    }
+
+    .footer-social a:hover img {
+      filter: brightness(0) invert(0.5) sepia(1) hue-rotate(200deg);
+    }
+
+    .qr-box {
+      margin-top: 10px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .qr-box img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border: none;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #1e90ff;
+      margin-top: 15px;
+      padding-top: 8px;
+      color: #ccc;
+      font-size: 13px;
+    }
+
+    #typingText {
+      font-size: 16px;
+      color: #1e90ff;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .qr-box {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .option-card {
+        width: 90%;
+        height: 150px;
+        font-size: 18px;
+      }
+      .header-content {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header-slider">
+    <div class="navbar">
+      <div class="logo">OK VARANASI</div>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+      </ul>
+    </div>
+
+    <div class="header-content">WELCOME TO VARANASI</div>
+
+    <div class="slide active" style="background-image: url('images/varanasi.jpg');"></div>
+    <div class="slide" style="background-image: url('images/varanasi1.jpg');"></div>
+    <div class="slide" style="background-image: url('images/bhopal.jpg');"></div>
+    <div class="slide" style="background-image: url('images/delhi.jpg');"></div>
+    <div class="slide" style="background-image: url('images/kota.jpg');"></div>
+    <div class="slide" style="background-image: url('images/chandauli.webp');"></div>
+  </header>
+
+  <!-- Search -->
+  <div class="search-container">
+    <input id="searchInput" type="text" placeholder="Search homes, shops, hostels...">
+  </div>
+
+  <!-- Cards -->
+  <div class="option-container" id="optionContainer">
+    <a href="homerent/index2.html" class="option-card">
+      <img src="images/agra.jpg" class="option-image">
+      <span>Homes for Rent</span>
+    </a>
+    <a href="purchasehomes/index1.html" class="option-card">
+      <img src="images/delhi.jpg" class="option-image">
+      <span>Purchase Homes</span>
+    </a>
+    <a href="purchaseproperties/index3.html" class="option-card">
+      <img src="images/jaipur.jpg" class="option-image">
+      <span>Purchase Property</span>
+    </a>
+    <a href="coaching/index4.html" class="option-card">
+      <img src="images/bhopal.jpg" class="option-image">
+      <span>Coaching Institutes</span>
+    </a>
+    <a href="touristspot/index5.html" class="option-card">
+      <img src="images/bhopal.jpg" class="option-image">
+      <span>toorist spot</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p id="typingText"></p>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>OK VARANASI</h3>
+        <p>Contact for adding your House, Homes, Shops, Coaching Institutes, and Hostels.</p>
+
+        <!-- QR images -->
+        <div class="qr-box">
+          <img src="images/qr1.png" alt="QR 1">
+          <img src="images/qr2.png" alt="QR 2">
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="https://www.linkedin.com/in/ok_shubham_32" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
+        </a>
+        <a href="mailto:shubham16maury@gmail.com">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+        </a>
+        <a href="https://twitter.com/ok_shubham_32" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
+        </a>
+        <a href="https://t.me/ok_shubham_32" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+        </a>
+        <a href="https://www.instagram.com/ok_shubham_32" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+        </a>
+        <a href="https://www.youtube.com/@ok_shubham_32" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 OK VARANASI. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Typing text
+    const text = "CONTACT FOR ADDING YOUR HOUSE, HOMES, SHOPS, COACHINGS AND HOSTELS";
+    const typingElement = document.getElementById("typingText");
+    let index = 0;
+    function typeText() {
+      if(index < text.length){
+        typingElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, 50);
+      } else {
+        setTimeout(() => { typingElement.textContent = ""; index=0; typeText(); }, 1000);
+      }
+    }
+    typeText();
+
+    // Slider
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    function showSlides(){
+      slides.forEach(s => s.classList.remove('active'));
+      slides[slideIndex].classList.add('active');
+      slideIndex = (slideIndex + 1) % slides.length;
+      setTimeout(showSlides, 4000);
+    }
+    showSlides();
+
+    // Search cards
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('keyup', () => {
+      const input = searchInput.value.toLowerCase();
+      const cards = document.querySelectorAll('.option-card');
+      cards.forEach(card => {
+        const text = card.querySelector('span').textContent.toLowerCase();
+        card.style.display = text.includes(input) ? 'flex' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

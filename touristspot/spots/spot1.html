@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kashi Vishwanath Temple - Full Details</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1579519545975-74ecec1e7ad6') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      padding-bottom: 100px;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: url('https://images.unsplash.com/photo-1563298723-dcfebaa392e3') center/cover no-repeat;
+      border-bottom: 2px solid #00ff9d;
+      box-shadow: 0 0 10px #00ffbf80;
+      position: relative;
+    }
+
+    /* Home Button */
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background: #00ffc8;
+      color: #000;
+      padding: 10px 18px;
+      font-size: 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .home-btn:hover {
+      background: #00ff9d;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffd5;
+    }
+
+    header p {
+      color: #e0e0e0;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #00ffaa;
+      border-left: 5px solid #00ff99;
+      padding-left: 12px;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .tilt {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #00ffcc55;
+      box-shadow: 0 0 15px #00ffc833;
+      transition: box-shadow 0.3s ease, border 0.3s ease;
+      cursor: pointer;
+    }
+
+    .tilt:hover {
+      box-shadow: 0 0 25px #00ffc8, 0 0 40px #00ffc8aa;
+      border: 2px solid #00ffc8;
+    }
+
+    .tilt img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 25px;
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    p {
+      color: #ddd;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: rgba(0,0,0,0.8);
+      color: #aaa;
+      font-size: 0.95rem;
+      border-top: 2px solid #00ffb3;
+    }
+
+    /* Fullscreen Image Popup */
+    #fullscreen {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 3px solid #00ffc8;
+      border-radius: 10px;
+    }
+
+    #fullscreen span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="home-btn">Home</a>
+    <h1>Kashi Vishwanath Temple</h1>
+    <p>One of the holiest and most famous Hindu temples dedicated to Lord Shiva</p>
+  </header>
+
+  <!-- Photo Gallery -->
+  <section class="section">
+    <h2>Photo Gallery</h2>
+    <div class="image-gallery">
+      <div class="tilt"><img src="../spotimages/kvt1.png" alt="Temple Image 1"></div>
+      <div class="tilt"><img src="../spotimages/kvt2.png" alt="Temple Image 2"></div>
+      <div class="tilt"><img src="../spotimages/kvt3.png" alt="Temple Image 3"></div>
+      <div class="tilt"><img src="../spotimages/kvt4.png" alt="Temple Image 4"></div>
+      <div class="tilt"><img src="../spotimages/kvt5.png" alt="Temple Image 5"></div>
+    </div>
+  </section>
+
+  <!-- Temple Details -->
+  <section class="section">
+    <h2>About the Temple</h2>
+    <p>
+      Kashi Vishwanath Temple, located in Varanasi (Uttar Pradesh), is one of the twelve Jyotirlingas 
+      and holds immense cultural, spiritual, and historical significance. The temple is situated on the 
+      western banks of the holy river Ganga.
+    </p>
+    <ul>
+      <li>Dedicated to Lord Shiva</li>
+      <li>Located in Varanasi, Uttar Pradesh</li>
+      <li>Considered one of the holiest Hindu pilgrimage sites</li>
+      <li>Recently redeveloped under the Kashi Vishwanath Corridor project</li>
+      <li>Millions of devotees visit every year</li>
+    </ul>
+  </section>
+
+  <!-- Location Info -->
+  <section class="section">
+    <h2>Location & Highlights</h2>
+    <p>City: Varanasi, Uttar Pradesh</p>
+    <p>Nearby: Ganga Ghat, Dashashwamedh Ghat, Sarnath</p>
+    <p>Description: The temple is a major pilgrimage spot with ancient architecture, spiritual atmosphere, 
+    and easy access to Ganga Aarti and nearby tourist attractions.</p>
+  </section>
+
+  <footer>
+    <p>
+      Project Template – Modify & Use Freely<br>
+      Need Customization? Contact via Email → 
+      <a href="mailto:shubham16maury@gmail.com" style="color:#00ffc8; text-decoration:none; font-weight:600;">
+        shubham16maury@gmail.com
+      </a>
+    </p>
+  </footer>
+
+  <!-- Fullscreen Viewer -->
+  <div id="fullscreen">
+    <span onclick="closeFullscreen()">×</span>
+    <img id="full-img" src="" alt="Full Image">
+  </div>
+
+  <!-- VanillaTilt Library -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script>
+    // Fullscreen Image
+    const galleryImages = document.querySelectorAll('.image-gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+      });
+    });
+
+    function closeFullscreen() {
+      fullscreen.style.display = 'none';
+      fullImg.src = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeFullscreen();
+    });
+
+    // Tilt Effect
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 20,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.4
+    });
+  </script>
+
+</body>
+</html>

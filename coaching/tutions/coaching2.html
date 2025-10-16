@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allen Career Institute - Varanasi</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg,#000,#0c0c0c); color:#fff; padding-bottom:100px; }
+    a { color:#00ffcc; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    header { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:rgba(0,0,0,0.95); border-bottom:2px solid #00ff9d; box-shadow:0 0 10px #00ffbf80; }
+    header .left-qr img { width:120px; height:120px; border-radius:8px; border:none; }
+    header .center-header { text-align:center; flex:1; }
+    header h1 { font-size:2.2rem; color:#00ffcc; text-shadow:0 0 10px #00ffd5; }
+    header p { color:#ccc; font-size:1rem; margin-top:5px; }
+    header .nav-links a { margin-left:15px; font-weight:600; }
+
+    .section { max-width:1000px; margin:30px auto; padding:0 20px; }
+    .section h2 { font-size:1.8rem; margin-bottom:15px; color:#00ffaa; border-left:5px solid #00ff99; padding-left:12px; }
+    .section p, .section ul { color:#bbb; line-height:1.6; margin-bottom:10px; }
+    ul { list-style-type:square; padding-left:25px; line-height:1.8; }
+
+    .image-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+    .tilt { border-radius:12px; overflow:hidden; border:2px solid #00ffcc55; box-shadow:0 0 15px #00ffc833; cursor:pointer; transition:box-shadow 0.3s ease,border 0.3s ease; }
+    .tilt:hover { box-shadow:0 0 25px #00ffc8,0 0 40px #00ffc8aa; border:2px solid #00ffc8; }
+    .tilt img { width:100%; height:200px; object-fit:cover; display:block; }
+
+    #fullscreen { display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; flex-direction:column; }
+    #fullscreen img { max-width:90%; max-height:80%; border:3px solid #00ffc8; border-radius:10px; transition:transform 0.3s ease; }
+    #fullscreen span { position:absolute; top:20px; right:30px; font-size:40px; color:#fff; cursor:pointer; }
+    #fullscreen button { padding:5px 12px; margin:5px; font-weight:600; cursor:pointer; background:#000; color:#00ffcc; border:2px solid #00ffcc; border-radius:5px; }
+
+    footer { background-color:#000; color:#888; font-size:0.9rem; margin-top:30px; padding-top:20px; border-top:2px solid #00ffb3; }
+    footer a { color:#ffcc00; }
+    footer img { border:none; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="left-qr">
+      <img src="../coachingimages/qr1.png" alt="QR Code">
+    </div>
+    <div class="center-header">
+      <h1>Allen Career Institute</h1>
+      <p>Top Coaching for IIT-JEE & NEET • 2024-25</p>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <h2>Coaching Gallery</h2>
+    <div class="image-gallery">
+      <div class="tilt"><img src="../coachingimages/allen1.png" alt="Campus 1"></div>
+      <div class="tilt"><img src="../coachingimages/allen2.png" alt="Campus 2"></div>
+      <div class="tilt"><img src="../coachingimages/allen3.png" alt="Campus 1"></div>
+      <div class="tilt"><img src="../coachingimages/allen4.png" alt="Campus 2"></div>
+
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="section">
+    <h2>Coaching Details</h2>
+    <ul>
+      <li>Campuses at Shivpur, Durgakund, Paharia</li>
+      <li>Expert faculty using Kota classroom system</li>
+      <li>Courses: IIT-JEE, NEET, Olympiads, NTSE, Boards</li>
+      <li>Smart classrooms, libraries, labs, online apps</li>
+      <li>Blended online & offline learning</li>
+      <li>Fee concessions for new admissions</li>
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <h2>About Allen Career Institute Varanasi</h2>
+    <p>Allen Career Institute in Varanasi is part of Allen's 36-year nationwide legacy. Established recently in 2024-25, it provides high-quality coaching for IIT-JEE and NEET with modern classrooms and personalized attention.</p>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="section">
+    <h2>Location</h2>
+    <p>Main Address: H. No. 51/3, Anisha Tower, Plot No 18, Shivpur, Varanasi, Uttar Pradesh 221003</p>
+    <p>Other campuses: Durgakund & Paharia</p>
+    <p>Description: Provides expert teachers, modern facilities, doubt sessions, and personal guidance for engineering and medical aspirants.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div style="display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; padding:20px;">
+      <div style="display:flex; gap:30px; margin-bottom:15px;">
+        <img src="../coachingimages/qr1.png" alt="QR Code 1" style="width:150px; height:150px;">
+        <img src="../coachingimages/qr2.png" alt="QR Code 2" style="width:150px; height:150px;">
+      </div>
+      <div style="text-align:center; color:#ccc; max-width:300px;">
+        <p style="margin:5px 0;">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
+          <a href="mailto:info@allen.ac.in">info@allen.ac.in</a>
+        </p>
+        <p style="margin:5px 0; font-size:0.85rem; color:#bbb;">
+          For admissions and inquiries, contact Allen Career Institute Varanasi.
+        </p>
+      </div>
+    </div>
+    <p style="color:#888; font-size:0.85rem; margin-top:15px;">&copy; 2025 Allen Career Institute, Varanasi. All rights reserved.</p>
+  </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+    <div style="margin-top:15px;">
+      <button id="zoomIn">Zoom In</button>
+      <button id="zoomOut">Zoom Out</button>
+    </div>
+  </div>
+
+  <!-- JS: IMAGE VIEWER -->
+  <script>
+    const tiltImages = document.querySelectorAll('.tilt img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
+    const zoomIn = document.getElementById('zoomIn');
+    const zoomOut = document.getElementById('zoomOut');
+    let currentScale = 1;
+
+    tiltImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+        currentScale = 1;
+        fullImg.style.transform = `scale(${currentScale})`;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
+    zoomIn.addEventListener('click', () => { currentScale += 0.2; fullImg.style.transform = `scale(${currentScale})`; });
+    zoomOut.addEventListener('click', () => { currentScale = Math.max(0.2, currentScale - 0.2); fullImg.style.transform = `scale(${currentScale})`; });
+    window.addEventListener('keydown', (e) => { if(e.key === "Escape") fullscreen.style.display = 'none'; });
+  </script>
+
+</body>
+</html>

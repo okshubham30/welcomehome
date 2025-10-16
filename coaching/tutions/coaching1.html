@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JRS Coaching Details</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ====== General Styles ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000000, #0c0c0c);
+      color: #fff;
+      padding-bottom: 100px;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0,0,0,0.95);
+      border-bottom: 2px solid #00ff9d;
+      box-shadow: 0 0 10px #00ffbf80;
+    }
+
+    /* Left QR Image */
+    header .left-qr img {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    /* Center Title */
+    header .center-header {
+      text-align: center;
+      flex: 1;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffd5;
+      animation: wave 2s ease forwards;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    /* Right navigation */
+    header .nav-links a {
+      margin-left: 15px;
+      font-weight: 600;
+    }
+
+    @keyframes wave {
+      0% { transform: translateY(0); }
+      10% { transform: translateY(-10px); }
+      20% { transform: translateY(0); }
+      30% { transform: translateY(-5px); }
+      40% { transform: translateY(0); }
+      100% { transform: translateY(0); }
+    }
+
+    /* ====== SECTIONS ====== */
+    .section {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #00ffaa;
+      border-left: 5px solid #00ff99;
+      padding-left: 12px;
+    }
+
+    .section p, .section ul {
+      color: #bbb;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 25px;
+      line-height: 1.8;
+    }
+
+    /* ====== IMAGE GALLERY ====== */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .tilt {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #00ffcc55;
+      box-shadow: 0 0 15px #00ffc833;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, border 0.3s ease;
+    }
+
+    .tilt:hover {
+      box-shadow: 0 0 25px #00ffc8, 0 0 40px #00ffc8aa;
+      border: 2px solid #00ffc8;
+    }
+
+    .tilt img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ====== FULLSCREEN VIEWER ====== */
+    #fullscreen {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 80%;
+      border: 3px solid #00ffc8;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    #fullscreen span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #fullscreen button {
+      padding: 5px 12px;
+      margin: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #000;
+      color: #00ffcc;
+      border: 2px solid #00ffcc;
+      border-radius: 5px;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background-color: #000;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid #00ffb3;
+    }
+
+    footer a {
+      color:#ffcc00;
+    }
+
+    footer img {
+      border: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header>
+    <!-- Left side QR code -->
+    <div class="left-qr">
+      <img src="../coachingimages/qr1.png" alt="QR Code">
+    </div>
+
+    <!-- Center title -->
+    <div class="center-header">
+      <h1>JRS Coaching</h1>
+      <p>Best Coaching for IIT-JEE & NEET • Founded in 1994</p>
+    </div>
+
+    <!-- Right navigation -->
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+    </div>
+  </header>
+
+  <!-- ====== GALLERY ====== -->
+  <section class="section">
+    <h2>Coaching Gallery</h2>
+    <div class="image-gallery">
+      <div class="tilt"><img src="../coachingimages/jrs1.png" alt="image 1"></div>
+      <div class="tilt"><img src="../coachingimages/jrs2.png" alt="image 2"></div>
+      <div class="tilt"><img src="../coachingimages/jrs3.png" alt="image 3"></div>
+      <div class="tilt"><img src="../coachingimages/jrs4.png" alt="image 4"></div>
+      <div class="tilt"><img src="../coachingimages/jrs5.png" alt="image 5"></div>
+    </div>
+  </section>
+
+  <!-- ====== DETAILS ====== -->
+  <section class="section">
+    <h2>Coaching Details</h2>
+    <ul>
+      <li>Experienced Faculty</li>
+      <li>Smart Classrooms</li>
+      <li>Doubt Sessions Weekly</li>
+      <li>Test Series & Notes</li>
+      <li>AC Classrooms & Library</li>
+      <li>Batch Timing: Morning & Evening</li>
+    </ul>
+  </section>
+
+  <!-- ====== ABOUT ====== -->
+  <section class="section">
+    <h2>About JRS Coaching</h2>
+    <p>JRS Coaching, also known as JRS Tutorials, is a leading institute in Varanasi established in 1994 by Amrendra Kumar Jha and others. It prepares students for IIT-JEE (Main & Advanced) and NEET-PMT.</p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li>Experienced and committed full-time faculty</li>
+      <li>Focus on Physics and Chemistry excellence</li>
+      <li>Systematic and complete syllabus coverage</li>
+      <li>Regular topic-wise and combined tests</li>
+      <li>Doubt-solving sessions after class</li>
+      <li>Emphasis on solving approach over rote learning</li>
+      <li>Classroom and online coaching available</li>
+      <li>EMI payment and fee concession options</li>
+      <li>One of the top institutes in Purvanchal region</li>
+    </ul>
+
+    <h2>Courses & Fees</h2>
+    <ul>
+      <li>IIT-JEE (Main + Advanced) – ₹111,500 to ₹117,500</li>
+      <li>NEET-PMT – Around ₹105,500</li>
+      <li>Pre-foundation (Class 8-9) – Olympiad, NTSE, KVPY Prep</li>
+    </ul>
+
+    <h2>Student Feedback</h2>
+    <ul>
+      <li>Dedicated and knowledgeable teachers</li>
+      <li>Excellent problem-solving focus</li>
+      <li>Strong test system</li>
+    </ul>
+  </section>
+
+  <!-- ====== LOCATION ====== -->
+  <section class="section">
+    <h2>Location</h2>
+    <p>City: Varanasi</p>
+    <p>Address: <a href="https://www.google.com/maps/place/Varanasi,+Uttar+Pradesh" target="_blank">Near Lanka, Varanasi</a></p>
+    <p>Description: Provides expert teachers, modern facilities, doubt sessions, and personal guidance for engineering and medical aspirants.</p>
+  </section>
+
+  <!-- ====== MORE DETAILS ====== -->
+  <section class="section">
+    <h2>For More Details</h2>
+    <p>Contact the coaching directly via email or QR codes provided below for admissions and inquiries.</p>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div style="display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; padding:20px;">
+      <div style="display:flex; gap:30px; margin-bottom:15px;">
+        <img src="../coachingimages/qr1.png" alt="QR Code 1" style="width:150px; height:150px;">
+        <img src="../coachingimages/qr2.png" alt="QR Code 2" style="width:150px; height:150px;">
+      </div>
+      <div style="text-align:center; color:#ccc; max-width:300px;">
+        <p style="margin:5px 0;">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
+          <a href="mailto:okvaranasii@gmail.com">okvaranasii@gmail.com</a>
+        </p>
+        <p style="margin:5px 0;">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style="width:20px; vertical-align:middle; margin-right:5px;">
+          <span>OKVARANASI</span>
+        </p>
+        <p style="margin:5px 0; font-size:0.85rem; color:#bbb;">
+          For home rentals, hostels, coaching centers, and tourist spot visits in Varanasi, please contact us.
+        </p>
+      </div>
+    </div>
+    <p style="color:#888; font-size:0.85rem; margin-top:15px;">&copy; 2025 OKVARANASI. All rights reserved.</p>
+  </footer>
+
+  <!-- ====== FULLSCREEN IMAGE VIEWER ====== -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+    <div style="margin-top:15px;">
+      <button id="zoomIn">Zoom In</button>
+      <button id="zoomOut">Zoom Out</button>
+    </div>
+  </div>
+
+  <!-- ====== JS: IMAGE VIEWER ====== -->
+  <script>
+    // Select all gallery images
+    const tiltImages = document.querySelectorAll('.tilt img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
+    const zoomIn = document.getElementById('zoomIn');
+    const zoomOut = document.getElementById('zoomOut');
+    let currentScale = 1;
+
+    tiltImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+        currentScale = 1;
+        fullImg.style.transform = `scale(${currentScale})`;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
+
+    zoomIn.addEventListener('click', () => {
+      currentScale += 0.2;
+      fullImg.style.transform = `scale(${currentScale})`;
+    });
+
+    zoomOut.addEventListener('click', () => {
+      currentScale = Math.max(0.2, currentScale - 0.2);
+      fullImg.style.transform = `scale(${currentScale})`;
+    });
+
+    // Press ESC to close fullscreen
+    window.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") fullscreen.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
