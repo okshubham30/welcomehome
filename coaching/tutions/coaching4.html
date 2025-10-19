@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aakash Institute - Varanasi</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===============================
+       RESET & BASIC STYLES
+    =============================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0c0c0c;
+      color: #fff;
+      line-height: 1.6;
+      padding-bottom: 50px;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===============================
+       HEADER
+    =============================== */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: #000000;
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    .header-left img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .header-center {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .header-center h1 {
+      font-size: 1.5rem;
+      color: #00ffcc;
+      margin-bottom: 5px;
+    }
+
+    .header-center p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .header-right .nav-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 5px;
+    }
+
+    /* ===============================
+       SECTIONS
+    =============================== */
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      color: #00ffaa;
+      margin-bottom: 10px;
+      border-left: 4px solid #00ff99;
+      padding-left: 8px;
+    }
+
+    section h3 {
+      font-size: 1.1rem;
+      color: #00ffbb;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    section p,
+    section ul {
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    /* ===============================
+       IMAGE GALLERY
+    =============================== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    /* ===============================
+       FULLSCREEN IMAGE VIEWER
+    =============================== */
+    #fullscreen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+
+    #fullscreen span {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* ===============================
+       FOOTER
+    =============================== */
+    footer {
+      background-color: #111;
+      color: #888;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    footer img {
+      width: 60px;
+      height: 60px;
+      margin: 5px;
+    }
+
+    /* ===============================
+       MOBILE RESPONSIVE
+    =============================== */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-left img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 5px;
+      }
+
+      .header-center h1 {
+        font-size: 1.2rem;
+      }
+
+      .header-center p {
+        font-size: 0.8rem;
+      }
+
+      .gallery img {
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="../coachingimages/qr1.png" alt="QR Code">
+    </div>
+    <div class="header-center">
+      <h1>Aakash Institute</h1>
+      <p>Varanasi Branch • Established 2010</p>
+    </div>
+    <div class="header-right">
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- IMAGE GALLERY -->
+  <section>
+    <h2>Coaching Gallery</h2>
+    <div class="gallery">
+      <img src="../coachingimages/akash1.png" alt="Khajuri Center">
+      <img src="../coachingimages/akash2.png" alt="Durgakund Center">
+      <img src="../coachingimages/akash3.png" alt="Classroom">
+      <img src="../coachingimages/akash4.png" alt="Library">
+      <img src="../coachingimages/akash5.png" alt="Lab">
+    </div>
+  </section>
+
+  <!-- BRANCHES -->
+  <section>
+    <h2>Aakash Branches in Varanasi</h2>
+    <h3>Durgakund Center (Main Branch)</h3>
+    <ul>
+      <li>Address: B27/97, 2nd Floor, Dharam Sang Shiksha Mandal, Near Durgakund Petrol Pump, Varanasi - 221005</li>
+      <li>Phone: +91-7617016155</li>
+      <li>Speciality: Main center for all courses</li>
+    </ul>
+
+    <h3>Khajuri Center</h3>
+    <ul>
+      <li>Address: S8/110, C6, 1st Floor, Muqubal Alam Road, Khajuri, Varanasi - 221001</li>
+      <li>Phone: +91-8601880004, +91-8601880006</li>
+      <li>Courses: JEE, NEET, Foundation/Board, Olympiad</li>
+    </ul>
+
+    <h3>Sigra Center</h3>
+    <ul>
+      <li>Address: D59/107D, Chandrika Nagar, Sigra, Varanasi - 221010</li>
+      <li>Phone: +91-7617016153</li>
+      <li>Courses: JEE, NEET, Foundation/Board, Olympiad</li>
+    </ul>
+  </section>
+
+  <!-- ====== LOCATION ====== -->
+  <section class="section">
+    <h2>Location & Contact</h2>
+    <p><strong>Khajuri Center:</strong> <a href="https://www.google.com/maps/search/?api=1&query=S8%2F110%2C+C6%2C+1st+Floor%2C+Muqubal+Alam+Road%2C+Khajuri%2C+Varanasi+221001" target="_blank">1st Floor, S.8/110, C-6, Muqubal Alam Road, Khajuri, Varanasi</a><br>Phone: +91-8601880004, +91-8601880006</p>
+    <p><strong>Durgakund Center:</strong> <a href="https://www.google.com/maps/search/?api=1&query=B27%2F97%2C+2nd+Floor%2C+Dharam+Sang+Shiksha+Mandal%2C+Near+Durgakund+Petrol+Pump%2C+Durga+Kund%2C+Varanasi+221005" target="_blank">No B27/97, 2nd Floor, Dharam Sang Shiksha Mandal, Near Durgakund Petrol Pump</a><br>Phone: +91-7617016155</p>
+    <p><strong>Sigra Center:</strong> <a href="https://www.google.com/maps/search/?api=1&query=D59%2F107D%2C+Chandrika+Nagar%2C+Sigra%2C+Varanasi+221010" target="_blank">D59/107D, Chandrika Nagar, Sigra, Varanasi</a><br>Phone: +91-7617016153</p>
+  </section>
+
+  <!-- COACHING DETAILS -->
+  <section>
+    <h2>Coaching Details</h2>
+    <ul>
+      <li>Courses: Long-term, Short-term, Foundation, NEET, IIT-JEE, Olympiads, NTSE, KVPY</li>
+      <li>Teaching: Integrated teaching, tech-enabled, focused learning</li>
+      <li>Facilities: Smart classrooms, iTutor, library, labs</li>
+      <li>Fee: ₹1,04,000 - ₹2,20,000</li>
+      <li>Scholarships: Up to 100% + cash awards</li>
+    </ul>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section>
+    <h2>Disclaimer</h2>
+    <p style="color:#bbb; font-size:0.95rem;">
+      For latest information about Aakash Institute Varanasi branches, contact the center directly.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../coachingimages/qr1.png" alt="QR Code 1">
+    <img src="../coachingimages/qr2.png" alt="QR Code 2">
+    <p>Email: <a href="mailto:okvaranasii@gamil.com">okvaranasii@gamil.com</a></p>
+    <p>THANKS FOR VISITING OK VARANASI</p>
+  </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+  </div>
+
+  <!-- JS: SIMPLE IMAGE VIEWER -->
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
+    window.addEventListener('keydown', e => { if(e.key === "Escape") fullscreen.style.display = 'none'; });
+  </script>
+
+</body>
+</html>

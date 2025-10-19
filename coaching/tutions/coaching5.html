@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allen Career Institute - Varanasi</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET & BASIC STYLES */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Poppins', sans-serif; background:#0c0c0c; color:#fff; line-height:1.6; }
+
+    a { color:#00ffcc; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    /* HEADER */
+    header {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      background:#111;
+      padding:10px 15px;
+      text-align:center;
+    }
+    .header-left img { width:80px; height:80px; }
+    .header-center { flex:1; min-width:150px; }
+    .header-center h1 { font-size:1.5rem; color:#00ffcc; margin-bottom:5px; }
+    .header-center p { font-size:0.9rem; color:#ccc; }
+    .header-right .nav-links { display:flex; gap:10px; justify-content:center; margin-top:5px; }
+
+    /* SECTIONS */
+    section { padding:20px; max-width:900px; margin:20px auto; }
+    section h2 { font-size:1.3rem; color:#00ffaa; margin-bottom:10px; border-left:4px solid #00ff99; padding-left:8px; }
+    section p, section ul { color:#bbb; margin-bottom:10px; }
+    ul { padding-left:20px; list-style-type:square; }
+
+    /* GALLERY */
+    .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
+    .gallery img { width:100%; height:120px; object-fit:cover; cursor:pointer; border-radius:8px; }
+
+    /* FOOTER */
+    footer { background:#111; color:#888; text-align:center; padding:15px; margin-top:20px; }
+    footer img { width:80px; height:80px; margin:5px; }
+
+    /* FULLSCREEN IMAGE VIEWER */
+    #fullscreen { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; flex-direction:column; }
+    #fullscreen img { max-width:90%; max-height:80%; border-radius:8px; }
+    #fullscreen span { position:absolute; top:15px; right:20px; font-size:30px; cursor:pointer; color:#fff; }
+
+    /* MOBILE */
+    @media(max-width:600px){
+      header { flex-direction:column; text-align:center; }
+      .header-left img { width:60px; height:60px; margin-bottom:8px; }
+      .header-center h1 { font-size:1.2rem; }
+      .header-center p { font-size:0.8rem; }
+      .header-right .nav-links { flex-direction:row; flex-wrap:wrap; gap:8px; justify-content:center; }
+      .gallery img { height:100px; }
+      footer img { width:60px; height:60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="../coachingimages/qr1.png" alt="QR Code">
+    </div>
+    <div class="header-center">
+      <h1>Allen Career Institute</h1>
+      <p>Top Coaching for IIT-JEE & NEET • 2024-25</p>
+    </div>
+    <div class="header-right">
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section>
+    <h2>Coaching Gallery</h2>
+    <div class="gallery">
+      <img src="../coachingimages/allen1.png" alt="Campus 1">
+      <img src="../coachingimages/allen2.png" alt="Campus 2">
+      <img src="../coachingimages/allen3.png" alt="Campus 3">
+      <img src="../coachingimages/allen4.png" alt="Campus 4">
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section>
+    <h2>Coaching Details</h2>
+    <ul>
+      <li>Campuses at Shivpur, Durgakund, Paharia</li>
+      <li>Expert faculty using Kota classroom system</li>
+      <li>Courses: IIT-JEE, NEET, Olympiads, NTSE, Boards</li>
+      <li>Smart classrooms, libraries, labs, online apps</li>
+      <li>Blended online & offline learning</li>
+      <li>Fee concessions for new admissions</li>
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About Allen Career Institute Varanasi</h2>
+    <p>Allen Career Institute in Varanasi is part of Allen's 36-year nationwide legacy. Established recently in 2024-25, it provides high-quality coaching for IIT-JEE and NEET with modern classrooms and personalized attention.</p>
+  </section>
+
+  <!-- LOCATION -->
+  <section>
+    <h2>Location</h2>
+    <p>Main Address: H. No. 51/3, Anisha Tower, Plot No 18, Shivpur, Varanasi, Uttar Pradesh 221003</p>
+    <p>Other campuses: Durgakund & Paharia</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../coachingimages/qr1.png" alt="QR Code 1">
+    <img src="../coachingimages/qr2.png" alt="QR Code 2">
+    <p>Email: <a href="mailto:info@allen.ac.in">info@allen.ac.in</a></p>
+    <p>&copy; 2025 Allen Career Institute, Varanasi. All rights reserved.</p>
+  </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+  </div>
+
+  <!-- JS: SIMPLE FULLSCREEN IMAGE VIEWER -->
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
+  </script>
+
+</body>
+</html>

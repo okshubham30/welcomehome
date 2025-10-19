@@ -9,69 +9,245 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg,#000,#0c0c0c); color:#fff; padding-bottom:100px; }
-    a { color:#00ffcc; text-decoration:none; }
-    a:hover { text-decoration:underline; }
+    /* ==============================
+       RESET & BASIC STYLES
+    ============================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    header { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:rgba(0,0,0,0.95); border-bottom:2px solid #00ff9d; box-shadow:0 0 10px #00ffbf80; }
-    header .left-qr img { width:120px; height:120px; border-radius:8px; border:none; }
-    header .center-header { text-align:center; flex:1; }
-    header h1 { font-size:2.2rem; color:#00ffcc; text-shadow:0 0 10px #00ffd5; }
-    header p { color:#ccc; font-size:1rem; margin-top:5px; }
-    header .nav-links a { margin-left:15px; font-weight:600; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0c0c0c;
+      color: #fff;
+      line-height: 1.6;
+    }
 
-    .section { max-width:1000px; margin:30px auto; padding:0 20px; }
-    .section h2 { font-size:1.8rem; margin-bottom:15px; color:#00ffaa; border-left:5px solid #00ff99; padding-left:12px; }
-    .section p, .section ul { color:#bbb; line-height:1.6; margin-bottom:10px; }
-    ul { list-style-type:square; padding-left:25px; line-height:1.8; }
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
 
-    .image-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-    .tilt { border-radius:12px; overflow:hidden; border:2px solid #00ffcc55; box-shadow:0 0 15px #00ffc833; cursor:pointer; transition:box-shadow 0.3s ease,border 0.3s ease; }
-    .tilt:hover { box-shadow:0 0 25px #00ffc8,0 0 40px #00ffc8aa; border:2px solid #00ffc8; }
-    .tilt img { width:100%; height:200px; object-fit:cover; display:block; }
+    a:hover {
+      text-decoration: underline;
+    }
 
-    #fullscreen { display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; flex-direction:column; }
-    #fullscreen img { max-width:90%; max-height:80%; border:3px solid #00ffc8; border-radius:10px; transition:transform 0.3s ease; }
-    #fullscreen span { position:absolute; top:20px; right:30px; font-size:40px; color:#fff; cursor:pointer; }
-    #fullscreen button { padding:5px 12px; margin:5px; font-weight:600; cursor:pointer; background:#000; color:#00ffcc; border:2px solid #00ffcc; border-radius:5px; }
+    /* ==============================
+       HEADER
+    ============================== */
+    header {
+      display: flex;
+      flex-wrap: wrap; /* allow wrapping on mobile */
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000000;
+      padding: 10px 15px;
+      text-align: center;
+    }
 
-    footer { background-color:#000; color:#888; font-size:0.9rem; margin-top:30px; padding-top:20px; border-top:2px solid #00ffb3; }
-    footer a { color:#ffcc00; }
-    footer img { border:none; }
+    /* QR CODE LEFT */
+    .header-left img {
+      width: 120px;
+      height: 120px;
+    }
+
+    /* TITLE CENTER */
+    .header-center {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .header-center h1 {
+      font-size: 1.5rem;
+      color: #00ffcc;
+      margin-bottom: 5px;
+    }
+
+    .header-center p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* NAV LINKS RIGHT */
+    .header-right .nav-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 5px;
+    }
+
+    /* ==============================
+       SECTIONS
+    ============================== */
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      color: #00ffaa;
+      margin-bottom: 10px;
+      border-left: 4px solid #00ff99;
+      padding-left: 8px;
+    }
+
+    section p,
+    section ul {
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    /* ==============================
+       GALLERY
+    ============================== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    footer {
+      background-color: #000;
+      color: #888;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    footer img {
+      width: 140px;
+      height: 140px;
+      margin: 5px;
+    }
+
+    /* ==============================
+       FULLSCREEN IMAGE VIEWER
+    ============================== */
+    #fullscreen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+
+    #fullscreen span {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* ==============================
+       MOBILE RESPONSIVE
+    ============================== */
+    @media (max-width: 600px) {
+
+      /* Header stack */
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-left img {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 8px;
+      }
+
+      .header-center h1 {
+        font-size: 1.2rem;
+      }
+
+      .header-center p {
+        font-size: 0.8rem;
+      }
+
+      .header-right .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+
+      /* Gallery smaller images */
+      .gallery img {
+        height: 100px;
+      }
+
+      /* Footer smaller QR codes */
+      footer img {
+        width: 140px;
+        height: 140px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
-    <div class="left-qr">
+    <div class="header-left">
       <img src="../coachingimages/qr1.png" alt="QR Code">
     </div>
-    <div class="center-header">
+    <div class="header-center">
       <h1>Allen Career Institute</h1>
       <p>Top Coaching for IIT-JEE & NEET • 2024-25</p>
     </div>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">About</a>
+    <div class="header-right">
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+      </div>
     </div>
   </header>
 
   <!-- GALLERY -->
-  <section class="section">
+  <section>
     <h2>Coaching Gallery</h2>
-    <div class="image-gallery">
-      <div class="tilt"><img src="../coachingimages/allen1.png" alt="Campus 1"></div>
-      <div class="tilt"><img src="../coachingimages/allen2.png" alt="Campus 2"></div>
-      <div class="tilt"><img src="../coachingimages/allen3.png" alt="Campus 1"></div>
-      <div class="tilt"><img src="../coachingimages/allen4.png" alt="Campus 2"></div>
-
+    <div class="gallery">
+      <img src="../coachingimages/allen1.png" alt="Campus 1">
+      <img src="../coachingimages/allen2.png" alt="Campus 2">
+      <img src="../coachingimages/allen3.png" alt="Campus 3">
+      <img src="../coachingimages/allen4.png" alt="Campus 4">
     </div>
   </section>
 
   <!-- DETAILS -->
-  <section class="section">
+  <section>
     <h2>Coaching Details</h2>
     <ul>
       <li>Campuses at Shivpur, Durgakund, Paharia</li>
@@ -84,72 +260,121 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="section">
+  <section>
     <h2>About Allen Career Institute Varanasi</h2>
     <p>Allen Career Institute in Varanasi is part of Allen's 36-year nationwide legacy. Established recently in 2024-25, it provides high-quality coaching for IIT-JEE and NEET with modern classrooms and personalized attention.</p>
   </section>
 
+  <!-- FEE STRUCTURE -->
+<section>
+  <h2>Fee Structure (Approx)</h2>
+  
+  <h3>IIT-JEE (Main + Advanced) Coaching Fee</h3>
+  <p>Approximately ₹1,20,000 to ₹1,50,000 per year.</p>
+  <p>Includes study material and online support.</p>
+  <p>Scholarships are available based on merit and previous accomplishments.</p>
+
+  <h3>NEET / Pre-Medical Coaching Fee</h3>
+  <p>Approximately ₹1,00,000 to ₹1,30,000 per year.</p>
+  <p>Discounts and scholarships are available for eligible students.</p>
+
+  <h3>Foundation or Career Nurture Courses (Class 6 to 9)</h3>
+  <p>Fee ranges from ₹40,000 to ₹70,000 annually depending on batch and syllabus.</p>
+  <p>Includes mixed medium teaching (English and Hindi).</p>
+
+  <h3>Additional Notes</h3>
+  <ul>
+    <li>Fee installments and refund policies are provided by Allen.</li>
+    <li>Scholarships based on Olympiads, ASAT test, siblings studying together, and other criteria reduce overall fees but are non-cumulative.</li>
+    <li>The fee may slightly vary depending on batch timing and admission year.</li>
+  </ul>
+</section>
+
   <!-- LOCATION -->
-  <section class="section">
+  <section>
     <h2>Location</h2>
-    <p>Main Address: H. No. 51/3, Anisha Tower, Plot No 18, Shivpur, Varanasi, Uttar Pradesh 221003</p>
-    <p>Other campuses: Durgakund & Paharia</p>
-    <p>Description: Provides expert teachers, modern facilities, doubt sessions, and personal guidance for engineering and medical aspirants.</p>
+    <p>Durgakund Campus, Saket Nagar, Near Sankat Mochan Temple, Varanasi, Uttar Pradesh, Pin Code 221005.</p>
+    <p>The Durgakund branch of Allen Career Institute is a well-known and major operational center, where coaching for IIT-JEE, NEET, and foundation courses takes place.</p>
   </section>
+
+  <!-- DISCLAIMER -->
+<section>
+  <h2>Disclaimer</h2>
+  <p>
+    This website is for informational purposes only. Allen Career Institute does not guarantee admission, results, or any other claims made here. 
+    For accurate details regarding courses, fees, and admissions, please contact the official institute directly.
+  </p>
+</section>
+
 
   <!-- FOOTER -->
   <footer>
-    <div style="display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; padding:20px;">
-      <div style="display:flex; gap:30px; margin-bottom:15px;">
-        <img src="../coachingimages/qr1.png" alt="QR Code 1" style="width:150px; height:150px;">
-        <img src="../coachingimages/qr2.png" alt="QR Code 2" style="width:150px; height:150px;">
-      </div>
-      <div style="text-align:center; color:#ccc; max-width:300px;">
-        <p style="margin:5px 0;">
-          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
-          <a href="mailto:info@allen.ac.in">info@allen.ac.in</a>
-        </p>
-        <p style="margin:5px 0; font-size:0.85rem; color:#bbb;">
-          For admissions and inquiries, contact Allen Career Institute Varanasi.
-        </p>
-      </div>
-    </div>
-    <p style="color:#888; font-size:0.85rem; margin-top:15px;">&copy; 2025 Allen Career Institute, Varanasi. All rights reserved.</p>
+    <img src="../coachingimages/qr1.png" alt="QR Code 1">
+    <img src="../coachingimages/qr2.png" alt="QR Code 2">
+    <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
+    <P>SCAN THE QR CODE BELOW TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!           
+    </p>
+    <br>
+    <p style=" color: #ff001e;">THANKS FOR VISITING OK VARANASI !</p>
+    <br>
+     <p style=" color: #00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
+   <div class="footer-right">
+  <a href="https://t.me/okvaranasi" target="_blank" 
+     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" 
+         alt="Telegram" 
+         style="width:24px; height:24px; margin-right:5px;"> Telegram
+  </a>
+
+  <a href="https://wa.me/919118717157" target="_blank" 
+     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+         alt="WhatsApp" 
+         style="width:24px; height:24px; margin-right:5px;"> WhatsApp
+  </a>
+
+  <a href="mailto:okvaranasii@gmail.com" 
+     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" 
+         alt="Gmail" 
+         style="width:24px; height:24px; margin-right:5px;"> Gmail
+  </a>
+
+  <a href="https://www.youtube.com/@OKVARANASI" target="_blank" 
+     style="display:inline-flex; align-items:center; text-decoration:none; color:inherit;">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" 
+         alt="YouTube" 
+         style="width:24px; height:24px; margin-right:5px;"> YouTube
+  </a>
+</div>
+
+
+  <!-- baki links same style -->
+</div>
+
   </footer>
 
   <!-- FULLSCREEN IMAGE VIEWER -->
   <div id="fullscreen">
     <span id="close">&times;</span>
     <img id="full-img" src="" alt="Full Image">
-    <div style="margin-top:15px;">
-      <button id="zoomIn">Zoom In</button>
-      <button id="zoomOut">Zoom Out</button>
-    </div>
   </div>
 
-  <!-- JS: IMAGE VIEWER -->
+  <!-- JS: SIMPLE FULLSCREEN IMAGE VIEWER -->
   <script>
-    const tiltImages = document.querySelectorAll('.tilt img');
+    const galleryImages = document.querySelectorAll('.gallery img');
     const fullscreen = document.getElementById('fullscreen');
     const fullImg = document.getElementById('full-img');
     const closeBtn = document.getElementById('close');
-    const zoomIn = document.getElementById('zoomIn');
-    const zoomOut = document.getElementById('zoomOut');
-    let currentScale = 1;
 
-    tiltImages.forEach(img => {
+    galleryImages.forEach(img => {
       img.addEventListener('click', () => {
         fullImg.src = img.src;
         fullscreen.style.display = 'flex';
-        currentScale = 1;
-        fullImg.style.transform = `scale(${currentScale})`;
       });
     });
 
     closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
-    zoomIn.addEventListener('click', () => { currentScale += 0.2; fullImg.style.transform = `scale(${currentScale})`; });
-    zoomOut.addEventListener('click', () => { currentScale = Math.max(0.2, currentScale - 0.2); fullImg.style.transform = `scale(${currentScale})`; });
-    window.addEventListener('keydown', (e) => { if(e.key === "Escape") fullscreen.style.display = 'none'; });
   </script>
 
 </body>
