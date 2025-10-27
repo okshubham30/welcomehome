@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aakash Institute - Varanasi</title>
+  <title>L-1 Coaching Varanasi</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -12,196 +12,66 @@
     /* ===============================
        RESET & BASIC STYLES
     =============================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0c0c0c;
-      color: #fff;
-      line-height: 1.6;
-      padding-bottom: 50px;
-    }
-
-    a {
-      color: #00ffcc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Poppins', sans-serif; background:#0c0c0c; color:#fff; line-height:1.6; }
+    a { color:#00ffcc; text-decoration:none; }
+    a:hover { text-decoration:underline; }
 
     /* ===============================
        HEADER
     =============================== */
     header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      background: #000000;
-      padding: 10px 15px;
-      text-align: center;
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      background:#000; padding:10px 15px; text-align:center;
     }
-
-    .header-left img {
-      width: 80px;
-      height: 80px;
-    }
-
-    .header-center {
-      flex: 1;
-      min-width: 150px;
-    }
-
-    .header-center h1 {
-      font-size: 1.5rem;
-      color: #00ffcc;
-      margin-bottom: 5px;
-    }
-
-    .header-center p {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    .header-right .nav-links {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 5px;
-    }
+    .header-left img { width:140px; height:140px; }
+    .header-center { flex:1; min-width:150px; }
+    .header-center h1 { font-size:1.5rem; color:#00ffcc; margin-bottom:5px; }
+    .header-center p { font-size:0.9rem; color:#ccc; }
+    .header-right .nav-links { display:flex; gap:10px; justify-content:center; margin-top:5px; }
 
     /* ===============================
        SECTIONS
     =============================== */
-    section {
-      padding: 20px;
-      max-width: 900px;
-      margin: 20px auto;
-    }
-
-    section h2 {
-      font-size: 1.3rem;
-      color: #00ffaa;
-      margin-bottom: 10px;
-      border-left: 4px solid #00ff99;
-      padding-left: 8px;
-    }
-
-    section h3 {
-      font-size: 1.1rem;
-      color: #00ffbb;
-      margin-top: 10px;
-      margin-bottom: 5px;
-    }
-
-    section p,
-    section ul {
-      color: #bbb;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-      list-style-type: square;
-    }
+    section { padding:20px; max-width:900px; margin:20px auto; }
+    section h2 { font-size:1.3rem; color:#00ffaa; margin-bottom:10px; border-left:4px solid #00ff99; padding-left:8px; }
+    section h3 { font-size:1.1rem; color:#00ffbb; margin-top:10px; margin-bottom:5px; }
+    section p, section ul { color:#bbb; margin-bottom:10px; }
+    ul { padding-left:20px; list-style-type:square; }
 
     /* ===============================
        IMAGE GALLERY
     =============================== */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      cursor: pointer;
-      border-radius: 8px;
-    }
+    .gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; }
+    .gallery img { width:100%; height:120px; object-fit:cover; cursor:pointer; border-radius:8px; }
 
     /* ===============================
        FULLSCREEN IMAGE VIEWER
     =============================== */
     #fullscreen {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.9); justify-content:center; align-items:center; flex-direction:column;
     }
-
-    #fullscreen img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 8px;
-    }
-
-    #fullscreen span {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 30px;
-      cursor: pointer;
-      color: #fff;
-    }
+    #fullscreen img { max-width:90%; max-height:80%; border-radius:8px; }
+    #fullscreen span { position:absolute; top:15px; right:20px; font-size:30px; cursor:pointer; color:#fff; }
 
     /* ===============================
        FOOTER
     =============================== */
-    footer {
-      background-color: #111;
-      color: #888;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-
-    footer img {
-      width: 60px;
-      height: 60px;
-      margin: 5px;
-    }
+    footer { background:#000; color:#888; text-align:center; padding:15px; margin-top:20px; }
+    footer img { width:140px; height:140px; margin:5px; }
+    .footer-right a { display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit; }
+    .footer-right img { width:24px; height:24px; margin-right:5px; }
 
     /* ===============================
        MOBILE RESPONSIVE
     =============================== */
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .header-left img {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 5px;
-      }
-
-      .header-center h1 {
-        font-size: 1.2rem;
-      }
-
-      .header-center p {
-        font-size: 0.8rem;
-      }
-
-      .gallery img {
-        height: 100px;
-      }
+    @media (max-width:600px){
+      header { flex-direction:column; text-align:center; }
+      .header-left img { width:60px; height:60px; margin-bottom:5px; }
+      .header-center h1 { font-size:1.2rem; }
+      .header-center p { font-size:0.8rem; }
+      .gallery img { height:100px; }
     }
   </style>
 </head>
@@ -213,8 +83,8 @@
       <img src="../coachingimages/qr1.png" alt="QR Code">
     </div>
     <div class="header-center">
-      <h1>Aakash Institute</h1>
-      <p>Varanasi Branch • Established 2010</p>
+      <h1>L-1 Coaching</h1>
+      <p>Varanasi Branch • Established 2005</p>
     </div>
     <div class="header-right">
       <div class="nav-links">
@@ -228,56 +98,87 @@
   <section>
     <h2>Coaching Gallery</h2>
     <div class="gallery">
-      <img src="../coachingimages/akash1.png" alt="Khajuri Center">
-      <img src="../coachingimages/akash2.png" alt="Durgakund Center">
-      <img src="../coachingimages/akash3.png" alt="Classroom">
-      <img src="../coachingimages/akash4.png" alt="Library">
-      <img src="../coachingimages/akash5.png" alt="Lab">
+      <img src="../coachingimages/L1.png" alt="Main Campus">
+      <img src="../coachingimages/L2.png" alt="Classroom">
+      <img src="../coachingimages/L3.png" alt="Library">
+      <!-- <img src="../coachingimages/L4.png" alt="Lab"> -->
     </div>
   </section>
 
-  <!-- BRANCHES -->
+  <!-- INTRODUCTION -->
   <section>
-    <h2>Aakash Branches in Varanasi</h2>
-    <h3>Durgakund Center (Main Branch)</h3>
-    <ul>
-      <li>Address: B27/97, 2nd Floor, Dharam Sang Shiksha Mandal, Near Durgakund Petrol Pump, Varanasi - 221005</li>
-      <li>Phone: +91-7617016155</li>
-      <li>Speciality: Main center for all courses</li>
-    </ul>
+    <h2>Introduction</h2>
+    <p>L-1 Coaching Institute was founded in 2005 by IIT-BHU and BHU Medical College alumni – Er. Brijesh Singh, Er. Deepak Jaju, Er. Nagendra Singh, Dr. Arun (IMS BHU), and Dr. Shashikant (MBBS Jabalpur). It is well known for NEET, JEE (Main + Advanced), Olympiad, NTSE, and KVPY exam preparation.</p>
+  </section>
 
-    <h3>Khajuri Center</h3>
+  <!-- FEATURES -->
+  <section>
+    <h2>Key Features</h2>
     <ul>
-      <li>Address: S8/110, C6, 1st Floor, Muqubal Alam Road, Khajuri, Varanasi - 221001</li>
-      <li>Phone: +91-8601880004, +91-8601880006</li>
-      <li>Courses: JEE, NEET, Foundation/Board, Olympiad</li>
-    </ul>
-
-    <h3>Sigra Center</h3>
-    <ul>
-      <li>Address: D59/107D, Chandrika Nagar, Sigra, Varanasi - 221010</li>
-      <li>Phone: +91-7617016153</li>
-      <li>Courses: JEE, NEET, Foundation/Board, Olympiad</li>
+      <li>IIT & Medical Graduate Faculty Team</li>
+      <li>Separate batches in English & Hindi medium</li>
+      <li>Online tests via AITS and L1 Aspire App</li>
+      <li>Biometric attendance, Smart Classes, Library</li>
+      <li>Super-40 Batch – 100% success rate (NEET & IIT)</li>
+      <li>Personality development and motivational sessions</li>
     </ul>
   </section>
 
-  <!-- ====== LOCATION ====== -->
-  <section class="section">
+  <!-- COURSES & FEES -->
+  <!-- COURSES & FEES -->
+<section>
+  <h2>Courses & Fees (2025)</h2>
+  <table style="width:100%; color:#bbb; border-collapse:collapse;">
+    <tr>
+      <th style="border-bottom:1px solid #00ffaa; padding:5px; text-align:left;">Course</th>
+      <th style="border-bottom:1px solid #00ffaa; padding:5px; text-align:left;">Duration</th>
+      <th style="border-bottom:1px solid #00ffaa; padding:5px; text-align:left;">Fee (INR) + GST Approx.</th>
+    </tr>
+    <tr><td>Pre-Foundation (Class 8)</td><td>1 Year</td><td>₹41,000</td></tr>
+    <tr><td>Pre-Foundation (Class 9)</td><td>1 Year</td><td>₹46,000</td></tr>
+    <tr><td>Pre-Foundation (Class 10)</td><td>1 Year</td><td>₹51,000</td></tr>
+    <tr><td>Foundation (Class 11)</td><td>1 Year</td><td>₹86,000</td></tr>
+    <tr><td>Foundation (Class 12)</td><td>1 Year</td><td>₹92,000</td></tr>
+    <tr><td>JEE Main Course</td><td>1 Year</td><td>₹91,000</td></tr>
+    <tr><td>JEE Main + Advanced</td><td>1 Year</td><td>₹96,000</td></tr>
+    <tr><td>NEET Medical Course</td><td>1 Year</td><td>₹96,000</td></tr>
+    <tr><td>Other Engineering Exams</td><td>1 Year</td><td>₹90,000</td></tr>
+    <tr><td>Combined Programs (Multiple Classes)</td><td>Varies</td><td>₹85,000 – ₹1,60,000</td></tr>
+    <tr><td>Test Series (Class 11)</td><td>Session</td><td>₹3,500</td></tr>
+    <tr><td>Test Series (Class 12)</td><td>Session</td><td>₹3,800</td></tr>
+    <tr><td>Target Test Series</td><td>Session</td><td>₹4,500</td></tr>
+  </table>
+</section>
+
+  <!-- LOCATION -->
+  <section>
     <h2>Location & Contact</h2>
-    <p><strong>Khajuri Center:</strong> <a href="https://www.google.com/maps/search/?api=1&query=S8%2F110%2C+C6%2C+1st+Floor%2C+Muqubal+Alam+Road%2C+Khajuri%2C+Varanasi+221001" target="_blank">1st Floor, S.8/110, C-6, Muqubal Alam Road, Khajuri, Varanasi</a><br>Phone: +91-8601880004, +91-8601880006</p>
-    <p><strong>Durgakund Center:</strong> <a href="https://www.google.com/maps/search/?api=1&query=B27%2F97%2C+2nd+Floor%2C+Dharam+Sang+Shiksha+Mandal%2C+Near+Durgakund+Petrol+Pump%2C+Durga+Kund%2C+Varanasi+221005" target="_blank">No B27/97, 2nd Floor, Dharam Sang Shiksha Mandal, Near Durgakund Petrol Pump</a><br>Phone: +91-7617016155</p>
-    <p><strong>Sigra Center:</strong> <a href="https://www.google.com/maps/search/?api=1&query=D59%2F107D%2C+Chandrika+Nagar%2C+Sigra%2C+Varanasi+221010" target="_blank">D59/107D, Chandrika Nagar, Sigra, Varanasi</a><br>Phone: +91-7617016153</p>
+    <p><strong>Main Branch:</strong> Brahmanand Nagar Colony, Durgakund, Varanasi – 221005 | Phone: 6388640833, 6390905111</p>
+    <p><strong>Second Branch:</strong> Prabha Complex, Sigra, Varanasi</p>
+    <p>Email: <a href="mailto:l1coaching2021@gmail.com">l1coaching2021@gmail.com</a></p>
+    <p>Website: <a href="https://l1coaching.in" target="_blank">https://l1coaching.in</a></p>
   </section>
 
-  <!-- COACHING DETAILS -->
+  <!-- FACILITIES -->
   <section>
-    <h2>Coaching Details</h2>
+    <h2>Facilities</h2>
     <ul>
-      <li>Courses: Long-term, Short-term, Foundation, NEET, IIT-JEE, Olympiads, NTSE, KVPY</li>
-      <li>Teaching: Integrated teaching, tech-enabled, focused learning</li>
-      <li>Facilities: Smart classrooms, iTutor, library, labs</li>
-      <li>Fee: ₹1,04,000 - ₹2,20,000</li>
-      <li>Scholarships: Up to 100% + cash awards</li>
+      <li>Test Series & Doubt Solving Sessions</li>
+      <li>Expert Faculty Guidance</li>
+      <li>Hostel/PG support for boys & girls (Durgakund area)</li>
+      <li>Online & Offline Learning Options</li>
+      <li>Individual Attention & Counseling Sessions</li>
+    </ul>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section>
+    <h2>Key Achievements</h2>
+    <ul>
+      <li>NEET 2021 AIR-1 (OBC Category)</li>
+      <li>Super-40 Program: 100% selection rate every year since 2018</li>
+      <li>Highest JEE Main Score – 340/360</li>
+      <li>Highest NEET Score – 715/720</li>
     </ul>
   </section>
 
@@ -285,16 +186,55 @@
   <section>
     <h2>Disclaimer</h2>
     <p style="color:#bbb; font-size:0.95rem;">
-      For latest information about Aakash Institute Varanasi branches, contact the center directly.
+      This page is for informational purposes only. Contact the institute directly for the latest details on courses, fees, and admissions.
     </p>
+
+    <p> The information provided on this website is for educational purposes only. While we strive to keep the content accurate and up-to-date, we do not guarantee any results or outcomes related to exams, admissions, or career success.</p>
   </section>
+
+
+  <!-- ADVICE FOR STUDENTS -->
+<section>
+  <h2>Advice for Students Considering Coaching</h2>
+  <p>Choosing the right coaching institute is an important decision that can shape your academic future. Here is some advice:</p>
+  <ul>
+    <li>Always research thoroughly about the coaching center before enrolling. Check for faculty experience, student results, and reviews.</li>
+    <li>Attend demo classes if possible, to understand the teaching style and environment.</li>
+    <li>Maintain a regular study schedule and use coaching as a guide, but your success depends largely on your own commitment and hard work.</li>
+    <li>Don't hesitate to ask coaches for personal doubt clearing sessions or extra help when needed.</li>
+    <li>Take advantage of test series and practice materials offered by the institute to build confidence and exam readiness.</li>
+    <li>Balance coaching with self-study and revision at home. Coaching is a supplement, not a substitute for your efforts.</li>
+  </ul>
+  <p style="color:blue;">Coaching is a secondary support system in education — the real success depends on your own hard work and dedication. Since you are investing your money and time, it is important to research and choose the best coaching institute carefully. Coaching can help, but it cannot replace consistent self-study and determination.</p>
+  <p>Remember, you have the power to achieve your goals with or without coaching — with focus and perseverance, you can do anything you set your mind to.</p>
+  <p style="color:#00ffaa;">Best of luck for your future!</p>
+</section>
+
 
   <!-- FOOTER -->
   <footer>
     <img src="../coachingimages/qr1.png" alt="QR Code 1">
     <img src="../coachingimages/qr2.png" alt="QR Code 2">
-    <p>Email: <a href="mailto:okvaranasii@gamil.com">okvaranasii@gamil.com</a></p>
-    <p>THANKS FOR VISITING OK VARANASI</p>
+    <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
+    <p>SCAN THE QR CODE ABOVE TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!</p>
+    <br>
+    <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+    <br>
+    <p style="color:#00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"> Telegram
+      </a>
+      <a href="https://wa.me/919118717157" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp
+      </a>
+      <a href="mailto:okvaranasii@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail"> Gmail
+      </a>
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Website"> Youtube
+      </a>
+    </div>
   </footer>
 
   <!-- FULLSCREEN IMAGE VIEWER -->
@@ -303,7 +243,7 @@
     <img id="full-img" src="" alt="Full Image">
   </div>
 
-  <!-- JS: SIMPLE IMAGE VIEWER -->
+  <!-- JS: SIMPLE FULLSCREEN IMAGE VIEWER -->
   <script>
     const galleryImages = document.querySelectorAll('.gallery img');
     const fullscreen = document.getElementById('fullscreen');

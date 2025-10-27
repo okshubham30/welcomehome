@@ -3,152 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Allen Career Institute - Varanasi</title>
-
-  <!-- Google Fonts -->
+  <title>PW Vidyapeeth Lanka - Varanasi</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
-    /* RESET & BASIC STYLES */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Poppins', sans-serif; background:#0c0c0c; color:#fff; line-height:1.6; }
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Poppins', sans-serif; background:#0c0c0c; color:#fff; line-height:1.6;}
+    a {color:#00ffcc; text-decoration:none;}
+    a:hover {text-decoration:underline;}
 
-    a { color:#00ffcc; text-decoration:none; }
-    a:hover { text-decoration:underline; }
+    /* Header */
+    header {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; background:#000; padding:10px 15px; text-align:center;}
+    .header-left img {width:120px; height:120px;}
+    .header-center {flex:1; min-width:150px;}
+    .header-center h1 {font-size:1.5rem; color:#00ffcc; margin-bottom:5px;}
+    .header-center p {font-size:0.9rem; color:#ccc;}
+    .header-right .nav-links {display:flex; gap:10px; justify-content:center; margin-top:5px;}
 
-    /* HEADER */
-    header {
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      background:#111;
-      padding:10px 15px;
-      text-align:center;
-    }
-    .header-left img { width:80px; height:80px; }
-    .header-center { flex:1; min-width:150px; }
-    .header-center h1 { font-size:1.5rem; color:#00ffcc; margin-bottom:5px; }
-    .header-center p { font-size:0.9rem; color:#ccc; }
-    .header-right .nav-links { display:flex; gap:10px; justify-content:center; margin-top:5px; }
+    /* Sections */
+    section {padding:20px; max-width:900px; margin:20px auto;}
+    section h2 {font-size:1.3rem; color:#00ffaa; margin-bottom:10px; border-left:4px solid #00ff99; padding-left:8px;}
+    section p, section ul {color:#bbb; margin-bottom:10px;}
+    ul {padding-left:20px; list-style-type:square;}
+    table {width:100%; border-collapse:collapse; margin-bottom:15px;}
+    th, td {border:1px solid #555; padding:8px; text-align:left;}
+    th {background:#111; color:#00ffcc;}
+    td {background:#222; color:#bbb;}
 
-    /* SECTIONS */
-    section { padding:20px; max-width:900px; margin:20px auto; }
-    section h2 { font-size:1.3rem; color:#00ffaa; margin-bottom:10px; border-left:4px solid #00ff99; padding-left:8px; }
-    section p, section ul { color:#bbb; margin-bottom:10px; }
-    ul { padding-left:20px; list-style-type:square; }
+    /* Footer */
+    footer {background:#000; color:#888; text-align:center; padding:15px; margin-top:20px;}
+    footer img {width:140px; height:140px; margin:5px;}
+    .footer-right a {display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;}
+    .footer-right img {width:24px; height:24px; margin-right:5px;}
 
-    /* GALLERY */
-    .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
-    .gallery img { width:100%; height:120px; object-fit:cover; cursor:pointer; border-radius:8px; }
-
-    /* FOOTER */
-    footer { background:#111; color:#888; text-align:center; padding:15px; margin-top:20px; }
-    footer img { width:80px; height:80px; margin:5px; }
-
-    /* FULLSCREEN IMAGE VIEWER */
-    #fullscreen { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; flex-direction:column; }
-    #fullscreen img { max-width:90%; max-height:80%; border-radius:8px; }
-    #fullscreen span { position:absolute; top:15px; right:20px; font-size:30px; cursor:pointer; color:#fff; }
-
-    /* MOBILE */
     @media(max-width:600px){
-      header { flex-direction:column; text-align:center; }
-      .header-left img { width:60px; height:60px; margin-bottom:8px; }
-      .header-center h1 { font-size:1.2rem; }
-      .header-center p { font-size:0.8rem; }
-      .header-right .nav-links { flex-direction:row; flex-wrap:wrap; gap:8px; justify-content:center; }
-      .gallery img { height:100px; }
-      footer img { width:60px; height:60px; }
+      header {flex-direction:column; text-align:center;}
+      .header-left img {width:80px; height:80px; margin-bottom:5px;}
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-left">
-      <img src="../coachingimages/qr1.png" alt="QR Code">
-    </div>
-    <div class="header-center">
-      <h1>Allen Career Institute</h1>
-      <p>Top Coaching for IIT-JEE & NEET • 2024-25</p>
-    </div>
-    <div class="header-right">
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- GALLERY -->
-  <section>
-    <h2>Coaching Gallery</h2>
-    <div class="gallery">
-      <img src="../coachingimages/allen1.png" alt="Campus 1">
-      <img src="../coachingimages/allen2.png" alt="Campus 2">
-      <img src="../coachingimages/allen3.png" alt="Campus 3">
-      <img src="../coachingimages/allen4.png" alt="Campus 4">
-    </div>
-  </section>
-
-  <!-- DETAILS -->
-  <section>
-    <h2>Coaching Details</h2>
-    <ul>
-      <li>Campuses at Shivpur, Durgakund, Paharia</li>
-      <li>Expert faculty using Kota classroom system</li>
-      <li>Courses: IIT-JEE, NEET, Olympiads, NTSE, Boards</li>
-      <li>Smart classrooms, libraries, labs, online apps</li>
-      <li>Blended online & offline learning</li>
-      <li>Fee concessions for new admissions</li>
-    </ul>
-  </section>
-
-  <!-- ABOUT -->
-  <section>
-    <h2>About Allen Career Institute Varanasi</h2>
-    <p>Allen Career Institute in Varanasi is part of Allen's 36-year nationwide legacy. Established recently in 2024-25, it provides high-quality coaching for IIT-JEE and NEET with modern classrooms and personalized attention.</p>
-  </section>
-
-  <!-- LOCATION -->
-  <section>
-    <h2>Location</h2>
-    <p>Main Address: H. No. 51/3, Anisha Tower, Plot No 18, Shivpur, Varanasi, Uttar Pradesh 221003</p>
-    <p>Other campuses: Durgakund & Paharia</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <img src="../coachingimages/qr1.png" alt="QR Code 1">
-    <img src="../coachingimages/qr2.png" alt="QR Code 2">
-    <p>Email: <a href="mailto:info@allen.ac.in">info@allen.ac.in</a></p>
-    <p>&copy; 2025 Allen Career Institute, Varanasi. All rights reserved.</p>
-  </footer>
-
-  <!-- FULLSCREEN IMAGE VIEWER -->
-  <div id="fullscreen">
-    <span id="close">&times;</span>
-    <img id="full-img" src="" alt="Full Image">
+<!-- HEADER -->
+<header>
+  <div class="header-left">
+    <img src="../coachingimages/qr1.png" alt="QR Code">
   </div>
+  <div class="header-center">
+    <h1>PW Vidyapeeth Lanka</h1>
+    <p>Varanasi Branch • October 2025</p>
+  </div>
+  <div class="header-right">
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+    </div>
+  </div>
+</header>
 
-  <!-- JS: SIMPLE FULLSCREEN IMAGE VIEWER -->
-  <script>
-    const galleryImages = document.querySelectorAll('.gallery img');
-    const fullscreen = document.getElementById('fullscreen');
-    const fullImg = document.getElementById('full-img');
-    const closeBtn = document.getElementById('close');
+<!-- DISCLAIMER -->
+<section>
+  <h2>Disclaimer</h2>
+  <p style="color:#bbb; font-size:0.95rem;">
+    This page is for informational purposes only. Contact the institute directly for the latest details on courses, fees, and admissions.
+  </p>
+  <p>
+    The information provided on this website is for educational purposes only. While we strive to keep the content accurate and up-to-date, we do not guarantee any results or outcomes related to exams, admissions, or career success.
+  </p>
+</section>
 
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        fullImg.src = img.src;
-        fullscreen.style.display = 'flex';
-      });
-    });
+<!-- ADVICE FOR STUDENTS -->
+<section>
+  <h2>Advice for Students Considering Coaching</h2>
+  <p>Choosing the right coaching institute is an important decision that can shape your academic future. Here is some advice:</p>
+  <ul>
+    <li>Always research thoroughly about the coaching center before enrolling. Check for faculty experience, student results, and reviews.</li>
+    <li>Attend demo classes if possible, to understand the teaching style and environment.</li>
+    <li>Maintain a regular study schedule and use coaching as a guide, but your success depends largely on your own commitment and hard work.</li>
+    <li>Don't hesitate to ask coaches for personal doubt clearing sessions or extra help when needed.</li>
+    <li>Take advantage of test series and practice materials offered by the institute to build confidence and exam readiness.</li>
+    <li>Balance coaching with self-study and revision at home. Coaching is a supplement, not a substitute for your efforts.</li>
+  </ul>
+  <p style="color:blue;">Coaching is a secondary support system in education — the real success depends on your own hard work and dedication. Since you are investing your money and time, it is important to research and choose the best coaching institute carefully. Coaching can help, but it cannot replace consistent self-study and determination.</p>
+  <p>Remember, you have the power to achieve your goals with or without coaching — with focus and perseverance, you can do anything you set your mind to.</p>
+  <p style="color:#00ffaa;">Best of luck for your future!</p>
+</section>
 
-    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
-  </script>
+<!-- COURSES & FEES -->
+<section>
+  <h2>Courses Offered & Fees (Approx.)</h2>
+  <table>
+    <tr>
+      <th>Course</th>
+      <th>Duration</th>
+      <th>Fee (INR, Offline)</th>
+      <th>Fee (INR, Online)</th>
+    </tr>
+    <tr><td>JEE (Class 11)</td><td>2 Years</td><td>₹1,36,740</td><td>₹99,989 (Power batch)</td></tr>
+    <tr><td>JEE (Class 12)</td><td>1 Year</td><td>₹77,747</td><td>₹4,999 (Lakshya batch)</td></tr>
+    <tr><td>JEE (Class 12 Pass)</td><td>1 Year</td><td>₹80,285</td><td>₹58,000 (Power batch)</td></tr>
+    <tr><td>NEET (Class 11)</td><td>2 Years</td><td>₹1,36,740</td><td>₹2,999 (online basics)</td></tr>
+    <tr><td>NEET (Class 12)</td><td>1 Year</td><td>₹77,747</td><td>₹4,999 (Lakshya batch)</td></tr>
+    <tr><td>NEET (Class 12 Pass/Droppers)</td><td>1 Year</td><td>₹80,285</td><td>₹2,999 (online basics)</td></tr>
+    <tr><td>Foundation (Class 9–10)</td><td>1–4 Years</td><td>₹37,912 to ₹2,09,000</td><td>₹1,999–₹20,999</td></tr>
+  </table>
+</section>
+
+<!-- HIGHLIGHTS & FEATURES -->
+<section>
+  <h2>Highlights & Features</h2>
+  <ul>
+    <li>Classes by experienced IITians, doctors, and subject experts</li>
+    <li>Doubt-clearing sessions & 24/7 support</li>
+    <li>Comprehensive study materials & practice questions</li>
+    <li>Regular test series, progress tracking, parent updates</li>
+    <li>State-of-the-art smart classrooms</li>
+    <li>Online & offline batches (Hindi/English)</li>
+    <li>Scholarship opportunities via PWSAT</li>
+    <li>Career counseling, motivational sessions, hostel/PG guidance</li>
+  </ul>
+</section>
+
+<!-- BRANCHES & LOCATION -->
+<section>
+  <h2>Branches & Location</h2>
+  <ul>
+    <li><strong>Lanka Branch (Main / BHU Branch):</strong> 2nd & 3rd Floor, Above V2 Mall, BHU - Lanka Road, Saket Nagar Colony, Lanka, Varanasi, UP 221005. Phone: 095133 50005, 07019243492</li>
+    <li><strong>Bhojuveer Branch:</strong> 3rd floor, Raj Complex, Bhojuveer, Gilat Bazar Road, Varanasi, UP 221002</li>
+    <li><strong>Website:</strong> <a href="https://www.pw.live" target="_blank">https://www.pw.live</a></li>
+  </ul>
+</section>
+
+<!-- ADMISSION PROCESS -->
+<section>
+  <h2>Admission Process</h2>
+  <p>Direct admission for most courses; board marks and scholarship exam options available. Demo classes can be booked online or at the center for a minimal fee.</p>
+</section>
+
+<!-- HOSTEL/PG -->
+<section>
+  <h2>Hostel / PG Nearby</h2>
+  <p>PW does not run hostels directly, but several PGs and hostels for boys and girls are available within 1 km of Lanka center, especially around BHU Gate, Saket Nagar, and Durgakund areas.</p>
+</section>
+
+<!-- CONTACT INFO -->
+<section>
+  <h2>Contact Information</h2>
+  <p><strong>PW Lanka Branch:</strong><br>
+     Above V2 Mall, BHU Lanka Road, Saket Nagar Colony, Lanka, Varanasi, 221005<br>
+     Phone: 095133 50005<br>
+     Instagram: @vidyapeeth_varanasi<br>
+     Website: <a href="https://www.pw.live" target="_blank">https://www.pw.live</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="../coachingimages/qr1.png" alt="QR Code 1">
+  <img src="../coachingimages/qr2.png" alt="QR Code 2">
+  <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
+  <p>SCAN THE QR CODE ABOVE TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!</p>
+  <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI !</p>
+  <div class="footer-right">
+    <a href="https://t.me/okvaranasi" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"> Telegram</a>
+    <a href="https://wa.me/919118717157" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp</a>
+    <a href="mailto:okvaranasii@gmail.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail"> Gmail</a>
+    <a href="https://www.youtube.com/@OKVARANASI" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> YouTube</a>
+  </div>
+</footer>
 
 </body>
 </html>

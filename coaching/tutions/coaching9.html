@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elliptical Text Slider</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #111, #333);
+    }
+
+    .slider-container {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    .slide {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 80%;
+      font-size: 18px;
+      transition: opacity 0.5s ease;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+      padding: 10px;
+      user-select: none;
+    }
+
+    .arrow.left {
+      left: 15px;
+    }
+
+    .arrow.right {
+      right: 15px;
+    }
+
+    @media (max-width: 500px) {
+      .slider-container {
+        height: 180px;
+      }
+      .slide {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider-container" id="textSlider">
+    <div class="slide active">✨ "Believe in yourself — you are stronger than you think."</div>
+    <div class="slide">🚀 "Success comes to those who never stop learning."</div>
+    <div class="slide">💡 "Every mistake is a new lesson — don’t fear failure."</div>
+    <div class="slide">🔥 "Work hard in silence, let your results make the noise."</div>
+
+    <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    // Arrow key navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // Swipe (mobile)
+    let startX = 0;
+    document.getElementById('textSlider').addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+    document.getElementById('textSlider').addEventListener('touchend', (e) => {
+      let endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) nextSlide();
+      if (endX - startX > 50) prevSlide();
+    });
+
+    // Auto slide every 5 sec
+    setInterval(nextSlide, 5000);
+  </script>
+
+</body>
+</html>
