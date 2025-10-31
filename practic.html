@@ -1,256 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Site</title>
-  <style>
-    /* ===== Reset ===== */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: Arial, sans-serif;
-      background:#0d0d0d;
-      color:white;
-      display:flex;
-      flex-direction:column;
-      min-height:100vh;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OK VARANASI</title>
+<link rel="stylesheet" href="style.css">
 
-    /* ===== Header ===== */
-    .header {
-      width:100%;
-      padding:20px;
-      background:#111;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .header-center { flex:1; display:flex; justify-content:center; }
-    .header-right { flex:1; display:flex; justify-content:flex-end; gap:15px; }
-    .header-right a {
-      text-decoration:none;
-      color:white;
-      background:#1a1a1a;
-      padding:8px 14px;
-      border-radius:8px;
-      border:1px solid #00ffff50;
-      transition:0.3s;
-    }
-    .header-right a:hover {
-      background:#222;
-      box-shadow:0 0 10px #00ffff80;
-    }
-    .qr-img {
-      width:120px;
-      height:120px;
-      border-radius:15px;
-      box-shadow:0 0 15px rgba(0,255,255,0.4);
-    }
-
-    /* ===== Search Box ===== */
-    .search-container {
-      max-width:500px;
-      width:100%;
-      margin:25px auto 10px;
-      text-align:center;
-    }
-    .search-container input {
-      width:100%;
-      padding:10px 15px;
-      border-radius:20px;
-      border:none;
-      outline:none;
-      font-size:15px;
-      background:#1a1a1a;
-      color:white;
-    }
-
-    /* ===== Circular Slider ===== */
-    .text-slider-container {
-      max-width:800px;
-      margin:10px auto;
-      overflow-x:auto;
-      display:flex;
-      gap:15px;
-      scroll-behavior:smooth;
-      scrollbar-width:none;
-      -ms-overflow-style:none;
-    }
-    .text-slider-container::-webkit-scrollbar { display:none; }
-
-    .text-card {
-      min-width:120px;
-      background:#1a1a1a;
-      border-radius:50px;
-      padding:10px 20px;
-      text-align:center;
-      cursor:pointer;
-      flex-shrink:0;
-      transition:0.3s;
-      border:1px solid #00ffff50;
-    }
-    .text-card:hover {
-      background:#222;
-      box-shadow:0 0 10px #00ffff80;
-    }
-    .text-card.active {
-      background:#00ffff;
-      color:#000;
-    }
-
-    /* ===== Option Cards ===== */
-    .option-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap:20px;
-      justify-content:center;
-      padding:20px;
-    }
-    .option-card {
-      width:280px;
-      height:180px;
-      position:relative;
-      background:#1a1a1a;
-      color:#bbe2d8;
-      font-size:22px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      border-radius:12px;
-      transition:0.3s;
-      box-shadow:0 0 8px rgba(0,255,255,0.2);
-    }
-    .option-card:hover {
-      transform:scale(1.05);
-      box-shadow:0 0 15px rgba(0,255,255,0.5);
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background-color:#000;
-      color:#888;
-      text-align:center;
-      padding:20px;
-      margin-top:auto;
-    }
-
-    /* ===== Responsive ===== */
-    @media(max-width:768px){
-      .header { flex-direction:column; align-items:center; gap:10px; }
-      .qr-img { width:100px; height:100px; }
-      .header-right { justify-content:center; }
-    }
-  </style>
+<style>
+/* === MAIN CONTENT BACKGROUND IMAGE ONLY === */
+.option-container {
+  background-image: url("images/BACK.png"); /* 👈 apni background image ka naam */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* scroll par image stable rahegi */
+}
+</style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="header">
-    <div class="header-center">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=example"
-           alt="QR Code" class="qr-img">
-    </div>
-    <div class="header-right">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-    </div>
-  </header>
-
-  <!-- ===== SEARCH ===== -->
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search for houses, shops, hostels...">
+<!-- Header -->
+<div class="header">
+  <div class="header-left"></div>
+  <div class="header-center">
+    <img src="coaching/coachingimages/qr1.png" alt="QR Code" class="qr-img">
   </div>
-
-  <!-- ===== TEXT SLIDER ===== -->
-  <div class="text-slider-container" id="textSlider">
-    <div class="text-card active" data-type="all">All</div>
-    <div class="text-card" data-type="house">Houses</div>
-    <div class="text-card" data-type="shop">Shops</div>
-    <div class="text-card" data-type="coaching">Coachings</div>
-    <div class="text-card" data-type="hostel">Hostels</div>
-    <div class="text-card" data-type="pg">PG</div>
-    <div class="text-card" data-type="room">Rooms</div>
+  <div class="header-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
   </div>
+</div>
 
-  <!-- ===== OPTION CARDS ===== -->
-  <div class="option-container" id="optionContainer">
-    <div class="option-card" data-type="house">🏠 House 1</div>
-    <div class="option-card" data-type="house">🏠 House 2</div>
-    <div class="option-card" data-type="shop">🛍️ Shop 1</div>
-    <div class="option-card" data-type="shop">🛍️ Shop 2</div>
-    <div class="option-card" data-type="coaching">📚 Coaching 1</div>
-    <div class="option-card" data-type="coaching">📘 Coaching 2</div>
-    <div class="option-card" data-type="hostel">🏨 Hostel 1</div>
-    <div class="option-card" data-type="pg">🏡 PG 1</div>
-    <div class="option-card" data-type="room">🛏️ Room 1</div>
+<!-- Search -->
+<div class="search-container">
+  <input id="searchInput" type="text" placeholder="Search homes, shops, hostels...">
+</div>
+
+<!-- Horizontal Text Slider -->
+<div class="text-slider-container" id="sliderContainer">
+  <div class="text-slider">
+    <div class="text-card" data-filter="Homes">Homes</div>
+    <div class="text-card" data-filter="Shops">Shops</div>
+    <div class="text-card" data-filter="Coaching">Coaching</div>
+    <div class="text-card" data-filter="Tourist">Tourist</div>
+    <div class="text-card" data-filter="Purchase">Purchase</div>
+    <div class="text-card" data-filter="Hostels">Hostels</div>
+    <div class="text-card" data-filter="Property">Property</div>
   </div>
+</div>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    © 2025 Your Website | All Rights Reserved
-  </footer>
+<!-- Option Cards (Main Content with BACKGROUND IMAGE) -->
+<div class="option-container" id="optionContainer">
+  <a href="homerent/index2.html" class="option-card" data-type="Homes">
+    <img src="images/agra.jpg" alt="Homes" class="option-image">
+    <span>Homes for Rent</span>
+  </a>
 
-  <!-- ===== SCRIPT ===== -->
-  <script>
-    // === SEARCH FILTER ===
-    const searchInput = document.getElementById('searchInput');
-    const cards = document.querySelectorAll('.option-card');
+  <a href="purchasehomes/index1.html" class="option-card" data-type="Purchase">
+    <img src="images/delhi.jpg" alt="Purchase" class="option-image">
+    <span>Purchase Homes</span>
+  </a>
 
-    searchInput.addEventListener('keyup', () => {
-      const value = searchInput.value.toLowerCase();
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(value) ? 'flex' : 'none';
-      });
-    });
+  <a href="purchaseproperties/index3.html" class="option-card" data-type="Property">
+    <img src="images/jaipur.jpg" alt="Property" class="option-image">
+    <span>Purchase Property</span>
+  </a>
 
-    // === SLIDER CLICK FILTER ===
-    const textCards = document.querySelectorAll('.text-card');
-    textCards.forEach(tc => {
-      tc.addEventListener('click', () => {
-        textCards.forEach(t => t.classList.remove('active'));
-        tc.classList.add('active');
-        const type = tc.dataset.type;
+  <a href="coaching/index4.html" class="option-card" data-type="Coaching">
+    <img src="images/bhopal.jpg" alt="Coaching" class="option-image">
+    <span>Coaching Institutes</span>
+  </a>
 
-        cards.forEach(card => {
-          card.style.display = (type === 'all' || card.dataset.type === type)
-            ? 'flex' : 'none';
-        });
-      });
-    });
+  <a href="touristspot/index5.html" class="option-card" data-type="Tourist">
+    <img src="images/bhopal.jpg" alt="Tourist" class="option-image">
+    <span>Tourist Spots</span>
+  </a>
+</div>
 
-    // === SWIPE SUPPORT ===
-    const slider = document.getElementById('textSlider');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+<!-- Footer -->
+<footer>
+  <img src="coaching/coachingimages/qr1.png" alt="QR Code 1" style="width:140px;height:140px;margin:5px;">
+  <img src="coaching/coachingimages/qr2.png" alt="QR Code 2" style="width:140px;height:140px;margin:5px;">
 
-    slider.addEventListener('mousedown', e => {
-      isDown = true;
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('mouseleave', () => { isDown = false; });
-    slider.addEventListener('mouseup', () => { isDown = false; });
-    slider.addEventListener('mousemove', e => {
-      if(!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1;
-      slider.scrollLeft = scrollLeft - walk;
-    });
+  <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
+  <p>SCAN THE QR CODE BELOW TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!</p>
 
-    // Touch (for mobile)
-    let startXTouch = 0;
-    slider.addEventListener('touchstart', e => {
-      startXTouch = e.touches[0].clientX;
-    });
-    slider.addEventListener('touchmove', e => {
-      const moveX = e.touches[0].clientX;
-      slider.scrollLeft += (startXTouch - moveX);
-      startXTouch = moveX;
-    });
-  </script>
+  <br>
+  <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+  <br>
+  <p style="color:#00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
+
+  <br>
+  <div class="footer-right">
+    <a href="https://t.me/okvaranasi" target="_blank" 
+       style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" 
+           alt="Telegram" 
+           style="width:24px; height:24px; margin-right:5px;"> Telegram
+    </a>
+
+    <a href="https://wa.me/919118717157" target="_blank" 
+       style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+           alt="WhatsApp" 
+           style="width:24px; height:24px; margin-right:5px;"> WhatsApp
+    </a>
+
+    <a href="mailto:okvaranasii@gmail.com" 
+       style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" 
+           alt="Gmail" 
+           style="width:24px; height:24px; margin-right:5px;"> Gmail
+    </a>
+
+    <a href="https://www.youtube.com/@OKVARANASI" target="_blank" 
+       style="display:inline-flex; align-items:center; text-decoration:none; color:inherit;">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" 
+           alt="YouTube" 
+           style="width:24px; height:24px; margin-right:5px;"> YouTube
+    </a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PW Vidyapeeth – Physics Wallah (Lanka, Varanasi)</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0c0c0c;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000000;
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    .header-left img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .header-center {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .header-center h1 {
+      font-size: 1.5rem;
+      color: #00ffcc;
+      margin-bottom: 5px;
+    }
+
+    .header-center p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .header-right .nav-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 5px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      color: #00ffaa;
+      margin-bottom: 10px;
+      border-left: 4px solid #00ff99;
+      padding-left: 8px;
+    }
+
+    section p,
+    section ul {
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #000;
+      color: #888;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    footer img {
+      width: 140px;
+      height: 140px;
+      margin: 5px;
+    }
+
+    /* FULLSCREEN IMAGE VIEWER */
+    #fullscreen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+
+    #fullscreen span {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-left img {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 8px;
+      }
+
+      .header-center h1 {
+        font-size: 1.2rem;
+      }
+
+      .header-center p {
+        font-size: 0.8rem;
+      }
+
+      .header-right .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+
+      .gallery img {
+        height: 100px;
+      }
+
+      footer img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="../coachingimages/qr1.png" alt="QR Code">
+    </div>
+    <div class="header-center">
+      <h1>PW Vidyapeeth – Physics Wallah</h1>
+      <p>Lanka, Varanasi • JEE, NEET & Foundation Coaching</p>
+    </div>
+    <div class="header-right">
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section>
+    <h2>Coaching Gallery</h2>
+    <div class="gallery">
+      <img src="../coachingimages/pw1.png" alt="Campus 1">
+      <img src="../coachingimages/pw2.png" alt="Campus 2">
+      <img src="../coachingimages/pw3.png" alt="Campus 3">
+      <img src="../coachingimages/pw4.png" alt="Campus 4">
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section>
+    <h2>About PW Vidyapeeth (Lanka, Varanasi)</h2>
+    <p>PW Vidyapeeth (Lanka, Varanasi) is a well-known branch of Physics Wallah that provides offline coaching for JEE, NEET, and foundation classes. It is one of the most popular coaching centers in Varanasi for science students aiming for competitive exams.</p>
+  </section>
+
+  <!-- LOCATION & CONTACT -->
+  <section>
+    <h2>Location & Contact Information</h2>
+    <ul>
+      <li><strong>Address:</strong> 2nd & 3rd Floor, Above V2 Mall, BHU - Lanka Road, Varanasi, Uttar Pradesh - 221005</li>
+      <li><strong>Contact Numbers:</strong> 95133 50005, 88582 41347, 97936 22399</li>
+      <li><strong>Other Branch:</strong> 3rd Floor, Raj Complex, Bhojuveer, Gilat Bazar Road, Varanasi – 221002</li>
+      <li><strong>Official Website:</strong> <a href="https://www.pw.live" target="_blank">pw.live</a></li>
+    </ul>
+  </section>
+
+  <!-- COURSES & FEES -->
+  <section>
+    <h2>Courses & Fee Structure</h2>
+    <ul>
+      <li>JEE Course for Class 11 (2 Years): ₹1,36,740</li>
+      <li>JEE Course for Class 12 (1 Year): ₹77,747</li>
+      <li>NEET Course for Class 11 (2 Years): ₹1,36,740</li>
+      <li>NEET Course for Class 12 (1 Year): ₹77,747</li>
+      <li>NEET/JEE Dropper Courses: ₹80,285 approx/year</li>
+      <li>Foundation (Class 9–10): ₹37,912 – ₹2,09,000 (depending on course type)</li>
+    </ul>
+  </section>
+
+  <!-- FACILITIES -->
+  <section>
+    <h2>Facilities & Features</h2>
+    <ul>
+      <li>Highly experienced faculty with regular doubt-solving sessions</li>
+      <li>Comprehensive study material and practice questions</li>
+      <li>Regular tests, performance tracking, and parent-student dashboards</li>
+      <li>Demo classes available (bookable at ₹49)</li>
+      <li>Flexible course structure tailored to student needs</li>
+    </ul>
+  </section>
+
+  <!-- ADMISSION -->
+  <section>
+    <h2>Admission</h2>
+    <ul>
+      <li>Direct admission or based on board exam performance</li>
+      <li>Scholarships available based on merit and eligibility</li>
+      <li>Discounts and offers are periodically announced by the center</li>
+    </ul>
+  </section>
+
+  <!-- UNIQUE POINTS -->
+  <section>
+    <h2>Unique Highlights</h2>
+    <ul>
+      <li>Batches available for Classes 9 to 12 (JEE/NEET/Foundation)</li>
+      <li>Motivational sessions and parent engagement programs</li>
+      <li>Hostel and residential options available (details at the center)</li>
+    </ul>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section>
+    <h2>Disclaimer</h2>
+    <p>This page is for informational purposes only. PW Vidyapeeth and Physics Wallah reserve the right to modify course details, fees, or schedules. Please contact the official center for accurate and latest updates.</p>
+  </section>
+
+  <!-- ADVICE -->
+  <section>
+    <h2>Advice for Students</h2>
+    <p>Choosing the right coaching institute can significantly impact your academic journey. Make sure to research, attend demo sessions, and focus on your self-study alongside coaching support. Remember — success depends more on your consistency and hard work than any institute.</p>
+    <p style="color:#00ffaa;">Best wishes for your future!</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../coachingimages/qr1.png" alt="QR Code 1">
+    <img src="../coachingimages/qr2.png" alt="QR Code 2">
+    <p>🙏 If you liked my work and found it helpful, you can support me!</p>
+    <p>Scan the QR code below to send a tip. Every contribution keeps me motivated!</p>
+    <br>
+    <p style="color:#ff001e;">Thanks for visiting OK VARANASI!</p>
+    <br>
+    <p style="color:#00ffaa;">For any suggestions or feedback, please contact me:</p>
+
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" style="width:24px;height:24px;margin-right:5px;"> Telegram
+      </a>
+      <a href="https://wa.me/919118717157" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width:24px;height:24px;margin-right:5px;"> WhatsApp
+      </a>
+      <a href="mailto:okvaranasii@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" style="width:24px;height:24px;margin-right:5px;"> Gmail
+      </a>
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style="width:24px;height:24px;margin-right:5px;"> YouTube
+      </a>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN VIEWER -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+  </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
+  </script>
+
+</body>
+</html>

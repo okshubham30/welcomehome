@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramnagar Fort - Varanasi</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0c0c0c;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000;
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    .header-left img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .header-center {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .header-center h1 {
+      font-size: 1.8rem;
+      color: #00ffcc;
+      margin-bottom: 5px;
+    }
+
+    .header-center p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .header-right .nav-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 5px;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+      color: #00ffaa;
+      margin-bottom: 10px;
+      border-left: 4px solid #00ff99;
+      padding-left: 8px;
+    }
+
+    section p, section ul {
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #000;
+      color: #888;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    footer img {
+      width: 140px;
+      height: 140px;
+      margin: 5px;
+    }
+
+    #fullscreen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+
+    #fullscreen span {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-left img {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 8px;
+      }
+      .gallery img {
+        height: 120px;
+      }
+      footer img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="../spotimages/qr1.png" alt="QR Code">
+    </div>
+    <div class="header-center">
+      <h1>Ramnagar Fort</h1>
+      <p>Historic Royal Fort on the Banks of River Ganga • Varanasi</p>
+    </div>
+    <div class="header-right">
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Gallery</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PHOTO GALLERY -->
+  <section>
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+     <img src="../spotimages/ramnagarf1.png" alt="Ramnagar Fort 1">
+    <img src="../spotimages/ramnagarf2.png" alt="Ramnagar Fort 2">
+    <img src="../spotimages/ramnagarf3.png" alt="Ramnagar Fort 3">
+    <img src="../spotimages/ramnagarf4.png" alt="Ramnagar Fort 4">
+    <img src="../spotimages/ramnagarf5.png" alt="Ramnagar Fort 5">
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About Ramnagar Fort</h2>
+    <p>
+      Ramnagar Fort is a grand sandstone structure built in the 18th century by Maharaja Balwant Singh, the ruler of the Banaras Kingdom. 
+      Located on the eastern bank of River Ganga, opposite Tulsi Ghat, the fort has been the royal residence of the Kashi Naresh for centuries.
+    </p>
+    <p>
+      Even today, it houses the current Maharaja, Anant Narayan Singh, preserving the legacy and traditions of Varanasi’s royal heritage.
+    </p>
+  </section>
+
+  <!-- HISTORY -->
+  <section>
+    <h2>History & Origin</h2>
+    <p>
+      Constructed around 1750 CE, the Ramnagar Fort symbolizes the power and prestige of the Banaras royal family. 
+      It was strategically located to overlook the sacred river, signifying the connection between the throne and divine traditions of Kashi.
+    </p>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section>
+    <h2>Architecture & Design</h2>
+    <p>
+      The fort exhibits Mughal and Rajput architectural fusion. Built using creamy Chunar sandstone, it features carved balconies, arched courtyards, open terraces, and decorated pillars.
+      The panoramic view of the Ganges and the ghats from the fort adds to its charm.
+    </p>
+  </section>
+
+  <!-- MUSEUM -->
+  <section>
+    <h2>Saraswati Bhawan Museum</h2>
+    <p>
+      Inside the fort lies the famous Saraswati Bhawan Museum — showcasing antique weapons, vintage cars, palanquins, ivory works, manuscripts, royal costumes, and rare astronomical clocks.
+    </p>
+    <p>
+      The collection reflects the grandeur of Kashi’s kings and their patronage of art, science, and culture.
+    </p>
+  </section>
+
+  <!-- FESTIVAL -->
+  <section>
+    <h2>Dussehra & Ram Lila Festival</h2>
+    <p>
+      Ramnagar Fort is world-famous for its month-long <strong>Ramlila celebration</strong> organized by the royal family during Dussehra.
+      This traditional play of the Ramayana, performed for over 200 years, attracts thousands of devotees and tourists.
+    </p>
+  </section>
+
+  <!-- TIMINGS -->
+  <section>
+    <h2>Timings & Entry Fee</h2>
+    <ul>
+      <li><strong>Timings:</strong> 10:00 AM – 5:00 PM (Closed on Mondays)</li>
+      <li><strong>Entry Fee:</strong> ₹20 – ₹50 (Indians), ₹100 – ₹150 (Foreigners)</li>
+      <li><strong>Photography:</strong> Allowed outside; restricted inside museum.</li>
+    </ul>
+  </section>
+
+  <!-- LOCATION -->
+  <section>
+    <h2>Location & How to Reach</h2>
+    <p>
+      Located in Ramnagar, about 14 km from Varanasi city center. Visitors can reach via road through Malviya Bridge or enjoy a scenic boat ride across the Ganga from Assi or Tulsi Ghat.
+    </p>
+  </section>
+
+  <!-- NEARBY -->
+  <section>
+    <h2>Nearby Attractions</h2>
+    <ul>
+      <li>Tulsi Ghat – 1 km across river</li>
+      <li>Assi Ghat – 10 minutes drive</li>
+      <li>Banaras Hindu University (BHU) – 5 km</li>
+      <li>Sarnath – 18 km</li>
+      <li>Dashashwamedh Ghat – 7 km</li>
+    </ul>
+  </section>
+
+  <!-- TRAVEL TIPS -->
+  <section>
+    <h2>Travel Tips & Fun Facts</h2>
+    <ul>
+      <li>Best time to visit: October to March.</li>
+      <li>Sunset from the fort gives breathtaking views of the Ganga.</li>
+      <li>Several movies like <em>Raanjhanaa</em> and <em>Banaras</em> were filmed here.</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../spotimages/qr1.png" alt="QR Code 1">
+    <img src="../spotimages/qr2.png" alt="QR Code 2">
+    <p>🙏 If you liked this page and found it helpful, you can support me!</p>
+    <p>Scan the QR code below to send a tip — every contribution keeps me motivated!</p>
+    <br>
+    <p style="color:#ff001e;">Thanks for visiting OK VARANASI!</p>
+    <p style="color:#00ffaa;">For suggestions or feedback, contact me:</p>
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" 
+             alt="Telegram" style="width:24px;height:24px;"> Telegram
+      </a>
+      <a href="https://wa.me/919118717157" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+             alt="WhatsApp" style="width:24px;height:24px;"> WhatsApp
+      </a>
+      <a href="mailto:okvaranasii@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" 
+             alt="Gmail" style="width:24px;height:24px;"> Gmail
+      </a>
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" 
+             alt="YouTube" style="width:24px;height:24px;"> YouTube
+      </a>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+  </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
+  </script>
+
+</body>
+</html>

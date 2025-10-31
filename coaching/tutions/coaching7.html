@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aakash Institute - Varanasi</title>
+  <title>Sky Tutorials - Varanasi (Durgakund)</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -17,10 +17,9 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0c0c0c;
+      background-color: #0c0c0c;
       color: #fff;
       line-height: 1.6;
-      padding-bottom: 50px;
     }
 
     a {
@@ -37,14 +36,14 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      background: #000000;
+      background-color: #000000;
       padding: 10px 15px;
       text-align: center;
     }
 
     .header-left img {
-      width: 140px;
-      height: 140px;
+      width: 120px;
+      height: 120px;
     }
 
     .header-center {
@@ -84,13 +83,6 @@
       padding-left: 8px;
     }
 
-    section h3 {
-      font-size: 1.1rem;
-      color: #00ffbb;
-      margin-top: 10px;
-      margin-bottom: 5px;
-    }
-
     section p,
     section ul {
       color: #bbb;
@@ -114,6 +106,20 @@
       object-fit: cover;
       cursor: pointer;
       border-radius: 8px;
+    }
+
+    footer {
+      background-color: #000;
+      color: #888;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    footer img {
+      width: 140px;
+      height: 140px;
+      margin: 5px;
     }
 
     #fullscreen {
@@ -144,64 +150,6 @@
       color: #fff;
     }
 
-    /* ===============================
-       FOOTER (Updated for JRS style)
-    =============================== */
-    footer {
-      background: linear-gradient(135deg, #000000, #111111, #1a1a1a);
-      color: #ddd;
-      text-align: center;
-      padding: 40px 15px;
-      border-top: 2px solid #00ffaa;
-      margin-top: 40px;
-    }
-
-    .footer-logos {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .footer-logos img {
-      width: 130px;
-      height: 130px;
-      border-radius: 10px;
-      border: 2px solid #00ffcc;
-      transition: 0.3s;
-    }
-
-    .footer-logos img:hover {
-      transform: scale(1.05);
-      border-color: #00ffaa;
-    }
-
-    .footer-info {
-      font-size: 0.95rem;
-      margin-top: 10px;
-      color: #aaa;
-    }
-
-    .footer-info a {
-      color: #00ffcc;
-      font-weight: 600;
-    }
-
-    .footer-tagline {
-      margin-top: 12px;
-      font-size: 1rem;
-      color: #00ffaa;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-rights {
-      margin-top: 15px;
-      font-size: 0.85rem;
-      color: #777;
-    }
-
     @media (max-width: 600px) {
       header {
         flex-direction: column;
@@ -209,22 +157,33 @@
       }
 
       .header-left img {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 5px;
+        width: 140px;
+        height: 140px;
+        margin-bottom: 8px;
       }
 
       .header-center h1 {
         font-size: 1.2rem;
       }
 
+      .header-center p {
+        font-size: 0.8rem;
+      }
+
+      .header-right .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+
       .gallery img {
         height: 100px;
       }
 
-      .footer-logos img {
-        width: 100px;
-        height: 100px;
+      footer img {
+        width: 140px;
+        height: 140px;
       }
     }
   </style>
@@ -237,8 +196,8 @@
       <img src="../coachingimages/qr1.png" alt="QR Code">
     </div>
     <div class="header-center">
-      <h1>Aakash Institute</h1>
-      <p>Varanasi Branch • Established 2010</p>
+      <h1>Sky Tutorials - Varanasi (Durgakund)</h1>
+      <p>Coaching for IIT-JEE & NEET | Since 2009</p>
     </div>
     <div class="header-right">
       <div class="nav-links">
@@ -248,87 +207,106 @@
     </div>
   </header>
 
-  <!-- IMAGE GALLERY -->
+  <!-- GALLERY -->
   <section>
     <h2>Coaching Gallery</h2>
     <div class="gallery">
-      <img src="../coachingimages/akash1.png" alt="Khajuri Center">
-      <img src="../coachingimages/akash2.png" alt="Durgakund Center">
-      <img src="../coachingimages/akash3.png" alt="Classroom">
-      <img src="../coachingimages/akash4.png" alt="Library">
-      <img src="../coachingimages/akash5.png" alt="Lab">
+      <img src="../coachingimages/sky1.png" alt="Campus 1">
+      <img src="../coachingimages/sky2.png" alt="Campus 2">
+      <img src="../coachingimages/sky3.png" alt="Campus 3">
+      <img src="../coachingimages/sky4.png" alt="Campus 4">
     </div>
   </section>
 
-  <!-- BRANCHES -->
+  <!-- ABOUT -->
   <section>
-    <h2>Aakash Branches in Varanasi</h2>
-    <h3>Durgakund Center (Main Branch)</h3>
-    <ul>
-      <li>Address: B27/97, 2nd Floor, Dharam Sang Shiksha Mandal, Near Durgakund Petrol Pump, Varanasi - 221005</li>
-      <li>Phone: +91-7617016155</li>
-      <li>Speciality: Main center for all courses</li>
-    </ul>
+    <h2>About Sky Tutorials</h2>
+    <p>Established in 2009, Sky Tutorials is a reputed coaching institute in Varanasi specializing in IIT-JEE (Main & Advanced) and NEET preparation. With over 14 years of teaching experience, the institute provides classes in both Hindi and English mediums, offering hybrid learning (offline + online).</p>
+  </section>
 
-    <h3>Khajuri Center</h3>
+  <!-- COURSES -->
+  <section>
+    <h2>Courses Offered (Approx)</h2>
     <ul>
-      <li>Address: S8/110, C6, 1st Floor, Muqubal Alam Road, Khajuri, Varanasi - 221001</li>
-      <li>Phone: +91-8601880004, +91-8601880006</li>
-      <li>Courses: JEE, NEET, Foundation/Board, Olympiad</li>
+      <li>IIT-JEE Target Course (Class XII Passed) – ₹70,000 (1 Year)</li>
+      <li>IIT-JEE Foundation Course (Class XI & XII) – ₹80,000 (2 Years)</li>
+      <li>NEET Target Course (Class XII Passed) – ₹70,000 (1 Year)</li>
+      <li>NEET Foundation Course (Class XI & XII) – ₹80,000 (2 Years)</li>
     </ul>
+  </section>
 
-    <h3>Sigra Center</h3>
+  <!-- FACILITIES -->
+  <section>
+    <h2>Facilities & Features</h2>
     <ul>
-      <li>Address: D59/107D, Chandrika Nagar, Sigra, Varanasi - 221010</li>
-      <li>Phone: +91-7617016153</li>
-      <li>Courses: JEE, NEET, Foundation/Board, Olympiad</li>
+      <li>Experienced and qualified faculty (many IIT & NIIT graduates)</li>
+      <li>Comprehensive study materials and regular tests</li>
+      <li>Hostel and transport facilities available</li>
+      <li>Dedicated doubt-solving sessions and library</li>
+      <li>Scholarship opportunities for deserving students</li>
+      <li>Career counseling and motivational seminars</li>
     </ul>
   </section>
 
   <!-- LOCATION -->
   <section>
     <h2>Location & Contact</h2>
-    <p><strong>Khajuri Center:</strong> <a href="#">Khajuri, Varanasi</a> | +91-8601880004</p>
-    <p><strong>Durgakund Center:</strong> <a href="#">Durgakund, Varanasi</a> | +91-7617016155</p>
-    <p><strong>Sigra Center:</strong> <a href="#">Sigra, Varanasi</a> | +91-7617016153</p>
+    <p><strong>Address:</strong> Sky Tower, Kabir Nagar Rd, Durgakund, Naria, Varanasi, Uttar Pradesh 221005</p>
+    <p><strong>Contact:</strong> +91 75100 20006, +91 96965 71381</p>
+    <p><strong>Email:</strong> inq@skytutorials.co.in</p>
+    <p><strong>Website:</strong> <a href="https://skytutorials.co.in/" target="_blank">https://skytutorials.co.in</a></p>
   </section>
 
-  <!-- COACHING DETAILS -->
+  <!-- REVIEWS -->
   <section>
-    <h2>Coaching Details</h2>
-    <ul>
-      <li>Courses: NEET, JEE, Olympiad, NTSE, Foundation</li>
-      <li>Facilities: Smart classrooms, library, labs</li>
-      <li>Scholarships: Up to 100% + cash awards</li>
-    </ul>
+    <h2>Student Reviews</h2>
+    <p>Students appreciate Sky Tutorials for its excellent faculty, personalized guidance, and result-oriented environment. It is rated among the top coaching centers in Varanasi for IIT-JEE and NEET preparation.</p>
   </section>
 
-  <!-- DISCLAIMER -->
-  <section>
-    <h2>Disclaimer</h2>
-    <p style="color:#bbb; font-size:0.95rem;">
-      For latest information about Aakash Institute Varanasi branches, contact the center directly.
-    </p>
-  </section>
+  <!-- ADVICE FOR STUDENTS -->
+<section>
+  <h2>Advice for Students Considering Coaching</h2>
+  <p>Choosing the right coaching institute is an important decision that can shape your academic future. Here is some advice:</p>
+  <ul>
+    <li>Always research thoroughly about the coaching center before enrolling. Check for faculty experience, student results, and reviews.</li>
+    <li>Attend demo classes if possible, to understand the teaching style and environment.</li>
+    <li>Maintain a regular study schedule and use coaching as a guide, but your success depends largely on your own commitment and hard work.</li>
+    <li>Don't hesitate to ask coaches for personal doubt clearing sessions or extra help when needed.</li>
+    <li>Take advantage of test series and practice materials offered by the institute to build confidence and exam readiness.</li>
+    <li>Balance coaching with self-study and revision at home. Coaching is a supplement, not a substitute for your efforts.</li>
+  </ul>
+  <p style="color:blue;">Coaching is a secondary support system in education — the real success depends on your own hard work and dedication. Since you are investing your money and time, it is important to research and choose the best coaching institute carefully. Coaching can help, but it cannot replace consistent self-study and determination.</p>
+  <p>Remember, you have the power to achieve your goals with or without coaching — with focus and perseverance, you can do anything you set your mind to.</p>
+  <p style="color:#00ffaa;">Best of luck for your future!</p>
+</section>
 
-  <!-- UPDATED FOOTER -->
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-logos">
-      <img src="../coachingimages/qr1.png" alt="QR Code 1">
-      <img src="../coachingimages/qr2.png" alt="QR Code 2">
-    </div>
+    <img src="../coachingimages/qr1.png" alt="QR 1">
+    <img src="../coachingimages/qr2.png" alt="QR 2">
+    <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
+    <p>SCAN THE QR CODE BELOW TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!</p>
+    <br>
+    <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+    <br>
+    <p style="color:#00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
 
-    <div class="footer-info">
-      📧 Email: <a href="mailto:okvaranasii@gmail.com">okvaranasii@gmail.com</a><br>
-      📞 Contact your nearest branch for admissions or support.
-    </div>
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank" style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" style="width:24px; height:24px; margin-right:5px;"> Telegram
+      </a>
 
-    <div class="footer-tagline">
-      💙 THANK YOU FOR VISITING OK VARANASI 💙
-    </div>
+      <a href="https://wa.me/919118717157" target="_blank" style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width:24px; height:24px; margin-right:5px;"> WhatsApp
+      </a>
 
-    <div class="footer-rights">
-      © 2025 OK VARANASI | All Rights Reserved
+      <a href="mailto:okvaranasii@gmail.com" style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" style="width:24px; height:24px; margin-right:5px;"> Gmail
+      </a>
+
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank" style="display:inline-flex; align-items:center; text-decoration:none; color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style="width:24px; height:24px; margin-right:5px;"> YouTube
+      </a>
     </div>
   </footer>
 
@@ -352,8 +330,6 @@
     });
 
     closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
-    window.addEventListener('keydown', e => { if(e.key === "Escape") fullscreen.style.display = 'none'; });
   </script>
-
 </body>
 </html>
