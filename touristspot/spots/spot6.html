@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Temples Entry Points - Sarnath</title>
+  <meta name="description" content="Thai, Tibetan and Japanese temples at Sarnath: history, architecture, visitor info, timings and how to reach." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0c0c0c;
+      --panel:#0a0a0a;
+      --accent:#00ffcc;
+      --muted:#bbb;
+      --heading:#00ffaa;
+      --danger:#ff001e;
+      --container-width:900px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);
+      color:#fff;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      background:#000;
+      padding:12px 18px;
+    }
+    .header-left img{width:120px;height:120px;object-fit:contain}
+    .header-center{flex:1;min-width:180px;padding:0 12px;text-align:center}
+    .header-center h1{font-size:1.8rem;color:var(--accent);margin-bottom:6px}
+    .header-center p{font-size:0.95rem;color:#ccc}
+    .header-right .nav-links{display:flex;gap:12px;align-items:center}
+    .header-right a{padding:6px 10px;border-radius:6px;background:transparent;color:var(--accent);font-weight:600}
+
+    main{max-width:var(--container-width);margin:22px auto;padding:0 16px}
+    section{margin-bottom:18px;background:transparent;padding:12px 4px}
+    section h2{
+      font-size:1.25rem;color:var(--heading);margin-bottom:10px;
+      border-left:4px solid #00ff99;padding-left:10px;
+    }
+    p, ul{color:var(--muted);margin-bottom:10px}
+    ul{padding-left:18px;list-style-type:square}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:8px;cursor:pointer;transition:transform .25s}
+    .gallery img:hover{transform:scale(1.03)}
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .card{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px}
+
+    footer{
+      background:#000;color:#888;text-align:center;padding:16px;margin-top:16px;
+    }
+    footer img{width:120px;height:120px;margin:6px;object-fit:contain}
+
+    #fullscreen{
+      display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);
+      justify-content:center;align-items:center;flex-direction:column;z-index:9999;
+    }
+    #fullscreen img{max-width:92%;max-height:82%;border-radius:8px}
+    #fullscreen span{position:absolute;top:18px;right:22px;font-size:36px;cursor:pointer;color:#fff}
+
+    @media(max-width:880px){
+      .two-col{grid-template-columns:1fr}
+      .header-center h1{font-size:1.4rem}
+      .header-left img{width:100px;height:100px}
+      .gallery img{height:120px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="../spotimages/qr1.png" alt="QR Code">
+    </div>
+
+    <div class="header-center">
+      <h1>SARNATH TEMPLE</h1>
+      <p>Thai, Tibetan Japanese Temples </p>
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- GALLERY -->
+    <section>
+      <h2>Photo Gallery</h2>
+      <div class="gallery">
+        <img src="../spotimages/thai1.png" alt="Thai Temple - Wat Thai" data-full="../spotimages/thai1.png">
+        <img src="../spotimages/tibetan1.png" alt="Tibetan Temple - Prayer Flags & Wheels" data-full="../spotimages/tibetan1.png">
+        <img src="../spotimages/japanese1.png" alt="Japanese Temple - Zen Garden" data-full="../spotimages/japanese1.png">
+        <img src="../spotimages/thai2.png" alt="Thai Temple Courtyard" data-full="../spotimages/thai2.png">
+        <img src="../spotimages/tibetan2.png" alt="Tibetan Prayer Wheel" data-full="../spotimages/tibetan2.png">
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section>
+      <h2>Overview</h2>
+      <p>
+        Sarnath’s international temples — the <strong>Thai</strong>, <strong>Tibetan</strong>, and <strong>Japanese</strong> temples — form
+        an important contemporary layer of the Buddhist landscape around the Main Archaeological Complex. Each temple has its own
+        separate entry point and welcomes visitors <strong>free of charge</strong>. While the archaeological complex preserves the ancient
+        ruins and stupas, these temples represent living traditions, international devotion and cross-cultural dialogue.
+      </p>
+      <p>
+        They are located a short distance from the ticketed archaeological area and can be visited independently. Together they offer
+        diverse experiences: ceremonial grandeur (Thai), Tibetan ritual life and prayer wheels (Tibetan), and Zen meditation and minimalism (Japanese).
+      </p>
+    </section>
+
+    <!-- DETAILED DESCRIPTIONS -->
+    <section>
+      <h2>Detailed Temple Profiles</h2>
+
+      <div class="two-col">
+
+        <!-- THAI -->
+        <div class="card">
+          <h3 style="color:var(--accent);margin-bottom:8px">Thai Temple — Wat Thai Sarnath</h3>
+          <p style="color:var(--muted)">
+            <strong>Historical note:</strong> Built with support from the Thai Buddhist community in the early 20th century,
+            Wat Thai celebrates the spiritual bond between Thailand and the land where the Buddha preached. It is one of the most
+            visually striking religious sites in Sarnath.
+          </p>
+
+          <h4 style="color:#fff;margin-top:8px">Architecture & Design</h4>
+          <ul>
+            <li>Classic Thai multi-tiered roofs with gilded finials and ornate bargeboards.</li>
+            <li>Mirror-mosaic and bas-relief work on the facades and gables.</li>
+            <li>Lotus ponds, manicured gardens and ornamental statues forming a ceremonial courtyard.</li>
+          </ul>
+
+          <h4 style="color:#fff;margin-top:8px">Spiritual Experience</h4>
+          <p style="color:var(--muted)">
+            Visitors find a serene atmosphere ideal for quiet meditation. The main sanctum houses a large golden Buddha image
+            in the Bhumisparsha (earth-touching) mudra. Monks in saffron robes perform daily rituals; occasional alms-giving and
+            chanting sessions are open to the public.
+          </p>
+
+          <p><strong>Practical Info:</strong></p>
+          <ul>
+            <li>Entry: Free</li>
+            <li>Timings: 06:00 – 18:00 (daily)</li>
+            <li>Location: ~400–600 m from the Main Archaeological Complex (walkable)</li>
+            <li>Photography: Allowed outside; request permission inside sanctum</li>
+          </ul>
+        </div>
+
+        <!-- TIBETAN -->
+        <div class="card">
+          <h3 style="color:var(--accent);margin-bottom:8px">Tibetan Temple &amp; Monastery</h3>
+          <p style="color:var(--muted)">
+            The Tibetan temple and monastery were established as a spiritual home for Tibetan Buddhists who settled in India.
+            The monastery maintains ritual life, meditation programs and community activities.
+          </p>
+
+          <h4 style="color:#fff;margin-top:8px">Architecture & Ritual Elements</h4>
+          <ul>
+            <li>Brightly painted murals portraying Tibetan deities, mandalas and narrative scenes.</li>
+            <li>Prayer wheels along corridors — devotees spin them clockwise to recite mantras.</li>
+            <li>Prayer flags fluttering above courtyards and the smell of butter lamps during pujas.</li>
+          </ul>
+
+          <h4 style="color:#fff;margin-top:8px">Community & Culture</h4>
+          <p style="color:var(--muted)">
+            The monastery offers public chanting sessions, teachings by resident lamas and special ceremonies on Tibetan festivals.
+            During Losar (Tibetan New Year) and other holy days the temple becomes a focus for large community gatherings.
+          </p>
+
+          <p><strong>Practical Info:</strong></p>
+          <ul>
+            <li>Entry: Free</li>
+            <li>Timings: 07:00 – 19:00</li>
+            <li>Location: Near the Thai Temple area; typically a short walk from the main road</li>
+            <li>Photography: Allowed outside; avoid flash and respect signs during prayers</li>
+          </ul>
+        </div>
+
+      </div> <!-- two-col -->
+
+      <!-- JAPANESE (full width) -->
+      <div style="margin-top:14px" class="card">
+        <h3 style="color:var(--accent);margin-bottom:8px">Japanese Temple — Nichigai Suzan Horinji</h3>
+        <p style="color:var(--muted)">
+          The Japanese temple represents the calm minimalism of Zen-inspired architecture. Built by Japanese monks and supported by
+          Japanese Buddhist networks, it emphasizes meditation, simplicity and cultural exchange.
+        </p>
+
+        <h4 style="color:#fff;margin-top:8px">Design & Ambience</h4>
+        <ul>
+          <li>Zen-influenced wooden interiors, simple altars and a contemplative courtyard with bamboo plantings.</li>
+          <li>Polished floors, shoji-like elements and carefully arranged stones or bonsai features.</li>
+          <li>A small replica or representation of a Japanese Buddha icon for devotion and reflection.</li>
+        </ul>
+
+        <h4 style="color:#fff;margin-top:8px">Programs & Activities</h4>
+        <p style="color:var(--muted)">
+          The temple occasionally hosts guided meditation sessions, short talks on Zen practices and cultural exchange events.
+          Visitors may be invited to sit for silent zazen (meditation) sessions — a good way to experience a Japanese approach to Buddhist practice.
+        </p>
+
+        <p><strong>Practical Info:</strong></p>
+        <ul>
+          <li>Entry: Free</li>
+          <li>Timings: 06:00 – 18:00</li>
+          <li>Location: ~700–900 m from the Main Archaeological Complex (Dharmapala Road side)</li>
+          <li>Photography: Allowed outside; ask permission inside for images during services</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CULTURAL IMPORTANCE -->
+    <section>
+      <h2>Cultural Importance & International Links</h2>
+      <p>
+        The foreign temples around Sarnath symbolize Buddhism’s global reach. They act as cultural embassies — preserving national
+        architectural styles, ritual forms and artistic traditions — while honoring the Indian context where the Dharma began.
+        These institutions also run educational and interfaith programs, strengthen diplomatic cultural ties and welcome international pilgrims.
+      </p>
+      <p>
+        For many pilgrims, visiting these temples provides a compact ‘tour of Asian Buddhism’ within a short distance: Thai visual splendor,
+        Tibetan ritual depth and Japanese contemplative stillness — all coexisting peacefully in Sarnath.
+      </p>
+    </section>
+
+    <!-- LOCATION & HOW TO REACH -->
+    <section>
+      <h2>Location & How to Reach</h2>
+      <p>
+        All three temples are located outside the ticketed Archaeological Complex but within easy reach on foot or by short ride.
+        Typical access options:
+      </p>
+      <ul>
+        <li><strong>On foot:</strong> Many visitors walk from the Main Archaeological Complex (10–20 minute walk depending on temple).</li>
+        <li><strong>Auto / Rickshaw:</strong> Readily available from Varanasi city or Sarnath parking areas.</li>
+        <li><strong>Taxis / Cab:</strong> A short 10–20 minute drive from Varanasi central locations like Godowlia or the railway station.</li>
+        <li><strong>Airport:</strong> Lal Bahadur Shastri International Airport (approx. 25 km).</li>
+      </ul>
+    </section>
+
+    <!-- TIMINGS & VISITOR TIPS -->
+    <section>
+      <h2>Timings, Rules & Visitor Tips</h2>
+      <div class="two-col">
+
+        <div class="card">
+          <h4 style="color:var(--accent)">Common Timings</h4>
+          <ul>
+            <li>Thai Temple: 06:00 – 18:00 (daily)</li>
+            <li>Tibetan Temple: 07:00 – 19:00</li>
+            <li>Japanese Temple: 06:00 – 18:00</li>
+          </ul>
+          <p style="color:var(--muted)">(Timings may vary slightly on special festivals – check locally or ask at the Sarnath information desk.)</p>
+        </div>
+
+        <div class="card">
+          <h4 style="color:var(--accent)">Visitor Tips</h4>
+          <ul>
+            <li>All three temples have <strong>free entry</strong>. Keep small donations for temple upkeep if you wish to contribute.</li>
+            <li>Remove shoes before entering indoor sanctums and dress modestly.</li>
+            <li>Maintain silence and switch phones to silent mode during prayers or services.</li>
+            <li>Ask permission before photographing monks, ceremonies, or inside shrines.</li>
+            <li>Best light for photos: early morning and late afternoon.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMBINE VISIT SUGGESTION -->
+    <section>
+      <h2>Suggested Visit Route</h2>
+      <p>
+        For a calm, fulfilling half-day itinerary:
+      </p>
+      <ul>
+        <li>Start at <strong>Chaukhandi Stupa</strong> (sunrise if possible) — then walk to the Thai Temple for morning rituals.</li>
+        <li>Visit the Tibetan Temple next to experience prayer wheels and monastery life.</li>
+        <li>Finish with the Japanese Temple for a short meditation or quiet reflection.</li>
+        <li>Optionally, head to the Main Archaeological Complex (Dhamek Stupa & Museum) afterwards for ancient history.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../spotimages/qr1.png" alt="QR Code 1">
+    <img src="../spotimages/qr2.png" alt="QR Code 2">
+    <p>🙏 If you liked this page and found it helpful, you can support me!</p>
+    <p>Scan the QR code above to send a tip — every contribution keeps OK VARANASI going!</p>
+    <p style="color:var(--danger);margin-top:8px">Thanks for visiting OK VARANASI!</p>
+    <p style="color:var(--accent)">For suggestions or feedback: <a href="mailto:okvaranasii@gmail.com">okvaranasii@gmail.com</a></p>
+    <div style="margin-top:8px">
+      <a href="https://t.me/okvaranasi" target="_blank" rel="noopener" style="color:var(--muted);margin-right:10px">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" style="width:20px;height:20px;vertical-align:middle"> Telegram
+      </a>
+      <a href="https://wa.me/919118717157" target="_blank" rel="noopener" style="color:var(--muted);margin-right:10px">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width:20px;height:20px;vertical-align:middle"> WhatsApp
+      </a>
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank" rel="noopener" style="color:var(--muted)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style="width:20px;height:20px;vertical-align:middle"> YouTube
+      </a>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full view">
+  </div>
+
+  <script>
+    // Fullscreen gallery
+    const galleryImgs = document.querySelectorAll('.gallery img');
+    const fs = document.getElementById('fullscreen');
+    const fsImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
+
+    galleryImgs.forEach(img=>{
+      img.addEventListener('click', ()=> {
+        const src = img.getAttribute('data-full') || img.src;
+        fsImg.src = src;
+        fs.style.display = 'flex';
+      });
+    });
+    closeBtn.addEventListener('click', ()=> fs.style.display = 'none');
+    fs.addEventListener('click', (e)=>{
+      if(e.target === fs) fs.style.display = 'none';
+    });
+
+    // Accessibility improvement: close on ESC
+    document.addEventListener('keydown', (e)=> {
+      if(e.key === 'Escape' && fs.style.display === 'flex') fs.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

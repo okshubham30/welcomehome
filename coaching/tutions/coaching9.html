@@ -3,133 +3,285 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elliptical Text Slider</title>
+  <title>Rankers Coaching - Varanasi | IIT JEE | NEET | Foundation</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0c0c0c;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a { color: #00ffcc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    header {
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000;
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    .header-left img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .header-center {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .header-center h1 {
+      font-size: 1.5rem;
+      color: #00ffcc;
+      margin-bottom: 5px;
+    }
+
+    .header-center p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .header-right .nav-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 5px;
+    }
+
+    /* SECTION STYLING */
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      color: #00ffaa;
+      margin-bottom: 10px;
+      border-left: 4px solid #00ff99;
+      padding-left: 8px;
+    }
+
+    section p, section ul {
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #000;
+      color: #888;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    footer img {
+      width: 140px;
+      height: 140px;
+      margin: 5px;
+    }
+
+    .footer-right a {
+      color: #fff;
+      margin: 5px 10px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .footer-right img {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+    }
+
+    /* FULLSCREEN IMAGE VIEW */
+    #fullscreen {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background: linear-gradient(135deg, #111, #333);
+      flex-direction: column;
     }
 
-    .slider-container {
-      position: relative;
-      width: 90%;
-      max-width: 600px;
-      height: 200px;
-      overflow: hidden;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
-      color: #fff;
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
     }
 
-    .slide {
-      display: none;
+    #fullscreen span {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      width: 80%;
-      font-size: 18px;
-      transition: opacity 0.5s ease;
-    }
-
-    .active {
-      display: block;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 15px; right: 20px;
       font-size: 30px;
-      color: #fff;
       cursor: pointer;
-      padding: 10px;
-      user-select: none;
+      color: #fff;
     }
 
-    .arrow.left {
-      left: 15px;
-    }
-
-    .arrow.right {
-      right: 15px;
-    }
-
-    @media (max-width: 500px) {
-      .slider-container {
-        height: 180px;
-      }
-      .slide {
-        font-size: 16px;
-      }
+    @media (max-width: 600px) {
+      header { flex-direction: column; text-align: center; }
+      .header-left img { width: 140px; height: 140px; margin-bottom: 8px; }
+      .header-center h1 { font-size: 1.2rem; }
+      .gallery img { height: 100px; }
+      footer img { width: 140px; height: 140px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="slider-container" id="textSlider">
-    <div class="slide active">✨ "Believe in yourself — you are stronger than you think."</div>
-    <div class="slide">🚀 "Success comes to those who never stop learning."</div>
-    <div class="slide">💡 "Every mistake is a new lesson — don’t fear failure."</div>
-    <div class="slide">🔥 "Work hard in silence, let your results make the noise."</div>
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="../coachingimages/qr1.png" alt="OK Varanasi Logo">
+    </div>
+    <div class="header-center">
+      <h1>Rankers Coaching </h1>
+      <p>Pandeypur Varanasi</p>
+      <p>IIT JEE | NEET | Foundation</p>
+    </div>
+  
+  </header>
 
-    <div class="arrow left" onclick="prevSlide()">&#10094;</div>
-    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+  <!-- GALLERY -->
+  <section>
+    <h2>Coaching Gallery</h2>
+    <div class="gallery">
+      <img src="../coachingimages/ranker1.png" alt="Rankers">
+      <img src="../coachingimages/ranker2.png" alt="Rankers">
+     <img src="../coachingimages/ranker3.png" alt="Rankers">
+     <img src="../coachingimages/ranker4.png" alt="Rankers">
+
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section>
+    <h2>Coaching Details</h2>
+    <ul>
+      <li>Located in Pandeypur, Varanasi</li>
+      <li>Courses offered: IIT-JEE (Main & Advanced), NEET-UG, Foundation (Class 8–10).</li>
+      <li>Highly experienced faculty with strong academic track records.</li>
+      <li>Smart classrooms, conceptual teaching methods, and personal mentoring.</li>
+      <li>Weekly tests, performance tracking, and doubt-clearing sessions.</li>
+      <li>Scholarships available through Rankers Scholarship Exam.</li>
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About Rankers Institute</h2>
+    <p>Rankers Coaching Institute in Varanasi is a premier center for JEE, NEET, and Foundation programs. It provides a structured learning experience, combining expert guidance, modern technology, and student-focused teaching methods to ensure consistent results.</p>
+    <p>The institute is known for its disciplined environment, dedicated faculty, and focus on conceptual clarity — helping students excel in competitive exams with confidence.</p>
+  </section>
+
+  <!-- LOCATION -->
+  <section>
+    <h2>Location</h2>
+    <p><strong> Branch:</strong> Pandit Ramadhar Colony, Hukul Ganj Road, near Keshav Kunj Restaurant, Pandeypur, Varanasi, Uttar Pradesh 221002</p>
+    <p><strong>Note:</strong> Students should verify details directly from the official institute before admission.</p>
+    <p>Official Website: <a href="https://myrankers.com" target="_blank">https://myrankers.com</a></p>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section>
+    <h2>Disclaimer</h2>
+    <p>
+      The information provided on <strong>OK VARANASI</strong> is for informational purposes only.
+      We are not directly associated with <strong>Rankers Coaching Varanasi</strong> or any other institution listed.
+      For accurate details about admissions, courses, or fees, please contact the institute through their official website or office.
+    </p>
+  </section>
+
+  <!-- ADVICE FOR STUDENTS -->
+<section>
+  <h2>Advice for Students Considering Coaching</h2>
+  <p>Choosing the right coaching institute is an important decision that can shape your academic future. Here is some advice:</p>
+  <ul>
+    <li>Always research thoroughly about the coaching center before enrolling. Check for faculty experience, student results, and reviews.</li>
+    <li>Attend demo classes if possible, to understand the teaching style and environment.</li>
+    <li>Maintain a regular study schedule and use coaching as a guide, but your success depends largely on your own commitment and hard work.</li>
+    <li>Don't hesitate to ask coaches for personal doubt clearing sessions or extra help when needed.</li>
+    <li>Take advantage of test series and practice materials offered by the institute to build confidence and exam readiness.</li>
+    <li>Balance coaching with self-study and revision at home. Coaching is a supplement, not a substitute for your efforts.</li>
+  </ul>
+  <p style="color:blue;">Coaching is a secondary support system in education — the real success depends on your own hard work and dedication. Since you are investing your money and time, it is important to research and choose the best coaching institute carefully. Coaching can help, but it cannot replace consistent self-study and determination.</p>
+  <p>Remember, you have the power to achieve your goals with or without coaching — with focus and perseverance, you can do anything you set your mind to.</p>
+  <p style="color:#00ffaa;">Best of luck for your future!</p>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../coachingimages/qr1.png" alt="QR 1">
+    <img src="../coachingimages/qr2.png" alt="QR 2">
+    <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
+    <p>SCAN THE QR CODE BELOW TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!</p>
+    <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+    <p style="color:#00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
+
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"> Telegram</a>
+      <a href="https://wa.me/919118717157" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp</a>
+      <a href="mailto:okvaranasii@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"> Gmail</a>
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"> YouTube</a>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
   </div>
 
   <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
 
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      slides[index].classList.add('active');
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      showSlide(currentSlide);
-    }
-
-    // Arrow key navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+      });
     });
 
-    // Swipe (mobile)
-    let startX = 0;
-    document.getElementById('textSlider').addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-    });
-    document.getElementById('textSlider').addEventListener('touchend', (e) => {
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) nextSlide();
-      if (endX - startX > 50) prevSlide();
-    });
-
-    // Auto slide every 5 sec
-    setInterval(nextSlide, 5000);
+    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
   </script>
 
 </body>

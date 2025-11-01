@@ -4,16 +4,196 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coaching Available</title>
-<link rel="stylesheet" href="style4.css">
-</head>
-<body>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Poppins', sans-serif;
+  background-color:#0d0d0d;
+  color:#fff;
+  min-height:100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color:#000;
+  padding:15px 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  box-shadow:0 0 15px rgba(0,255,255,0.4);
+}
+header img {
+  max-width:120px;
+  height:auto;
+}
+
+.header-title {
+  flex:1;
+  text-align:center;
+  font-size:1.4rem;
+  color:#00ff99;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+.header-nav {
+  display:flex;
+  gap:20px;
+}
+.header-nav a {
+  color:#a6f074;
+  text-decoration:none;
+  font-weight:600;
+  font-size:1rem;
+  transition:0.3s;
+}
+.header-nav a:hover { color:#30ec1f; }
+
+/* ===== SEARCH BOX ===== */
+.search-box-container {
+  display:flex;
+  justify-content:center;
+  margin:30px auto;
+  max-width:600px;
+  flex-wrap:wrap;
+}
+.search-box-container input {
+  flex:1;
+  padding:15px 20px;
+  font-size:18px;
+  border:2px solid #2dc228;
+  border-right:none;
+  border-top-left-radius:30px;
+  border-bottom-left-radius:30px;
+  outline:none;
+  transition:all 0.3s ease;
+  color:#2c3e50;
+}
+.search-box-container button {
+  padding:15px 30px;
+  background-color:#2ecc71;
+  color:white;
+  font-size:18px;
+  border:2px solid #2ecc71;
+  border-left:none;
+  border-top-right-radius:30px;
+  border-bottom-right-radius:30px;
+  cursor:pointer;
+  transition: background-color 0.3s ease;
+}
+.search-box-container button:hover { background-color:#27ae60; }
+
+/* ===== COACHING CARDS ===== */
+section.gallery {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:25px;
+  flex-wrap:wrap;
+  padding:20px;
+}
+.coaching-card {
+  display:block;
+  width:280px;
+  background-color:#1a1a1a;
+  border-radius:15px;
+  overflow:hidden;
+  padding:15px;
+  transition:0.4s ease;
+  border-left:4px solid transparent;
+  box-shadow:0 0 8px rgba(0,255,255,0.2);
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  margin:20px auto;
+}
+.coaching-card img {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:12px;
+}
+.coaching-card h3 { font-size:1.2rem; color:#2cdb14; }
+.coaching-card p { color:#ccc; font-size:0.95rem; margin-top:5px; }
+.coaching-card:hover {
+  border-left:4px solid #5adb1e;
+  box-shadow:0 0 25px rgba(0,255,0,0.5);
+  transform:translateY(-5px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color:#111;
+  color:#fff;
+  padding:30px 20px;
+  text-align:center;
+  box-shadow:0 -2px 10px rgba(0,255,255,0.2);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+  border:none; /* ← border removed */
+}
+footer img {
+  width:140px;
+  height:140px;
+  margin:5px;
+  border:none;
+}
+.footer-right a {
+  display:inline-flex;
+  align-items:center;
+  margin:5px 10px;
+  text-decoration:none;
+  color:inherit;
+}
+.footer-right a img {
+  width:24px;
+  height:24px;
+  margin-right:5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:600px) {
+  header {
+    flex-direction:column;
+    text-align:center;
+  }
+  .header-nav {
+    justify-content:center;
+  }
+  .header-title {
+    margin:10px 0;
+  }
+  .coaching-card { width:90%; }
+  .search-box-container { flex-direction:column; align-items:center; }
+  .search-box-container input, .search-box-container button {
+    width:90%;
+    margin:5px 0;
+    border-radius:20px !important;
+  }
+}
+
+.no-results {
+  color:#ff4d4d;
+  font-size:1.2rem;
+  margin-top:20px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
 <header>
   <img src="coachingimages/qr1.png" alt="Header Image">
+  <div class="header-title">COACHING INSTITUTE</div>
   <div class="header-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <p style="text-align: center;" >COACHING INSTITUTE</p>
   </div>
 </header>
 
@@ -36,7 +216,8 @@
     <p>IIT-JEE/ NEET/ OLYMPIADS</p>
     <p>Near Durgakund, Sankat Mochan</p>
   </a>
-<a href="tutions/coaching3.html" class="coaching-card">
+
+  <a href="tutions/coaching3.html" class="coaching-card">
     <img src="coachingimages/akash1.png" alt="Coaching in Varanasi">
     <h3>AKASH DURGAKUND</h3>
     <p>IIT-JEE/ NEET/ OLYMPIADS</p>
@@ -63,7 +244,8 @@
     <p>IIT-JEE/ NEET/ OLYMPIADS</p>
     <p>Near Durgakund, Sankat Mochan</p>
   </a>
-<a href="tutions/coaching7.html" class="coaching-card">
+
+  <a href="tutions/coaching7.html" class="coaching-card">
     <img src="coachingimages/sky1.png" alt="Coaching in Varanasi">
     <h3>SKY DURGAKUND</h3>
     <p>IIT-JEE/ NEET/ OLYMPIADS</p>
@@ -71,57 +253,104 @@
   </a>
 
   <a href="tutions/coaching8.html" class="coaching-card">
-    <img src="coachingimages/unaccedemy.png" alt="Coaching in Varanasi">
-    <h3>UNACCEDEMY DURGAKUND</h3>
+    <img src="coachingimages/unacademy1.jpg" alt="Coaching in Varanasi">
+    <h3>UNACADEMY DURGAKUND</h3>
     <p>IIT-JEE/ NEET/ OLYMPIADS</p>
-    <p></p>
   </a>
 
+   <a href="tutions/coaching9.html" class="coaching-card">
+    <img src="coachingimages/ranker2.png" alt="Coaching in Varanasi">
+    <h3>RANKERS PANDEYPUT</h3>
+    <p>IIT-JEE/ NEET/ FOUNDATION</p>
+  </a>
 
-  <!-- New coaching cards can be added here -->
+  <a href="tutions/coaching10.html" class="coaching-card">
+    <img src="coachingimages/evolve1.png" alt="Coaching in Varanasi">
+    <h3>EVOLVE DURGAKUND</h3>
+    <p>IIT-JEE/ NEET/ OLYMPIADS</p>
+  </a>
+
+   <a href="tutions/coaching11.html" class="coaching-card">
+    <img src="coachingimages/" alt="Coaching in Varanasi">
+    <h3>UNACADEMY DURGAKUND</h3>
+    <p>IIT-JEE/ NEET/ OLYMPIADS</p>
+  </a>
+  
+   <a href="tutions/coaching12.html" class="coaching-card">
+    <img src="coachingimages/" alt="Coaching in Varanasi">
+    <h3>UNACADEMY DURGAKUND</h3>
+    <p>IIT-JEE/ NEET/ OLYMPIADS</p>
+  </a>
+
+   <a href="tutions/coaching10.html" class="coaching-card">
+    <img src="coachingimages/" alt="Coaching in Varanasi">
+    <h3>UNACADEMY DURGAKUND</h3>
+    <p>IIT-JEE/ NEET/ OLYMPIADS</p>
+  </a>
+  
 </section>
 
 <footer>
-  <footer>
-  <img src="coachingimages/qr1.png" alt="QR Code 1" style="width:140px;height:140px;margin:5px;">
-  <img src="coachingimages/qr2.png" alt="QR Code 2" style="width:140px;height:140px;margin:5px;">
+  <img src="coachingimages/qr1.png" alt="QR Code 1">
+  <img src="coachingimages/qr2.png" alt="QR Code 2">
   <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
   <p>SCAN THE QR CODE BELOW TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!</p>
-  <br>
   <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
-  <br>
   <p style="color:#00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
-<BR>
+
   <div class="footer-right">
-  <a href="https://t.me/okvaranasi" target="_blank" 
-     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" 
-         alt="Telegram" 
-         style="width:24px; height:24px; margin-right:5px;"> Telegram
-  </a>
-
-  <a href="https://wa.me/919118717157" target="_blank" 
-     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
-         alt="WhatsApp" 
-         style="width:24px; height:24px; margin-right:5px;"> WhatsApp
-  </a>
-
-  <a href="mailto:okvaranasii@gmail.com" 
-     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" 
-         alt="Gmail" 
-         style="width:24px; height:24px; margin-right:5px;"> Gmail
-  </a>
-
-  <a href="https://www.youtube.com/@OKVARANASI" target="_blank" 
-     style="display:inline-flex; align-items:center; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" 
-         alt="YouTube" 
-         style="width:24px; height:24px; margin-right:5px;"> YouTube
-  </a>
-</div>
+    <a href="https://t.me/okvaranasi" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"> Telegram
+    </a>
+    <a href="https://wa.me/919118717157" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp
+    </a>
+    <a href="mailto:okvaranasii@gmail.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail"> Gmail
+    </a>
+    <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> YouTube
+    </a>
+  </div>
 </footer>
-<script src="script.js"></script>
+
+<script>
+// ===== SEARCH FUNCTION =====
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+const coachingCards = document.querySelectorAll(".coaching-card");
+const gallery = document.querySelector(".gallery");
+
+let noResultMsg = document.createElement("p");
+noResultMsg.textContent = "🔍 कोई परिणाम नहीं मिला";
+noResultMsg.classList.add("no-results");
+
+function searchCoaching() {
+  const query = searchInput.value.trim().toLowerCase();
+  let found = false;
+
+  coachingCards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    if (text.includes(query)) {
+      card.style.display = "block";
+      found = true;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  const existingMsg = document.querySelector(".no-results");
+  if (existingMsg) existingMsg.remove();
+
+  if (!found && query !== "") {
+    gallery.appendChild(noResultMsg);
+  }
+}
+
+searchButton.addEventListener("click", searchCoaching);
+searchInput.addEventListener("keypress", function(e){
+  if(e.key === "Enter") searchCoaching();
+});
+</script>
 </body>
 </html>

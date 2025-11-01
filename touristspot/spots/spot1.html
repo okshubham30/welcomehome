@@ -1,222 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kashi Vishwanath Temple - Full Details</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kashi Vishwanath Temple - Varanasi</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    /* BASIC RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: url('https://images.unsplash.com/photo-1579519545975-74ecec1e7ad6') no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
-      padding-bottom: 100px;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: url('https://images.unsplash.com/photo-1563298723-dcfebaa392e3') center/cover no-repeat;
-      border-bottom: 2px solid #00ff9d;
-      box-shadow: 0 0 10px #00ffbf80;
-      position: relative;
-    }
-
-    /* Home Button */
-    .home-btn {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      background: #00ffc8;
-      color: #000;
-      padding: 10px 18px;
-      font-size: 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .home-btn:hover {
-      background: #00ff9d;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #00ffcc;
-      text-shadow: 0 0 10px #00ffd5;
-    }
-
-    header p {
-      color: #e0e0e0;
-      font-size: 1.1rem;
-    }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      margin-top: 30px;
-    }
-
-    .section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: #00ffaa;
-      border-left: 5px solid #00ff99;
-      padding-left: 12px;
-    }
-
-    .image-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .tilt {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 2px solid #00ffcc55;
-      box-shadow: 0 0 15px #00ffc833;
-      transition: box-shadow 0.3s ease, border 0.3s ease;
-      cursor: pointer;
-    }
-
-    .tilt:hover {
-      box-shadow: 0 0 25px #00ffc8, 0 0 40px #00ffc8aa;
-      border: 2px solid #00ffc8;
-    }
-
-    .tilt img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
-
-    ul {
-      list-style-type: square;
-      padding-left: 25px;
-      color: #ccc;
-      line-height: 1.8;
-    }
-
-    p {
-      color: #ddd;
+      background-color: #0c0c0c;
+      color: #fff;
       line-height: 1.6;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000;
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    .header-left img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .header-center {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .header-center h1 {
+      font-size: 1.6rem;
+      color: #00ffcc;
+      margin-bottom: 5px;
+    }
+
+    .header-center p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      color: #00ffaa;
+      margin-bottom: 10px;
+      border-left: 4px solid #00ff99;
+      padding-left: 8px;
+    }
+
+    section p, section ul {
+      color: #bbb;
       margin-bottom: 10px;
     }
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background-color: rgba(0,0,0,0.8);
-      color: #aaa;
-      font-size: 0.95rem;
-      border-top: 2px solid #00ffb3;
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
     }
 
-    /* Fullscreen Image Popup */
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #000;
+      color: #888;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    footer img {
+      width: 140px;
+      height: 140px;
+      margin: 5px;
+    }
+
+    /* FULLSCREEN IMAGE VIEWER */
     #fullscreen {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
-      z-index: 9999;
+      flex-direction: column;
     }
 
     #fullscreen img {
       max-width: 90%;
-      max-height: 90%;
-      border: 3px solid #00ffc8;
-      border-radius: 10px;
+      max-height: 80%;
+      border-radius: 8px;
     }
 
     #fullscreen span {
       position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 40px;
-      color: #fff;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
       cursor: pointer;
+      color: #fff;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      header { flex-direction: column; }
+      .header-left img { width: 140px; height: 140px; margin-bottom: 8px; }
+      .gallery img { height: 120px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <a href="#" class="home-btn">Home</a>
-    <h1>Kashi Vishwanath Temple</h1>
-    <p>One of the holiest and most famous Hindu temples dedicated to Lord Shiva</p>
+    <div class="header-left">
+      <img src="../touristimages/kashiqr.png" alt="QR Code">
+    </div>
+    <div class="header-center">
+      <h1>Kashi Vishwanath Temple</h1>
+      <p>One of the 12 Jyotirlingas of Lord Shiva – Varanasi</p>
+    </div>
   </header>
 
-  <!-- Photo Gallery -->
-  <section class="section">
-    <h2>Photo Gallery</h2>
-    <div class="image-gallery">
-      <div class="tilt"><img src="../spotimages/kvt1.png" alt="Temple Image 1"></div>
-      <div class="tilt"><img src="../spotimages/kvt2.png" alt="Temple Image 2"></div>
-      <div class="tilt"><img src="../spotimages/kvt3.png" alt="Temple Image 3"></div>
-      <div class="tilt"><img src="../spotimages/kvt4.png" alt="Temple Image 4"></div>
-      <div class="tilt"><img src="../spotimages/kvt5.png" alt="Temple Image 5"></div>
+  <!-- GALLERY -->
+  <section>
+    <h2>Temple Gallery</h2>
+    <div class="gallery">
+      <img src="../touristimages/kashi1.png" alt="Temple 1">
+      <img src="../touristimages/kashi2.png" alt="Temple 2">
+      <img src="../touristimages/kashi3.png" alt="Temple 3">
+      <img src="../touristimages/kashi4.png" alt="Temple 4">
     </div>
   </section>
 
-  <!-- Temple Details -->
-  <section class="section">
-    <h2>About the Temple</h2>
-    <p>
-      Kashi Vishwanath Temple, located in Varanasi (Uttar Pradesh), is one of the twelve Jyotirlingas 
-      and holds immense cultural, spiritual, and historical significance. The temple is situated on the 
-      western banks of the holy river Ganga.
-    </p>
+  <!-- ABOUT -->
+  <section>
+    <h2>About Kashi Vishwanath Temple</h2>
+    <p>Kashi Vishwanath Temple, located in Varanasi, Uttar Pradesh, is one of the most revered temples dedicated to Lord Shiva. It stands on the western bank of the River Ganga and is one of the twelve Jyotirlingas of Lord Shiva, making it one of the holiest pilgrimage sites in Hinduism.</p>
+    <p>The temple symbolizes the spiritual essence of India and attracts millions of devotees every year who seek liberation (moksha) and divine blessings from Lord Vishwanath.</p>
+  </section>
+
+  <!-- HISTORY -->
+  <section>
+    <h2>History & Importance</h2>
     <ul>
-      <li>Dedicated to Lord Shiva</li>
-      <li>Located in Varanasi, Uttar Pradesh</li>
-      <li>Considered one of the holiest Hindu pilgrimage sites</li>
-      <li>Recently redeveloped under the Kashi Vishwanath Corridor project</li>
-      <li>Millions of devotees visit every year</li>
+      <li>The temple has been destroyed and rebuilt several times throughout history due to invasions.</li>
+      <li>The present structure was rebuilt in 1780 by Maharani Ahilyabai Holkar of Indore.</li>
+      <li>The temple dome is covered with nearly 800 kg of gold, donated by Maharaja Ranjit Singh in 1835.</li>
+      <li>In 2021, the Kashi Vishwanath Corridor was inaugurated, connecting the temple directly to the Ganga River.</li>
     </ul>
   </section>
 
-  <!-- Location Info -->
-  <section class="section">
-    <h2>Location & Highlights</h2>
-    <p>City: Varanasi, Uttar Pradesh</p>
-    <p>Nearby: Ganga Ghat, Dashashwamedh Ghat, Sarnath</p>
-    <p>Description: The temple is a major pilgrimage spot with ancient architecture, spiritual atmosphere, 
-    and easy access to Ganga Aarti and nearby tourist attractions.</p>
+  <!-- TIMINGS -->
+  <section>
+    <h2>Temple Timings</h2>
+    <ul>
+      <li><strong>Mangala Aarti:</strong> 3:00 AM – 4:00 AM</li>
+      <li><strong>Bhog Aarti:</strong> 11:15 AM – 12:20 PM</li>
+      <li><strong>Sandhya Aarti:</strong> 7:00 PM – 8:15 PM</li>
+      <li><strong>Shayan Aarti:</strong> 9:00 PM – 10:30 PM</li>
+    </ul>
   </section>
 
+  <!-- LOCATION -->
+  <section>
+    <h2>Location</h2>
+    <p><strong>Address:</strong> Vishwanath Gali, Near Dashashwamedh Ghat, Varanasi, Uttar Pradesh – 221001</p>
+    <p>Located in the heart of Varanasi, near the sacred River Ganga, the temple is easily accessible by road and water. The nearest railway station is Varanasi Junction, about 5 km away.</p>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section>
+    <h2>Disclaimer</h2>
+    <p>The information on <strong>OK VARANASI</strong> is provided for general and educational purposes. We are not officially associated with <strong>Kashi Vishwanath Temple Trust</strong>. For accurate darshan timings, rituals, or official updates, please refer to the temple’s official sources.</p>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>
-      Project Template – Modify & Use Freely<br>
-      Need Customization? Contact via Email → 
-      <a href="mailto:shubham16maury@gmail.com" style="color:#00ffc8; text-decoration:none; font-weight:600;">
-        shubham16maury@gmail.com
+    <img src="../coachingimages/qr1.png" alt="QR Code 1">
+    <img src="../coachingimages/qr2.png" alt="QR Code 2">
+    <p>🙏 If you liked our work and found it useful, you can support us!</p>
+    <p>Scan the QR code to send a small contribution. Every bit helps keep OK VARANASI growing.</p>
+    <br>
+    <p style="color:#00ffaa;">Thanks for visiting OK VARANASI!</p>
+    <br>
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" style="width:24px;height:24px;margin-right:5px;"> Telegram
       </a>
-    </p>
+      <a href="https://wa.me/919118717157" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:24px;height:24px;margin-right:5px;"> WhatsApp
+      </a>
+      <a href="mailto:okvaranasii@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" style="width:24px;height:24px;margin-right:5px;"> Gmail
+      </a>
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:24px;height:24px;margin-right:5px;"> YouTube
+      </a>
+    </div>
   </footer>
 
-  <!-- Fullscreen Viewer -->
+  <!-- FULLSCREEN VIEWER -->
   <div id="fullscreen">
-    <span onclick="closeFullscreen()">×</span>
+    <span id="close">&times;</span>
     <img id="full-img" src="" alt="Full Image">
   </div>
 
-  <!-- VanillaTilt Library -->
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <script>
-    // Fullscreen Image
-    const galleryImages = document.querySelectorAll('.image-gallery img');
+    const galleryImages = document.querySelectorAll('.gallery img');
     const fullscreen = document.getElementById('fullscreen');
     const fullImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
 
     galleryImages.forEach(img => {
       img.addEventListener('click', () => {
@@ -224,23 +265,7 @@
         fullscreen.style.display = 'flex';
       });
     });
-
-    function closeFullscreen() {
-      fullscreen.style.display = 'none';
-      fullImg.src = '';
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeFullscreen();
-    });
-
-    // Tilt Effect
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-      max: 20,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.4
-    });
+    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
   </script>
 
 </body>

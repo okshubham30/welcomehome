@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PW Vidyapeeth Lanka, Varanasi</title>
+  <title>Unacademy Varanasi - Durgakund Centre</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ===============================
-       RESET & BASIC STYLES
-    =============================== */
     * {
       margin: 0;
       padding: 0;
@@ -34,9 +31,6 @@
       text-decoration: underline;
     }
 
-    /* ===============================
-       HEADER
-    =============================== */
     header {
       display: flex;
       flex-wrap: wrap;
@@ -75,9 +69,6 @@
       margin-top: 5px;
     }
 
-    /* ===============================
-       SECTIONS
-    =============================== */
     section {
       padding: 20px;
       max-width: 900px;
@@ -92,21 +83,10 @@
       padding-left: 8px;
     }
 
-    section h3 {
-      font-size: 1.1rem;
-      color: #00ffbb;
-      margin-top: 10px;
-      margin-bottom: 5px;
-    }
-
     section p,
-    section ul,
-    section table,
-    section td,
-    section th {
+    section ul {
       color: #bbb;
       margin-bottom: 10px;
-      font-size: 0.95rem;
     }
 
     ul {
@@ -114,30 +94,6 @@
       list-style-type: square;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    table, th, td {
-      border: 1px solid #00ffaa;
-    }
-
-    th, td {
-      padding: 8px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #111;
-      color: #00ffaa;
-    }
-
-    /* ===============================
-       GALLERY
-    =============================== */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -150,45 +106,8 @@
       object-fit: cover;
       cursor: pointer;
       border-radius: 8px;
-      transition: transform 0.3s ease;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* ===============================
-       FULLSCREEN IMAGE VIEWER
-    =============================== */
-    #fullscreen {
-      display: none;
-      position: fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    #fullscreen img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 8px;
-    }
-
-    #fullscreen span {
-      position:absolute;
-      top:15px;
-      right:20px;
-      font-size:30px;
-      cursor:pointer;
-      color:#fff;
-    }
-
-    /* ===============================
-       FOOTER
-    =============================== */
     footer {
       background-color: #000;
       color: #888;
@@ -203,9 +122,34 @@
       margin: 5px;
     }
 
-    /* ===============================
-       MOBILE RESPONSIVE
-    =============================== */
+    #fullscreen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+
+    #fullscreen span {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #fff;
+    }
+
     @media (max-width: 600px) {
       header {
         flex-direction: column;
@@ -213,21 +157,22 @@
       }
 
       .header-left img {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 5px;
+        width: 140px;
+        height: 140px;
+        margin-bottom: 8px;
       }
 
       .header-center h1 {
         font-size: 1.2rem;
       }
 
-      .header-center p {
-        font-size: 0.8rem;
-      }
-
       .gallery img {
         height: 100px;
+      }
+
+      footer img {
+        width: 140px;
+        height: 140px;
       }
     }
   </style>
@@ -240,110 +185,121 @@
       <img src="../coachingimages/qr1.png" alt="QR Code">
     </div>
     <div class="header-center">
-      <h1>PW Vidyapeeth Lanka</h1>
-      <p>Varanasi Branch • Established 2016</p>
+      <h1>Unacademy Varanasi</h1>
+      <p>Durgakund Near Durga Mandir  </p>
+      <p>• JEE | NEET | Foundation</p>
     </div>
-    <div class="header-right">
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Courses</a>
-        <a href="#">Contact</a>
-      </div>
-    </div>
+  
   </header>
 
- 
-  <!-- IMAGE GALLERY -->
+  <!-- GALLERY -->
   <section>
-    <h2>PW Vidyapeeth Lanka - Campus Gallery</h2>
+    <h2>Coaching Gallery</h2>
     <div class="gallery">
-      <img src="../coachingimages/pw1.jpg" alt="Classroom">
-      <img src="../coachingimages/pw2.jpg" alt="Library">
-      <img src="../coachingimages/pw3.jpg" alt="Lab">
-      <img src="../coachingimages/pw4.jpg" alt="Smart Classroom">
-      <img src="../coachingimages/pw5.jpg" alt="Faculty Interaction">
+      <img src="../coachingimages/unacademy1.jpg" alt="Campus 1">
+      <img src="../coachingimages/akash1.png" alt="Campus 2">
+      <img src="../coachingimages/unacademy3.png" alt="Campus 3">
+      <img src="../coachingimages/unacademy2.jpg" alt="Campus 4">
     </div>
   </section>
 
-  <!-- COURSES & FEES -->
+  <!-- DETAILS -->
   <section>
-    <h2>Courses Offered & Fees (Approx)</h2>
-    <table>
-      <tr>
-        <th>Course</th>
-                <th>Duration</th>
-        <th>Fee (INR) + GST Approx.</th>
-      </tr>
-      <tr><td>Pre-Foundation (Class 8)</td><td>1 Year</td><td>₹41,000</td></tr>
-      <tr><td>Pre-Foundation (Class 9)</td><td>1 Year</td><td>₹46,000</td></tr>
-      <tr><td>Pre-Foundation (Class 10)</td><td>1 Year</td><td>₹51,000</td></tr>
-      <tr><td>Foundation (Class 11)</td><td>1 Year</td><td>₹86,000</td></tr>
-      <tr><td>Foundation (Class 12)</td><td>1 Year</td><td>₹92,000</td></tr>
-      <tr><td>JEE Main Course</td><td>1 Year</td><td>₹91,000</td></tr>
-      <tr><td>JEE Main + Advanced</td><td>1 Year</td><td>₹96,000</td></tr>
-      <tr><td>NEET Medical Course</td><td>1 Year</td><td>₹96,000</td></tr>
-      <tr><td>Other Engineering Exams</td><td>1 Year</td><td>₹90,000</td></tr>
-      <tr><td>Combined Programs (Multiple Classes)</td><td>Varies</td><td>₹85,000 to ₹1,60,000</td></tr>
-      <tr><td>Test Series (Class 11)</td><td>Session</td><td>₹3,500</td></tr>
-      <tr><td>Test Series (Class 12)</td><td>Session</td><td>₹3,800</td></tr>
-      <tr><td>Target Test Series</td><td>Session</td><td>₹4,500</td></tr>
-    </table>
+    <h2>Coaching Details</h2>
+    <ul>
+      <li>Located at Durgakund, Varanasi — a modern offline learning centre of Unacademy.</li>
+      <li>Courses offered: JEE (Main & Advanced), NEET-UG, and Foundation (Class 8-10).</li>
+      <li>Expert educators from across India with hybrid learning model.</li>
+      <li>Smart classrooms, digital boards, and access to Unacademy Learning App.</li>
+      <li>Personal mentorship, live doubt-solving, and test analysis.</li>
+      <li>Regular mock tests, PTMs, and ranking evaluations for progress tracking.</li>
+    </ul>
   </section>
 
-  <!-- CONTACT & LOCATION -->
+  <!-- ABOUT -->
   <section>
-    <h2>Contact & Location</h2>
-    <p><strong>Lanka Branch (Main/BHU Branch):</strong> 2nd & 3rd Floor, Above V2 Mall, BHU - Lanka Road, Saket Nagar Colony, Lanka, Varanasi, UP 221005</p>
-    <p>Phone: 095133 50005, 07019243492</p>
-    <p><strong>Bhojuveer Branch:</strong> 3rd Floor, Raj Complex, Bhojuveer, Gilat Bazar Road, Varanasi, UP 221002</p>
-    <p>Website: <a href="https://www.pw.live" target="_blank">https://www.pw.live</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/vidyapeeth_varanasi/" target="_blank">@vidyapeeth_varanasi</a></p>
+    <h2>About Unacademy Durgakund Centre</h2>
+    <p>Unacademy’s Durgakund Centre in Varanasi brings India’s top online educators to an offline environment. Students get the best of both worlds — in-person classroom teaching and access to Unacademy Plus courses digitally.</p>
+    <p>The institute aims to create a supportive environment for aspirants preparing for IIT-JEE, NEET, and Foundation exams through structured programs, technology integration, and mentorship support.</p>
   </section>
 
-   <!-- DISCLAIMER -->
+  <!-- FEE STRUCTURE -->
+  <section>
+    <h2>Fee Structure (Approx)</h2>
+
+    <h3>JEE (Main + Advanced)</h3>
+    <p>₹1,10,000 – ₹1,40,000 per year (including material & app access).</p>
+
+    <h3>NEET / Medical</h3>
+    <p>₹1,00,000 – ₹1,35,000 per year depending on batch and faculty.</p>
+
+    <h3>Foundation (Class 8 – 10)</h3>
+    <p>₹50,000 – ₹75,000 annually depending on course intensity.</p>
+
+    <h3>Notes</h3>
+    <ul>
+      <li>Scholarships offered through Unacademy’s admission tests.</li>
+      <li>Installments and limited refund options available.</li>
+      <li>Access to Unacademy Plus and Iconic benefits included for select batches.</li>
+    </ul>
+  </section>
+
+  <!-- LOCATION -->
+  <section>
+    <h2>Location</h2>
+    <p>Unacademy Centre, Durgakund, Saket Nagar, Near Durga Mandir, Varanasi, Uttar Pradesh 221005.</p>
+    <p>The Durgakund branch is a prime offline centre for students preparing for competitive exams, equipped with modern classrooms and study lounges.</p>
+  </section>
+
+  <!-- DISCLAIMER -->
   <section>
     <h2>Disclaimer</h2>
-    <p style="color:#bbb; font-size:0.95rem;">
-      This page is for informational purposes only. Contact the institute directly for the latest details on courses, fees, and admissions.
+    <p>
+      The information provided on <strong>OK VARANASI</strong> is for informational purposes only. 
+      We are not directly associated with <strong>Unacademy Varanasi</strong> or any other institution listed here. 
+      For accurate and official details regarding admissions, fees, or courses, please contact the respective institute directly.
     </p>
-    <p>The information provided on this website is for educational purposes only. While we strive to keep the content accurate and up-to-date, we do not guarantee any results or outcomes related to exams, admissions, or career success.</p>
   </section>
 
-  <!-- ADVICE FOR STUDENTS -->
-  <section>
-    <h2>Advice for Students Considering Coaching</h2>
-    <p>Choosing the right coaching institute is an important decision that can shape your academic future. Here is some advice:</p>
-    <ul>
-      <li>Always research thoroughly about the coaching center before enrolling. Check for faculty experience, student results, and reviews.</li>
-      <li>Attend demo classes if possible, to understand the teaching style and environment.</li>
-      <li>Maintain a regular study schedule and use coaching as a guide, but your success depends largely on your own commitment and hard work.</li>
-      <li>Don't hesitate to ask coaches for personal doubt clearing sessions or extra help when needed.</li>
-      <li>Take advantage of test series and practice materials offered by the institute to build confidence and exam readiness.</li>
-      <li>Balance coaching with self-study and revision at home. Coaching is a supplement, not a substitute for your efforts.</li>
-    </ul>
-    <p style="color:blue;">
-      Coaching is a secondary support system in education — the real success depends on your own hard work and dedication. Since you are investing your money and time, it is important to research and choose the best coaching institute carefully. Coaching can help, but it cannot replace consistent self-study and determination.
-    </p>
-    <p>Remember, you have the power to achieve your goals with or without coaching — with focus and perseverance, you can do anything you set your mind to.</p>
-    <p style="color:#00ffaa;">Best of luck for your future!</p>
-  </section>
-
+   <!-- ADVICE FOR STUDENTS -->
+<section>
+  <h2>Advice for Students Considering Coaching</h2>
+  <p>Choosing the right coaching institute is an important decision that can shape your academic future. Here is some advice:</p>
+  <ul>
+    <li>Always research thoroughly about the coaching center before enrolling. Check for faculty experience, student results, and reviews.</li>
+    <li>Attend demo classes if possible, to understand the teaching style and environment.</li>
+    <li>Maintain a regular study schedule and use coaching as a guide, but your success depends largely on your own commitment and hard work.</li>
+    <li>Don't hesitate to ask coaches for personal doubt clearing sessions or extra help when needed.</li>
+    <li>Take advantage of test series and practice materials offered by the institute to build confidence and exam readiness.</li>
+    <li>Balance coaching with self-study and revision at home. Coaching is a supplement, not a substitute for your efforts.</li>
+  </ul>
+  <p style="color:blue;">Coaching is a secondary support system in education — the real success depends on your own hard work and dedication. Since you are investing your money and time, it is important to research and choose the best coaching institute carefully. Coaching can help, but it cannot replace consistent self-study and determination.</p>
+  <p>Remember, you have the power to achieve your goals with or without coaching — with focus and perseverance, you can do anything you set your mind to.</p>
+  <p style="color:#00ffaa;">Best of luck for your future!</p>
+</section>
 
   <!-- FOOTER -->
   <footer>
     <img src="../coachingimages/qr1.png" alt="QR Code 1">
     <img src="../coachingimages/qr2.png" alt="QR Code 2">
-    <p>Email: <a href="mailto:contact@pw.live">contact@pw.live</a></p>
-    <p>THANKS FOR VISITING PW VIDYAPEETH VARANASI</p>
+    <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
+    <p>SCAN THE QR CODE BELOW TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!</p>
+    <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+    <p style="color:#00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" style="width:24px;height:24px;margin-right:5px;"> Telegram</a>
+      <a href="https://wa.me/919118717157" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:24px;height:24px;margin-right:5px;"> WhatsApp</a>
+      <a href="mailto:okvaranasii@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" style="width:24px;height:24px;margin-right:5px;"> Gmail</a>
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:24px;height:24px;margin-right:5px;"> YouTube</a>
+    </div>
   </footer>
 
-  <!-- FULLSCREEN IMAGE VIEWER -->
+  <!-- FULLSCREEN VIEWER -->
   <div id="fullscreen">
     <span id="close">&times;</span>
     <img id="full-img" src="" alt="Full Image">
   </div>
 
-  <!-- JS: IMAGE VIEWER -->
   <script>
     const galleryImages = document.querySelectorAll('.gallery img');
     const fullscreen = document.getElementById('fullscreen');
@@ -358,7 +314,6 @@
     });
 
     closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
-    window.addEventListener('keydown', e => { if(e.key === "Escape") fullscreen.style.display = 'none'; });
   </script>
 
 </body>
