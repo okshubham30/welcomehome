@@ -9,28 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* BASIC RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #0c0c0c;
       color: #fff;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    a {
-      color: #00ffcc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: #00ffcc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     /* HEADER */
     header {
@@ -41,114 +29,89 @@
       background-color: #000;
       padding: 10px 15px;
       text-align: center;
+      border-bottom: 2px solid #00ffaa;
     }
 
-    .header-left img {
-      width: 120px;
-      height: 120px;
-    }
+    .header-left img { width: 120px; height: 120px; border-radius: 8px; }
+    .header-center { flex: 1; min-width: 150px; }
+    .header-center h1 { font-size: 1.6rem; color: #00ffaa; margin-bottom: 5px; text-shadow: 0 0 6px #00ffaa; }
+    .header-center p { font-size: 0.9rem; color: #ccc; }
 
-    .header-center {
-      flex: 1;
-      min-width: 150px;
-    }
-
-    .header-center h1 {
-      font-size: 1.6rem;
-      color: #00ffcc;
-      margin-bottom: 5px;
-    }
-
-    .header-center p {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    /* SECTIONS */
+    /* SECTION */
     section {
-      padding: 20px;
-      max-width: 900px;
+      padding: 25px;
+      max-width: 950px;
       margin: 20px auto;
+      background: #101010;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00ffaa33;
     }
 
     section h2 {
       font-size: 1.3rem;
       color: #00ffaa;
       margin-bottom: 10px;
-      border-left: 4px solid #00ff99;
+      border-left: 4px solid #00ffaa;
       padding-left: 8px;
     }
 
-    section p, section ul {
-      color: #bbb;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-      list-style-type: square;
-    }
+    section p, section ul { color: #ccc; margin-bottom: 10px; }
+    ul { padding-left: 20px; list-style-type: square; }
 
     /* GALLERY */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
     }
-
     .gallery img {
       width: 100%;
       height: 150px;
       object-fit: cover;
       border-radius: 8px;
       cursor: pointer;
+      transition: transform 0.3s;
     }
+    .gallery img:hover { transform: scale(1.05); }
 
     /* FOOTER */
     footer {
       background-color: #000;
-      color: #888;
       text-align: center;
-      padding: 15px;
-      margin-top: 20px;
+      padding: 25px;
+      border-top: 2px solid #00ffaa;
+      margin-top: 30px;
     }
+    footer img { width: 140px; height: 140px; margin: 5px; border-radius: 10px; }
+    footer p { color: #aaa; font-size: 0.9rem; }
 
-    footer img {
-      width: 140px;
-      height: 140px;
-      margin: 5px;
-    }
-
-    /* FULLSCREEN IMAGE VIEWER */
+    /* FULLSCREEN VIEWER */
     #fullscreen {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      z-index: 1000;
     }
 
     #fullscreen img {
       max-width: 90%;
-      max-height: 80%;
+      max-height: 85%;
       border-radius: 8px;
     }
-
     #fullscreen span {
       position: absolute;
       top: 15px;
       right: 20px;
-      font-size: 30px;
+      font-size: 32px;
       cursor: pointer;
       color: #fff;
     }
 
-    /* MOBILE */
     @media (max-width: 600px) {
       header { flex-direction: column; }
       .header-left img { width: 140px; height: 140px; margin-bottom: 8px; }
@@ -161,7 +124,7 @@
   <!-- HEADER -->
   <header>
     <div class="header-left">
-      <img src="../touristimages/kashiqr.png" alt="QR Code">
+      <img src="../spotimages/qr1.png" alt="QR Code">
     </div>
     <div class="header-center">
       <h1>Kashi Vishwanath Temple</h1>
@@ -173,99 +136,147 @@
   <section>
     <h2>Temple Gallery</h2>
     <div class="gallery">
-      <img src="../touristimages/kashi1.png" alt="Temple 1">
-      <img src="../touristimages/kashi2.png" alt="Temple 2">
-      <img src="../touristimages/kashi3.png" alt="Temple 3">
-      <img src="../touristimages/kashi4.png" alt="Temple 4">
+       <img src="../spotimages/kvt1.png" alt="Temple">
+    <img src="../spotimages/kvt2.png" alt="Temple">
+    <img src="../spotimages/kvt3.png" alt="Temple">
+    <img src="../spotimages/kvt4.png" alt="Temple">
     </div>
   </section>
 
   <!-- ABOUT -->
   <section>
-    <h2>About Kashi Vishwanath Temple</h2>
-    <p>Kashi Vishwanath Temple, located in Varanasi, Uttar Pradesh, is one of the most revered temples dedicated to Lord Shiva. It stands on the western bank of the River Ganga and is one of the twelve Jyotirlingas of Lord Shiva, making it one of the holiest pilgrimage sites in Hinduism.</p>
-    <p>The temple symbolizes the spiritual essence of India and attracts millions of devotees every year who seek liberation (moksha) and divine blessings from Lord Vishwanath.</p>
+    <h2>About the Temple</h2>
+    <p>The <strong>Kashi Vishwanath Temple</strong>, located in the holy city of Varanasi, is one of the most sacred temples in Hinduism. Dedicated to Lord Shiva, it represents the spiritual core of India where every devotee wishes to attain moksha (liberation). The golden dome and the sacred Jyotirlinga make it a major religious landmark.</p>
   </section>
 
   <!-- HISTORY -->
   <section>
-    <h2>History & Importance</h2>
+    <h2>History & Heritage</h2>
     <ul>
-      <li>The temple has been destroyed and rebuilt several times throughout history due to invasions.</li>
-      <li>The present structure was rebuilt in 1780 by Maharani Ahilyabai Holkar of Indore.</li>
-      <li>The temple dome is covered with nearly 800 kg of gold, donated by Maharaja Ranjit Singh in 1835.</li>
-      <li>In 2021, the Kashi Vishwanath Corridor was inaugurated, connecting the temple directly to the Ganga River.</li>
+      <li>The original temple is said to date back over 1000 years.</li>
+      <li>It was destroyed and rebuilt multiple times, most famously by Maharani Ahilyabai Holkar in 1780 CE.</li>
+      <li>The golden spire and dome were added by Maharaja Ranjit Singh of Punjab in 1835.</li>
+      <li>In 2021, the <strong>Kashi Vishwanath Corridor</strong> was inaugurated, connecting the temple directly with the Ganga River.</li>
+    </ul>
+  </section>
+
+  <!-- RULES -->
+  <section>
+    <h2>Entry Rules & Guidelines</h2>
+    <ul>
+      <li>Photography and videography are strictly <strong>not allowed inside</strong> the temple.</li>
+      <li>Foreigners and non-Hindus can visit certain areas but cannot enter the Garbhagriha (main sanctum).</li>
+      <li>Dress modestly – Indian traditional attire preferred. Avoid shorts or sleeveless clothes.</li>
+      <li>Mobile phones, cameras, and leather items must be deposited at the security counter.</li>
+      <li>Foreign visitors must carry a valid ID (passport).</li>
     </ul>
   </section>
 
   <!-- TIMINGS -->
   <section>
-    <h2>Temple Timings</h2>
+    <h2>Darshan & Aarti Timings</h2>
     <ul>
       <li><strong>Mangala Aarti:</strong> 3:00 AM – 4:00 AM</li>
       <li><strong>Bhog Aarti:</strong> 11:15 AM – 12:20 PM</li>
       <li><strong>Sandhya Aarti:</strong> 7:00 PM – 8:15 PM</li>
       <li><strong>Shayan Aarti:</strong> 9:00 PM – 10:30 PM</li>
+      <li><strong>Entry Fee:</strong> Free for general darshan; Aarti tickets ₹300–₹1500 (foreigners slightly higher).</li>
     </ul>
   </section>
 
-  <!-- LOCATION -->
+  <!-- HOW TO REACH -->
   <section>
-    <h2>Location</h2>
-    <p><strong>Address:</strong> Vishwanath Gali, Near Dashashwamedh Ghat, Varanasi, Uttar Pradesh – 221001</p>
-    <p>Located in the heart of Varanasi, near the sacred River Ganga, the temple is easily accessible by road and water. The nearest railway station is Varanasi Junction, about 5 km away.</p>
+    <h2>How to Reach</h2>
+    <ul>
+      <li><strong>By Air:</strong> Lal Bahadur Shastri International Airport – 25 km from temple.</li>
+      <li><strong>By Train:</strong> Varanasi Junction – 5 km | Manduadih Station – 7 km.</li>
+      <li><strong>By Road:</strong> Regular auto, taxi, and e-rickshaw services from any point in Varanasi.</li>
+      <li><strong>Nearest Ghat:</strong> Dashashwamedh Ghat (1 km, walking distance).</li>
+    </ul>
+  </section>
+
+  <!-- ACCOMMODATION -->
+  <section>
+    <h2>Accommodation & Facilities</h2>
+    <p>There are numerous dharamshalas, guest houses, and hotels near the temple for pilgrims and visitors.</p>
+    <ul>
+      <li>Official <strong>Kashi Vishwanath Guest House</strong> for devotees.</li>
+      <li>Hotels like <strong>Ramada, Taj Ganges, Guleria Kothi</strong> for foreign visitors.</li>
+      <li>Free cloakroom and luggage deposit counters near the entrance.</li>
+      <li>Separate queues for women, senior citizens, and foreign tourists.</li>
+    </ul>
+  </section>
+
+  <!-- RITUALS -->
+  <section>
+    <h2>Rituals & Beliefs</h2>
+    <p>Devotees offer Ganga water, bilva leaves, and prayers to the Jyotirlinga. It is believed that worshipping Lord Vishwanath and bathing in the Ganga grants moksha — liberation from rebirth.</p>
+  </section>
+
+  <!-- TIPS -->
+  <section>
+    <h2>Travel Tips for Visitors</h2>
+    <ul>
+      <li>Best visiting months: <strong>October to March</strong>.</li>
+      <li>Carry water and walk comfortably – the temple lanes (Vishwanath Gali) are narrow.</li>
+      <li>Don’t accept unauthorized guides or touts.</li>
+      <li>Keep footwear outside; you can hire a locker near the entrance.</li>
+      <li>Book Aarti tickets only from the official counter or website.</li>
+    </ul>
+  </section>
+
+  <!-- NEARBY -->
+  <section>
+    <h2>Nearby Attractions</h2>
+    <ul>
+      <li>Dashashwamedh Ghat – 1 km</li>
+      <li>Manikarnika Ghat – 1.2 km</li>
+      <li>Sankat Mochan Temple – 5 km</li>
+      <li>Banaras Hindu University (BHU) – 6 km</li>
+      <li>Sarnath – 10 km</li>
+    </ul>
   </section>
 
   <!-- DISCLAIMER -->
   <section>
     <h2>Disclaimer</h2>
-    <p>The information on <strong>OK VARANASI</strong> is provided for general and educational purposes. We are not officially associated with <strong>Kashi Vishwanath Temple Trust</strong>. For accurate darshan timings, rituals, or official updates, please refer to the temple’s official sources.</p>
+    <p>The information provided here is for educational and travel purposes only. <strong>OK VARANASI</strong> is not affiliated with the official Kashi Vishwanath Temple Trust. For official timings or booking, visit <a href="https://shrikashivishwanath.org" target="_blank">shrikashivishwanath.org</a>.</p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <img src="../coachingimages/qr1.png" alt="QR Code 1">
-    <img src="../coachingimages/qr2.png" alt="QR Code 2">
-    <p>🙏 If you liked our work and found it useful, you can support us!</p>
-    <p>Scan the QR code to send a small contribution. Every bit helps keep OK VARANASI growing.</p>
+    <img src="../spotimages/qr1.png" alt="QR 1">
+    <img src="../spotimages/qr2.png" alt="QR 2">
+    <p>🙏 If you liked our work and found it helpful, you can support us!</p>
+    <p>Scan the QR to contribute. Every donation keeps OK VARANASI active and growing.</p>
     <br>
     <p style="color:#00ffaa;">Thanks for visiting OK VARANASI!</p>
     <br>
     <div class="footer-right">
-      <a href="https://t.me/okvaranasi" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" style="width:24px;height:24px;margin-right:5px;"> Telegram
-      </a>
-      <a href="https://wa.me/919118717157" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:24px;height:24px;margin-right:5px;"> WhatsApp
-      </a>
-      <a href="mailto:okvaranasii@gmail.com">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" style="width:24px;height:24px;margin-right:5px;"> Gmail
-      </a>
-      <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:24px;height:24px;margin-right:5px;"> YouTube
-      </a>
+      <a href="https://t.me/okvaranasi" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" style="width:24px;height:24px;"> Telegram</a> |
+      <a href="https://wa.me/919118717157" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:24px;height:24px;"> WhatsApp</a> |
+      <a href="mailto:okvaranasii@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" style="width:24px;height:24px;"> Gmail</a> |
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:24px;height:24px;"> YouTube</a>
     </div>
   </footer>
 
-  <!-- FULLSCREEN VIEWER -->
+  <!-- FULLSCREEN VIEW -->
   <div id="fullscreen">
     <span id="close">&times;</span>
     <img id="full-img" src="" alt="Full Image">
   </div>
 
   <script>
-    const galleryImages = document.querySelectorAll('.gallery img');
-    const fullscreen = document.getElementById('fullscreen');
-    const fullImg = document.getElementById('full-img');
-    const closeBtn = document.getElementById('close');
+    const imgs = document.querySelectorAll('.gallery img');
+    const fs = document.getElementById('fullscreen');
+    const fimg = document.getElementById('full-img');
+    const close = document.getElementById('close');
 
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        fullImg.src = img.src;
-        fullscreen.style.display = 'flex';
-      });
+    imgs.forEach(img => img.onclick = () => {
+      fimg.src = img.src;
+      fs.style.display = 'flex';
     });
-    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
+    close.onclick = () => fs.style.display = 'none';
   </script>
 
 </body>
