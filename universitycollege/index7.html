@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varanasi Universities & Colleges - OK VARANASI</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0d0d0d;color:white;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh;}
+
+/* ===== Header ===== */
+.header{
+  width:100%;
+  padding:15px 20px;
+  background:black;
+  display:flex;
+  align-items:center;
+  justify-content:center; /* title center */
+  position:relative; /* QR positioning */
+  border-bottom:2px solid #00ff88;
+}
+.header-title{
+  text-align:center;
+  font-size:1.8rem;
+  color:#00ff88;
+  font-weight:700;
+  letter-spacing:1px;
+  text-shadow:0 0 6px #00ff88,0 0 12px #00ff88;
+  flex:1;
+}
+.header-qr{
+  position:absolute;
+  left:20px; /* QR left side */
+}
+.header-qr img{
+  width:120px;
+  height:120px;
+  border-radius:12px;
+}
+
+/* ===== Search ===== */
+.search-container{max-width:500px;width:100%;margin:20px auto;text-align:center;}
+.search-container input{width:100%;padding:10px 15px;border-radius:20px;border:none;outline:none;font-size:15px;background:#1a1a1a;color:white;}
+
+/* ===== Horizontal Text Slider ===== */
+.text-slider-container{max-width:800px;margin:20px auto;position:relative;overflow:hidden;cursor:grab;}
+.text-slider{display:flex;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;gap:15px;padding:10px;scrollbar-width:none;-ms-overflow-style:none;}
+.text-slider::-webkit-scrollbar{display:none;}
+.text-slider.dragging{cursor:grabbing;scroll-behavior:auto;}
+.text-card{flex:0 0 auto;min-width:120px;background:#1a1a1a;border-radius:50px;padding:10px 20px;text-align:center;cursor:pointer;user-select:none;transition:0.3s;border:1px solid #00ffff50;white-space:nowrap;}
+.text-card:hover{background:#222;box-shadow:0 0 10px #00ffff80;}
+.text-card.active{background:#00ffff;color:#000;transform:scale(1.05);}
+
+/* ===== Option Cards ===== */
+.option-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding:20px;}
+.option-card{width:280px;height:180px;position:relative;background:#111;color:#fff;display:flex;justify-content:center;align-items:flex-end;border-radius:15px;overflow:hidden;text-decoration:none;transition:0.3s;border:2px solid transparent;cursor:pointer;}
+.option-card:hover{transform:scale(1.05);border:2px solid #00ff88;box-shadow:0 0 15px #00ff88;}
+.option-card img{position:absolute;width:100%;height:100%;object-fit:cover;filter:brightness(0.65);transition:0.3s;}
+.option-card:hover img{filter:brightness(0.75);}
+.option-card span{position:relative;z-index:2;text-align:center;padding:10px;font-size:1rem;font-weight:600;color:#00ff88;}
+
+/* ===== Footer ===== */
+footer{background-color:#000;color:#888;text-align:center;padding:20px;margin-top:auto;border-top:2px solid #00ff88;}
+.footer-right{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:10px;}
+.footer-right a{display:flex;align-items:center;text-decoration:none;color:white;background:#111;padding:8px 12px;border-radius:8px;flex:1 1 150px;justify-content:center;max-width:200px;transition:0.3s;}
+.footer-right a:hover{background:#00ff88;color:#000;}
+.footer-right img{width:24px;height:24px;margin-right:5px;}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  .header{flex-direction:column;justify-content:center;align-items:center;gap:10px;}
+  .header-qr{position:relative;left:0;margin-bottom:10px;}
+  .option-card{width:90%;height:180px;font-size:16px;}
+  .text-card{min-width:90px;padding:8px 15px;font-size:14px;border-radius:30px;}
+}
+@media(max-width:480px){
+  .option-card{height:160px;font-size:14px;}
+  .header-qr img{width:100px;height:100px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-qr">
+    <img src="unimages/qr1.png" alt="QR Code">
+  </div>
+  <h1 class="header-title">UNIVERSITIES & COLLEGES</h1>
+</div>
+
+<!-- Search -->
+<div class="search-container">
+  <input id="searchInput" type="text" placeholder="Search universities, colleges...">
+</div>
+
+<!-- Horizontal Text Slider -->
+<div class="text-slider-container">
+  <div class="text-slider">
+    <div class="text-card active" data-filter="Universities">Universities</div>
+    <div class="text-card" data-filter="Engineering">Engineering Colleges</div>
+    <div class="text-card" data-filter="Medical">Medical Colleges</div>
+    <div class="text-card" data-filter="Management">Management Institutes</div>
+    <div class="text-card" data-filter="Others">Other Colleges</div>
+  </div>
+</div>
+
+<!-- Option Cards -->
+<div class="option-container">
+  <a href="colleges/bhu.html" class="option-card" data-type="Universities">
+    <img src="unimages/bhu1.jpg" alt="BHU">
+    <span>Banaras Hindu University (BHU)</span>
+  </a>
+  <a href="colleges/mgkvp.html" class="option-card" data-type="Universities">
+    <img src="unimages/mgkvp.jpg" alt="MGKVP">
+    <span>Mahatma Gandhi Kashi Vidyapith (MGKVP)</span>
+  </a>
+  <a href="iird.html" class="option-card" data-type="Universities">
+    <img src="unimages/iird.jpg" alt="IIRD">
+    <span>IIRD Varanasi</span>
+  </a>
+  <a href="itm.html" class="option-card" data-type="Engineering">
+    <img src="colimages/itm.jpg" alt="ITM College">
+    <span>ITM College of Engineering</span>
+  </a>
+  <a href="imsbhu.html" class="option-card" data-type="Medical">
+    <img src="colimages/imsbhu.jpg" alt="IMS BHU">
+    <span>Institute of Medical Sciences, BHU</span>
+  </a>
+  <a href="bhumgmt.html" class="option-card" data-type="Management">
+    <img src="colimages/mgmt.jpg" alt="Management College">
+    <span>Management Institutes</span>
+  </a>
+  <a href="others.html" class="option-card" data-type="Others">
+    <img src="colimages/other.jpg" alt="Other College">
+    <span>Other Colleges</span>
+  </a>
+
+  <a href="colleges/iitbhu.html" class="option-card" data-type="IIT BHU">
+    <img src="colimages/other.jpg" alt="Other College">
+    <span>IIT BHU VARANASI</span>
+  </a>
+
+  <a href="colleges/ssw.html" class="option-card" data-type="SSW">
+    <img src="colimages/other.jpg" alt="Other College">
+    <span>Sampurnanand Sanskrit Vishwavidyalaya (SSVV)</span>
+  </a>
+
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <img src="unimages/qr1.png" alt="logo" style="width:140px;height:140px;margin:5px;">
+  <img src="unimages/qr2.png" alt="qr code" style="width:140px;height:140px;margin:5px;">
+  <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
+  <p>SCAN THE QR CODE BELOW TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!</p>
+  <br>
+  <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+  <br>
+  <p style="color:#00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
+  <div class="footer-right">
+    <a href="https://t.me/okvaranasi" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"> Telegram</a>
+    <a href="https://wa.me/919118717157" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp</a>
+    <a href="mailto:okvaranasii@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail"> Gmail</a>
+    <a href="https://www.youtube.com/@OKVARANASI" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> YouTube</a>
+  </div>
+</footer>
+
+<!-- JS -->
+<script>
+// ===== Search Filter =====
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('keyup', () => {
+  const input = searchInput.value.toLowerCase();
+  const cards = document.querySelectorAll('.option-card');
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(input) ? "flex" : "none";
+  });
+});
+
+// ===== Horizontal Text Slider Swipe & Click =====
+const sliderContainer = document.querySelector(".text-slider");
+let isDragging=false, startX, scrollLeft, moved=false;
+sliderContainer.addEventListener("mousedown", e=>{isDragging=true;moved=false;sliderContainer.classList.add("dragging");startX=e.pageX-sliderContainer.offsetLeft;scrollLeft=sliderContainer.scrollLeft;});
+sliderContainer.addEventListener("mouseleave",()=>{isDragging=false;sliderContainer.classList.remove("dragging");});
+sliderContainer.addEventListener("mouseup",e=>{sliderContainer.classList.remove("dragging");if(!moved){const target=e.target.closest(".text-card");if(target) handleCardClick(target);}isDragging=false;});
+sliderContainer.addEventListener("mousemove",e=>{if(!isDragging)return;e.preventDefault();moved=true;const x=e.pageX-sliderContainer.offsetLeft;sliderContainer.scrollLeft=scrollLeft-(x-startX)*1.5;});
+let touchStartX=0;
+sliderContainer.addEventListener("touchstart",e=>{touchStartX=e.touches[0].clientX;moved=false;});
+sliderContainer.addEventListener("touchmove",e=>{const touchEndX=e.touches[0].clientX;const moveX=touchStartX-touchEndX;if(Math.abs(moveX)>5)moved=true;sliderContainer.scrollLeft+=moveX*1.2;touchStartX=touchEndX;});
+sliderContainer.addEventListener("touchend",e=>{if(!moved){const target=e.target.closest(".text-card");if(target) handleCardClick(target);}});
+
+function handleCardClick(card){
+  document.querySelectorAll(".text-card").forEach(c=>c.classList.remove("active"));
+  card.classList.add("active");
+  const filterType=card.getAttribute("data-filter");
+  const optionCards=document.querySelectorAll(".option-card");
+  optionCards.forEach(opt=>{opt.style.display=(opt.dataset.type===filterType)?"flex":"none";});
+}
+</script>
+
+</body>
+</html>

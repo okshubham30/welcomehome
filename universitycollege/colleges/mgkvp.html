@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahatma Gandhi Kashi Vidyapith (MGKVP) - Varanasi</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background-color:#0c0c0c;
+      color:#fff;
+      line-height:1.6;
+    }
+    a{color:#00ffcc;text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      background-color:#000;
+      padding:10px 15px;
+      text-align:center;
+    }
+    .header-left img{width:120px;height:120px;}
+    .header-center{flex:1;min-width:150px;}
+    .header-center h1{font-size:1.6rem;color:#00ffcc;margin-bottom:5px;}
+    .header-center p{font-size:0.9rem;color:#ccc;}
+
+    section{
+      padding:20px;
+      max-width:900px;
+      margin:20px auto;
+    }
+    section h2{
+      font-size:1.3rem;
+      color:#00ffaa;
+      margin-bottom:10px;
+      border-left:4px solid #00ff99;
+      padding-left:8px;
+    }
+    section p,section ul{color:#bbb;margin-bottom:10px;}
+    ul{padding-left:20px;list-style-type:square;}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:10px;
+    }
+    .gallery img{
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      border-radius:8px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .gallery img:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 10px #00ffaa;
+    }
+
+    .video-container{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:15px;
+    }
+    iframe{
+      width:100%;
+      max-width:720px;
+      height:400px;
+      border-radius:10px;
+      border:2px solid #00ffaa;
+    }
+
+    footer{
+      background-color:#000;
+      color:#888;
+      text-align:center;
+      padding:15px;
+      margin-top:20px;
+    }
+    footer img{width:140px;height:140px;margin:5px;}
+
+    #fullscreen{
+      display:none;
+      position:fixed;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(0,0,0,0.9);
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      z-index:999;
+    }
+    #fullscreen img{max-width:90%;max-height:80%;border-radius:8px;}
+    #fullscreen span{
+      position:absolute;
+      top:15px;right:20px;
+      font-size:30px;cursor:pointer;color:#fff;
+    }
+
+    @media (max-width:600px){
+      header{flex-direction:column;text-align:center;}
+      .header-left img{width:140px;height:140px;margin-bottom:8px;}
+      .header-center h1{font-size:1.3rem;}
+      .gallery img{height:100px;}
+      iframe{height:220px;}
+      footer img{width:120px;height:120px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="../unimages/qr1.png" alt="logo">
+    </div>
+    <div class="header-center">
+      <h1>Mahatma Gandhi Kashi Vidyapith (MGKVP) - Varanasi</h1>
+      <p>State University | Established in 1921 by Babu Shiv Prasad Gupta</p>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section>
+    <h2>Campus Gallery</h2>
+    <div class="gallery">
+      <img src="../schoolimages/mgkvp1.jpg" alt="MGKVP Main Building">
+      <img src="../schoolimages/mgkvp2.jpg" alt="University Gate">
+      <img src="../schoolimages/mgkvp3.jpg" alt="Auditorium">
+      <img src="../schoolimages/mgkvp4.jpg" alt="Library">
+      <img src="../schoolimages/mgkvp5.jpg" alt="Hostel">
+      <img src="../schoolimages/mgkvp6.jpg" alt="Campus Garden">
+    </div>
+  </section>
+
+  <!-- VIDEO SECTION -->
+  <section>
+    <h2>🎥 MGKVP Campus Tour</h2>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/Qi4_ncf2U" 
+        title="MGKVP Campus Tour"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About MGKVP, Varanasi</h2>
+    <p>Mahatma Gandhi Kashi Vidyapith (MGKVP) is a state university located in the holy city of Varanasi, Uttar Pradesh. Established in 1921 during India’s freedom movement, it played a major role in promoting Indian education free from British control. The university was renamed after Mahatma Gandhi in 1995.</p>
+    <p>It offers a broad range of academic programs across Arts, Science, Commerce, Education, Law, and Social Sciences. MGKVP has more than 350 affiliated colleges spread across various districts of Uttar Pradesh.</p>
+  </section>
+
+  <!-- COURSES -->
+  <section>
+    <h2>Courses Offered</h2>
+    <ul>
+      <li>Undergraduate Programs: B.A., B.Sc., B.Com, BBA, BCA, LL.B., B.Ed</li>
+      <li>Postgraduate Programs: M.A., M.Sc., M.Com, MBA, LL.M, M.Ed</li>
+      <li>Doctoral and Research Programs (Ph.D.)</li>
+      <li>Professional Courses: Journalism, Social Work, Library Science, Fine Arts</li>
+    </ul>
+  </section>
+
+  <!-- ADMISSION PROCESS -->
+  <section>
+    <h2>Admission Process</h2>
+    <ul>
+      <li><strong>UG Courses:</strong> Admission based on marks obtained in 10+2 or entrance exams conducted by the university.</li>
+      <li><strong>PG Courses:</strong> Merit-based or through MGKVP Entrance Test.</li>
+      <li><strong>Ph.D. Programs:</strong> Admission through Research Entrance Test (RET) and interview.</li>
+    </ul>
+    <p>Applications are accepted online via the official portal: <a href="https://mgkvponline.org.in" target="_blank">mgkvponline.org.in</a></p>
+  </section>
+
+  <!-- FEES AND SCHOLARSHIPS -->
+  <section>
+    <h2>Fees and Scholarships</h2>
+    <ul>
+      <li>Affordable fee structure suitable for all students.</li>
+      <li>Scholarships for SC/ST/OBC and meritorious students as per government norms.</li>
+      <li>Merit-cum-means scholarships for economically weaker students.</li>
+      <li>Various state-level and central government schemes supported by the university.</li>
+    </ul>
+  </section>
+
+  <!-- CAMPUS LIFE -->
+  <section>
+    <h2>Campus Life and Facilities</h2>
+    <ul>
+      <li>Spacious academic blocks and green campus area.</li>
+      <li>Central library with thousands of books and digital resources.</li>
+      <li>Separate hostels for boys and girls.</li>
+      <li>Playgrounds, gymnasium, and sports facilities.</li>
+      <li>Student cultural and annual events organized regularly.</li>
+      <li>Wi-Fi enabled campus and computer labs.</li>
+    </ul>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section>
+    <h2>Disclaimer</h2>
+    <p>The information on <strong>OK VARANASI</strong> is for educational and informational purposes only. We are not affiliated with MGKVP administration. For official notices, admissions, and results, visit <a href="https://mgkvp.ac.in" target="_blank">www.mgkvp.ac.in</a>.</p>
+  </section>
+
+  <!-- ADVICE -->
+  <section>
+    <h2>Advice for Students</h2>
+    <ul>
+      <li>Stay updated with university notifications for admission and exams.</li>
+      <li>Participate in university activities to gain exposure and confidence.</li>
+      <li>Focus on practical skills like communication, computer literacy, and teamwork.</li>
+      <li>Keep your documents ready for scholarships and admission verification.</li>
+    </ul>
+    <p style="color:#00ffaa;">📘 “MGKVP is a symbol of self-reliance and Indian education spirit.”</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../unimages/qr1.png" alt="logo">
+    <img src="../unimages/qr2.png" alt="scanner">
+    <p>🙏 IF YOU FOUND THIS PAGE HELPFUL, YOU CAN SUPPORT ME!</p>
+    <p>SCAN THE QR CODE BELOW TO SEND A TIP — EVERY CONTRIBUTION MOTIVATES ME 💚</p>
+    <br>
+    <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+    <br>
+    <p style="color:#00ffaa;">FOR FEEDBACK OR SUGGESTIONS, CONTACT ME BELOW</p>
+
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" style="width:24px;height:24px;margin-right:5px;"> Telegram
+      </a>
+
+      <a href="https://wa.me/919118717157" target="_blank" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:24px;height:24px;margin-right:5px;"> WhatsApp
+      </a>
+
+      <a href="mailto:okvaranasii@gmail.com" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" style="width:24px;height:24px;margin-right:5px;"> Gmail
+      </a>
+
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank" style="display:inline-flex;align-items:center;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:24px;height:24px;margin-right:5px;"> YouTube
+      </a>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+  </div>
+
+  <script>
+    const galleryImages=document.querySelectorAll('.gallery img');
+    const fullscreen=document.getElementById('fullscreen');
+    const fullImg=document.getElementById('full-img');
+    const closeBtn=document.getElementById('close');
+
+    galleryImages.forEach(img=>{
+      img.addEventListener('click',()=>{
+        fullImg.src=img.src;
+        fullscreen.style.display='flex';
+      });
+    });
+    closeBtn.addEventListener('click',()=>fullscreen.style.display='none');
+  </script>
+
+</body>
+</html>

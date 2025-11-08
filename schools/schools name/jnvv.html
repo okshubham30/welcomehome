@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jawahar Navodaya Vidyalaya - Varanasi</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background-color:#0c0c0c;
+      color:#fff;
+      line-height:1.7;
+    }
+    a{color:#00ffcc;text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    header{
+      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+      background-color:#000;padding:10px 15px;text-align:center;
+      border-bottom:2px solid #00ffaa;
+    }
+    .header-left img{width:120px;height:120px;border-radius:8px;}
+    .header-center{flex:1;min-width:150px;}
+    .header-center h1{font-size:1.6rem;color:#00ffaa;margin-bottom:5px;text-shadow:0 0 6px #00ffaa;}
+    .header-center p{font-size:0.9rem;color:#ccc;}
+
+    section{
+      padding:25px;max-width:950px;margin:20px auto;
+      background:#101010;border-radius:12px;box-shadow:0 0 10px #00ffaa33;
+    }
+    section h2{
+      font-size:1.3rem;color:#00ffaa;margin-bottom:10px;
+      border-left:4px solid #00ffaa;padding-left:8px;
+    }
+    section p,section ul{color:#ccc;margin-bottom:10px;}
+    ul{padding-left:20px;list-style-type:square;}
+
+    .gallery{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;
+    }
+    .gallery img{
+      width:100%;height:150px;object-fit:cover;border-radius:8px;cursor:pointer;
+      transition:transform 0.3s;
+    }
+    .gallery img:hover{transform:scale(1.05);}
+
+    footer{
+      background-color:#000;text-align:center;padding:25px;
+      border-top:2px solid #00ffaa;margin-top:30px;
+    }
+    footer img{width:120px;height:120px;margin:5px;border-radius:10px;}
+    footer p{color:#aaa;font-size:0.9rem;}
+
+    #fullscreen{
+      display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.9);justify-content:center;align-items:center;flex-direction:column;z-index:1000;
+    }
+    #fullscreen img{max-width:90%;max-height:85%;border-radius:8px;}
+    #fullscreen span{position:absolute;top:15px;right:20px;font-size:32px;cursor:pointer;color:#fff;}
+
+    @media(max-width:600px){
+      header{flex-direction:column;}
+      .header-left img{width:140px;height:140px;margin-bottom:8px;}
+      .gallery img{height:120px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="../schoolimages/qr1.png" alt="logo">
+  </div>
+  <div class="header-center">
+    <h1>Jawahar Navodaya Vidyalaya, Varanasi</h1>
+    <p>A Premier Residential School under Navodaya Vidyalaya Samiti</p>
+  </div>
+</header>
+
+<!-- 1. IMAGE GALLERY -->
+<section>
+  <h2>Campus Gallery</h2>
+  <div class="gallery">
+    <img src="../spotimages/jnv1.png" alt="School Building">
+    <img src="../spotimages/jnv2.png" alt="Students">
+    <img src="../spotimages/jnv3.png" alt="Classroom">
+    <img src="../spotimages/jnv4.png" alt="Hostel Area">
+  </div>
+</section>
+
+<!-- 2. ABOUT SCHOOL -->
+<section>
+  <h2>About the School</h2>
+  <p><strong>Jawahar Navodaya Vidyalaya, Varanasi</strong> is a co-educational residential school established by the Government of India under the Navodaya Vidyalaya Samiti. It provides quality education to talented children predominantly from rural areas of Varanasi district. The school is affiliated to CBSE and offers classes from VI to XII.</p>
+</section>
+
+<!-- 3. ADMISSION PROCESS -->
+<section>
+  <h2>Admission Process</h2>
+  <ul>
+    <li>Main entry through the <strong>Jawahar Navodaya Vidyalaya Selection Test (JNVST)</strong> for Class VI.</li>
+    <li>Additional lateral entry tests for Class IX and XI, subject to vacancy.</li>
+    <li>Application forms are released online at <a href="https://navodaya.gov.in" target="_blank">navodaya.gov.in</a>.</li>
+    <li>No admission through donation or direct admission — purely merit based.</li>
+  </ul>
+</section>
+
+<!-- 4. ELIGIBILITY CONDITIONS -->
+<section>
+  <h2>Eligibility Conditions</h2>
+  <ul>
+    <li>Must be studying in Class V in a recognised school in <strong>Varanasi district</strong>.</li>
+    <li>For rural quota: should have studied Classes III–V in a rural school for the full session.</li>
+    <li>Age between <strong>1 May 2013 and 1 July 2015</strong> (for 2025 entry).</li>
+    <li>Candidate can appear for the test only once.</li>
+  </ul>
+</section>
+
+<!-- 5. FACILITIES -->
+<section>
+  <h2>Facilities</h2>
+  <ul>
+    <li>Well-equipped science and computer laboratories.</li>
+    <li>Smart classrooms and digital learning through Samsung Smart School initiative.</li>
+    <li>Library, art and music rooms, and multi-purpose hall.</li>
+    <li>Sports ground for football, volleyball, athletics and indoor games.</li>
+  </ul>
+</section>
+
+<!-- 6. HOSTEL LIFE -->
+<section>
+  <h2>Hostel Life</h2>
+  <p>The school offers separate hostels for boys and girls with resident staff supervision. Students are provided nutritious meals, health care, and opportunities for co-curricular development.</p>
+</section>
+
+<!-- 7. LOCATION & DISTANCE -->
+<section>
+  <h2>Location & Distance</h2>
+  <ul>
+    <li>Village Gajokhar, Post Parsara, District Varanasi – 221206.</li>
+    <li>~25 km from Varanasi Junction.</li>
+    <li>~20 km from Lanka and BHU Main Gate.</li>
+    <li>Nearest station – Khalispur (5 km).</li>
+  </ul>
+</section>
+
+<!-- 8. RULES & DISCIPLINE -->
+<section>
+  <h2>Rules & Discipline</h2>
+  <ul>
+    <li>All students must stay in the hostel and follow the daily routine.</li>
+    <li>Uniform and punctuality are mandatory.</li>
+    <li>Mobile phones and electronic gadgets are not permitted for students.</li>
+    <li>Students must maintain cleanliness and respect teachers and peers.</li>
+  </ul>
+</section>
+
+<!-- 9. ACADEMICS & RESULTS -->
+<section>
+  <h2>Academics & Results</h2>
+  <p>JNV Varanasi follows the CBSE curriculum focusing on holistic education — academic excellence, co-curricular and physical development. Students consistently achieve excellent board results and participate in national-level Olympiads and exhibitions.</p>
+</section>
+
+<!-- 10. FEES & EXPENSES -->
+<section>
+  <h2>Fees & Expenses</h2>
+  <ul>
+    <li>Education, boarding, and lodging are provided <strong>free of cost</strong> by the Government of India.</li>
+    <li>Nominal fee of ₹600/month applicable for boys under general category whose parents are Govt employees.</li>
+    <li>No fee for SC/ST, girl students and rural category students.</li>
+  </ul>
+</section>
+
+<!-- 11. CONTACT INFORMATION -->
+<section>
+  <h2>Contact Information</h2>
+  <ul>
+    <li><strong>Address:</strong> Jawahar Navodaya Vidyalaya, Village Gajokhar, Post Parsara, Varanasi – 221206</li>
+    <li><strong>Phone:</strong> 0542-2983448</li>
+    <li><strong>Email:</strong> jnvvaranasi@gmail.com</li>
+    <li><strong>Website:</strong> <a href="https://navodaya.gov.in" target="_blank">navodaya.gov.in</a></li>
+  </ul>
+</section>
+
+<!-- 12. WHY CHOOSE JNV -->
+<section>
+  <h2>Why Choose JNV Varanasi</h2>
+  <ul>
+    <li>High-quality CBSE education at almost no cost.</li>
+    <li>Fully residential environment promoting discipline and unity.</li>
+    <li>Migration programme fostering national integration.</li>
+    <li>Opportunities for sports, cultural exchange, and competitive exams.</li>
+  </ul>
+</section>
+
+<footer>
+  <img src="../schoolimages/qr1.png" alt="logo">
+  <img src="../schoolimages/qr2.png" alt="logo">
+  <p>🙏 If you liked my work and found it helpful, you can support me!</p>
+    <p>Scan the QR code below to send a tip. Every contribution keeps me motivated!</p>
+    <br>
+    <p style="color:#ff001e;">Thanks for visiting OK VARANASI!</p>
+    <br>
+    <p style="color:#00ffaa;">For any suggestions or feedback, please contact me:</p>
+
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" style="width:24px;height:24px;margin-right:5px;"> Telegram
+      </a>
+      <a href="https://wa.me/919118717157" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width:24px;height:24px;margin-right:5px;"> WhatsApp
+      </a>
+      <a href="mailto:okvaranasii@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" style="width:24px;height:24px;margin-right:5px;"> Gmail
+      </a>
+      <br>
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style="width:24px;height:24px;margin-right:5px;"> YouTube
+      </a>
+    </div>
+</footer>
+
+<div id="fullscreen">
+  <span id="close">&times;</span>
+  <img id="full-img" src="" alt="Full Image">
+</div>
+
+<script>
+const imgs=document.querySelectorAll('.gallery img');
+const fs=document.getElementById('fullscreen');
+const fimg=document.getElementById('full-img');
+const close=document.getElementById('close');
+imgs.forEach(img=>img.onclick=()=>{fimg.src=img.src;fs.style.display='flex';});
+close.onclick=()=>fs.style.display='none';
+</script>
+
+</body>
+</html>

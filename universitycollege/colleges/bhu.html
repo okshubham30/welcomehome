@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banaras Hindu University (BHU) - Varanasi</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background-color:#0c0c0c;
+      color:#fff;
+      line-height:1.6;
+    }
+
+    a{color:#00ffcc;text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    /* HEADER */
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      background-color:#000;
+      padding:10px 15px;
+      text-align:center;
+    }
+
+    .header-left img{width:120px;height:120px;}
+    .header-center{flex:1;min-width:150px;}
+    .header-center h1{font-size:1.6rem;color:#00ffcc;margin-bottom:5px;}
+    .header-center p{font-size:0.9rem;color:#ccc;}
+
+    section{
+      padding:20px;
+      max-width:900px;
+      margin:20px auto;
+    }
+
+    section h2{
+      font-size:1.3rem;
+      color:#00ffaa;
+      margin-bottom:10px;
+      border-left:4px solid #00ff99;
+      padding-left:8px;
+    }
+
+    section p,section ul{color:#bbb;margin-bottom:10px;}
+    ul{padding-left:20px;list-style-type:square;}
+
+    /* GALLERY */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:10px;
+    }
+    .gallery img{
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      cursor:pointer;
+      border-radius:8px;
+      transition:0.3s;
+    }
+    .gallery img:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 10px #00ffaa;
+    }
+
+    /* VIDEO */
+    .video-container{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:15px;
+    }
+    iframe{
+      width:100%;
+      max-width:720px;
+      height:400px;
+      border-radius:10px;
+      border:2px solid #00ffaa;
+    }
+
+    /* FOOTER */
+    footer{
+      background-color:#000;
+      color:#888;
+      text-align:center;
+      padding:15px;
+      margin-top:20px;
+    }
+
+    footer img{width:140px;height:140px;margin:5px;}
+
+    /* FULLSCREEN IMAGE VIEWER */
+    #fullscreen{
+      display:none;
+      position:fixed;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(0,0,0,0.9);
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      z-index:999;
+    }
+    #fullscreen img{max-width:90%;max-height:80%;border-radius:8px;}
+    #fullscreen span{
+      position:absolute;
+      top:15px;
+      right:20px;
+      font-size:30px;
+      cursor:pointer;
+      color:#fff;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:600px){
+      header{flex-direction:column;text-align:center;}
+      .header-left img{width:140px;height:140px;margin-bottom:8px;}
+      .header-center h1{font-size:1.3rem;}
+      .gallery img{height:100px;}
+      iframe{height:220px;}
+      footer img{width:120px;height:120px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="../unimages/qr1.png" alt="logo">
+    </div>
+    <div class="header-center">
+      <h1>Banaras Hindu University (BHU) - Varanasi</h1>
+      <p>Institute of Eminence | Founded by Pandit Madan Mohan Malaviya</p>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section>
+    <h2>Campus Gallery</h2>
+    <div class="gallery">
+      <img src="../schoolimages/bhu1.jpg" alt="BHU Campus Gate">
+      <img src="../schoolimages/bhu2.jpg" alt="New Vishwanath Temple">
+      <img src="../schoolimages/bhu3.jpg" alt="Central Library">
+      <img src="../schoolimages/bhu4.jpg" alt="Hostel Building">
+      <img src="../schoolimages/bhu5.jpg" alt="Campus Road">
+      <img src="../schoolimages/bhu6.jpg" alt="Auditorium">
+    </div>
+  </section>
+
+  <!-- VIDEO SECTION -->
+  <section>
+  <h2>🎥 BHU Campus Tour</h2>
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/8moccFjlX2k" 
+      title="BHU Campus Tour Video" 
+      allowfullscreen>
+    </iframe>
+  </div>
+<br>
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/twhhkWAJdc0" 
+      title="BHU Campus Tour Video" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+
+</section>
+
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About Banaras Hindu University (BHU)</h2>
+    <p>Banaras Hindu University (BHU), established in 1916 by Pandit Madan Mohan Malaviya, is one of India’s most prestigious central universities located in Varanasi, Uttar Pradesh. Spread across more than 1,300 acres, the BHU campus is renowned for its lush greenery, grand architecture, and spiritual environment.</p>
+    <p>It is recognized as an “Institute of Eminence” by the Government of India and attracts students from all states of India and abroad. The university offers a wide range of undergraduate, postgraduate, doctoral, and diploma programs in diverse disciplines like Arts, Science, Commerce, Engineering, Medicine, Law, Agriculture, and Performing Arts.</p>
+  </section>
+
+  <!-- FACULTIES -->
+  <section>
+    <h2>Faculties and Institutes</h2>
+    <ul>
+      <li>Institute of Science</li>
+      <li>Institute of Technology (IIT-BHU)</li>
+      <li>Institute of Medical Sciences</li>
+      <li>Faculty of Arts</li>
+      <li>Faculty of Commerce</li>
+      <li>Faculty of Law</li>
+      <li>Faculty of Agriculture</li>
+      <li>Faculty of Social Sciences</li>
+      <li>Faculty of Performing Arts</li>
+      <li>Faculty of Visual Arts</li>
+    </ul>
+  </section>
+
+  <!-- COURSES -->
+  <section>
+    <h2>Popular Courses Offered</h2>
+    <ul>
+      <li>B.A., B.Sc., B.Com, B.Ed, LL.B., BFA</li>
+      <li>B.Tech and M.Tech (through IIT-BHU)</li>
+      <li>MBBS, BDS, Nursing (IMS-BHU)</li>
+      <li>M.A., M.Sc., M.Com, MBA, MCA</li>
+      <li>Ph.D. and Research Programs in various disciplines</li>
+    </ul>
+  </section>
+
+  <!-- ADMISSION PROCESS -->
+  <section>
+    <h2>Admission Process</h2>
+    <p>Admissions to Banaras Hindu University are conducted through national-level entrance exams:</p>
+    <ul>
+      <li><strong>Undergraduate (UG):</strong> Admission via <b>CUET-UG</b> conducted by NTA. Candidates must apply through CUET and choose BHU as their preferred university.</li>
+      <li><strong>Postgraduate (PG):</strong> Admission through <b>CUET-PG</b> or direct BHU process depending on course.</li>
+      <li><strong>Ph.D. Programs:</strong> Based on Research Entrance Test (RET) and interview conducted by BHU.</li>
+    </ul>
+    <p>After results, candidates must complete <b>BHU counselling</b> via the official admission portal at <a href="https://bhuonline.in" target="_blank">bhuonline.in</a>.</p>
+  </section>
+
+  <!-- FEES AND SCHOLARSHIPS -->
+  <section>
+    <h2>Fees and Scholarships</h2>
+    <ul>
+      <li>BHU offers affordable fee structures for all courses.</li>
+      <li>Numerous scholarships are available for meritorious and economically weaker students.</li>
+      <li>SC/ST and OBC students can avail fee concessions as per government norms.</li>
+      <li>Merit-based and need-based scholarships supported by BHU Alumni Association.</li>
+    </ul>
+  </section>
+
+  <!-- CAMPUS LIFE -->
+  <section>
+    <h2>Campus Life and Facilities</h2>
+    <ul>
+      <li>Sprawling green campus with over 60 hostels.</li>
+      <li>Central Library with over 1.5 million books and digital resources.</li>
+      <li>Wi-Fi enabled academic buildings and research centers.</li>
+      <li>24×7 health care through Sir Sunderlal Hospital.</li>
+      <li>Large sports complex and gymnasium.</li>
+      <li>Student cultural events like SPANDAN and BHU Fest.</li>
+    </ul>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section>
+    <h2>Disclaimer</h2>
+    <p>The information provided on <strong>OK VARANASI</strong> is for general informational purposes only. We are not directly associated with <strong>BHU</strong> or its administration. For official admission updates, notifications, or forms, visit the official BHU website at <a href="https://www.bhu.ac.in" target="_blank">www.bhu.ac.in</a>.</p>
+  </section>
+
+  <!-- ADVICE -->
+  <section>
+    <h2>Advice for Students</h2>
+    <p>BHU is not just a university — it’s a heritage of learning and culture. If you are planning to join BHU:</p>
+    <ul>
+      <li>Focus on clearing CUET or entrance exams with dedication.</li>
+      <li>Prepare your documents and certificates early for counselling.</li>
+      <li>Use the university’s rich environment to build skills and confidence.</li>
+      <li>Respect teachers, peers, and the legacy of Mahamana Malaviya Ji.</li>
+      <li>Engage in social and cultural activities to enhance personality.</li>
+    </ul>
+    <p style="color:#00ffaa;">📘 “BHU is a temple of learning — where knowledge meets character.”</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../unimages/qr1.png" alt="logo">
+    <img src="../unimages/qr2.png" alt="scanner">
+    <p>🙏 IF YOU FOUND THIS PAGE HELPFUL, YOU CAN SUPPORT ME!</p>
+    <p>SCAN THE QR CODE BELOW TO SEND A TIP — EVERY CONTRIBUTION MOTIVATES ME 💚</p>
+    <br>
+    <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+    <br>
+    <p style="color:#00ffaa;">FOR FEEDBACK OR SUGGESTIONS, CONTACT ME BELOW</p>
+
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" style="width:24px;height:24px;margin-right:5px;"> Telegram
+      </a>
+
+      <a href="https://wa.me/919118717157" target="_blank" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:24px;height:24px;margin-right:5px;"> WhatsApp
+      </a>
+
+      <a href="mailto:okvaranasii@gmail.com" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" style="width:24px;height:24px;margin-right:5px;"> Gmail
+      </a>
+
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank" style="display:inline-flex;align-items:center;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:24px;height:24px;margin-right:5px;"> YouTube
+      </a>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+  </div>
+
+  <script>
+    const galleryImages=document.querySelectorAll('.gallery img');
+    const fullscreen=document.getElementById('fullscreen');
+    const fullImg=document.getElementById('full-img');
+    const closeBtn=document.getElementById('close');
+
+    galleryImages.forEach(img=>{
+      img.addEventListener('click',()=>{
+        fullImg.src=img.src;
+        fullscreen.style.display='flex';
+      });
+    });
+    closeBtn.addEventListener('click',()=>fullscreen.style.display='none');
+  </script>
+
+</body>
+</html>

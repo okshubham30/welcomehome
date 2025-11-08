@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIT (BHU) - Varanasi</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background-color:#0c0c0c;
+      color:#fff;
+      line-height:1.6;
+    }
+
+    a{color:#00ffcc;text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      background-color:#000;
+      padding:10px 15px;
+      text-align:center;
+    }
+
+    .header-left img{width:120px;height:120px;}
+    .header-center{flex:1;min-width:150px;}
+    .header-center h1{font-size:1.6rem;color:#00ffcc;margin-bottom:5px;}
+    .header-center p{font-size:0.9rem;color:#ccc;}
+
+    section{
+      padding:20px;
+      max-width:900px;
+      margin:20px auto;
+    }
+
+    section h2{
+      font-size:1.3rem;
+      color:#00ffaa;
+      margin-bottom:10px;
+      border-left:4px solid #00ff99;
+      padding-left:8px;
+    }
+
+    section p,section ul{color:#bbb;margin-bottom:10px;}
+    ul{padding-left:20px;list-style-type:square;}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:10px;
+    }
+    .gallery img{
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      cursor:pointer;
+      border-radius:8px;
+      transition:0.3s;
+    }
+    .gallery img:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 10px #00ffaa;
+    }
+
+    .video-container{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:15px;
+    }
+    iframe{
+      width:100%;
+      max-width:720px;
+      height:400px;
+      border-radius:10px;
+      border:2px solid #00ffaa;
+    }
+
+    footer{
+      background-color:#000;
+      color:#888;
+      text-align:center;
+      padding:15px;
+      margin-top:20px;
+    }
+
+    footer img{width:140px;height:140px;margin:5px;}
+
+    #fullscreen{
+      display:none;
+      position:fixed;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(0,0,0,0.9);
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      z-index:999;
+    }
+    #fullscreen img{max-width:90%;max-height:80%;border-radius:8px;}
+    #fullscreen span{
+      position:absolute;
+      top:15px;
+      right:20px;
+      font-size:30px;
+      cursor:pointer;
+      color:#fff;
+    }
+
+    @media (max-width:600px){
+      header{flex-direction:column;text-align:center;}
+      .header-left img{width:140px;height:140px;margin-bottom:8px;}
+      .header-center h1{font-size:1.3rem;}
+      .gallery img{height:100px;}
+      iframe{height:220px;}
+      footer img{width:120px;height:120px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="../unimages/qr1.png" alt="logo">
+    </div>
+    <div class="header-center">
+      <h1>Indian Institute of Technology (BHU) - Varanasi</h1>
+      <p>Institute of National Importance | Established 1919</p>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section>
+    <h2>Campus Gallery</h2>
+    <div class="gallery">
+      <img src="../schoolimages/iitbhu1.jpg" alt="IIT BHU Main Building">
+      <img src="../schoolimages/iitbhu2.jpg" alt="Department of Electrical Engineering">
+      <img src="../schoolimages/iitbhu3.jpg" alt="Campus Area">
+      <img src="../schoolimages/iitbhu4.jpg" alt="Hostel Block">
+      <img src="../schoolimages/iitbhu5.jpg" alt="Workshop Area">
+      <img src="../schoolimages/iitbhu6.jpg" alt="Auditorium and Grounds">
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section>
+    <h2>🎥 IIT BHU Campus Tour</h2>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/Qi4_ncf2nwU"
+        title="IIT BHU Campus Tour"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About IIT (BHU) Varanasi</h2>
+    <p>IIT (BHU) Varanasi is one of India’s oldest engineering institutions, tracing its origins to the Banaras Engineering College (1919). It became an IIT in 2012 and is located within the Banaras Hindu University (BHU) campus in Varanasi, Uttar Pradesh. Known for its rich heritage and academic excellence, IIT BHU offers world-class education, research, and innovation opportunities in science, technology, and engineering.</p>
+    <p>The institute blends traditional Indian values with modern technological advancements, preparing students to become global leaders and innovators.</p>
+  </section>
+
+  <!-- DEPARTMENTS -->
+  <section>
+    <h2>Departments and Schools</h2>
+    <ul>
+      <li>School of Biomedical Engineering</li>
+      <li>Department of Civil Engineering</li>
+      <li>Department of Electrical Engineering</li>
+      <li>Department of Mechanical Engineering</li>
+      <li>Department of Computer Science & Engineering</li>
+      <li>Department of Ceramic Engineering</li>
+      <li>Department of Metallurgical Engineering</li>
+      <li>School of Materials Science and Technology</li>
+      <li>Department of Chemical Engineering</li>
+      <li>Department of Mining Engineering</li>
+      <li>School of Management Sciences</li>
+    </ul>
+  </section>
+
+  <!-- COURSES -->
+  <section>
+    <h2>Courses Offered</h2>
+    <ul>
+      <li><strong>B.Tech:</strong> Admission through JEE Advanced</li>
+      <li><strong>Integrated Dual Degree (B.Tech + M.Tech)</strong></li>
+      <li><strong>M.Tech:</strong> Admission through GATE</li>
+      <li><strong>Ph.D.:</strong> Research in advanced engineering and sciences</li>
+      <li><strong>MBA:</strong> Offered under the School of Management Sciences</li>
+    </ul>
+  </section>
+
+  <!-- ADMISSION -->
+  <section>
+    <h2>Admission Process</h2>
+    <ul>
+      <li><b>B.Tech / Dual Degree:</b> Based on JEE Advanced Rank through JoSAA counselling.</li>
+      <li><b>M.Tech:</b> Admission through GATE scores and CCMT counselling.</li>
+      <li><b>Ph.D.:</b> Through Departmental Written Test and Interview.</li>
+      <li><b>MBA:</b> Based on CAT scores and group discussion/interview process.</li>
+    </ul>
+    <p>For more details and registration, visit the official site: 
+      <a href="https://www.iitbhu.ac.in/admissions" target="_blank">www.iitbhu.ac.in/admissions</a>
+    </p>
+  </section>
+
+  <!-- FACILITIES -->
+  <section>
+    <h2>Campus Facilities</h2>
+    <ul>
+      <li>Modern classrooms and advanced laboratories.</li>
+      <li>High-speed Wi-Fi across campus.</li>
+      <li>Central Library with thousands of journals and research papers.</li>
+      <li>Hostel accommodation with mess and recreation areas.</li>
+      <li>Sports complex, gymnasium, and cultural activity centers.</li>
+      <li>Collaboration with international universities and industries.</li>
+    </ul>
+  </section>
+
+  <!-- PLACEMENTS -->
+  <section>
+    <h2>Placements and Internships</h2>
+    <ul>
+      <li>Top recruiters include Google, Microsoft, Amazon, TCS, Infosys, and ISRO.</li>
+      <li>Average placement package: ₹15–20 LPA (as per branch).</li>
+      <li>Active placement cell guiding students for internships and careers.</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../unimages/qr1.png" alt="logo">
+    <img src="../unimages/qr2.png" alt="QR Code 2">
+    <p>🙏 IF YOU FOUND THIS PAGE HELPFUL, YOU CAN SUPPORT ME!</p>
+    <p>SCAN THE QR CODE BELOW TO SEND A TIP — EVERY CONTRIBUTION MOTIVATES ME 💚</p>
+    <br>
+    <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+    <br>
+    <p style="color:#00ffaa;">FOR FEEDBACK OR SUGGESTIONS, CONTACT ME BELOW</p>
+
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" style="width:24px;height:24px;margin-right:5px;"> Telegram
+      </a>
+
+      <a href="https://wa.me/919118717157" target="_blank" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:24px;height:24px;margin-right:5px;"> WhatsApp
+      </a>
+
+      <a href="mailto:okvaranasii@gmail.com" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" style="width:24px;height:24px;margin-right:5px;"> Gmail
+      </a>
+
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank" style="display:inline-flex;align-items:center;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:24px;height:24px;margin-right:5px;"> YouTube
+      </a>
+    </div>
+  </footer>
+
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+  </div>
+
+  <script>
+    const galleryImages=document.querySelectorAll('.gallery img');
+    const fullscreen=document.getElementById('fullscreen');
+    const fullImg=document.getElementById('full-img');
+    const closeBtn=document.getElementById('close');
+
+    galleryImages.forEach(img=>{
+      img.addEventListener('click',()=>{
+        fullImg.src=img.src;
+        fullscreen.style.display='flex';
+      });
+    });
+    closeBtn.addEventListener('click',()=>fullscreen.style.display='none');
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Central Institute of Higher Tibetan Studies (CIHTS) - Sarnath</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Basic reset & theme --- */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0c0c0c;
+      color:#fff;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a { color:#00ffcc; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    /* --- Header --- */
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      background:#000;
+      padding:12px 16px;
+      text-align:center;
+      border-bottom:1px solid rgba(0,255,170,0.06);
+    }
+    .header-left img{ width:120px; height:120px; object-fit:cover; }
+    .header-center{ flex:1; min-width:180px; padding:6px 16px; }
+    .header-center h1{ font-size:1.6rem; color:#00ffcc; margin-bottom:6px; }
+    .header-center p{ color:#cfcfcf; font-size:0.95rem; }
+
+    /* --- Page sections --- */
+    section{
+      padding:20px;
+      max-width:980px;
+      margin:18px auto;
+      background:transparent;
+    }
+    section h2{
+      font-size:1.25rem;
+      color:#00ffaa;
+      margin-bottom:10px;
+      border-left:4px solid #00ff99;
+      padding-left:10px;
+    }
+    section p, section ul { color:#bbb; margin-bottom:12px; }
+    ul{ padding-left:20px; list-style-type:square; }
+
+    /* --- Gallery --- */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:10px;
+      margin-top:8px;
+    }
+    .gallery img{
+      width:100%;
+      height:130px;
+      object-fit:cover;
+      border-radius:8px;
+      cursor:pointer;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .gallery img:hover{
+      transform:scale(1.04);
+      box-shadow:0 6px 18px rgba(0,255,170,0.08);
+    }
+
+    /* --- Video --- */
+    .video-container{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:12px;
+    }
+    iframe{
+      width:100%;
+      max-width:780px;
+      height:430px;
+      border-radius:10px;
+      border:2px solid #00ffaa;
+      background:#000;
+    }
+
+    /* --- Info columns (small utility) --- */
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .card{
+      background:rgba(255,255,255,0.02);
+      padding:12px;
+      border-radius:8px;
+      border:1px solid rgba(0,255,170,0.03);
+    }
+    .muted{ color:#9f9f9f; font-size:0.95rem; }
+
+    /* --- Footer --- */
+    footer{
+      background:#000;
+      color:#888;
+      text-align:center;
+      padding:16px;
+      margin-top:20px;
+      border-top:1px solid rgba(0,255,170,0.03);
+    }
+    footer img{ width:140px; height:140px; margin:6px; object-fit:cover; }
+
+    /* --- Fullscreen viewer --- */
+    #fullscreen{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.92);
+      z-index:9999;
+      justify-content:center;
+      align-items:center;
+      padding:16px;
+    }
+    #fullscreen img{ max-width:96%; max-height:86%; border-radius:8px; }
+    #fullscreen .close{
+      position:absolute;
+      top:14px;
+      right:18px;
+      font-size:34px;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width:820px){
+      .two-col{ grid-template-columns: 1fr; }
+      .header-left img{ width:140px; height:140px; margin-bottom:8px; }
+      .header-center h1{ font-size:1.25rem; }
+      iframe{ height:260px; }
+      .gallery img{ height:110px; }
+      footer img{ width:120px; height:120px; }
+    }
+
+    @media (max-width:480px){
+      header{ flex-direction:column; gap:8px; }
+      section{ padding:16px; margin:12px; }
+      iframe{ height:200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <!-- Replace QR with your actual QR image -->
+      <img src="../unimages/qr1.png" alt="CIHTS Logo / QR">
+    </div>
+
+    <div class="header-center">
+      <h1>Central Institute of Higher Tibetan Studies (CIHTS) - Sarnath</h1>
+      <p>Deemed University • Preservation & Study of Tibetan-Buddhist Traditions</p>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section>
+    <h2>Campus Gallery</h2>
+    <div class="gallery">
+      <!-- Replace these with real images: cihts1..cihts6 -->
+      <img src="../schoolimages/cihts1.jpg" alt="CIHTS Main Gate">
+      <img src="../schoolimages/cihts2.jpg" alt="Campus View">
+      <img src="../schoolimages/cihts3.jpg" alt="Library / Manuscripts">
+      <img src="../schoolimages/cihts4.jpg" alt="Sowa-Rigpa Clinic / Lab">
+      <img src="../schoolimages/cihts5.jpg" alt="Classroom / Seminar Hall">
+      <img src="../schoolimages/cihts6.jpg" alt="Cultural Event / Festival">
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section>
+    <h2>🎥 CIHTS Campus / Intro Video</h2>
+    <p class="muted">(Replace <strong>EMBED_VIDEO_ID</strong> below with the YouTube video id — e.g. for <em>https://youtu.be/ABC123</em> use <em>ABC123</em>.)</p>
+
+    <div class="video-container">
+      <!-- Replace EMBED_VIDEO_ID with your video's ID -->
+      <iframe
+        src="https://www.youtube.com/embed/EMBED_VIDEO_ID"
+        title="CIHTS - Campus & Intro Video"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About CIHTS (Central Institute of Higher Tibetan Studies)</h2>
+    <p>The Central Institute of Higher Tibetan Studies (CIHTS), Sarnath (Varanasi) is a Government-funded deemed university founded in 1967 to provide higher education in Tibetan language, Buddhist philosophy, culture, and traditional sciences such as Sowa-Rigpa (Tibetan medicine). Located close to the historic site of Sarnath, CIHTS blends traditional monastic scholarship with modern academic methods and research.</p>
+  </section>
+
+  <!-- HISTORY -->
+  <section>
+    <h2>History & Background</h2>
+    <p>Founded in 1967, CIHTS was established to serve educational needs of Tibetan youth (in exile) and Himalayan communities, and to conserve Tibetan Buddhist textual and cultural heritage. Over decades it has grown into a recognized centre of learning with NAAC accreditation and UGC recognition.</p>
+    <p>The institute’s campus at Sarnath offers a tranquil, scholarly environment amid Buddhist sites, making it ideal for the study of Buddhist thought and cultural exchange.</p>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section>
+    <h2>Vision & Mission</h2>
+    <ul>
+      <li><strong>Vision:</strong> To be a global hub for Tibetan and Buddhist studies, research and preservation of the Indo-Tibetan cultural heritage.</li>
+      <li><strong>Mission:</strong> Integrate traditional Tibetan/Buddhist scholarship with modern academia, promote research, train practitioners (e.g., Sowa-Rigpa), and facilitate cultural exchange.</li>
+    </ul>
+  </section>
+
+  <!-- ACADEMICS & DEPARTMENTS -->
+  <section>
+    <h2>Academic Structure & Departments</h2>
+    <p>CIHTS offers a range of programmes across levels and disciplines. Key academic areas include:</p>
+    <ul>
+      <li>Buddhist Philosophy & Indo-Tibetan Studies</li>
+      <li>Tibetan Language & Literature</li>
+      <li>Sowa-Rigpa (Traditional Tibetan Medicine)</li>
+      <li>Tibetan Jyotish (Astrology) & Ritual Studies</li>
+      <li>Fine Arts & Thangka Painting</li>
+      <li>History & Cultural Studies of Himalayan regions</li>
+      <li>Research centres for manuscriptology, translation & preservation</li>
+    </ul>
+  </section>
+
+  <!-- COURSES -->
+  <section>
+    <h2>Courses & Programmes</h2>
+    <ul>
+      <li>Pre-University (Purva Madhyama / Uttara Madhyama) — foundation-level courses</li>
+      <li>Undergraduate (e.g., Shastri / B.A. equivalent in Buddhist/Tibetan studies)</li>
+      <li>Integrated & Professional (e.g., B.S.R.M.S. — Sowa-Rigpa medicine)</li>
+      <li>Postgraduate (Acharya / M.A. equivalents in specialized subjects)</li>
+      <li>M.Phil / Vidyavaridhi (Ph.D.) — advanced research degrees</li>
+      <li>Diploma & certificate courses (languages, manuscriptology, arts)</li>
+    </ul>
+  </section>
+
+  <!-- ADMISSION -->
+  <section>
+    <h2>Admission Process & Eligibility</h2>
+    <p>Admission rules vary per programme — always check official notices. Typical points:</p>
+    <ul>
+      <li>Applications: Online / offline application forms as per prospectus.</li>
+      <li>Entrance: Many programmes require institute entrance tests; some may be merit-based.</li>
+      <li>Eligibility: Depends on course — e.g., Purva Madhyama may require lower secondary completion with Tibetan language knowledge; Acharya requires UG (Shastri) or equivalent.</li>
+      <li>Documents: Mark sheets, DOB proof, caste certificate (if applicable), migration certificate, photograph, identity proof.</li>
+      <li>Reserved seats / special quotas: Certain seats may be reserved for Tibetan community / Himalayan regions / specific categories — check prospectus.</li>
+    </ul>
+    <p>For accurate dates and forms, use the official CIHTS admissions page (or campus notice board).</p>
+  </section>
+
+  <!-- FEES & SCHOLARSHIPS -->
+  <section>
+    <h2>Fees, Scholarships & Financial Support</h2>
+    <p>CIHTS being supported by the Ministry of Culture often offers subsidized/affordable fee structures. Scholarships & financial supports include:</p>
+    <ul>
+      <li>Government scholarships for eligible students</li>
+      <li>Fellowships and research assistantships for MPhil / PhD candidates</li>
+      <li>Special provisions for Tibetan exile students and students from Himalayan regions</li>
+      <li>Check CIHTS website / office for current fee details and scholarship notices</li>
+    </ul>
+  </section>
+
+  <!-- CAMPUS LIFE & FACILITIES -->
+  <section>
+    <h2>Campus Life & Facilities</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>Residential Campus</h3>
+        <p>CIHTS provides hostel accommodation for students; the campus is residential for many programmes, fostering a focused academic and community life.</p>
+      </div>
+      <div class="card">
+        <h3>Library & Manuscripts</h3>
+        <p>Specialized libraries with Tibetan texts, manuscripts, translations and modern reference materials. Manuscript preservation is an active area.</p>
+      </div>
+    </div>
+
+    <div style="height:12px;"></div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>Healthcare & Sowa-Rigpa Clinic</h3>
+        <p>A functioning Sowa-Rigpa clinic and labs support the studying and practising of Tibetan medicine within campus facilities.</p>
+      </div>
+      <div class="card">
+        <h3>Cultural & Academic Activities</h3>
+        <p>Regular seminars, workshops, Buddhist ritual practice, arts training (thangka) and cultural festivals connect students to living traditions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH & INTERNATIONAL COLLABORATION -->
+  <section>
+    <h2>Research, Publications & Collaborations</h2>
+    <p>CIHTS engages in:</p>
+    <ul>
+      <li>Textual research, critical editions and translations</li>
+      <li>Manuscript cataloguing and conservation projects</li>
+      <li>Collaborations with international Buddhist and Indology centres</li>
+      <li>Workshops and joint research projects on Himalayan cultures, medicine and linguistics</li>
+    </ul>
+  </section>
+
+  <!-- CAREER PATHS -->
+  <section>
+    <h2>Career Paths & Opportunities</h2>
+    <p>Graduates and researchers from CIHTS find roles in:</p>
+    <ul>
+      <li>Teaching and academics (schools, colleges, higher education)</li>
+      <li>Research institutes, museums, libraries and archives</li>
+      <li>Traditional medicine practice (Sowa-Rigpa clinics) and healthcare settings</li>
+      <li>Translation, publishing, cultural heritage management</li>
+      <li>Government / NGO work focused on Himalayan & Tibetan communities</li>
+    </ul>
+  </section>
+
+  <!-- STRENGTHS & THINGS TO CONSIDER -->
+  <section>
+    <h2>Strengths & Things to Consider</h2>
+    <ul>
+      <li>Unique niche: one of India’s leading centres for Tibetan and Buddhist studies.</li>
+      <li>Strong preservation focus (manuscripts & traditional knowledge).</li>
+      <li>Residential campus ideal for immersive learning.</li>
+      <li>Not suited if you're seeking mainstream engineering/commerce training — it’s a specialist institute.</li>
+      <li>Always confirm admission rules, seat reservations, and fee structure from the official site before applying.</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT & LINKS -->
+  <section>
+    <h2>Contact & Important Links</h2>
+    <p><strong>Address:</strong> Central Institute of Higher Tibetan Studies, Sarnath, Varanasi, Uttar Pradesh, India.</p>
+    <p><strong>Official Website:</strong> <a href="https://cihts.ac.in" target="_blank">https://cihts.ac.in</a></p>
+    <p><strong>Phone / Email:</strong> Check official website for current contact numbers and email addresses.</p>
+  </section>
+
+  <!-- ADVICE & TIPS -->
+  <section>
+    <h2>Advice for Applicants</h2>
+    <ul>
+      <li>Carefully read the prospectus and eligibility for the programme you want.</li>
+      <li>If you’re from a non-Tibetan background but interested in courses, check language prerequisites.</li>
+      <li>Prepare documents (DOB, marksheets, caste certificate, migration certificate) before application.</li>
+      <li>For research programmes, contact potential supervisors and prepare a short research plan.</li>
+    </ul>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section>
+    <h2>Disclaimer</h2>
+    <p>This page is an informational template for CIHTS and not an official university page. For authenticated notices, admission dates, fee structures and circulars always refer to the official CIHTS website (<a href="https://cihts.ac.in" target="_blank">cihts.ac.in</a>) or contact the institute directly.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <!-- Footer QR images: replace with your QR files -->
+    <img src="../unimages/qr1.png" alt="QR Code 1">
+    <img src="../unimages/qr2.png" alt="QR Code 2">
+
+    <p>🙏 IF YOU FOUND THIS PAGE HELPFUL, YOU CAN SUPPORT ME!</p>
+    <p>SCAN THE QR CODE BELOW TO SEND A TIP — EVERY CONTRIBUTION MOTIVATES ME 💚</p>
+    <br>
+    <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+    <br>
+    <p style="color:#00ffaa;">FOR FEEDBACK OR SUGGESTIONS, CONTACT ME BELOW</p>
+
+    <div class="footer-right" style="margin-top:10px;">
+      <a href="https://t.me/okvaranasi" target="_blank" style="display:inline-flex;align-items:center;margin-right:12px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" style="width:22px;height:22px;margin-right:6px;"> Telegram
+      </a>
+      <a href="https://wa.me/919118717157" target="_blank" style="display:inline-flex;align-items:center;margin-right:12px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:22px;height:22px;margin-right:6px;"> WhatsApp
+      </a>
+      <a href="mailto:okvaranasii@gmail.com" style="display:inline-flex;align-items:center;margin-right:12px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" style="width:22px;height:22px;margin-right:6px;"> Gmail
+      </a>
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank" style="display:inline-flex;align-items:center;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:22px;height:22px;margin-right:6px;"> YouTube
+      </a>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div id="fullscreen" role="dialog" aria-hidden="true">
+    <div class="close" id="close-fullscreen">&times;</div>
+    <img id="full-img" src="" alt="Full view">
+  </div>
+
+  <script>
+    // Gallery fullscreen viewer
+    (function(){
+      const imgs = document.querySelectorAll('.gallery img');
+      const viewer = document.getElementById('fullscreen');
+      const fullImg = document.getElementById('full-img');
+      const closeBtn = document.getElementById('close-fullscreen');
+
+      imgs.forEach(img => {
+        img.addEventListener('click', () => {
+          fullImg.src = img.src;
+          viewer.style.display = 'flex';
+          viewer.setAttribute('aria-hidden','false');
+        });
+      });
+
+      closeBtn.addEventListener('click', () => {
+        viewer.style.display = 'none';
+        viewer.setAttribute('aria-hidden','true');
+      });
+
+      // close on ESC
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') {
+          viewer.style.display = 'none';
+          viewer.setAttribute('aria-hidden','true');
+        }
+      });
+
+      // close when clicking outside image
+      viewer.addEventListener('click', (ev) => {
+        if(ev.target === viewer) {
+          viewer.style.display = 'none';
+          viewer.setAttribute('aria-hidden','true');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

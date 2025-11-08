@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sampurnanand Sanskrit Vishwavidyalaya (SSVV) - Varanasi</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Basic reset & theme --- */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0c0c0c;
+      color:#fff;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a { color:#00ffcc; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    /* --- Header --- */
+    header{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      background:#000;
+      padding:12px 16px;
+      text-align:center;
+      border-bottom:1px solid rgba(0,255,170,0.06);
+    }
+    .header-left img{ width:120px; height:120px; object-fit:cover; }
+    .header-center{ flex:1; min-width:180px; padding:6px 16px; }
+    .header-center h1{ font-size:1.6rem; color:#00ffcc; margin-bottom:6px; }
+    .header-center p{ color:#cfcfcf; font-size:0.95rem; }
+
+    /* --- Page sections --- */
+    section{
+      padding:20px;
+      max-width:980px;
+      margin:18px auto;
+      background:transparent;
+    }
+    section h2{
+      font-size:1.25rem;
+      color:#00ffaa;
+      margin-bottom:10px;
+      border-left:4px solid #00ff99;
+      padding-left:10px;
+    }
+    section p, section ul { color:#bbb; margin-bottom:12px; }
+    ul{ padding-left:20px; list-style-type:square; }
+
+    /* --- Gallery --- */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:10px;
+      margin-top:8px;
+    }
+    .gallery img{
+      width:100%;
+      height:130px;
+      object-fit:cover;
+      border-radius:8px;
+      cursor:pointer;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .gallery img:hover{
+      transform:scale(1.04);
+      box-shadow:0 6px 18px rgba(0,255,170,0.08);
+    }
+
+    /* --- Video --- */
+    .video-container{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:12px;
+    }
+    iframe{
+      width:100%;
+      max-width:780px;
+      height:430px;
+      border-radius:10px;
+      border:2px solid #00ffaa;
+      background:#000;
+    }
+
+    /* --- Info columns (small utility) --- */
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .card{
+      background:rgba(255,255,255,0.02);
+      padding:12px;
+      border-radius:8px;
+      border:1px solid rgba(0,255,170,0.03);
+    }
+    .muted{ color:#9f9f9f; font-size:0.95rem; }
+
+    /* --- Footer --- */
+    footer{
+      background:#000;
+      color:#888;
+      text-align:center;
+      padding:16px;
+      margin-top:20px;
+      border-top:1px solid rgba(0,255,170,0.03);
+    }
+    footer img{ width:140px; height:140px; margin:6px; object-fit:cover; }
+
+    /* --- Fullscreen viewer --- */
+    #fullscreen{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.92);
+      z-index:9999;
+      justify-content:center;
+      align-items:center;
+      padding:16px;
+    }
+    #fullscreen img{ max-width:96%; max-height:86%; border-radius:8px; }
+    #fullscreen .close{
+      position:absolute;
+      top:14px;
+      right:18px;
+      font-size:34px;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width:820px){
+      .two-col{ grid-template-columns: 1fr; }
+      .header-left img{ width:140px; height:140px; margin-bottom:8px; }
+      .header-center h1{ font-size:1.25rem; }
+      iframe{ height:260px; }
+      .gallery img{ height:110px; }
+      footer img{ width:120px; height:120px; }
+    }
+
+    @media (max-width:480px){
+      header{ flex-direction:column; gap:8px; }
+      section{ padding:16px; margin:12px; }
+      iframe{ height:200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <!-- Replace QR with your actual QR image -->
+      <img src="../unimages/qr1.png" alt="logo">
+    </div>
+
+    <div class="header-center">
+      <h1>Sampurnanand Sanskrit Vishwavidyalaya (SSVV) - Varanasi</h1>
+      <p>Centre of Excellence for Sanskrit & Traditional Indian Knowledge Systems</p>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section>
+    <h2>Campus Gallery</h2>
+    <div class="gallery">
+      <!-- Replace these with your real images (ssvv1.jpg ... ssvv6.jpg) -->
+      <img src="../schoolimages/ssvv1.jpg" alt="SSVV Main Building">
+      <img src="../schoolimages/ssvv2.jpg" alt="Saraswati Bhavan Library">
+      <img src="../schoolimages/ssvv3.jpg" alt="Campus View">
+      <img src="../schoolimages/ssvv4.jpg" alt="Classroom / Lecture Hall">
+      <img src="../schoolimages/ssvv5.jpg" alt="Students & Activities">
+      <img src="../schoolimages/ssvv6.jpg" alt="Auditorium / Events">
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section>
+    <h2>🎥 SSVV Campus / Intro Video</h2>
+    <p class="muted">(Replace <strong>EMBED_VIDEO_ID</strong> below with your YouTube video id — e.g. if link is <em>https://youtu.be/ABC123</em> use <em>ABC123</em>.)</p>
+
+    <div class="video-container">
+      <!-- Replace EMBED_VIDEO_ID with your video's ID -->
+      <iframe
+        src="https://www.youtube.com/embed/EMBED_VIDEO_ID"
+        title="Sampurnanand Sanskrit Vishwavidyalaya - Campus Video"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About Sampurnanand Sanskrit Vishwavidyalaya (SSVV)</h2>
+    <p>Sampurnanand Sanskrit Vishwavidyalaya (SSVV), Varanasi, is a premier state university dedicated to the teaching, research and preservation of Sanskrit language, literature and Indian traditional knowledge systems. The university’s roots trace back to the early Sanskrit colleges in Varanasi and it has evolved into a modern institution offering classical and contemporary courses that combine tradition with modern scholarship.</p>
+
+    <p>Located at Jagatganj / Chaukaghat in Varanasi, SSVV focuses on disciplines such as Veda, Vedanga, Vyakarana (grammar), Nyaya (logic), Mimamsa, Jyotisha (astronomy/astrology), Puranetihasa (epics & history), and also offers allied modern subjects like Education, Library Science, Social Sciences and Language studies.</p>
+  </section>
+
+  <!-- HISTORY -->
+  <section>
+    <h2>History & Establishment</h2>
+    <p>The university’s lineage dates back to 1791 with the establishment of Government Sanskrit College in Varanasi. As a dedicated university, Sampurnanand Sanskrit Vishwavidyalaya was established in 1958 (gazetted later) with the objective of fostering Sanskrit learning at a high academic level. The university is named after the great scholar Sampurnanand and serves as one of the key centres of Sanskrit scholarship in India.</p>
+
+    <p>Over the decades SSVV has preserved numerous manuscripts, built specialized libraries and developed a network of affiliated Sanskrit colleges across Uttar Pradesh.</p>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section>
+    <h2>Vision & Mission</h2>
+    <ul>
+      <li><strong>Vision:</strong> To be a global hub for Sanskrit and Indological studies—bridging ancient wisdom and modern research.</li>
+      <li><strong>Mission:</strong> To preserve, teach, research and disseminate Sanskrit literature, Vedic sciences and allied disciplines using rigorous academic methods, while creating employable skill-based programs for learners.</li>
+    </ul>
+  </section>
+
+  <!-- FACULTIES & DEPARTMENTS -->
+  <section>
+    <h2>Faculties, Schools & Departments</h2>
+    <p>SSVV's academic structure includes traditional departments and modern allied departments. Major units typically include:</p>
+    <ul>
+      <li>Faculty of Sanskrit Literature (Shastri / Acharya programmes)</li>
+      <li>Department of Veda & Vedanga</li>
+      <li>Department of Vyakarana (Grammar)</li>
+      <li>Department of Nyaya, Mimamsa & Darshana</li>
+      <li>Department of Jyotisha (Astrology & Astronomy)</li>
+      <li>Faculty of Education (B.Ed / M.Ed)</li>
+      <li>Department of Library and Information Science</li>
+      <li>Departments/centres for Research, Manuscriptology and Publication</li>
+      <li>Affiliated Sanskrit colleges across Uttar Pradesh</li>
+    </ul>
+  </section>
+
+  <!-- COURSES -->
+  <section>
+    <h2>Courses Offered</h2>
+    <ul>
+      <li><strong>Undergraduate:</strong> Shastri (equivalent to B.A. in Sanskrit and traditional streams)</li>
+      <li><strong>Postgraduate:</strong> Acharya (M.A. equivalent) in diverse specialisations</li>
+      <li><strong>Professional:</strong> B.Ed, M.Ed, Library & Information Science (UG/PG)</li>
+      <li><strong>Diploma/Certificate:</strong> Short courses, language & manuscriptology certificates</li>
+      <li><strong>Research:</strong> M.Phil and Ph.D. in classical and interdisciplinary subjects</li>
+    </ul>
+  </section>
+
+  <!-- ADMISSION -->
+  <section>
+    <h2>Admission Process</h2>
+    <p>Admission procedures may differ by programme and academic year — always verify on the official SSVV website or prospectus. General flow:</p>
+    <ul>
+      <li>Check official notifications (SSVV website) for application opening dates.</li>
+      <li>Fill the online application form for the chosen programme; upload required documents and photographs.</li>
+      <li>Eligibility varies — e.g., Shastri: 10+2 equivalent; Acharya: Bachelor’s (Shastri) or equivalent. M.Phil/Ph.D.: PG degree with minimum percentage as per rules.</li>
+      <li>Selection can be merit-based, entrance-test based or both (depends on course & year).</li>
+      <li>After provisional selection, attend document verification and pay admission/semester fees.</li>
+    </ul>
+
+    <h3>Documents typically required</h3>
+    <ul>
+      <li>Class 10 certificate (DOB proof)</li>
+      <li>Class 12 mark sheet / Graduation mark sheet (as applicable)</li>
+      <li>Caste/Category certificate (if applicable)</li>
+      <li>Migration / Transfer certificate (where required)</li>
+      <li>Recent passport-size photograph, identity proof (Aadhaar / Voter ID / Passport)</li>
+    </ul>
+  </section>
+
+  <!-- FEES & SCHOLARSHIPS -->
+  <section>
+    <h2>Fees, Scholarships & Financial Aid</h2>
+    <p>Fee structure depends on the programme (Shastri, Acharya, B.Ed, M.Ed, Ph.D. etc.) and may be comparatively modest since SSVV is a state university. Scholarships & concessions:</p>
+    <ul>
+      <li>Government scholarships for SC / ST / OBC and economically weaker students.</li>
+      <li>Merit-based awards for outstanding students in examinations.</li>
+      <li>Special fellowships and research assistantships for M.Phil / Ph.D. students (subject to availability).</li>
+      <li>Students should check state-level scholarship portals (e.g., UP scholarships) and SSVV notices for application procedures.</li>
+    </ul>
+  </section>
+
+  <!-- CAMPUS LIFE & FACILITIES -->
+  <section>
+    <h2>Campus Life & Facilities</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>Library & Manuscripts</h3>
+        <p>The Saraswati Bhavan Library houses an extensive collection of Sanskrit manuscripts, rare books and printed resources. Manuscriptology and preservation are active research areas.</p>
+      </div>
+      <div class="card">
+        <h3>Hostels & Student Support</h3>
+        <p>Separate hostel facilities for boys and girls, canteens, medical check-ups and basic recreational areas. Hostel allotment follows university rules and availability.</p>
+      </div>
+    </div>
+
+    <div style="height:12px;"></div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>Research & Publication</h3>
+        <p>SSVV runs research programs in Sanskrit grammar, poetics, Dharmaśāstra, manuscriptology, and modern comparative studies; journals and books are published from university presses.</p>
+      </div>
+      <div class="card">
+        <h3>Cultural & Outreach</h3>
+        <p>Regular seminars, Sanskrit workshops, cultural programs and lecture series keep the living tradition active; outreach programmes promote Sanskrit teaching across schools and colleges.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH & COLLABORATION -->
+  <section>
+    <h2>Research, Publications & Collaborations</h2>
+    <p>SSVV encourages research in classical disciplines and interdisciplinary projects. Major activities include:</p>
+    <ul>
+      <li>Critical editions and manuscript cataloging</li>
+      <li>Collaborative research with Indology centres, libraries and other universities</li>
+      <li>Conferences, national seminars and publication of research journals</li>
+      <li>Student research projects and doctoral supervision</li>
+    </ul>
+  </section>
+
+  <!-- CAREER PATHS & SCOPE -->
+  <section>
+    <h2>Career Paths & Scope for Graduates</h2>
+    <p>Graduates from SSVV typically find careers in:</p>
+    <ul>
+      <li>Teaching (schools, colleges, universities), competitive exams for teaching</li>
+      <li>Research & archival work (manuscriptology, libraries, cultural institutes)</li>
+      <li>Translation, publishing houses, content creation for heritage & media</li>
+      <li>Government jobs, civil services, cultural administration</li>
+      <li>Digital humanities, computational linguistics (Sanskrit NLP), and interdisciplinary tech projects with linguistic focus</li>
+    </ul>
+  </section>
+
+  <!-- NOTABLE FEATURES & STRENGTHS -->
+  <section>
+    <h2>Notable Features & Strengths</h2>
+    <ul>
+      <li>Historic centre for Sanskrit with a network of affiliated colleges.</li>
+      <li>Rich manuscript collections and focus on preservation/publishing.</li>
+      <li>NAAC accreditation and recognized academic credentials.</li>
+      <li>Strong tradition-to-modern approach: classical training + contemporary applications.</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT & IMPORTANT LINKS -->
+  <section>
+    <h2>Contact & Important Links</h2>
+    <p><strong>Address:</strong> Sampurnanand Sanskrit Vishwavidyalaya, Jagatganj (Chaukaghat), Varanasi - 221002, Uttar Pradesh, India.</p>
+    <p><strong>Phone (University Office):</strong> Check university website for updated numbers.</p>
+    <p><strong>Official Website:</strong> <a href="https://www.ssvv.ac.in" target="_blank">https://www.ssvv.ac.in</a></p>
+    <p><strong>Affiliated Colleges:</strong> Dozens of Sanskrit mahavidyalayas and PG centres across Uttar Pradesh—see the official site for affiliation list and contact details.</p>
+  </section>
+
+  <!-- ADVICE & TIPS -->
+  <section>
+    <h2>Advice for Students</h2>
+    <ul>
+      <li>Read the official prospectus for programme-specific eligibility and the latest dates.</li>
+      <li>Scan and keep originals of all documents (class certificates, identity proofs, caste certificate, photographs).</li>
+      <li>If interested in research, contact potential supervisors early and prepare a research proposal for M.Phil/Ph.D. applications.</li>
+      <li>Explore scholarships (state and central) and apply early to avoid missing deadlines.</li>
+      <li>Attend workshops and certificate courses to improve employability in modern sectors (digital humanities, publishing, teaching).</li>
+    </ul>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section>
+    <h2>Disclaimer</h2>
+    <p>The information on this page is provided for general informational purposes and is not an official document of Sampurnanand Sanskrit Vishwavidyalaya. For authenticated notices, admission dates, fee structures and official circulars always refer to the university website (<a href="https://www.ssvv.ac.in" target="_blank">ssvv.ac.in</a>) or contact the university office directly.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <!-- Footer QR images: replace with your QR files -->
+    <img src="../unimages/qr1.png" alt="QR Code 1">
+    <img src="../unimages/qr2.png" alt="QR Code 2">
+
+    <p>🙏 IF YOU FOUND THIS PAGE HELPFUL, YOU CAN SUPPORT ME!</p>
+    <p>SCAN THE QR CODE BELOW TO SEND A TIP — EVERY CONTRIBUTION MOTIVATES ME 💚</p>
+    <br>
+    <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+    <br>
+    <p style="color:#00ffaa;">FOR FEEDBACK OR SUGGESTIONS, CONTACT ME BELOW</p>
+
+    <div class="footer-right" style="margin-top:10px;">
+      <a href="https://t.me/okvaranasi" target="_blank" style="display:inline-flex;align-items:center;margin-right:12px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" style="width:22px;height:22px;margin-right:6px;"> Telegram
+      </a>
+      <a href="https://wa.me/919118717157" target="_blank" style="display:inline-flex;align-items:center;margin-right:12px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:22px;height:22px;margin-right:6px;"> WhatsApp
+      </a>
+      <a href="mailto:okvaranasii@gmail.com" style="display:inline-flex;align-items:center;margin-right:12px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" style="width:22px;height:22px;margin-right:6px;"> Gmail
+      </a>
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank" style="display:inline-flex;align-items:center;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:22px;height:22px;margin-right:6px;"> YouTube
+      </a>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div id="fullscreen" role="dialog" aria-hidden="true">
+    <div class="close" id="close-fullscreen">&times;</div>
+    <img id="full-img" src="" alt="Full view">
+  </div>
+
+  <script>
+    // Gallery fullscreen viewer
+    (function(){
+      const imgs = document.querySelectorAll('.gallery img');
+      const viewer = document.getElementById('fullscreen');
+      const fullImg = document.getElementById('full-img');
+      const closeBtn = document.getElementById('close-fullscreen');
+
+      imgs.forEach(img => {
+        img.addEventListener('click', () => {
+          fullImg.src = img.src;
+          viewer.style.display = 'flex';
+          viewer.setAttribute('aria-hidden','false');
+        });
+      });
+
+      closeBtn.addEventListener('click', () => {
+        viewer.style.display = 'none';
+        viewer.setAttribute('aria-hidden','true');
+      });
+
+      // close on ESC
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') {
+          viewer.style.display = 'none';
+          viewer.setAttribute('aria-hidden','true');
+        }
+      });
+
+      // close when clicking outside image
+      viewer.addEventListener('click', (ev) => {
+        if(ev.target === viewer) {
+          viewer.style.display = 'none';
+          viewer.setAttribute('aria-hidden','true');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

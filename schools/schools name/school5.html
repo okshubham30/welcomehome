@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jawahar Navodaya Vidyalaya - Chandauli</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background-color:#0c0c0c;
+      color:#fff;
+      line-height:1.7;
+    }
+    a{color:#00ffcc;text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    header{
+      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+      background-color:#000;padding:10px 15px;text-align:center;
+      border-bottom:2px solid #00ffaa;
+    }
+    .header-left img{width:120px;height:120px;border-radius:8px;}
+    .header-center{flex:1;min-width:150px;}
+    .header-center h1{font-size:1.6rem;color:#00ffaa;margin-bottom:5px;text-shadow:0 0 6px #00ffaa;}
+    .header-center p{font-size:0.9rem;color:#ccc;}
+    section{
+      padding:25px;max-width:950px;margin:20px auto;
+      background:#101010;border-radius:12px;box-shadow:0 0 10px #00ffaa33;
+    }
+    section h2{
+      font-size:1.3rem;color:#00ffaa;margin-bottom:10px;
+      border-left:4px solid #00ffaa;padding-left:8px;
+    }
+    section p,section ul{color:#ccc;margin-bottom:10px;}
+    ul{padding-left:20px;list-style-type:square;}
+    .gallery{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;
+    }
+    .gallery img{
+      width:100%;height:150px;object-fit:cover;border-radius:8px;cursor:pointer;
+      transition:transform 0.3s;
+    }
+    .gallery img:hover{transform:scale(1.05);}
+    footer{
+      background-color:#000;text-align:center;padding:25px;
+      border-top:2px solid #00ffaa;margin-top:30px;
+    }
+    footer img{width:120px;height:120px;margin:5px;border-radius:10px;}
+    footer p{color:#aaa;font-size:0.9rem;}
+    #fullscreen{
+      display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.9);justify-content:center;align-items:center;flex-direction:column;z-index:1000;
+    }
+    #fullscreen img{max-width:90%;max-height:85%;border-radius:8px;}
+    #fullscreen span{position:absolute;top:15px;right:20px;font-size:32px;cursor:pointer;color:#fff;}
+    @media(max-width:600px){
+      header{flex-direction:column;}
+      .header-left img{width:140px;height:140px;margin-bottom:8px;}
+      .gallery img{height:120px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="../schoolimages/qr1.png" alt="logo">
+  </div>
+  <div class="header-center">
+    <h1>Jawahar Navodaya Vidyalaya, Chandauli</h1>
+    <p>A Premier Residential School under Navodaya Vidyalaya Samiti (Ministry of Education)</p>
+  </div>
+</header>
+
+<!-- 1. IMAGE GALLERY -->
+<section>
+  <h2>Campus Gallery</h2>
+  <div class="gallery">
+    <img src="../spotimages/jnvch1.png" alt="Main Building">
+    <img src="../spotimages/jnvch2.png" alt="Assembly Ground">
+    <img src="../spotimages/jnvch3.png" alt="Classrooms">
+    <img src="../spotimages/jnvch4.png" alt="Hostel and Playground">
+  </div>
+</section>
+
+<!-- 2. ABOUT SCHOOL -->
+<section>
+  <h2>About the School</h2>
+  <p><strong>Jawahar Navodaya Vidyalaya, Chandauli</strong> was established in <strong>1987</strong> by the Government of India under the Navodaya Vidyalaya Samiti. It is a fully residential, co-educational institution affiliated with the <strong>Central Board of Secondary Education (CBSE)</strong>.</p>
+  <p>The school is located at <strong>Dharahara</strong> in a serene, eco-friendly environment surrounded by nature. JNV Chandauli provides free quality education, lodging, and boarding to talented rural students of the district.</p>
+</section>
+
+<!-- 3. ADMISSION PROCESS -->
+<section>
+  <h2>Admission Process</h2>
+  <ul>
+    <li>Admission in Class VI through the <strong>Jawahar Navodaya Vidyalaya Selection Test (JNVST)</strong>.</li>
+    <li>Lateral entry for Classes IX and XI subject to available seats.</li>
+    <li>Online registration and details available at <a href="https://navodaya.gov.in" target="_blank">navodaya.gov.in</a>.</li>
+    <li>No capitation fee or donation accepted — admission purely on merit basis.</li>
+  </ul>
+</section>
+
+<!-- 4. FACILITIES -->
+<section>
+  <h2>Facilities</h2>
+  <ul>
+    <li>Smart classrooms and modern teaching aids.</li>
+    <li>Science labs (Physics, Chemistry, Biology) and Computer lab.</li>
+    <li>Library with reference, fiction, and periodicals section.</li>
+    <li>Hostels for boys and girls with warden supervision.</li>
+    <li>Sports fields for football, volleyball, cricket, and athletics.</li>
+    <li>Medical room and hygienic dining hall.</li>
+  </ul>
+</section>
+
+<!-- 5. CAMPUS & ENVIRONMENT -->
+<section>
+  <h2>Campus & Environment</h2>
+  <p>The school campus spans around <strong>30 acres</strong> of lush greenery. It provides a perfect atmosphere for learning, creativity, and all-round development. The residential environment encourages teamwork, self-discipline, and cultural harmony among students.</p>
+</section>
+
+<!-- 6. ACADEMICS -->
+<section>
+  <h2>Academics</h2>
+  <p>JNV Chandauli offers education from <strong>Class VI to XII</strong>. The curriculum follows the CBSE pattern. The school focuses on conceptual learning, STEM activities, and value-based education. Streams offered at the senior secondary level include:</p>
+  <ul>
+    <li>Science (with Computer Science or Biology)</li>
+    <li>Commerce</li>
+    <li>Humanities</li>
+  </ul>
+</section>
+
+<!-- 7. CO-CURRICULAR & SPORTS -->
+<section>
+  <h2>Co-curricular & Sports</h2>
+  <ul>
+    <li>Sports meets at cluster, regional, and national levels.</li>
+    <li>Art, music, and cultural competitions.</li>
+    <li>Science exhibitions, quizzes, and literary clubs.</li>
+    <li>Yoga and physical training for mental well-being.</li>
+  </ul>
+</section>
+
+<!-- 8. LOCATION -->
+<section>
+  <h2>Location & Distance</h2>
+  <ul>
+    <li><strong>Address:</strong> Jawahar Navodaya Vidyalaya, Dharahara, District Chandauli, Uttar Pradesh – 232107.</li>
+    <li>Nearest railway station: <strong>Chandauli Majhwar (9 km)</strong>.</li>
+    <li>Approx. 35 km from Varanasi City.</li>
+  </ul>
+</section>
+
+<!-- 9. CONTACT -->
+<section>
+  <h2>Contact Information</h2>
+  <ul>
+    <li><strong>Phone:</strong> 05412-255224 / 255226</li>
+    <li><strong>Email:</strong> jnvchandauli@gmail.com</li>
+    <li><strong>Official Website:</strong> <a href="https://navodaya.gov.in/nvs/nvs-school/CHANDAULI/en/home/" target="_blank">navodaya.gov.in/nvs-school/CHANDAULI</a></li>
+  </ul>
+</section>
+
+<!-- 10. BIG BROTHER ADVICE -->
+<section>
+  <h2>Big Brother’s Advice</h2>
+  <p>Bro 💪, JNV Chandauli is not just a school — it’s a family that builds your confidence, discipline, and leadership. If you get a chance here, grab it! Work hard for the <strong>JNVST exam</strong> — it’s your golden ticket.</p>
+  <p>Once you’re inside, make the most of everything — academics, sports, and friendships. Life at JNV will teach you independence and teamwork, both priceless for your future.</p>
+</section>
+
+<!-- 11. DISCLAIMER -->
+<section>
+  <h2>Disclaimer</h2>
+  <p>This content is compiled for educational and informational purposes only. Details like contact numbers, admission rules, and facilities may change with time. Always verify the latest updates from the official Navodaya Vidyalaya Samiti website before applying or visiting.</p>
+</section>
+
+<footer>
+  <img src="../schoolimages/qr1.png" alt="logo">
+  <img src="../schoolimages/qr2.png" alt="logo">
+  <p>🙏 If you liked my work and found it helpful, you can support me!</p>
+  <p>Scan the QR code below to send a tip. Every contribution keeps me motivated!</p>
+  <br>
+  <p style="color:#ff001e;">Thanks for visiting OK VARANASI!</p>
+  <br>
+  <p style="color:#00ffaa;">For any suggestions or feedback, please contact me:</p>
+  <div class="footer-right">
+    <a href="https://t.me/okvaranasi" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" style="width:24px;height:24px;margin-right:5px;"> Telegram
+    </a>
+    <a href="https://wa.me/919118717157" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width:24px;height:24px;margin-right:5px;"> WhatsApp
+    </a>
+    <a href="mailto:okvaranasii@gmail.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" style="width:24px;height:24px;margin-right:5px;"> Gmail
+    </a><br>
+    <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style="width:24px;height:24px;margin-right:5px;"> YouTube
+    </a>
+  </div>
+</footer>
+
+<div id="fullscreen">
+  <span id="close">&times;</span>
+  <img id="full-img" src="" alt="Full Image">
+</div>
+
+<script>
+const imgs=document.querySelectorAll('.gallery img');
+const fs=document.getElementById('fullscreen');
+const fimg=document.getElementById('full-img');
+const close=document.getElementById('close');
+imgs.forEach(img=>img.onclick=()=>{fimg.src=img.src;fs.style.display='flex';});
+close.onclick=()=>fs.style.display='none';
+</script>
+
+</body>
+</html>

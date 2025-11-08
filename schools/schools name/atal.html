@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atal Residential School - Varanasi</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0c0c0c;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000;
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    .header-left img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .header-center {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .header-center h1 {
+      font-size: 1.6rem;
+      color: #00ffcc;
+      margin-bottom: 5px;
+    }
+
+    .header-center p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      color: #00ffaa;
+      margin-bottom: 10px;
+      border-left: 4px solid #00ff99;
+      padding-left: 8px;
+    }
+
+    section p, section ul {
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00ffaa;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #000;
+      color: #888;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    footer img {
+      width: 140px;
+      height: 140px;
+      margin: 5px;
+    }
+
+    /* FULLSCREEN IMAGE VIEWER */
+    #fullscreen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 999;
+    }
+
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+
+    #fullscreen span {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-left img {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 8px;
+      }
+
+      .header-center h1 {
+        font-size: 1.3rem;
+      }
+
+      .gallery img {
+        height: 100px;
+      }
+
+      footer img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="../schoolimages/qr1.png" alt="QR Code">
+    </div>
+    <div class="header-center">
+      <h1>Atal Residential School - Varanasi</h1>
+      <p>Empowering Rural Students with Quality Education</p>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section>
+    <h2>School Gallery</h2>
+    <div class="gallery">
+      <img src="../schoolimages/atal1.png" alt="Campus 1">
+      <img src="../schoolimages/atal2.png" alt="Campus 2">
+      <img src="../schoolimages/atal3.png" alt="Classroom">
+      <img src="../schoolimages/atal4.png" alt="Students">
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section>
+    <h2>School Details</h2>
+    <ul>
+      <li>Located in Varanasi district, Uttar Pradesh</li>
+      <li>Provides free residential education for children of labourers</li>
+      <li>Classes from 6th to 12th with modern infrastructure</li>
+      <li>Smart classrooms, computer labs, science labs, and digital library</li>
+      <li>Separate hostel facilities for boys and girls</li>
+      <li>Fully funded by Uttar Pradesh government</li>
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About Atal Residential School Varanasi</h2>
+    <p>Atal Residential School (ARS) Varanasi is a state government initiative established to provide quality education to children of labourers and economically weaker sections. The school operates as a fully residential campus with modern facilities, focusing on holistic development including academics, sports, and moral education.</p>
+    <p>It aims to bridge the gap between rural and urban education by offering a CBSE-standard curriculum and well-trained teachers. The medium of instruction is bilingual (Hindi & English) to ensure better comprehension and confidence among students.</p>
+  </section>
+
+  <!-- ADMISSION -->
+  <section>
+    <h2>Admission Process</h2>
+    <ul>
+      <li>Admissions are based on merit and eligibility criteria set by the Uttar Pradesh Government.</li>
+      <li>Applicants must be children of registered labourers or economically weaker families.</li>
+      <li>Application forms are available through the official Atal Residential School portal.</li>
+      <li>Selection includes written assessment and document verification.</li>
+    </ul>
+  </section>
+
+  <!-- FACILITIES -->
+  <section>
+    <h2>Facilities at ARS Varanasi</h2>
+    <ul>
+      <li>Modern classrooms with interactive smart boards</li>
+      <li>Separate hostels for boys and girls with 24×7 supervision</li>
+      <li>Nutritious meals and clean drinking water</li>
+      <li>Playgrounds for cricket, football, athletics, and indoor games</li>
+      <li>Medical care with in-house nurse and doctor visits</li>
+      <li>24-hour security with CCTV monitoring</li>
+    </ul>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section>
+    <h2>Disclaimer</h2>
+    <p>
+      The information provided on <strong>OK VARANASI</strong> is for general informational purposes only. 
+      We are not directly associated with <strong>Atal Residential School</strong> or any government department. 
+      For official details regarding admissions, results, or policies, please refer to the official Uttar Pradesh Government website or school authorities.
+    </p>
+  </section>
+
+  <!-- ADVICE -->
+  <section>
+    <h2>Advice for Students</h2>
+    <p>Education at Atal Residential Schools is a golden opportunity for students from rural and labour backgrounds. Here’s some advice to make the most of it:</p>
+    <ul>
+      <li>Stay disciplined and make full use of the hostel environment for learning.</li>
+      <li>Participate in extracurricular and sports activities for overall growth.</li>
+      <li>Use the library and computer labs regularly for project-based learning.</li>
+      <li>Respect teachers and staff — they are your guides and mentors.</li>
+      <li>Maintain a healthy routine with focus on both study and well-being.</li>
+    </ul>
+    <p style="color: #00ffaa;">Education is the foundation of a strong future — make every moment count!</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../schoolimages/qr1.png" alt="QR Code 1">
+    <img src="../schoolimages/qr2.png" alt="QR Code 2">
+    <p>🙏 IF YOU FOUND THIS PAGE HELPFUL, YOU CAN SUPPORT ME!</p>
+    <p>SCAN THE QR CODE BELOW TO SEND A TIP — EVERY CONTRIBUTION MOTIVATES ME 💚</p>
+    <br>
+    <p style="color: #ff001e;">THANKS FOR VISITING OK VARANASI!</p>
+    <br>
+    <p style="color: #00ffaa;">FOR FEEDBACK OR SUGGESTIONS, CONTACT ME BELOW</p>
+
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi" target="_blank" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" style="width:24px;height:24px;margin-right:5px;"> Telegram
+      </a>
+
+      <a href="https://wa.me/919118717157" target="_blank" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:24px;height:24px;margin-right:5px;"> WhatsApp
+      </a>
+
+      <a href="mailto:okvaranasii@gmail.com" style="display:inline-flex;align-items:center;margin-right:15px;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" style="width:24px;height:24px;margin-right:5px;"> Gmail
+      </a>
+
+      <a href="https://www.youtube.com/@OKVARANASI" target="_blank" style="display:inline-flex;align-items:center;color:inherit;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:24px;height:24px;margin-right:5px;"> YouTube
+      </a>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN VIEWER -->
+  <div id="fullscreen">
+    <span id="close">&times;</span>
+    <img id="full-img" src="" alt="Full Image">
+  </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullImg = document.getElementById('full-img');
+    const closeBtn = document.getElementById('close');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        fullscreen.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => fullscreen.style.display = 'none');
+  </script>
+
+</body>
+</html>
