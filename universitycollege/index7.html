@@ -6,76 +6,234 @@
 <title>Varanasi Universities & Colleges - OK VARANASI</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0d0d0d;color:white;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh;}
+body{
+  background:#0d0d0d;
+  color:white;
+  overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
 
 /* ===== Header ===== */
 .header{
   width:100%;
-  padding:15px 20px;
-  background:black;
+  height:150px; /* increased height */
   display:flex;
   align-items:center;
-  justify-content:center; /* title center */
-  position:relative; /* QR positioning */
-  border-bottom:2px solid #00ff88;
-}
-.header-title{
-  text-align:center;
-  font-size:1.8rem;
-  color:#00ff88;
-  font-weight:700;
-  letter-spacing:1px;
-  text-shadow:0 0 6px #00ff88,0 0 12px #00ff88;
-  flex:1;
+  justify-content:center;
+  position:relative;
+  padding:20px;
+  border-bottom:2px solid BLACK;
+  box-shadow:0 0 25px #00ff8850;
+  background:BLACK; /* background removed */
 }
 .header-qr{
   position:absolute;
-  left:20px; /* QR left side */
+  left:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .header-qr img{
-  width:120px;
-  height:120px;
+  width:110px;
+  height:110px;
   border-radius:12px;
+  object-fit:cover;
+  border:2px solid BLACK;
+  box-shadow:0 0 15px bLACK;
+}
+.header-title{
+  text-align:center;
+  font-size:2.3rem;
+  color:#00ff88;
+  font-weight:700;
+  letter-spacing:1px;
+  text-shadow:0 0 8px #00ff88,0 0 15px #00ff88;
+}
+
+/* ===== Main Content ===== */
+.main-content{
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding:20px;
+  text-align:center;
 }
 
 /* ===== Search ===== */
-.search-container{max-width:500px;width:100%;margin:20px auto;text-align:center;}
-.search-container input{width:100%;padding:10px 15px;border-radius:20px;border:none;outline:none;font-size:15px;background:#1a1a1a;color:white;}
+.search-container{
+  max-width:500px;
+  width:100%;
+  margin:30px auto;
+}
+.search-container input{
+  width:100%;
+  padding:12px 18px;
+  border-radius:25px;
+  border:2px solid #00ff8850;
+  outline:none;
+  font-size:16px;
+  background:#1a1a1a;
+  color:white;
+  transition:0.3s;
+}
+.search-container input:focus{
+  border-color:#00ff88;
+  box-shadow:0 0 10px #00ff8860;
+}
 
 /* ===== Horizontal Text Slider ===== */
-.text-slider-container{max-width:800px;margin:20px auto;position:relative;overflow:hidden;cursor:grab;}
-.text-slider{display:flex;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;gap:15px;padding:10px;scrollbar-width:none;-ms-overflow-style:none;}
+.text-slider-container{
+  max-width:800px;
+  margin:20px auto;
+  position:relative;
+  overflow:hidden;
+  cursor:grab;
+}
+.text-slider{
+  display:flex;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-behavior:smooth;
+  gap:15px;
+  padding:10px;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
 .text-slider::-webkit-scrollbar{display:none;}
 .text-slider.dragging{cursor:grabbing;scroll-behavior:auto;}
-.text-card{flex:0 0 auto;min-width:120px;background:#1a1a1a;border-radius:50px;padding:10px 20px;text-align:center;cursor:pointer;user-select:none;transition:0.3s;border:1px solid #00ffff50;white-space:nowrap;}
-.text-card:hover{background:#222;box-shadow:0 0 10px #00ffff80;}
-.text-card.active{background:#00ffff;color:#000;transform:scale(1.05);}
+.text-card{
+  flex:0 0 auto;
+  min-width:130px;
+  background:#1a1a1a;
+  border-radius:50px;
+  padding:10px 22px;
+  text-align:center;
+  cursor:pointer;
+  user-select:none;
+  transition:0.3s;
+  border:1px solid #00ffff50;
+  white-space:nowrap;
+  font-weight:600;
+}
+.text-card:hover{
+  background:#222;
+  box-shadow:0 0 10px #00ffff80;
+}
+.text-card.active{
+  background:#00ffff;
+  color:#000;
+  transform:scale(1.05);
+}
 
 /* ===== Option Cards ===== */
-.option-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding:20px;}
-.option-card{width:280px;height:180px;position:relative;background:#111;color:#fff;display:flex;justify-content:center;align-items:flex-end;border-radius:15px;overflow:hidden;text-decoration:none;transition:0.3s;border:2px solid transparent;cursor:pointer;}
-.option-card:hover{transform:scale(1.05);border:2px solid #00ff88;box-shadow:0 0 15px #00ff88;}
-.option-card img{position:absolute;width:100%;height:100%;object-fit:cover;filter:brightness(0.65);transition:0.3s;}
-.option-card:hover img{filter:brightness(0.75);}
-.option-card span{position:relative;z-index:2;text-align:center;padding:10px;font-size:1rem;font-weight:600;color:#00ff88;}
+.option-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+  justify-content:center;
+  padding:20px 10px 50px;
+}
+.option-card{
+  width:280px;
+  height:180px;
+  position:relative;
+  background:#111;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  border-radius:15px;
+  overflow:hidden;
+  text-decoration:none;
+  transition:0.3s;
+  border:2px solid transparent;
+  cursor:pointer;
+}
+.option-card:hover{
+  transform:scale(1.05);
+  border:2px solid #00ff88;
+  box-shadow:0 0 15px #00ff88;
+}
+.option-card img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(0.65);
+  transition:0.3s;
+}
+.option-card:hover img{filter:brightness(0.8);}
+.option-card span{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:10px;
+  font-size:1rem;
+  font-weight:600;
+  color:#00ff88;
+  background:rgba(0,0,0,0.6);
+  border-radius:10px;
+  margin-bottom:10px;
+}
 
 /* ===== Footer ===== */
-footer{background-color:#000;color:#888;text-align:center;padding:20px;margin-top:auto;border-top:2px solid #00ff88;}
-.footer-right{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:10px;}
-.footer-right a{display:flex;align-items:center;text-decoration:none;color:white;background:#111;padding:8px 12px;border-radius:8px;flex:1 1 150px;justify-content:center;max-width:200px;transition:0.3s;}
-.footer-right a:hover{background:#00ff88;color:#000;}
-.footer-right img{width:24px;height:24px;margin-right:5px;}
+footer{
+  background-color:#000;
+  color:#888;
+  text-align:center;
+  padding:25px 10px;
+  margin-top:auto;
+  border-top:2px solid #00ff88;
+}
+.footer-right{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:10px;
+}
+.footer-right a{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:white;
+  background:#111;
+  padding:8px 12px;
+  border-radius:8px;
+  flex:1 1 150px;
+  justify-content:center;
+  max-width:200px;
+  transition:0.3s;
+}
+.footer-right a:hover{
+  background:#00ff88;
+  color:#000;
+}
+.footer-right img{
+  width:24px;
+  height:24px;
+  margin-right:5px;
+}
 
 /* ===== Responsive ===== */
 @media(max-width:768px){
-  .header{flex-direction:column;justify-content:center;align-items:center;gap:10px;}
-  .header-qr{position:relative;left:0;margin-bottom:10px;}
-  .option-card{width:90%;height:180px;font-size:16px;}
-  .text-card{min-width:90px;padding:8px 15px;font-size:14px;border-radius:30px;}
+  .header{
+    flex-direction:column;
+    gap:10px;
+    height:auto;
+    padding:20px 10px;
+  }
+  .header-qr{position:relative;left:0;margin-bottom:5px;}
+  .header-qr img{width:100px;height:100px;}
+  .header-title{font-size:1.8rem;}
+  .option-card{width:90%;height:180px;}
 }
 @media(max-width:480px){
-  .option-card{height:160px;font-size:14px;}
-  .header-qr img{width:100px;height:100px;}
+  .header-qr img{width:80px;height:80px;}
+  .option-card{height:160px;}
+  .text-card{min-width:100px;padding:8px 16px;font-size:14px;}
 }
 </style>
 </head>
@@ -89,62 +247,69 @@ footer{background-color:#000;color:#888;text-align:center;padding:20px;margin-to
   <h1 class="header-title">UNIVERSITIES & COLLEGES</h1>
 </div>
 
-<!-- Search -->
-<div class="search-container">
-  <input id="searchInput" type="text" placeholder="Search universities, colleges...">
-</div>
+<!-- Main Content -->
+<div class="main-content">
 
-<!-- Horizontal Text Slider -->
-<div class="text-slider-container">
-  <div class="text-slider">
-    <div class="text-card active" data-filter="Universities">Universities</div>
-    <div class="text-card" data-filter="Engineering">Engineering Colleges</div>
-    <div class="text-card" data-filter="Medical">Medical Colleges</div>
-    <div class="text-card" data-filter="Management">Management Institutes</div>
-    <div class="text-card" data-filter="Others">Other Colleges</div>
+  <!-- Search -->
+  <div class="search-container">
+    <input id="searchInput" type="text" placeholder="Search universities, colleges...">
   </div>
-</div>
 
-<!-- Option Cards -->
-<div class="option-container">
-  <a href="colleges/bhu.html" class="option-card" data-type="Universities">
-    <img src="unimages/bhu1.jpg" alt="BHU">
-    <span>Banaras Hindu University (BHU)</span>
-  </a>
-  <a href="colleges/mgkvp.html" class="option-card" data-type="Universities">
-    <img src="unimages/mgkvp.jpg" alt="MGKVP">
-    <span>Mahatma Gandhi Kashi Vidyapith (MGKVP)</span>
-  </a>
-  <a href="iird.html" class="option-card" data-type="Universities">
-    <img src="unimages/iird.jpg" alt="IIRD">
-    <span>IIRD Varanasi</span>
-  </a>
-  <a href="itm.html" class="option-card" data-type="Engineering">
-    <img src="colimages/itm.jpg" alt="ITM College">
-    <span>ITM College of Engineering</span>
-  </a>
-  <a href="imsbhu.html" class="option-card" data-type="Medical">
-    <img src="colimages/imsbhu.jpg" alt="IMS BHU">
-    <span>Institute of Medical Sciences, BHU</span>
-  </a>
-  <a href="bhumgmt.html" class="option-card" data-type="Management">
-    <img src="colimages/mgmt.jpg" alt="Management College">
-    <span>Management Institutes</span>
-  </a>
-  <a href="others.html" class="option-card" data-type="Others">
-    <img src="colimages/other.jpg" alt="Other College">
-    <span>Other Colleges</span>
-  </a>
+  <!-- Horizontal Text Slider -->
+  <div class="text-slider-container">
+    <div class="text-slider">
+      <div class="text-card active" data-filter="Universities">Universities</div>
+      <div class="text-card" data-filter="Engineering">Engineering Colleges</div>
+      <div class="text-card" data-filter="Medical">Medical Colleges</div>
+      <div class="text-card" data-filter="Management">Management Institutes</div>
+      <div class="text-card" data-filter="Others">Other Colleges</div>
+    </div>
+  </div>
 
-  <a href="colleges/iitbhu.html" class="option-card" data-type="IIT BHU">
-    <img src="colimages/other.jpg" alt="Other College">
-    <span>IIT BHU VARANASI</span>
-  </a>
+  <!-- Option Cards -->
+  <div class="option-container">
+    <a href="colleges/bhu.html" class="option-card" data-type="Universities">
+      <img src="unimages/bhu1.jpg" alt="BHU">
+      <span>Banaras Hindu University (BHU)</span>
+    </a>
+    <a href="colleges/mgkvp.html" class="option-card" data-type="Universities">
+      <img src="unimages/mgkvp.jpg" alt="MGKVP">
+      <span>Mahatma Gandhi Kashi Vidyapith (MGKVP)</span>
+    </a>
+    <a href="iird.html" class="option-card" data-type="Universities">
+      <img src="unimages/iird.jpg" alt="IIRD">
+      <span>IIRD Varanasi</span>
+    </a>
+    <a href="itm.html" class="option-card" data-type="Engineering">
+      <img src="colimages/itm.jpg" alt="ITM College">
+      <span>ITM College of Engineering</span>
+    </a>
+    <a href="imsbhu.html" class="option-card" data-type="Medical">
+      <img src="colimages/imsbhu.jpg" alt="IMS BHU">
+      <span>Institute of Medical Sciences, BHU</span>
+    </a>
+    <a href="bhumgmt.html" class="option-card" data-type="Management">
+      <img src="colimages/mgmt.jpg" alt="Management College">
+      <span>Management Institutes</span>
+    </a>
+    <a href="others.html" class="option-card" data-type="Others">
+      <img src="colimages/other.jpg" alt="Other College">
+      <span>Other Colleges</span>
+    </a>
+    <a href="colleges/iitbhu.html" class="option-card" data-type="Universities">
+      <img src="colimages/other.jpg" alt="IIT BHU">
+      <span>IIT BHU Varanasi</span>
+    </a>
+    <a href="colleges/ssw.html" class="option-card" data-type="Universities">
+      <img src="colimages/other.jpg" alt="SSVV">
+      <span>Sampurnanand Sanskrit Vishwavidyalaya (SSVV)</span>
+    </a>
 
-  <a href="colleges/ssw.html" class="option-card" data-type="SSW">
-    <img src="colimages/other.jpg" alt="Other College">
-    <span>Sampurnanand Sanskrit Vishwavidyalaya (SSVV)</span>
-  </a>
+     <a href="colleges/kit.html" class="option-card" data-type="colleges">
+      <img src="colimages/other.jpg" alt="SSVV">
+      <span>KASHI INSTITUTE OF TECHONOLOGY </span>
+    </a>
+
 
 
 </div>
@@ -180,7 +345,7 @@ searchInput.addEventListener('keyup', () => {
   });
 });
 
-// ===== Horizontal Text Slider Swipe & Click =====
+// ===== Horizontal Text Slider =====
 const sliderContainer = document.querySelector(".text-slider");
 let isDragging=false, startX, scrollLeft, moved=false;
 sliderContainer.addEventListener("mousedown", e=>{isDragging=true;moved=false;sliderContainer.classList.add("dragging");startX=e.pageX-sliderContainer.offsetLeft;scrollLeft=sliderContainer.scrollLeft;});
