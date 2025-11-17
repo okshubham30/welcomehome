@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Malls – OK VARANASI</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{
+  background:#0d0d0d;
+  color:white;
+  overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* ===== Header ===== */
+.header{
+  width:100%;
+  height:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:20px;
+  background:black;
+  border-bottom:2px solid #00ff88;
+  box-shadow:0 0 22px #00ff8850;
+}
+.header-qr{
+  position:absolute;
+  left:25px;
+}
+.header-qr img{
+  width:110px;
+  height:110px;
+  object-fit:cover;
+  border-radius:15px;
+  border:none;
+}
+.header-title{
+  font-size:2.4rem;
+  color:#00ff88;
+  font-weight:700;
+  letter-spacing:1px;
+  text-shadow:0 0 8px #00ff88,0 0 15px #00ff88;
+  text-align:center;
+}
+
+/* ===== Search ===== */
+.search-container{
+  max-width:500px;
+  width:90%;
+  margin:30px auto;
+}
+.search-container input{
+  width:100%;
+  padding:14px 20px;
+  border-radius:30px;
+  font-size:17px;
+  border:2px solid #00ff8850;
+  background:#1a1a1a;
+  color:white;
+  outline:none;
+  transition:.3s;
+}
+.search-container input:focus{
+  border-color:#00ff88;
+  box-shadow:0 0 12px #00ff8860;
+}
+
+/* ===== Horizontal Slider ===== */
+.text-slider-container{
+  max-width:850px;
+  margin:10px auto 25px;
+  position:relative;
+  overflow:hidden;
+  cursor:grab;
+}
+.text-slider{
+  display:flex;
+  gap:15px;
+  padding:10px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  user-select:none;
+}
+.text-slider::-webkit-scrollbar{display:none;}
+.text-slider.dragging{cursor:grabbing;scroll-behavior:auto;}
+
+.text-card{
+  flex:0 0 auto;
+  min-width:140px;
+  padding:10px 20px;
+  text-align:center;
+  background:#1a1a1a;
+  color:#00ffff;
+  border-radius:45px;
+  font-weight:600;
+  border:1px solid #00ffff50;
+  transition:.3s;
+  white-space:nowrap;
+}
+.text-card:hover{
+  background:#222;
+  box-shadow:0 0 12px #00ffff80;
+}
+.text-card.active{
+  background:#00ffff;
+  color:black;
+  transform:scale(1.05);
+}
+
+/* ===== Cards ===== */
+.option-container{
+  width:100%;
+  max-width:1200px;
+  margin:0 auto 40px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+  padding:10px;
+}
+.option-card{
+  width:300px;
+  height:190px;
+  background:#111;
+  border-radius:15px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  text-decoration:none;
+  border:2px solid transparent;
+  transition:.3s;
+  cursor:pointer;
+}
+.option-card:hover{
+  transform:scale(1.05);
+  border:2px solid #00ff88;
+  box-shadow:0 0 15px #00ff88;
+}
+.option-card img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(0.65);
+}
+.option-card span{
+  position:relative;
+  z-index:5;
+  background:rgba(0,0,0,0.6);
+  padding:8px 12px;
+  border-radius:10px;
+  margin-bottom:12px;
+  font-size:1rem;
+  color:#00ff88;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#000;
+  color:#ccc;
+  text-align:center;
+  padding:40px 20px;
+  border-top:2px solid #00ff88;
+  margin-top:auto;
+}
+.footer-section{max-width:900px;margin:auto;}
+
+.footer-images{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.footer-images img{
+  width:150px;
+  height:150px;
+  border-radius:10px;
+  object-fit:cover;
+  box-shadow:0 0 12px #00ff8860;
+}
+.footer-text{
+  margin-top:20px;
+  line-height:1.6;
+  color:#ccc;
+}
+.footer-thanks{
+  color:#ff0030;
+  font-size:1.3rem;
+  margin-top:25px;
+  font-weight:600;
+}
+.footer-contact{
+  color:#00ffaa;
+  margin-top:12px;
+  font-weight:600;
+}
+.footer-right{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:25px;
+}
+.footer-right a{
+  background:#111;
+  padding:10px 18px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  border:1px solid #00ff8850;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+.footer-right a:hover{
+  background:#00ff88;
+  color:black;
+  box-shadow:0 0 12px #00ff88;
+}
+.footer-right img{
+  width:22px;
+  height:22px;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:480px){
+  .header-qr img{width:80px;height:80px;}
+  .header-title{font-size:1.8rem;}
+
+  .footer-images img{
+    width:120px;
+    height:120px;
+  }
+  .footer-right a{
+    flex:1 1 40%;
+    justify-content:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+  <div class="header-qr">
+    <img src="unimages/qr1.png" alt="logo">
+  </div>
+  <h1 class="header-title">SHOPPING MALLS – OK VARANASI</h1>
+</div>
+
+<!-- ===== Search ===== -->
+<div class="search-container">
+  <input id="searchInput" type="text" placeholder="Search malls...">
+</div>
+
+<!-- ===== Slider ===== -->
+<div class="text-slider-container">
+  <div class="text-slider">
+    <div class="text-card active" data-filter="Popular">Popular</div>
+    <div class="text-card" data-filter="Big">Big Malls</div>
+    <div class="text-card" data-filter="Fashion">Fashion</div>
+    <div class="text-card" data-filter="Electronics">Electronics</div>
+    <div class="text-card" data-filter="FoodCourt">Food Courts</div>
+  </div>
+</div>
+
+<!-- ===== Cards ===== -->
+<div class="option-container">
+
+  <a href="#" class="option-card" data-type="Popular">
+    <img src="mallimages/jhv.jpg">
+    <span>JHV Mall Varanasi</span>
+  </a>
+
+  <a href="#" class="option-card" data-type="Big">
+    <img src="mallimages/ipmall.jpg">
+    <span>IP SIGRA Mall</span>
+  </a>
+
+  <a href="#" class="option-card" data-type="Fashion">
+    <img src="mallimages/vmart.jpg">
+    <span>V-Mart Varanasi</span>
+  </a>
+
+  <a href="#" class="option-card" data-type="Electronics">
+    <img src="mallimages/croma.jpg">
+    <span>Croma Mall</span>
+  </a>
+
+  <a href="#" class="option-card" data-type="FoodCourt">
+    <img src="mallimages/foodcourt.jpg">
+    <span>Food Court – Mall</span>
+  </a>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-section">
+
+    <div class="footer-images">
+      <img src="unimages/qr1.png">
+      <img src="unimages/qr2.png">
+    </div>
+
+    <p class="footer-text">
+      🙏 If you liked my work and found it helpful, you can support me!
+      <br>Scan the QR to send a tip. It motivates me a lot!
+    </p>
+
+    <p class="footer-thanks">THANK YOU FOR VISITING OK VARANASI!</p>
+    <p class="footer-contact">FOR ANY FEEDBACK OR SUGGESTION – CONTACT BELOW</p>
+
+    <div class="footer-right">
+      <a href="https://t.me/okvaranasi"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"> Telegram</a>
+      <a href="https://wa.me/919118717157"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp</a>
+      <a href="mailto:okvaranasii@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"> Gmail</a>
+      <a href="https://www.youtube.com/@OKVARANASI"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"> YouTube</a>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ===== JS ===== -->
+<script>
+// ===== Search Filter =====
+const searchInput=document.getElementById("searchInput");
+searchInput.addEventListener("keyup",()=>{
+  const input=searchInput.value.toLowerCase();
+  document.querySelectorAll(".option-card").forEach(card=>{
+    card.style.display=card.textContent.toLowerCase().includes(input)?"flex":"none";
+  });
+});
+
+// ===== Slider Drag + Click Filter =====
+const slider=document.querySelector(".text-slider");
+let isDown=false,startX,scrollLeft,moved=false;
+
+slider.addEventListener("mousedown",e=>{
+  isDown=true;
+  moved=false;
+  startX=e.pageX-slider.offsetLeft;
+  scrollLeft=slider.scrollLeft;
+  slider.classList.add("dragging");
+});
+slider.addEventListener("mouseleave",()=>{isDown=false;slider.classList.remove("dragging");});
+slider.addEventListener("mouseup",e=>{
+  slider.classList.remove("dragging");
+  if(!moved){
+    const card=e.target.closest(".text-card");
+    if(card) selectFilter(card);
+  }
+  isDown=false;
+});
+slider.addEventListener("mousemove",e=>{
+  if(!isDown)return;
+  e.preventDefault();
+  moved=true;
+  const x=e.pageX-slider.offsetLeft;
+  slider.scrollLeft=scrollLeft-(x-startX)*1.5;
+});
+
+// mobile touch
+slider.addEventListener("touchstart",e=>{
+  startX=e.touches[0].clientX;
+  moved=false;
+});
+slider.addEventListener("touchmove",e=>{
+  const x=e.touches[0].clientX;
+  slider.scrollLeft+=(startX - x)*1.2;
+  startX=x;
+  moved=true;
+});
+slider.addEventListener("touchend",e=>{
+  if(!moved){
+    const card=e.target.closest(".text-card");
+    if(card) selectFilter(card);
+  }
+});
+
+function selectFilter(card){
+  document.querySelectorAll(".text-card").forEach(c=>c.classList.remove("active"));
+  card.classList.add("active");
+  const filter=card.dataset.filter;
+  document.querySelectorAll(".option-card").forEach(c=>{
+    c.style.display=c.dataset.type===filter?"flex":"none";
+  });
+}
+</script>
+
+</body>
+</html>

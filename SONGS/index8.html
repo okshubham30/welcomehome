@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>OK VARANASI - Videos & Reels</title>
+<style>
+  /* ===== Base ===== */
+  *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+  html,body{height:100%;background:#000;color:#fff;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+
+  /* ===== Header ===== */
+  .header{
+    width:100%;
+    background:#000;              /* pure black */
+    border-bottom:2px solid #0b3; /* subtle separator (optional) */
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:center;
+    padding:12px 18px;
+  }
+  .logo-img{
+    position:absolute; left:18px; width:52px; height:52px;
+    object-fit:cover; border-radius:6px; /* square with slight rounding */
+    /* NO border as requested */
+  }
+  .site-title{
+    font-size:22px; color:#00ff88; font-weight:800;
+    text-align:center; letter-spacing:1px;
+    text-shadow:0 0 10px #00ff88;
+  }
+
+  /* ===== Elliptical Slider (Stories-style) ===== */
+  .ellipse-wrap{
+    padding:14px 12px; background:#0b0b0b; border-top:1px solid #052; border-bottom:1px solid #052;
+  }
+  .ellipse-slider{
+    display:flex; gap:14px; overflow-x:auto; padding:6px;
+    -webkit-overflow-scrolling:touch; scroll-behavior:smooth;
+  }
+  .ellipse-slider::-webkit-scrollbar{display:none}
+  .ellipse-item{
+    flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:6px;
+    width:130px; text-align:center; cursor:pointer;
+    user-select:none; -webkit-tap-highlight-color: transparent;
+  }
+  .ellipse-pill{
+    width:120px; height:56px; border-radius:30px;
+    background:#111; display:flex; align-items:center; justify-content:center;
+    padding:8px 12px; color:#00ff88; font-weight:700; font-size:14px;
+    border:2px solid transparent; box-shadow:0 0 8px #003b20 inset;
+    transition:transform .15s ease, background .15s, color .15s, border .15s;
+    white-space:nowrap;
+  }
+  .ellipse-item.active .ellipse-pill{
+    background:#00ff88; color:#000; transform:scale(1.04); border-color:#00ff88;
+    box-shadow:0 6px 18px rgba(0,255,136,0.12);
+  }
+
+  /* ===== Search ===== */
+  .search-row{display:flex; justify-content:center; padding:16px 12px}
+  .search-input{
+    width:100%; max-width:720px; padding:12px 16px; border-radius:10px;
+    border:2px solid rgba(0,255,136,0.25); background:#111; color:#fff;
+    outline:none; font-size:15px;
+  }
+
+  /* ===== Horizontal Video Slider (top) ===== */
+  .section-title{color:#00ff88; font-weight:700; margin:18px 18px; font-size:18px}
+  .h-slider{display:flex; gap:14px; overflow-x:auto; padding:12px 18px 22px; scroll-behavior:smooth}
+  .h-slider::-webkit-scrollbar{height:7px}
+  .h-slider::-webkit-scrollbar-thumb{background:#00ff88;border-radius:10px}
+  .h-card{flex:0 0 260px; background:#111; border-radius:10px; padding:8px; border:2px solid rgba(0,255,136,0.12)}
+  .h-card iframe{width:100%; height:360px; border-radius:8px; display:block; border:none}
+  @media(max-width:780px){ .h-card{flex:0 0 200px} .h-card iframe{height:240px} }
+
+  /* ===== Normal Video Feed (filtered by slider) ===== */
+  .feed{padding:16px 18px 80px; display:flex; flex-direction:column; gap:18px}
+  .feed-card{background:#111;border-radius:10px;padding:12px;border:2px solid rgba(0,255,136,0.08)}
+  .feed-meta{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .thumb{width:90px;height:60px;border-radius:8px;object-fit:cover}
+  .feed-title{font-weight:700;color:#00ff88}
+  .feed-desc{font-size:13px;color:#bfffd6;opacity:.9}
+
+  .feed-iframe{width:100%;height:420px;border-radius:8px;border:none;display:block}
+  @media(max-width:780px){ .feed-iframe{height:260px} .thumb{width:80px;height:56px} }
+
+  /* ===== Modal for Reels (shorts slider) ===== */
+  .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:none;align-items:center;justify-content:center;z-index:120}
+  .modal{width:92%;max-width:920px;background:#060606;border-radius:12px;padding:12px;border:2px solid rgba(0,255,136,0.12)}
+  .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .modal-title{color:#00ff88;font-weight:800}
+  .modal-close{background:#111;border:none;color:#fff;padding:6px 10px;border-radius:8px;cursor:pointer}
+  .reels-slider{display:flex;gap:12px;overflow-x:auto;padding:8px}
+  .reel-card{flex:0 0 320px;background:#0e0e0e;border-radius:10px;padding:8px;border:1px solid rgba(255,255,255,0.03)}
+  .reel-card iframe{width:100%;height:600px;border-radius:8px;border:none}
+  @media(max-width:780px){ .reel-card{flex:0 0 260px} .reel-card iframe{height:420px} }
+
+  /* small helpers */
+  .hidden{display:none}
+  .center{display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <img src="logo.png" alt="logo" class="logo-img" />
+    <div class="site-title">OK VARANASI</div>
+  </header>
+
+  <!-- ELLIPTICAL CLICKABLE SLIDER (swipe + click) -->
+  <div class="ellipse-wrap">
+    <div class="ellipse-slider" id="ellipseSlider">
+      <!-- Buttons below: change labels as you want -->
+      <div class="ellipse-item active" data-key="Videos"><div class="ellipse-pill">Videos</div></div>
+      <div class="ellipse-item" data-key="Songs"><div class="ellipse-pill">Songs</div></div>
+      <div class="ellipse-item" data-key="Movies"><div class="ellipse-pill">Movies</div></div>
+      <div class="ellipse-item" data-key="Trailers"><div class="ellipse-pill">Trailers</div></div>
+      <div class="ellipse-item" data-key="Reels"><div class="ellipse-pill">Reels</div></div>
+      <div class="ellipse-item" data-key="Shorts"><div class="ellipse-pill">Shorts</div></div>
+      <div class="ellipse-item" data-key="Others"><div class="ellipse-pill">Others</div></div>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="search-row">
+    <input id="searchInput" class="search-input" placeholder="Search Varanasi Videos (title/description)..." />
+  </div>
+
+  <!-- HORIZONTAL VIDEO SLIDER (top thumbnails) -->
+  <div>
+    <div class="section-title">🔥 Trending Varanasi Clips</div>
+    <div class="h-slider" id="hSlider">
+      <!-- sample cards: replace embed IDs -->
+      <div class="h-card"><iframe src="https://www.youtube.com/embed/1mfqVupHH0E" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="h-card"><iframe src="https://www.youtube.com/embed/K4TOrB7at0Y" allowfullscreen></iframe></div>
+      <div class="h-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+      <div class="h-card"><iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" allowfullscreen></iframe></div>
+    </div>
+  </div>
+
+  <!-- NORMAL VIDEO FEED: these will be filtered by slider -->
+  <div class="section-title" style="margin-top:8px">📺 Videos Feed</div>
+  <main id="feed" class="feed">
+    <!-- feed items: each must have data-category value -->
+    <!-- Replace titles, thumbnails and VIDEO_IDs with your content -->
+    <article class="feed-card" data-category="Videos">
+      <div class="feed-meta">
+        <img class="thumb" src="https://img.youtube.com/vi/1mfqVupHH0E/hqdefault.jpg" alt="">
+        <div>
+          <div class="feed-title">Varanasi Ganga Aarti - Short</div>
+          <div class="feed-desc">Ganga Aarti near Dashashwamedh — short clip.</div>
+        </div>
+      </div>
+      <iframe class="feed-iframe" src="https://www.youtube.com/embed/1mfqVupHH0E" allowfullscreen></iframe>
+    </article>
+
+    <article class="feed-card" data-category="Songs">
+      <div class="feed-meta">
+        <img class="thumb" src="https://img.youtube.com/vi/K4TOrB7at0Y/hqdefault.jpg" alt="">
+        <div>
+          <div class="feed-title">Kashi Anthem (Song)</div>
+          <div class="feed-desc">Local song celebrating Kashi and culture.</div>
+        </div>
+      </div>
+      <iframe class="feed-iframe" src="https://www.youtube.com/embed/K4TOrB7at0Y" allowfullscreen></iframe>
+    </article>
+
+    <article class="feed-card" data-category="Movies">
+      <div class="feed-meta">
+        <img class="thumb" src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+        <div>
+          <div class="feed-title">Feature: Banaras Stories</div>
+          <div class="feed-desc">Short feature film about Banaras life.</div>
+        </div>
+      </div>
+      <iframe class="feed-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    </article>
+
+    <article class="feed-card" data-category="Trailers">
+      <div class="feed-meta">
+        <img class="thumb" src="https://img.youtube.com/vi/aqz-KE-bpKQ/hqdefault.jpg" alt="">
+        <div>
+          <div class="feed-title">Trailer: Kashi Documentary</div>
+          <div class="feed-desc">Official trailer for Kashi docu-series.</div>
+        </div>
+      </div>
+      <iframe class="feed-iframe" src="https://www.youtube.com/embed/aqz-KE-bpKQ" allowfullscreen></iframe>
+    </article>
+
+    <!-- Add more feed-card articles here; use data-category keys that match ellipse buttons -->
+  </main>
+
+  <!-- ===== REELS / SHORTS MODAL ===== -->
+  <div id="modalBackdrop" class="modal-backdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <div class="modal-title">Reels / Shorts</div>
+        <button id="modalClose" class="modal-close">Close</button>
+      </div>
+      <div class="reels-slider" id="reelsSlider">
+        <!-- sample short embeds: replace IDs with your Shorts -->
+        <div class="reel-card"><iframe src="https://www.youtube.com/embed/SHORT_ID_1" allowfullscreen></iframe></div>
+        <div class="reel-card"><iframe src="https://www.youtube.com/embed/SHORT_ID_2" allowfullscreen></iframe></div>
+        <div class="reel-card"><iframe src="https://www.youtube.com/embed/SHORT_ID_3" allowfullscreen></iframe></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* =========================
+   Slider click + swipe logic
+   ========================= */
+
+const ellipseSlider = document.getElementById('ellipseSlider');
+const ellipseItems = Array.from(document.querySelectorAll('.ellipse-item'));
+const feed = document.getElementById('feed');
+const searchInput = document.getElementById('searchInput');
+
+// Utility: set active button by key
+function setActiveKey(key){
+  ellipseItems.forEach(it => {
+    if(it.dataset.key === key) it.classList.add('active');
+    else it.classList.remove('active');
+  });
+}
+
+// Filter feed by category (key). 'Videos' default show that category only
+function filterFeedBy(key){
+  const articles = Array.from(document.querySelectorAll('.feed-card'));
+  if(key === 'All' || !key){
+    articles.forEach(a => a.style.display = '');
+    return;
+  }
+  // Special handling for "Reels" & "Shorts": keep the feed (or show none) — we'll open modal for Reels
+  if(key === 'Reels'){
+    // Open modal instead of filtering feed
+    openReelsModal();
+    return;
+  }
+
+  // Normal filtering
+  articles.forEach(a => {
+    const cat = a.dataset.category || '';
+    a.style.display = (cat.toLowerCase() === key.toLowerCase()) ? '' : 'none';
+  });
+}
+
+// Click behavior for ellipse items
+ellipseItems.forEach(item => {
+  item.addEventListener('click', (e) => {
+    const key = item.dataset.key;
+    // focus visual
+    setActiveKey(key);
+    // center this pill in the slider view
+    item.scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'});
+    // filter feed
+    filterFeedBy(key);
+  });
+});
+
+/* ========== Swipe / drag behavior for ellipse-slider ========== */
+let isDown = false, startX, scrollLeft;
+ellipseSlider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  ellipseSlider.classList.add('active-drag');
+  startX = e.pageX - ellipseSlider.offsetLeft;
+  scrollLeft = ellipseSlider.scrollLeft;
+});
+ellipseSlider.addEventListener('mouseleave', () => { isDown = false; ellipseSlider.classList.remove('active-drag'); });
+ellipseSlider.addEventListener('mouseup', () => { isDown = false; ellipseSlider.classList.remove('active-drag'); });
+ellipseSlider.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - ellipseSlider.offsetLeft;
+  const walk = (x - startX) * 1; //scroll-fast
+  ellipseSlider.scrollLeft = scrollLeft - walk;
+});
+
+// Touch support
+ellipseSlider.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].pageX - ellipseSlider.offsetLeft;
+  scrollLeft = ellipseSlider.scrollLeft;
+});
+ellipseSlider.addEventListener('touchmove', (e) => {
+  const x = e.touches[0].pageX - ellipseSlider.offsetLeft;
+  const walk = (x - startX) * 1.0;
+  ellipseSlider.scrollLeft = scrollLeft - walk;
+}, {passive:true});
+
+/* ========== Search Filter (title/desc) ========== */
+searchInput.addEventListener('input', (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  const articles = Array.from(document.querySelectorAll('.feed-card'));
+  articles.forEach(a => {
+    const title = a.querySelector('.feed-title')?.textContent?.toLowerCase() || '';
+    const desc  = a.querySelector('.feed-desc')?.textContent?.toLowerCase() || '';
+    const match = !q || title.includes(q) || desc.includes(q);
+    a.style.display = match ? '' : 'none';
+  });
+});
+
+/* ========== Reels Modal Handling ========== */
+const modal = document.getElementById('modalBackdrop');
+const modalClose = document.getElementById('modalClose');
+const reelsSlider = document.getElementById('reelsSlider');
+
+// Open reels modal
+function openReelsModal(){
+  // If you want to optionally open user channel's shorts page in new tab:
+  // window.open('https://www.youtube.com/shorts/', '_blank');
+
+  // show modal
+  modal.style.display = 'flex';
+  // scroll slider to start
+  reelsSlider.scrollLeft = 0;
+}
+
+// close modal
+modalClose.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// click outside modal to close
+modal.addEventListener('click', (e) => {
+  if(e.target === modal) modal.style.display = 'none';
+});
+
+/* ========== Optional: Keyboard shortcuts ========== */
+// Esc to close modal
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') modal.style.display = 'none';
+});
+
+/* ========== Initialize default filter ========== */
+window.addEventListener('DOMContentLoaded', () => {
+  // default show 'Videos' category
+  setActiveKey('Videos');
+  filterFeedBy('Videos');
+});
+</script>
+</body>
+</html>
