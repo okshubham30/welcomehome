@@ -1,18 +1,238 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OK VARANASI</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OK VARANASI</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ================= CSS START ================= -->
+  <style>
+    /* BASIC RESET */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Inter',sans-serif;
+    }
+
+    body{
+      background:#0d0d0d;
+      color:#fff;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* ================= HEADER ================= */
+    .header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#000;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 30px;
+      box-shadow:0 6px 25px rgba(0,255,255,0.25);
+    }
+
+    .header-center img{
+      width:150px;
+      border-radius:15px;
+    }
+
+    .header-right a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:15px;
+      padding:8px 18px;
+      border-radius:25px;
+      background:#121212;
+      border:1px solid #00ffff55;
+      transition:0.3s;
+    }
+
+    .header-right a:hover{
+      background:#00ffff;
+      color:#000;
+    }
+
+    /* ================= SEARCH ================= */
+    .search-container{
+      max-width:520px;
+      width:100%;
+      margin:25px auto;
+    }
+
+    .search-container input{
+      width:100%;
+      padding:14px 22px;
+      border-radius:35px;
+      border:none;
+      outline:none;
+      background:#161616;
+      color:#fff;
+      font-size:15px;
+    }
+
+    /* ================= CATEGORY SLIDER ================= */
+    .slider-wrap{
+      display:flex;
+      justify-content:center;
+    }
+
+    .text-slider{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      padding:15px;
+      max-width:950px;
+      scrollbar-width:none;
+    }
+
+    .text-slider::-webkit-scrollbar{
+      display:none;
+    }
+
+    .text-card{
+      min-width:110px;
+      padding:10px 22px;
+      border-radius:50px;
+      background:#141414;
+      border:1px solid #00ffff55;
+      cursor:pointer;
+      text-align:center;
+      white-space:nowrap;
+      transition:0.3s;
+    }
+
+    .text-card:hover,
+    .text-card.active{
+      background:#00ffff;
+      color:#000;
+      box-shadow:0 0 12px #00ffff80;
+    }
+
+    /* ================= OPTION CARDS ================= */
+    .option-container{
+      max-width:1200px;
+      margin:30px auto;
+      padding:20px;
+      display:grid;
+      gap:25px;
+    }
+
+    .option-card{
+      display:flex;
+      gap:25px;
+      background:#121212;
+      border-radius:20px;
+      overflow:hidden;
+      cursor:pointer;
+      border:1px solid #00ffff40;
+      box-shadow:0 12px 35px rgba(0,255,255,0.18);
+      transition:0.35s;
+      text-decoration:none;
+      color:white;
+    }
+
+    .option-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 25px 60px rgba(0,255,255,0.35);
+    }
+
+    .option-card img{
+      width:42%;
+      object-fit:cover;
+    }
+
+    .option-content{
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .option-content h2{
+      font-size:26px;
+      color:#00ffff;
+      margin-bottom:10px;
+    }
+
+    .option-content p{
+      font-size:15px;
+      color:#cfcfcf;
+      line-height:1.6;
+    }
+
+    .option-content span{
+      margin-top:15px;
+      background:#00ffff;
+      color:#000;
+      padding:8px 20px;
+      border-radius:25px;
+      width:max-content;
+      font-weight:600;
+    }
+
+    /* ================= FOOTER ================= */
+    footer{
+      background:#000;
+      color:#aaa;
+      text-align:center;
+      padding:30px;
+      margin-top:auto;
+    }
+
+    footer img{
+      width:130px;
+      margin:10px;
+    }
+
+    .footer-links a{
+      display:inline-flex;
+      align-items:center;
+      margin:10px;
+      color:#aaa;
+      text-decoration:none;
+    }
+
+    .footer-links img{
+      width:24px;
+      margin-right:6px;
+    }
+
+    .footer-links a:hover{
+      color:#00ffff;
+    }
+
+    /* ================= MOBILE ================= */
+    @media(max-width:768px){
+      .option-card{
+        flex-direction:column;
+      }
+      .option-card img{
+        width:100%;
+        height:190px;
+      }
+      .option-content h2{
+        font-size:22px;
+      }
+    }
+  </style>
+  <!-- ================= CSS END ================= -->
 </head>
+
 <body>
 
-<!-- Header -->
+<!-- ================= HEADER ================= -->
 <div class="header">
-  <div class="header-left"></div>
+  <div></div>
   <div class="header-center">
-    <img src="coaching/coachingimages/qr1.png" alt="QR Code" class="qr-img">
+    <img src="coaching/coachingimages/qr1.png" alt="QR">
   </div>
   <div class="header-right">
     <a href="index.html">Home</a>
@@ -20,117 +240,150 @@
   </div>
 </div>
 
-<!-- Search -->
+<!-- ================= SEARCH ================= -->
 <div class="search-container">
-  <input id="searchInput" type="text" placeholder="Search homes, shops, hostels...">
+  <input type="text" id="searchInput" placeholder="Search homes, shops, hostels...">
 </div>
 
-<!-- Horizontal Text Slider -->
-<div class="text-slider-container" id="sliderContainer">
+<!-- ================= CATEGORY SLIDER ================= -->
+<div class="slider-wrap">
   <div class="text-slider">
+    <div class="text-card active" data-filter="All">All</div>
     <div class="text-card" data-filter="Homes">Homes</div>
-    <div class="text-card" data-filter="Shops">Shops</div>
+    <div class="text-card" data-filter="Hostels">Hostels</div>
     <div class="text-card" data-filter="Coaching">Coaching</div>
     <div class="text-card" data-filter="Tourist">Tourist</div>
-    <div class="text-card" data-filter="Purchase">Purchase</div>
-    <div class="text-card" data-filter="Hostels">Hostels</div>
-    <div class="text-card" data-filter="Property">Property</div>
+    <div class="text-card" data-filter="Schools">Schools</div>
+    <div class="text-card" data-filter="Shops">Shops</div>
   </div>
 </div>
 
-<!-- Option Cards -->
+<!-- ================= OPTION CARDS ================= -->
 <div class="option-container" id="optionContainer">
+
   <a href="homerent/index2.html" class="option-card" data-type="Homes">
-    <img src="images/agra.jpg" alt="Homes" class="option-image"><span>Homes for Rent</span>
+    <img src="images/homesforrent.jpg">
+    <div class="option-content">
+      <h2>Homes for Rent</h2>
+      <p>Affordable and verified rental homes in Varanasi.</p>
+      <span>Explore</span>
+    </div>
   </a>
 
-
-  <!-- <a href="purchasehomes/index1.html" class="option-card" data-type="Purchase">
-    <img src="images/delhi.jpg" alt="Purchase" class="option-image"><span>Purchase Homes</span>
-  </a>
-  <a href="purchaseproperties/index3.html" class="option-card" data-type="Property">
-    <img src="images/jaipur.jpg" alt="Property" class="option-image"><span>Purchase Property</span>
-  </a> -->
-
- <a href="hostelpg/index8.html" class="option-card" data-type="Homes">
-    <img src="images/hostelpg.jpg" alt="Homes" class="option-image"><span>Hostels and Pg</span>
+  <a href="hostelpg/index8.html" class="option-card" data-type="Hostels">
+    <img src="images/Hostels.jpg">
+    <div class="option-content">
+      <h2>Hostels & PG</h2>
+      <p>Student friendly PG and hostel facilities.</p>
+      <span>Explore</span>
+    </div>
   </a>
 
   <a href="coaching/index4.html" class="option-card" data-type="Coaching">
-    <img src="images/bhopal.jpg" alt="Coaching" class="option-image"><span>Coaching Institutes</span>
+    <img src="images/coachinginstitutes.jpg">
+    <div class="option-content">
+      <h2>Coaching Institutes</h2>
+      <p>Top coaching centers for exams and academics.</p>
+      <span>Explore</span>
+    </div>
   </a>
+
   <a href="touristspot/index5.html" class="option-card" data-type="Tourist">
-    <img src="images/bhopal.jpg" alt="Tourist" class="option-image"><span>Tourist Spots</span>
+    <img src="images/famousplaces.png">
+    <div class="option-content">
+      <h2>Tourist Spots</h2>
+      <p>Famous ghats, temples and heritage places.</p>
+      <span>Explore</span>
+    </div>
   </a>
 
-  <a href="schools/index6.html" class="option-card" data-type="SCHOOLS">
-    <img src="images/school.png" alt="school" class="option-image"><span>SCHOOL</span>
+  <a href="schools/index6.html" class="option-card" data-type="Schools">
+    <img src="images/school.png">
+    <div class="option-content">
+      <h2>Schools</h2>
+      <p>Best schools with complete details.</p>
+      <span>Explore</span>
+    </div>
   </a>
 
-  <a href="universitycollege/index7.html" class="option-card" data-type="SCHOOLS">
-    <img src="images/UNIVES.png" alt="Tourist" class="option-image"><span>Universities and colleges</span>
+  <a href="shopes/index9.html" class="option-card" data-type="Shops">
+    <img src="images/shoppingmalls.jpg">
+    <div class="option-content">
+      <h2>SHOPPINGS MALLS </h2>
+      <p>shoppings malls in varanasi </p>
+      <span>Explore</span>
+    </div>
   </a>
 
-  <a href="universitycollege/index7.html" class="option-card" data-type="SCHOOLS">
-    <img src="images/UNIVES.png" alt="Tourist" class="option-image"><span>Universities and colleges</span>
+  <a href="shopes/index11.html" class="option-card" data-type="Shops">
+    <img src="images/twowheeler.png">
+    <div class="option-content">
+      <h2>TWO WHEELER SHOW ROOMS </h2>
+      <p>two wheeler show rooms  in varanasi </p>
+      <span>Explore</span>
+    </div>
   </a>
 
-<a href="shopes/index9.html" class="option-card" data-type="SCHOOLS">
-    <img src="images/shopes.png" alt="Tourist" class="option-image"><span>Shopes</span>
+  <a href="shopes/index11.html" class="option-card" data-type="Shops">
+    <img src="images/fourwheeler.png">
+    <div class="option-content">
+      <h2>FOUR WHEELER SHOW ROOMS</h2>
+      <p>four wheeler show rooms  in varanasi </p>
+      <span>Explore</span>
+    </div>
   </a>
-
-  <a href="Showrooms/index10.html" class="option-card" data-type="SCHOOLS">
-    <img src="images/shopes.png" alt="Tourist" class="option-image"><span>Showrooms</span>
-  </a>
-
 
 </div>
 
-
-
-<!-- Footer -->
+<!-- ================= FOOTER ================= -->
 <footer>
-  <img src="coaching/coachingimages/qr1.png" alt="QR Code 1" style="width:140px;height:140px;margin:5px;">
-  <img src="coaching/coachingimages/qr2.png" alt="QR Code 2" style="width:140px;height:140px;margin:5px;">
+  <img src="coaching/coachingimages/qr1.png">
+  <img src="coaching/coachingimages/qr2.png">
+
   <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
-  <p>SCAN THE QR CODE BELOW TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!</p>
-  <br>
-  <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
-  <br>
-  <p style="color:#00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
-<BR>
-  <div class="footer-right">
-  <a href="https://t.me/okvaranasi" target="_blank" 
-     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" 
-         alt="Telegram" 
-         style="width:24px; height:24px; margin-right:5px;"> Telegram
-  </a>
+  <p style="color:#ff001e">THANKS FOR VISITING OK VARANASI!</p>
+  <p style="color:#00ffaa">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
 
-  <a href="https://wa.me/919118717157" target="_blank" 
-     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
-         alt="WhatsApp" 
-         style="width:24px; height:24px; margin-right:5px;"> WhatsApp
-  </a>
-
-  <a href="mailto:okvaranasii@gmail.com" 
-     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" 
-         alt="Gmail" 
-         style="width:24px; height:24px; margin-right:5px;"> Gmail
-  </a>
-
-  <a href="https://www.youtube.com/@OKVARANASI" target="_blank" 
-     style="display:inline-flex; align-items:center; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" 
-         alt="YouTube" 
-         style="width:24px; height:24px; margin-right:5px;"> YouTube
-  </a>
-</div>
-
+  <div class="footer-links">
+    <a href="https://t.me/okvaranasi" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">Telegram
+    </a>
+    <a href="https://wa.me/919118717157" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">WhatsApp
+    </a>
+    <a href="mailto:okvaranasii@gmail.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">Gmail
+    </a>
+    <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">YouTube
+    </a>
+  </div>
 </footer>
 
-<script src="script.js"></script>
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+  // SEARCH FUNCTION
+  const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("keyup", function(){
+    const value = searchInput.value.toLowerCase();
+    document.querySelectorAll(".option-card").forEach(card=>{
+      card.style.display = card.innerText.toLowerCase().includes(value) ? "flex" : "none";
+    });
+  });
+
+  // CATEGORY FILTER
+  document.querySelectorAll(".text-card").forEach(btn=>{
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".text-card").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const type = btn.dataset.filter;
+      document.querySelectorAll(".option-card").forEach(card=>{
+        card.style.display = (type === "All" || card.dataset.type === type) ? "flex" : "none";
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
