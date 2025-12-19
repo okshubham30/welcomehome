@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | OK Varanasi</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* ---------- Header ---------- */
+header{
+  text-align:center;
+  padding:50px 20px 70px;
+  border-bottom:2px solid #00ffff;
+}
+
+header h1{
+  font-size:36px;
+  color:#00ffff;
+  text-shadow:0 0 15px #00ffff;
+}
+
+header p{
+  max-width:800px;
+  margin:15px auto 0;
+  color:#ccc;
+  font-size:17px;
+  line-height:1.7;
+}
+
+/* ---------- Layout ---------- */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* ---------- Sections (Zig-Zag) ---------- */
+.section{
+  display:flex;
+  gap:30px;
+  align-items:center;
+  margin-bottom:70px;
+  flex-wrap:wrap;
+}
+
+.section:nth-child(even){
+  flex-direction:row-reverse;
+}
+
+.text{
+  flex:1 1 480px;
+}
+
+.text h2{
+  color:#00ffff;
+  text-shadow:0 0 8px #00ffff77;
+  margin-bottom:12px;
+}
+
+.text p{
+  color:#ddd;
+  font-size:16px;
+  line-height:1.7;
+}
+
+.text ul{
+  padding-left:18px;
+}
+
+.text ul li{
+  margin-bottom:6px;
+}
+
+.image{
+  flex:1 1 420px;
+  height:240px;
+  background:#111;
+  border:1px solid #00ffff44;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#00ffff66;
+  font-size:18px;
+  box-shadow:0 0 15px #00ffff33;
+}
+
+/* ---------- Highlight Box ---------- */
+.highlight-box{
+  background:#0b0b0b;
+  border:1px solid #00ffff55;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 0 20px #00ffff33;
+}
+
+.highlight-box h2{
+  color:#00ffff;
+}
+
+.highlight-box p{
+  max-width:900px;
+  margin:auto;
+  color:#ccc;
+  font-size:16px;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-block;
+  margin:15px 8px 0;
+  padding:12px 26px;
+  background:#00ffff;
+  color:#000;
+  font-weight:600;
+  border-radius:6px;
+  text-decoration:none;
+  box-shadow:0 0 15px #00ffffaa;
+}
+
+.btn:hover{
+  box-shadow:0 0 25px #00ffff;
+}
+
+/* ---------- Footer ---------- */
+footer{
+  text-align:center;
+  padding:25px;
+  border-top:1px solid #00ffff33;
+  color:#aaa;
+  font-size:14px;
+}
+
+/* ---------- Mobile ---------- */
+@media(max-width:768px){
+  header h1{font-size:28px;}
+  .image{height:200px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= FRONT / HERO ================= -->
+<header>
+  <h1>Welcome to OK Varanasi</h1>
+  <p>
+    OK Varanasi is your <strong>ultimate digital guide to Banaras (Kashi)</strong> —  
+    the spiritual capital of India. Built by a passionate local student, this platform
+    brings together <strong>tourism, education, lifestyle, and real-life local info</strong>
+    in one trusted place.
+  </p>
+</header>
+
+<div class="container">
+
+  <!-- Mission -->
+  <div class="section">
+    <div class="text">
+      <h2>Our Mission</h2>
+      <p>
+        Varanasi is not just a city — it’s a <strong>5,000+ year old living civilization</strong>.
+        From sacred ghats and ancient temples to modern education hubs, OK Varanasi aims
+        to make every detail easily accessible for students, tourists, pilgrims, and locals.
+      </p>
+    </div>
+    <div class="image">Mission Image</div>
+  </div>
+
+  <!-- Tourism -->
+  <div class="section">
+    <div class="text">
+      <h2>Tourism & Spiritual Places</h2>
+      <p>
+        Discover the heart of Kashi with detailed guides, timings, and locations:
+      </p>
+      <ul>
+        <li>Kashi Vishwanath Temple</li>
+        <li>Dashashwamedh Ghat & Ganga Aarti</li>
+        <li>Assi Ghat, Manikarnika Ghat</li>
+        <li>Ramnagar Fort</li>
+        <li>Sarnath – Dhamek Stupa</li>
+      </ul>
+    </div>
+    <div class="image">Temple / Ghat Image</div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <div class="text">
+      <h2>Education Hub of Purvanchal</h2>
+      <p>
+        Varanasi is also an education powerhouse. We provide authentic information
+        on universities, colleges, hostels, and coaching institutes.
+      </p>
+      <ul>
+        <li>BHU & IIT-BHU</li>
+        <li>Mahatma Gandhi Kashi Vidyapith</li>
+        <li>70+ colleges</li>
+        <li>Allen, Narayana, Sri Chaitanya, Vidyapit</li>
+      </ul>
+    </div>
+    <div class="image">Education Image</div>
+  </div>
+
+  <!-- Lifestyle -->
+  <div class="section">
+    <div class="text">
+      <h2>Shopping, Food & Lifestyle</h2>
+      <p>
+        From street food to malls, OK Varanasi covers the modern lifestyle of the city:
+      </p>
+      <ul>
+        <li>IP Mall, JHV Mall, PDR Mall</li>
+        <li>Street food & famous Banarasi cuisine</li>
+        <li>Cinemas, cafés, hostels & PGs</li>
+      </ul>
+    </div>
+    <div class="image">Lifestyle Image</div>
+  </div>
+
+  <!-- Why Us -->
+  <div class="highlight-box">
+    <h2>Why OK Varanasi?</h2>
+    <p>
+      Unlike generic travel websites, we provide <strong>local-level accuracy</strong> —
+      Google Maps, real timings, contact numbers, fees, Hindi & English support.
+      Connected with our YouTube channel <strong>OK Varanasi</strong> for real video tours
+      and 2025-updated content.
+    </p>
+    <a href="#" class="btn">Contact Us</a>
+    <a href="#" class="btn">Subscribe</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 OK Varanasi • Made with ❤️ in Banaras • Jai Ganga Maiyya 🙏
+</footer>
+
+</body>
+</html>     

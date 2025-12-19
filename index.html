@@ -26,39 +26,90 @@
       flex-direction:column;
     }
 
-    /* ================= HEADER ================= */
-    .header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:#000;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:15px 30px;
-      box-shadow:0 6px 25px rgba(0,255,255,0.25);
-    }
+    /* ================= NEW HEADER ================= */
+.header{
+  position: relative;
+  top:0;
+  z-index:1000;
+  background:linear-gradient(135deg,#000,#0a0a0a);
+  padding:20px 30px;
+  box-shadow:0 8px 30px rgba(0,255,255,0.25);
+}
 
-    .header-center img{
-      width:150px;
-      border-radius:15px;
-    }
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
 
-    .header-right a{
-      color:#fff;
-      text-decoration:none;
-      margin-left:15px;
-      padding:8px 18px;
-      border-radius:25px;
-      background:#121212;
-      border:1px solid #00ffff55;
-      transition:0.3s;
-    }
+/* LEFT LOGO */
+.header-logo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
 
-    .header-right a:hover{
-      background:#00ffff;
-      color:#000;
-    }
+.header-logo img{
+  width:70px;
+  border-radius:12px;
+  box-shadow:0 0 15px #00ffff80;
+}
+
+/* CENTER TEXT */
+.header-text{
+  text-align:center;
+  flex:1;
+}
+
+.header-text h1{
+  font-size:28px;
+  font-weight:700;
+  color:#00ffff;
+  letter-spacing:1px;
+}
+
+.header-text p{
+  font-size:14px;
+  color:#cfcfcf;
+  margin-top:6px;
+}
+
+/* RIGHT MENU */
+.header-right a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:12px;
+  padding:10px 22px;
+  border-radius:30px;
+  background:#111;
+  border:1px solid #00ffff55;
+  transition:0.3s;
+  font-weight:500;
+}
+
+.header-right a:hover{
+  background:#00ffff;
+  color:#000;
+  box-shadow:0 0 15px #00ffff;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .header-inner{
+    flex-direction:column;
+  }
+
+  .header-text h1{
+    font-size:22px;
+  }
+
+  .header-right{
+    margin-top:10px;
+  }
+}
 
     /* ================= SEARCH ================= */
     .search-container{
@@ -230,15 +281,30 @@
 
 <!-- ================= HEADER ================= -->
 <div class="header">
-  <div></div>
-  <div class="header-center">
-    <img src="coaching/coachingimages/qr1.png" alt="QR">
-  </div>
-  <div class="header-right">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+  <div class="header-inner">
+
+    <!-- LEFT LOGO -->
+    <div class="header-logo">
+      <img src="coaching/coachingimages/qr1.png" alt="OK VARANASI">
+    </div>
+
+    <!-- CENTER TITLE + LINE -->
+    <div class="header-text">
+      <h1>OK VARANASI</h1>
+      <p>
+        Discover everything about Varanasi 
+      </p>
+    </div>
+
+    <!-- RIGHT MENU -->
+    <div class="header-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </div>
+
   </div>
 </div>
+
 
 <!-- ================= SEARCH ================= -->
 <div class="search-container">
