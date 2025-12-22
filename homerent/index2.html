@@ -1,179 +1,289 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homes Available for Rent</title>
-  <link rel="stylesheet" href="style2.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homes Available for Rent | OK VARANASI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* BASIC RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#0d0d0d;color:#fff;min-height:100vh;display:flex;flex-direction:column;}
+
+/* HEADER */
+.header{
+  background:linear-gradient(135deg,#000,#0a0a0a);
+  padding:20px 30px;
+  box-shadow:0 8px 30px rgba(0,255,255,0.25);
+}
+.header-inner{
+  max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.header-logo img{width:70px;border-radius:12px;box-shadow:0 0 20px #00ffff80;}
+.header-text{text-align:center;flex:1;}
+.header-text h1{font-size:26px;color:#00ffff; text-shadow:0 0 8px #00ffff,0 0 15px #00ffff55,0 0 25px #00ffff77;}
+.header-text p{font-size:14px;color:#cfcfcf;margin-top:6px;}
+.header-right a{
+  color:#fff;text-decoration:none;margin-left:12px;padding:10px 22px;
+  border-radius:30px;background:#111;border:1px solid #00ffff55;transition:0.3s;font-weight:500;
+}
+.header-right a:hover{background:#00ffff;color:#000;box-shadow:0 0 15px #00ffff;}
+
+@media(max-width:768px){
+  .header-inner{flex-direction:column;}
+  .header-text h1{font-size:22px;}
+  .header-text p{font-size:13px;}
+  .header-right{margin-top:10px;}
+}
+
+/* SEARCH */
+.search-container{
+  max-width:520px;width:100%;margin:25px auto;
+}
+.search-container input{
+  width:100%;padding:14px 22px;border-radius:35px;border:none;outline:none;
+  background:#161616;color:#fff;font-size:15px;
+}
+
+/* CATEGORY SLIDER */
+.category-slider{
+  display:flex;
+  overflow-x:auto;
+  gap:12px;
+  max-width:950px;
+  margin:10px auto 20px auto;
+  padding:10px 0;
+  scrollbar-width:none;
+}
+.category-slider::-webkit-scrollbar{display:none;}
+.category-card{
+  min-width:110px;
+  padding:10px 22px;
+  border-radius:50px;
+  background:#141414;
+  border:1px solid #00ffff55;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:0.3s;
+  flex-shrink:0;
+}
+.category-card:hover,
+.category-card.active{
+  background:#00ffff;
+  color:#000;
+  box-shadow:0 0 12px #00ffff80;
+}
+
+/* OPTION CARDS (HOUSES) */
+.option-container{max-width:1200px;margin:0 auto;padding:20px;display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.option-card{
+  display:flex;flex-direction:column;gap:15px;background:#121212;border-radius:20px;
+  overflow:hidden;cursor:pointer;border:1px solid #00ffff40;box-shadow:0 12px 35px rgba(0,255,255,0.18);
+  transition:0.35s;text-decoration:none;color:white;
+}
+.option-card:hover{transform:translateY(-6px);box-shadow:0 25px 60px rgba(0,255,255,0.35);}
+.option-card img{width:100%;height:180px;object-fit:cover;}
+.option-content{padding:20px;display:flex;flex-direction:column;justify-content:center;}
+.option-content h2{font-size:22px;color:#00ffff;margin-bottom:8px;}
+.option-content p{font-size:14px;color:#cfcfcf;line-height:1.4;}
+.option-content span{margin-top:10px;background:#00ffff;color:#000;padding:6px 15px;border-radius:25px;width:max-content;font-weight:600;}
+
+/* FOOTER */
+footer{
+  background:#0a0a0a;
+  color:#aaa;
+  text-align:center;
+  padding:40px 20px;
+  margin-top:auto;
+  border-top:2px solid #00ffff55;
+  box-shadow:0 -5px 25px rgba(0,255,255,0.25);
+}
+footer img{
+  width:100px;
+  margin:10px;
+  border-radius:12px;
+  box-shadow:0 0 15px #00ffff80;
+  transition: transform 0.3s;
+}
+footer img:hover{transform: scale(1.1) rotate(5deg);}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+.footer-links a{
+  display:inline-flex;
+  align-items:center;
+  margin:10px 15px;
+  color:#00ffff;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+.footer-links a:hover{
+  color:#fff;
+  text-shadow: 0 0 8px #00ffff;
+}
+.footer-links a img{
+  width:24px;
+  height:24px;
+  margin-right:6px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .option-card{flex-direction:column;}
+  .option-card img{width:100%;height:180px;}
+  .option-content h2{font-size:18px;}
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>🏠Homes Available for Rent </h1>
-    <p id="typingText1"></p>
-  </header>
 
-  <!-- Search box -->
-  <div class="search-box-container">
-  <input type="text" id="searchInput" placeholder="Search by location or type..." />
-  <button onclick="searchHouses()">Search</button>
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="header-logo"><img src="ghar/gharimages/QR1.png" alt="OK VARANASI Logo"></div>
+    <div class="header-text">
+      <h1>Available Houses in Varanasi</h1>
+      <p>Search verified rental homes in Varanasi & nearby cities</p>
+    </div>
+    <div class="header-right">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </div>
+  </div>
 </div>
 
-  <hr class="colorful-hr">
-  <h2>Available Houses</h2>
-  <hr class="colorful-hr">
+<!-- SEARCH -->
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Type to search homes..." onkeyup="searchHouses()"/>
+</div>
 
-  <!-- Available houses section -->
-  <section>
-    <!-- ghar 1 -->
-    <a href="ghar/ghar1.html" class="house-card" id="ghar1">
-    <img src="../images/varanasi.jpg" alt="3 BHK House in Varanasi">
-    <h3>Location: Varanasi</h3>
-    <p>₹ 23,000 / month | 2 BHK</p>
-    <p>Clean and peaceful neighborhood</p>
-    </a>
+<!-- CATEGORY SLIDER -->
+<div class="category-slider" id="categorySlider">
+  <div class="category-card active" data-filter="all">All</div>
+  <div class="category-card" data-filter="Gautamnagar">Gautamnagar</div>
+  <div class="category-card" data-filter="Lanka">Lanka</div>
+  <div class="category-card" data-filter="Durgakund">Durgakund</div>
+  <div class="category-card" data-filter="Chittupur">Chittupur</div>
+  <div class="category-card" data-filter="Hyderabad Gate">Hyderabad Gate</div>
+</div>
 
-    <!-- ghar 2 -->
-    <a href="ghar/ghar2.html" class="house-card" id="ghar2">
-      <img src="../images/kota.jpg" alt="3 BHK Rental House in Kota">
-    <h3>Location: Kota</h3>
-    <p>₹ 15,000 / month | 3 BHK</p>
-    <p>Near Dakhaniya Railway Station</p>
+<!-- HOUSES -->
+<div class="option-container" id="optionContainer">
 
-    </a>
-    <!-- ghar 3 -->
-    <a href="ghar/ghar3.html" class="house-card" id="ghar1">
-      <img src="../images/chandauli.webp" alt="2 BHK House in Chandauli">
-    <h3>Location: Chandauli</h3>
-    <p>₹ 10,000 / month | 2 BHK</p>
-    <p>Clean and peaceful neighborhood</p>
-    </a>
+  <a href="ghar/ghar1.html" class="option-card" data-location="Gautamnagar">
+    <img src="../images/varanasi.jpg" alt="Varanasi 2 BHK">
+    <div class="option-content">
+      <h2>Varanasi</h2>
+      <p>₹ 23,000 / month | 2 BHK</p>
+      <p>Clean and peaceful neighborhood</p>
+      <span>Explore</span>
+    </div>
+  </a>
 
-    <!-- ghar 4 -->
-    <a href="ghar/ghar4.html" class="house-card" id="ghar2">
-      <img src="../images/lucknow.jpg" alt="3 BHK Rental House in Lucknow">
-    <h3>Location: Lucknow</h3>
-    <p>₹ 22,000 / month | 3 BHK</p>
-    <p>Close to metro and market</p>
+  <a href="ghar/ghar2.html" class="option-card" data-location="Lanka">
+    <img src="../images/kota.jpg" alt="Kota 3 BHK">
+    <div class="option-content">
+      <h2>Kota</h2>
+      <p>₹ 15,000 / month | 3 BHK</p>
+      <p>Near Dakhaniya Railway Station</p>
+      <span>Explore</span>
+    </div>
+  </a>
 
-    </a>
+  <a href="ghar/ghar3.html" class="option-card" data-location="Durgakund">
+    <img src="../images/chandauli.webp" alt="Chandauli 2 BHK">
+    <div class="option-content">
+      <h2>Chandauli</h2>
+      <p>₹ 10,000 / month | 2 BHK</p>
+      <p>Clean and peaceful neighborhood</p>
+      <span>Explore</span>
+    </div>
+  </a>
 
-   <!-- ghar 5 -->
-     <a href="ghar/ghar5.html" class="house-card" id="ghar1">
-      <img src="../images/allahabad.webp" alt="">
-      <h3>Location: Allahabad</h3>
-    <p>₹ 13,000 / month | 2 BHK</p>
-    <p>Close to airport</p>
+  <a href="ghar/ghar4.html" class="option-card" data-location="Chittupur">
+    <img src="../images/lucknow.jpg" alt="Lucknow 3 BHK">
+    <div class="option-content">
+      <h2>Lucknow</h2>
+      <p>₹ 22,000 / month | 3 BHK</p>
+      <p>Close to metro and market</p>
+      <span>Explore</span>
+    </div>
+  </a>
 
-    </a>
+  <a href="ghar/ghar5.html" class="option-card" data-location="Hyderabad Gate">
+    <img src="../images/allahabad.webp" alt="Allahabad 2 BHK">
+    <div class="option-content">
+      <h2>Allahabad</h2>
+      <p>₹ 13,000 / month | 2 BHK</p>
+      <p>Close to airport</p>
+      <span>Explore</span>
+    </div>
+  </a>
 
-    <!-- ghar 6 -->
-    <a href="gahr/ghar6.html" class="house-card" id="ghar2">
-      <img src="../images/bhopal.jpg" alt="">
-      <h3>Location: Bhopal</h3>
-    <p>₹ 19,000 / month | 3 BHK</p>
-    <p>Close to metro and market</p>
+</div>
 
-    </a>
-
-  <!-- ghar 7 -->
-     <a href="ghar/ghar7.html" class="house-card" id="ghar1">
-      <img src="../images/jaipur.jpg" alt="">
-      <h3>Location: Jaipur</h3>
-    <p>₹ 17,000 / month | 3 BHK</p>
-    <p>Close to Hawamahal</p>
-    </a>
-
-    <!-- ghar 8 -->
-    <a href="ghar/ghar8.html" class="house-card" id="ghar2">
-      <img src="../images/mughalsarai.jpg" alt="">
-      <h3>Location: Mughal Sarai</h3>
-    <p>₹ 12,000 / month | 3 BHK</p>
-    <p>Close to railway station</p>
-    </a>
-
-     <!-- ghar 9 -->
-    <a href="ghar/ghar9.html" class="house-card" id="ghar2">
-      <img src="../images/commingsoon.png" alt="">
-      <h3>COMING SOON</h3>
-      <p></p>
-      <p></p>
-    </a>
-
-  <!-- ghar 10 -->
-     <a href="ghar/ghar10.html" class="house-card" id="ghar1">
-      <img src="../images/commingsoon.png" alt="">
-      <h3>COMING SOON</h3>
-      <p></p>
-      <p></p>
-    </a>
-
-    <!-- ghar 11 -->
-    <a href="ghar/ghar11.html" class="house-card" id="ghar2">
-      <img src="../images/commingsoon.png" alt="">
-      <h3>COMING SOON</h3>
-      <p></p>
-      <p></p>
-    </a>
-
-     <!-- ghar 11 -->
-    <a href="ghar/ghar11.html" class="house-card" id="ghar2">
-      <img src="../images/commingsoon.png" alt="">
-      <h3>COMING SOON</h3>
-      <p></p>
-      <p></p>
-    </a>
-
-
-    <!-- additional houses can be added here -->
-  </section>
-
+<!-- FOOTER -->
 <footer>
-    <img src="../coachingimages/qr1.png" alt="QR Code 1">
-    <img src="../coachingimages/qr2.png" alt="QR Code 2">
-    <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
-    <P>SCAN THE QR CODE BELOW TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!           
-    </p>
-    <br>
-    <p style=" color: #ff001e;">THANKS FOR VISITING OK VARANASI !</p>
-    <br>
-     <p style=" color: #00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
-   <div class="footer-right">
-  <a href="https://t.me/okvaranasi" target="_blank" 
-     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" 
-         alt="Telegram" 
-         style="width:24px; height:24px; margin-right:5px;"> Telegram
-  </a>
+  <div style="margin-bottom:20px;">
+    <img src="ghar/gharimages/QR1.png" alt="OK VARANASI Logo">
+  </div>
+  <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
+  <p style=" color: #ff001e;">THANKS FOR VISITING OK VARANASI !</p>
+  <p style=" color: #00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
+  <div class="footer-links">
+    <a href="https://t.me/okvaranasi" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">Telegram</a>
+    <a href="https://wa.me/919118717157" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">WhatsApp</a>
+    <a href="mailto:okvaranasii@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">Gmail</a>
+    <a href="https://www.youtube.com/@OKVARANASI" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">YouTube</a>
+  </div>
+</footer>
 
-  <a href="https://wa.me/919118717157" target="_blank" 
-     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
-         alt="WhatsApp" 
-         style="width:24px; height:24px; margin-right:5px;"> WhatsApp
-  </a>
+<script>
+// FISHER-YATES SHUFFLE
+function shuffleHouses(containerId){
+  const container = document.getElementById(containerId);
+  const cards = Array.from(container.children);
+  for(let i = cards.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+  container.innerHTML = '';
+  cards.forEach(card => container.appendChild(card));
+}
 
-  <a href="mailto:okvaranasii@gmail.com" 
-     style="display:inline-flex; align-items:center; margin-right:15px; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" 
-         alt="Gmail" 
-         style="width:24px; height:24px; margin-right:5px;"> Gmail
-  </a>
+// LIVE SEARCH
+function searchHouses() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.option-card').forEach(card=>{
+    const location = card.dataset.location.toLowerCase();
+    card.style.display = (location.includes(input) || card.innerText.toLowerCase().includes(input)) ? 'flex':'none';
+  });
+}
 
-  <a href="https://www.youtube.com/@OKVARANASI" target="_blank" 
-     style="display:inline-flex; align-items:center; text-decoration:none; color:inherit;">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" 
-         alt="YouTube" 
-         style="width:24px; height:24px; margin-right:5px;"> YouTube
-  </a>
-</div>
+// CATEGORY FILTER
+const categoryCards = document.querySelectorAll('.category-card');
+categoryCards.forEach(cat=>{
+  cat.addEventListener('click', ()=>{
+    categoryCards.forEach(c=>c.classList.remove('active'));
+    cat.classList.add('active');
+    const filter = cat.dataset.filter.toLowerCase();
+    document.querySelectorAll('.option-card').forEach(card=>{
+      card.style.display = (filter === 'all' || card.dataset.location.toLowerCase() === filter) ? 'flex' : 'none';
+    });
+    shuffleHouses('optionContainer'); // shuffle after filter
+  });
+});
 
+// INITIAL SHUFFLE ON PAGE LOAD
+window.addEventListener('DOMContentLoaded', ()=>{
+  shuffleHouses('optionContainer');
+});
+</script>
 
-  <!-- baki links same style -->
-</div>
-
-  </footer>
-
-
-  <script src="script2.js"></script>
 </body>
 </html>
