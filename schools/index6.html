@@ -3,229 +3,331 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Varanasi Schools - OK VARANASI</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0d0d0d;color:white;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh;}
+<title>Varanasi Schools | OK VARANASI</title>
 
-/* ===== Header ===== */
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+
+body{
+  background:#0d0d0d;
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
 .header{
-  width:100%;
-  padding:20px 20px;
-  background:black;
+  background:linear-gradient(135deg,#000,#0a0a0a);
+  padding:20px 30px;
+  box-shadow:0 8px 30px rgba(0,255,255,0.25);
+}
+.header-inner{
+  max-width:1200px;
+  margin:auto;
   display:flex;
   align-items:center;
-  justify-content:center; 
-  position:relative;
-  min-height:160px; /* header height bada kiya */
+  justify-content:space-between;
+  gap:20px;
 }
-.header-title{
-  text-align:center;
-  font-size:2rem; /* thoda bada font */
-  color:#00ff88;
-  font-weight:700;
-  letter-spacing:1px;
-  text-shadow:0 0 6px #00ff88,0 0 12px #00ff88;
-  flex:1;
-}
-.header-qr{
-  position:absolute;
-  left:20px;
-  top:50%;
-  transform:translateY(-50%);
-}
-.header-qr img{
-  width:140px;
-  height:140px;
+.header-logo img{
+  width:80px;
   border-radius:12px;
-  display:block;
+  box-shadow:0 0 20px #00ffff80;
 }
-
-/* ===== Search ===== */
-.search-container{max-width:500px;width:100%;margin:20px auto;text-align:center;}
-.search-container input{width:100%;padding:10px 15px;border-radius:20px;border:none;outline:none;font-size:15px;background:#1a1a1a;color:white;}
-
-/* ===== Horizontal Text Slider ===== */
-.text-slider-container{max-width:800px;margin:20px auto;position:relative;overflow:hidden;cursor:grab;}
-.text-slider{display:flex;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;gap:15px;padding:10px;scrollbar-width:none;-ms-overflow-style:none;}
-.text-slider::-webkit-scrollbar{display:none;}
-.text-slider.dragging{cursor:grabbing;scroll-behavior:auto;}
-.text-card{flex:0 0 auto;min-width:120px;background:#1a1a1a;border-radius:50px;padding:10px 20px;text-align:center;cursor:pointer;user-select:none;transition:0.3s;border:1px solid #00ffff50;white-space:nowrap;}
-.text-card:hover{background:#222;box-shadow:0 0 10px #00ffff80;}
-.text-card.active{background:#00ffff;color:#000;transform:scale(1.05);}
-
-/* ===== Option Cards ===== */
-.option-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding:20px;}
-.option-card{width:280px;position:relative;background:#111;color:#fff;display:flex;flex-direction:column;justify-content:flex-start;border-radius:15px;overflow:hidden;text-decoration:none;transition:0.3s;border:2px solid transparent;cursor:pointer;}
-.option-card:hover{transform:scale(1.05);border:2px solid #00ff88;box-shadow:0 0 15px #00ff88;}
-.option-card img{width:100%;height:180px;object-fit:cover;filter:brightness(0.65);transition:0.3s;}
-.option-card:hover img{filter:brightness(0.75);}
-.card-content{padding:10px;}
-.school-name{font-weight:600;color:white;font-size:1rem;}
-.school-desc{color:white;font-size:0.85rem;margin-top:5px;line-height:1.3;}
-
-/* ===== Footer ===== */
-footer{background-color:#000;color:#888;text-align:center;padding:20px;margin-top:auto;}
-.footer-right{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:10px;}
-.footer-right a{display:flex;align-items:center;text-decoration:none;color:white;background:#111;padding:8px 12px;border-radius:8px;flex:1 1 150px;justify-content:center;max-width:200px;transition:0.3s;}
-.footer-right a:hover{background:#00ff88;color:#000;}
-.footer-right img{width:24px;height:24px;margin-right:5px;}
-
-/* ===== Responsive ===== */
+.header-text{
+  flex:1;
+  text-align:center;
+}
+.header-text h1{
+  font-size:26px;
+  color:#00ffff;
+  text-shadow:0 0 8px #00ffff;
+}
+.header-text p{
+  font-size:14px;
+  color:#cfcfcf;
+  margin-top:6px;
+}
 @media(max-width:768px){
-  .header{flex-direction:column;justify-content:center;align-items:center;gap:10px;min-height:auto;}
-  .header-qr{position:relative;left:0;margin-bottom:10px;transform:none;}
-  .option-card{width:90%;}
-  .text-card{min-width:90px;padding:8px 15px;font-size:14px;border-radius:30px;}
+  .header-inner{flex-direction:column;}
 }
-@media(max-width:480px){
-  .option-card img{height:160px;}
-  .header-qr img{width:100px;height:100px;}
+
+/* ================= SEARCH ================= */
+.search-container{
+  max-width:520px;
+  margin:25px auto;
+  padding:0 16px;
+}
+.search-container input{
+  width:100%;
+  padding:14px 22px;
+  border-radius:35px;
+  border:none;
+  outline:none;
+  background:#161616;
+  color:#fff;
+}
+
+/* ================= CATEGORY SLIDER (CENTER) ================= */
+.category-wrapper{
+  display:flex;
+  justify-content:center;
+  width:100%;
+}
+.category-slider{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:10px 16px;
+  scrollbar-width:none;
+}
+.category-slider::-webkit-scrollbar{display:none;}
+
+.category-card{
+  min-width:120px;
+  padding:10px 22px;
+  border-radius:50px;
+  background:#141414;
+  border:1px solid #00ffff55;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:0.3s;
+  flex-shrink:0;
+}
+.category-card:hover,
+.category-card.active{
+  background:#00ffff;
+  color:#000;
+  box-shadow:0 0 12px #00ffff80;
+}
+
+/* ================= OPTION CARDS ================= */
+.option-container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.option-card{
+  background:#121212;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid #00ffff40;
+  box-shadow:0 12px 35px rgba(0,255,255,0.18);
+  transition:0.35s;
+}
+.option-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 25px 60px rgba(0,255,255,0.35);
+}
+.option-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+.option-content{
+  padding:20px;
+}
+.option-content h2{
+  font-size:20px;
+  color:#00ffff;
+}
+.option-content p{
+  font-size:14px;
+  color:#cfcfcf;
+  margin-top:6px;
+}
+.option-content span{
+  margin-top:10px;
+  display:inline-block;
+  background:#00ffff;
+  color:#000;
+  padding:6px 15px;
+  border-radius:25px;
+  font-weight:600;
+}
+@media(max-width:768px){
+  .option-container{grid-template-columns:1fr;}
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#0a0a0a;
+  color:#aaa;
+  text-align:center;
+  padding:40px 20px;
+  margin-top:auto;
+  border-top:2px solid #00ffff55;
+}
+footer img{
+  width:100px;
+  border-radius:12px;
+  box-shadow:0 0 15px #00ffff80;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+.footer-links a{
+  margin:10px 15px;
+  color:#00ffff;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+}
+.footer-links img{
+  width:24px;
+  margin-right:6px;
 }
 </style>
 </head>
+
 <body>
 
-<!-- Header -->
+<!-- HEADER -->
 <div class="header">
-  <div class="header-qr">
-    <img src="schoolimages/qr1.png" alt="QR Code">
+  <div class="header-inner">
+    <div class="header-logo">
+      <img src="schoolimages/qr1.png">
+    </div>
+    <div class="header-text">
+      <h1>Schools in Varanasi</h1>
+      <p>Government & Private verified schools</p>
+    </div>
   </div>
-  <h1 class="header-title">SCHOOLS</h1>
 </div>
 
-<!-- Search -->
+<!-- SEARCH -->
 <div class="search-container">
-  <input id="searchInput" type="text" placeholder="Search schools...">
+  <input type="text" id="searchInput" placeholder="Search schools...">
 </div>
 
-<!-- Horizontal Text Slider -->
-<div class="text-slider-container">
-  <div class="text-slider">
-    <div class="text-card active" data-filter="All">ALL</div>
-    <div class="text-card" data-filter="PRIVATE">PRIVATE</div>
-    <div class="text-card" data-filter="GOVERNMENT">GOVERNMENT</div>
-    <div class="text-card" data-filter="CBSE">CBSE</div>
-    <div class="text-card" data-filter="ICSE">ICSE</div>
-    <div class="text-card" data-filter="NEAR JNV">NEAR JNV</div>
+<!-- CATEGORY -->
+<div class="category-wrapper">
+  <div class="category-slider">
+    <div class="category-card active" data-filter="ALL">ALL</div>
+    <div class="category-card" data-filter="PRIVATE">PRIVATE</div>
+    <div class="category-card" data-filter="GOVERNMENT">GOVERNMENT</div>
+    <div class="category-card" data-filter="CBSE">CBSE</div>
+    <div class="category-card" data-filter="ICSE">ICSE</div>
+    <div class="category-card" data-filter="NEAR JNV">NEAR JNV</div>
   </div>
 </div>
 
-<!-- Option Cards -->
+<!-- CARDS -->
 <div class="option-container">
-  <div class="option-card" data-type="GOVERNMENT">
-    <img src="schoolimages/atal1.jpg" alt="Atal School">
-    <div class="card-content">
-      <span class="school-name">Atal Residential School</span>
-      <span>CBSE GOVERNMENT</span>
-      <p class="school-desc">Atal Residential School is a CBSE-affiliated government school focused on holistic education. It provides residential facilities and emphasizes academics, sports, and cultural activities.</p>
-    </div>
-  </div>
 
-  <div class="option-card" data-type="GOVERNMENT">
-    <img src="schoolimages/jnvv1.jpg" alt="JNV Varanasi">
-    <div class="card-content">
-      <span class="school-name">Jawahar Navodaya Vidyalaya (JNV) Varanasi</span>
-      <span>CBSE GOVERNMENT</span>
-      <p class="school-desc">JNV Varanasi is part of the nationwide Navodaya system. It offers quality education for talented students, with free boarding and strong academic results.</p>
+  <div class="option-card" data-tags="GOVERNMENT,CBSE,NEAR JNV">
+  <a href="schools name/atal.html" class="card-link">
+    <img src="schoolimages/atal1.png">
+    <div class="option-content">
+      <h2>Atal Residential School</h2>
+      <p>CBSE Government residential school</p>
+      <span>Explore</span>
     </div>
-  </div>
-
-  <div class="option-card" data-type="PRIVATE">
-    <img src="schoolimages/stjv1.jpg" alt="STJV 1">
-    <div class="card-content">
-      <span class="school-name">St. John’s School (DLW), Varanasi</span>
-      <p class="school-desc">St. John’s School (DLW) is a private institution with emphasis on academics, sports, and overall personality development.</p>
-    </div>
-  </div>
-
-  <div class="option-card" data-type="PRIVATE">
-    <img src="schoolimages/stjv2.jpg" alt="STJV 2">
-    <div class="card-content">
-      <span class="school-name">St. John’s School, Marhauli – Varanasi</span>
-      <p class="school-desc">A private school providing quality education with modern facilities and extracurricular opportunities.</p>
-    </div>
-  </div>
+  </a>
 </div>
 
-<!-- Footer -->
+
+  <div class="option-card" data-tags="GOVERNMENT,CBSE,NEAR JNV">
+    <a href="schools name/jnvc.html" class="card-link"></a>
+    <img src="schoolimages/jnvc1.png">
+    <div class="option-content">
+      <h2>Jawahar Navodaya Vidyalaya</h2>
+      <p>Free boarding & quality education</p>
+      <span>Explore</span>
+    </div>
+  </div>
+
+  <div class="option-card" data-tags="PRIVATE,ICSE">
+    <a href="schools name/stjv1.html" class="card-link"></a>
+    <img src="schoolimages/stjv1.jpg">
+    <div class="option-content">
+      <h2>St. John’s School (DLW)</h2>
+      <p>Private ICSE school</p>
+      <span>Explore</span>
+    </div>
+  </div>
+
+  <div class="option-card" data-tags="PRIVATE,ICSE">
+    <a href="schools name/stjv2.html" class="card-link"></a>
+    <img src="schoolimages/stjv2.jpg">
+    <div class="option-content">
+      <h2>St. John’s School Marhauli</h2>
+      <p>Modern private institution</p>
+      <span>Explore</span>
+    </div>
+  </div>
+
+  <div class="option-card" data-tags="GOVERNMENT, JNV">
+    <a href="schools name/jnvv.html" class="card-link"></a>
+    <img src="schoolimages/jnvv1.png">
+    <div class="option-content">
+      <h2>JNV VARANASI</h2>
+      <p>GOVERNME</p>
+      <span>Explore</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <img src="schoolimages/qr1.png" alt="logo" style="width:140px;height:140px;margin:5px;">
-  <img src="schoolimages/qr2.png" alt="qr code" style="width:140px;height:140px;margin:5px;">
+  <img src="schoolimages/qr1.png">
   <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
-  <p>SCAN THE QR CODE BELOW TO SEND A TIP. EVERY CONTRIBUTION KEEPS ME MOTIVATED!</p>
-  <br>
-  <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI!</p>
-  <br>
-  <p style="color:#00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
-  <div class="footer-right">
-    <a href="https://t.me/okvaranasi" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"> Telegram</a>
-    <a href="https://wa.me/919118717157" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp</a>
-    <a href="mailto:okvaranasii@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail"> Gmail</a>
-    <a href="https://www.youtube.com/@OKVARANASI" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> YouTube</a>
+  <p style="color:#ff001e">THANKS FOR VISITING OK VARANASI!</p>
+  <p style="color:#00ffaa">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
+
+  <div class="footer-links">
+    <a href="https://t.me/okvaranasi" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">Telegram
+    </a>
+    <a href="https://wa.me/919118717157" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">WhatsApp
+    </a>
+    <a href="mailto:okvaranasii@gmail.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">Gmail
+    </a>
+    <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">YouTube
+    </a>
   </div>
 </footer>
 
 <!-- JS -->
 <script>
-// ===== Search Filter =====
-const searchInput = document.getElementById('searchInput');
-searchInput.addEventListener('keyup', () => {
-  const input = searchInput.value.toLowerCase();
-  const cards = document.querySelectorAll('.option-card');
-  cards.forEach(card => {
-    const text = card.textContent.toLowerCase();
-    card.style.display = text.includes(input) ? "flex" : "none";
+const searchInput=document.getElementById("searchInput");
+const cards=document.querySelectorAll(".option-card");
+const filters=document.querySelectorAll(".category-card");
+let activeFilter="ALL";
+
+searchInput.addEventListener("input",filterAll);
+
+filters.forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    filters.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    activeFilter=btn.dataset.filter;
+    filterAll();
   });
 });
 
-// ===== Horizontal Text Slider =====
-const sliderContainer = document.querySelector(".text-slider");
-let isDragging=false, startX, scrollLeft, moved=false;
-
-sliderContainer.addEventListener("mousedown", e=>{
-  isDragging=true; moved=false;
-  sliderContainer.classList.add("dragging");
-  startX=e.pageX-sliderContainer.offsetLeft;
-  scrollLeft=sliderContainer.scrollLeft;
-});
-sliderContainer.addEventListener("mouseleave",()=>{isDragging=false;sliderContainer.classList.remove("dragging");});
-sliderContainer.addEventListener("mouseup",e=>{
-  sliderContainer.classList.remove("dragging");
-  if(!moved){const target=e.target.closest(".text-card"); if(target) handleCardClick(target);}
-  isDragging=false;
-});
-sliderContainer.addEventListener("mousemove",e=>{
-  if(!isDragging) return;
-  e.preventDefault();
-  moved=true;
-  const x=e.pageX-sliderContainer.offsetLeft;
-  sliderContainer.scrollLeft=scrollLeft-(x-startX)*1.5;
-});
-let touchStartX=0;
-sliderContainer.addEventListener("touchstart",e=>{touchStartX=e.touches[0].clientX;moved=false;});
-sliderContainer.addEventListener("touchmove",e=>{
-  const touchEndX=e.touches[0].clientX;
-  const moveX=touchStartX-touchEndX;
-  if(Math.abs(moveX)>5) moved=true;
-  sliderContainer.scrollLeft+=moveX*1.2;
-  touchStartX=touchEndX;
-});
-sliderContainer.addEventListener("touchend",e=>{
-  if(!moved){const target=e.target.closest(".text-card"); if(target) handleCardClick(target);}
-});
-
-function handleCardClick(card){
-  document.querySelectorAll(".text-card").forEach(c=>c.classList.remove("active"));
-  card.classList.add("active");
-  const filterType=card.getAttribute("data-filter");
-  const optionCards=document.querySelectorAll(".option-card");
-  optionCards.forEach(opt=>{
-    if(filterType==="All"){
-      opt.style.display="flex";
-    } else {
-      opt.style.display=(opt.dataset.type===filterType)?"flex":"none";
-    }
+function filterAll(){
+  const val=searchInput.value.toLowerCase();
+  cards.forEach(card=>{
+    const tags=card.dataset.tags.toLowerCase();
+    const text=card.textContent.toLowerCase();
+    card.style.display=
+      (activeFilter==="ALL"||tags.includes(activeFilter.toLowerCase()))
+      && text.includes(val) ? "block" : "none";
   });
 }
 </script>

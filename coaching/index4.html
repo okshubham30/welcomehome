@@ -6,9 +6,17 @@
 <title>Coaching Available | OK VARANASI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* BASIC RESET */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#0d0d0d;color:#fff;min-height:100vh;display:flex;flex-direction:column;}
+
+/* 🔥 MAIN FIX */
+body{
+  background:#0d0d0d;
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  overflow-x:hidden;  /* ❌ Full page horizontal scroll OFF */
+}
 
 /* HEADER */
 .header{
@@ -17,116 +25,86 @@ body{background:#0d0d0d;color:#fff;min-height:100vh;display:flex;flex-direction:
   box-shadow:0 8px 30px rgba(0,255,255,0.25);
 }
 .header-inner{
-  max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
 }
 .header-logo img{width:70px;border-radius:12px;box-shadow:0 0 20px #00ffff80;}
 .header-text{text-align:center;flex:1;}
-.header-text h1{font-size:26px;color:#00ffff; text-shadow:0 0 8px #00ffff,0 0 15px #00ffff55,0 0 25px #00ffff77;}
+.header-text h1{font-size:26px;color:#00ffff; text-shadow:0 0 8px #00ffff,0 0 15px #00ffff55;}
 .header-text p{font-size:14px;color:#cfcfcf;margin-top:6px;}
 .header-right a{
-  color:#fff;text-decoration:none;margin-left:12px;padding:10px 22px;
-  border-radius:30px;background:#111;border:1px solid #00ffff55;transition:0.3s;font-weight:500;
+  color:#fff;text-decoration:none;margin-left:12px;padding:10px 22px;border-radius:30px;background:#111;border:1px solid #00ffff55;transition:0.3s;font-weight:500;
 }
 .header-right a:hover{background:#00ffff;color:#000;box-shadow:0 0 15px #00ffff;}
 
 /* SEARCH */
 .search-container{
-  max-width:600px;width:100%;margin:25px auto;
-  display:flex;gap:10px;flex-wrap:wrap;
+  max-width:600px;width:100%;margin:25px auto;display:flex;gap:10px;padding:0 15px;
 }
 .search-container input{
-  flex:1;
-  padding:14px 22px;
-  border-radius:35px;
-  border:none;
-  outline:none;
-  background:#161616;color:#fff;font-size:15px;
+  flex:1;padding:14px 22px;border-radius:35px;border:none;outline:none;background:#161616;color:#fff;
 }
 .search-container button{
-  padding:14px 25px;
-  border:none;
-  border-radius:35px;
-  background:#00ffff;
-  color:#000;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
+  padding:14px 25px;border:none;border-radius:35px;background:#00ffff;color:#000;font-weight:600;cursor:pointer;
 }
-.search-container button:hover{background:#0ff;font-weight:600;box-shadow:0 0 12px #00ffff;}
 
-/* COACHING CARDS */
+/* ================= CATEGORY SLIDER ================= */
+.category-slider{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;   /* ✅ HORIZONTAL SCROLL ALLOWED HERE */
+  overflow-y:hidden;
+  max-width:100%;
+  margin:10px auto 20px;
+  padding:10px 16px;
+  scrollbar-width:none;
+}
+.category-slider::-webkit-scrollbar{display:none;}
+.category-card{
+  min-width:110px;padding:10px 22px;border-radius:50px;background:#141414;border:1px solid #00ffff55;cursor:pointer;white-space:nowrap;transition:0.3s;flex-shrink:0;
+}
+.category-card:hover,
+.category-card.active{background:#00ffff;color:#000;box-shadow:0 0 12px #00ffff80;}
+
+/* ================= OPTION CARDS ================= */
 .option-container{
-  max-width:1200px;margin:20px auto;padding:20px;display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  max-width:1200px;
+  width:100%;
+  margin:0 auto;
+  padding:20px;
+  display:grid;
+  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  overflow-x:hidden; /* ❌ REMOVE HORIZONTAL SCROLL FROM MAIN CONTENT */
 }
 .option-card{
-  display:flex;flex-direction:column;gap:15px;background:#121212;border-radius:20px;
-  overflow:hidden;cursor:pointer;border:1px solid #00ffff40;box-shadow:0 12px 35px rgba(0,255,255,0.18);
-  transition:0.35s;text-decoration:none;color:white;
+  background:#121212;border-radius:20px;overflow:hidden;border:1px solid #00ffff40;box-shadow:0 12px 35px rgba(0,255,255,0.18);transition:0.35s;text-decoration:none;color:#fff;display:flex;flex-direction:column;cursor:pointer;
 }
 .option-card:hover{transform:translateY(-6px);box-shadow:0 25px 60px rgba(0,255,255,0.35);}
 .option-card img{width:100%;height:180px;object-fit:cover;}
-.option-content{padding:20px;display:flex;flex-direction:column;justify-content:center;}
-.option-content h2{font-size:22px;color:#00ffff;margin-bottom:8px;}
-.option-content p{font-size:14px;color:#cfcfcf;line-height:1.4;}
-.option-content span{margin-top:10px;background:#00ffff;color:#000;padding:6px 15px;border-radius:25px;width:max-content;font-weight:600;}
+.option-content{padding:20px;}
+.option-content h2{font-size:22px;color:#00ffff;}
+.option-content p{font-size:14px;color:#cfcfcf;margin-top:5px;}
+.option-content span{margin-top:10px;display:inline-block;background:#00ffff;color:#000;padding:6px 15px;border-radius:25px;font-weight:600;}
 
-/* NO RESULTS MESSAGE */
-.no-results { color:#ff4d4d; font-size:1.2rem; text-align:center; margin-top:20px; }
+/* NO RESULT */
+.no-results{color:#ff4d4d;font-size:18px;text-align:center;grid-column:1/-1;}
 
 /* FOOTER */
 footer{
-  background:#0a0a0a;
-  color:#aaa;
-  text-align:center;
-  padding:40px 20px;
-  margin-top:auto;
-  border-top:2px solid #00ffff55;
-  box-shadow:0 -5px 25px rgba(0,255,255,0.25);
-}
-footer img{
-  width:100px;
-  margin:10px;
-  border-radius:12px;
-  box-shadow:0 0 15px #00ffff80;
-  transition: transform 0.3s;
-}
-footer img:hover{transform: scale(1.1) rotate(5deg);}
-.footer-links{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:15px;
-  gap:15px;
-}
-.footer-links a{
-  display:inline-flex;
-  align-items:center;
-  color:#00ffff;
-  text-decoration:none;
-  font-weight:500;
-  transition:0.3s;
-}
-.footer-links a:hover{
-  color:#fff;
-  text-shadow: 0 0 8px #00ffff;
-}
-.footer-links a img{
-  width:24px;
-  height:24px;
-  margin-right:6px;
+  background:#0a0a0a;color:#aaa;text-align:center;padding:40px 20px;margin-top:auto;border-top:2px solid #00ffff55;
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
   .header-inner{flex-direction:column;}
-  .header-text h1{font-size:22px;}
-  .header-text p{font-size:13px;}
-  .header-right{margin-top:10px;}
-  .option-card{flex-direction:column;}
-  .option-card img{width:100%;height:180px;}
-  .option-content h2{font-size:18px;}
-  .search-container{flex-direction:column;align-items:center;}
-  .search-container input, .search-container button{width:90%;margin:5px 0;}
+  .search-container{flex-direction:column;}
+  .search-container input,.search-container button{width:100%;}
 }
 </style>
 </head>
@@ -135,7 +113,7 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
 <!-- HEADER -->
 <div class="header">
   <div class="header-inner">
-    <div class="header-logo"><img src="coachingimages/qr1.png" alt="Logo"></div>
+    <div class="header-logo"><img src="coachingimages/qr1.png"></div>
     <div class="header-text">
       <h1>Coaching Institutes in Varanasi</h1>
       <p>Search verified coaching centers for IIT-JEE, NEET & Olympiads</p>
@@ -149,12 +127,21 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
 
 <!-- SEARCH -->
 <div class="search-container">
-  <input type="text" id="searchInput" placeholder="Search by location or type...">
+  <input type="text" id="searchInput" placeholder="Search coaching...">
   <button id="searchButton">Search</button>
 </div>
 
-<!-- COACHING CARDS -->
+<!-- CATEGORY SLIDER -->
+<div class="category-slider">
+  <div class="category-card active" data-filter="all">All</div>
+  <div class="category-card" data-filter="Durgakund">Durgakund</div>
+  <div class="category-card" data-filter="Lanka">Lanka</div>
+  <div class="category-card" data-filter="Pandeyput">Pandeyput</div>
+</div>
+
+<!-- MAIN CONTENT -->
 <div class="option-container" id="optionContainer">
+
   <a href="tutions/coaching1.html" class="option-card" data-location="Durgakund">
     <img src="coachingimages/jrs1.png" alt="JRS DURGAKUND">
     <div class="option-content">
@@ -164,6 +151,7 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
       <span>Explore</span>
     </div>
   </a>
+
   <a href="tutions/coaching2.html" class="option-card" data-location="Durgakund">
     <img src="coachingimages/allen1.png" alt="ALLEN DURGAKUND">
     <div class="option-content">
@@ -173,6 +161,7 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
       <span>Explore</span>
     </div>
   </a>
+
   <a href="tutions/coaching3.html" class="option-card" data-location="Durgakund">
     <img src="coachingimages/akash1.png" alt="AKASH DURGAKUND">
     <div class="option-content">
@@ -182,6 +171,7 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
       <span>Explore</span>
     </div>
   </a>
+
   <a href="tutions/coaching4.html" class="option-card" data-location="Durgakund">
     <img src="coachingimages/L1.png" alt="L1 DURGAKUND">
     <div class="option-content">
@@ -191,6 +181,7 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
       <span>Explore</span>
     </div>
   </a>
+
   <a href="tutions/coaching5.html" class="option-card" data-location="Lanka">
     <img src="coachingimages/pw1.png" alt="PW LANKA">
     <div class="option-content">
@@ -200,6 +191,7 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
       <span>Explore</span>
     </div>
   </a>
+
   <a href="tutions/coaching6.html" class="option-card" data-location="Durgakund">
     <img src="coachingimages/narayana1.png" alt="NARAYANA DURGAKUND">
     <div class="option-content">
@@ -209,6 +201,7 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
       <span>Explore</span>
     </div>
   </a>
+
   <a href="tutions/coaching7.html" class="option-card" data-location="Durgakund">
     <img src="coachingimages/sky1.png" alt="SKY DURGAKUND">
     <div class="option-content">
@@ -218,6 +211,7 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
       <span>Explore</span>
     </div>
   </a>
+
   <a href="tutions/coaching8.html" class="option-card" data-location="Durgakund">
     <img src="coachingimages/unacademy1.jpg" alt="UNACADEMY DURGAKUND">
     <div class="option-content">
@@ -226,6 +220,7 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
       <span>Explore</span>
     </div>
   </a>
+
   <a href="tutions/coaching9.html" class="option-card" data-location="Pandeyput">
     <img src="coachingimages/ranker2.png" alt="RANKERS PANDEYPUT">
     <div class="option-content">
@@ -234,6 +229,7 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
       <span>Explore</span>
     </div>
   </a>
+
   <a href="tutions/coaching10.html" class="option-card" data-location="Durgakund">
     <img src="coachingimages/evolve1.png" alt="EVOLVE DURGAKUND">
     <div class="option-content">
@@ -242,7 +238,64 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
       <span>Explore</span>
     </div>
   </a>
+
 </div>
+
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+const optionContainer = document.getElementById("optionContainer");
+
+// No results message
+let noResultMsg = document.createElement("p");
+noResultMsg.className = "no-results";
+noResultMsg.textContent = "🔍 RESULT NOT FOUND";
+
+// Function to search coaching cards
+function searchCoaching(){
+  const query = searchInput.value.toLowerCase().trim();
+  let found = false;
+
+  Array.from(optionContainer.children).forEach(card => {
+    if(card.innerText.toLowerCase().includes(query)){
+      card.style.display = "flex";
+      found = true;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  // Remove previous no-result message if exists
+  document.querySelector(".no-results")?.remove();
+
+  if(!found && query !== "") {
+    optionContainer.appendChild(noResultMsg);
+  }
+}
+
+// Shuffle all option cards
+function shuffleCards() {
+  const cards = Array.from(optionContainer.children);
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+  cards.forEach(card => optionContainer.appendChild(card));
+}
+
+// Events
+searchButton.addEventListener("click", searchCoaching);
+searchInput.addEventListener("keydown", e => {
+  if(e.key === "Enter") searchCoaching();
+});
+
+// Shuffle cards on page load
+window.addEventListener('DOMContentLoaded', () => {
+  shuffleCards();
+});
+</script>
+
 
 <!-- FOOTER -->
 <footer>
@@ -253,68 +306,77 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
   <p style="color:#ff001e;">THANKS FOR VISITING OK VARANASI !</p>
   <p style="color:#00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
   <div class="footer-links">
-    <a href="https://t.me/okvaranasi" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">Telegram</a>
-    <a href="https://wa.me/919118717157" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">WhatsApp</a>
-    <a href="mailto:okvaranasii@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">Gmail</a>
-    <a href="https://www.youtube.com/@OKVARANASI" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">YouTube</a>
+    <a href="https://t.me/okvaranasi" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">Telegram
+    </a>
+    <a href="https://wa.me/919118717157" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">WhatsApp
+    </a>
+    <a href="mailto:okvaranasii@gmail.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">Gmail
+    </a>
+    <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">YouTube
+    </a>
   </div>
 </footer>
 
-<script>
-const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchButton");
-const optionContainer = document.getElementById("optionContainer");
-
-let noResultMsg = document.createElement("p");
-noResultMsg.textContent = "🔍 कोई परिणाम नहीं मिला";
-noResultMsg.classList.add("no-results");
-
-function searchCoaching() {
-  const query = searchInput.value.trim().toLowerCase();
-  const cards = Array.from(optionContainer.children);
-  let found = false;
-
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    if (text.includes(query)) {
-      card.style.display = "flex";
-      found = true;
-    } else {
-      card.style.display = "none";
-    }
-  });
-
-  const existingMsg = document.querySelector(".no-results");
-  if (existingMsg) existingMsg.remove();
-
-  if (!found && query !== "") {
-    optionContainer.appendChild(noResultMsg);
-  } else if (found) {
-    shuffleVisibleCards();
-  }
+<!-- FOOTER CSS -->
+<style>
+footer{
+  background:#0a0a0a;
+  color:#aaa;
+  text-align:center;
+  padding:40px 20px;
+  border-top:2px solid #00ffff55;
+  box-shadow:0 -5px 25px rgba(0,255,255,0.25);
 }
 
-// SHUFFLE ONLY VISIBLE CARDS
-function shuffleVisibleCards() {
-  const visibleCards = Array.from(optionContainer.children).filter(c => c.style.display !== "none");
-  for (let i = visibleCards.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [visibleCards[i], visibleCards[j]] = [visibleCards[j], visibleCards[i]];
-  }
-  visibleCards.forEach(card => optionContainer.appendChild(card));
+footer img{
+  width:100px;
+  margin:10px;
+  border-radius:12px;
+  box-shadow:0 0 15px #00ffff80;
+  transition: transform 0.3s;
+}
+footer img:hover{
+  transform: scale(1.1) rotate(5deg);
 }
 
-// EVENTS
-searchButton.addEventListener("click", searchCoaching);
-searchInput.addEventListener("keypress", function(e){
-  if(e.key === "Enter") searchCoaching();
-});
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:15px;
+  gap:15px;
+}
 
-// SHUFFLE ON PAGE LOAD
-window.addEventListener('DOMContentLoaded', () => {
-  shuffleVisibleCards();
-});
-</script>
+.footer-links a{
+  display:inline-flex;
+  align-items:center;
+  color:#00ffff;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.footer-links a:hover{
+  color:#fff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+.footer-links a img{
+  width:24px;
+  height:24px;
+  margin-right:6px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  footer img{width:80px;}
+  .footer-links a{font-size:14px;}
+}
+</style>
 
 </body>
 </html>

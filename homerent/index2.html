@@ -4,65 +4,117 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Homes Available for Rent | OK VARANASI</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 /* BASIC RESET */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#0d0d0d;color:#fff;min-height:100vh;display:flex;flex-direction:column;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
 
-/* HEADER */
+body{
+  background:#0d0d0d;
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  overflow-x:hidden; /* 🔥 MAIN FIX */
+}
+
+/* ================= HEADER ================= */
 .header{
   background:linear-gradient(135deg,#000,#0a0a0a);
   padding:20px 30px;
   box-shadow:0 8px 30px rgba(0,255,255,0.25);
 }
 .header-inner{
-  max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
-.header-logo img{width:70px;border-radius:12px;box-shadow:0 0 20px #00ffff80;}
-.header-text{text-align:center;flex:1;}
-.header-text h1{font-size:26px;color:#00ffff; text-shadow:0 0 8px #00ffff,0 0 15px #00ffff55,0 0 25px #00ffff77;}
-.header-text p{font-size:14px;color:#cfcfcf;margin-top:6px;}
+.header-logo img{
+  width:70px;
+  border-radius:12px;
+  box-shadow:0 0 20px #00ffff80;
+}
+.header-text{
+  text-align:center;
+  flex:1;
+}
+.header-text h1{
+  font-size:26px;
+  color:#00ffff;
+  text-shadow:0 0 8px #00ffff,0 0 15px #00ffff55;
+}
+.header-text p{
+  font-size:14px;
+  color:#cfcfcf;
+  margin-top:6px;
+}
 .header-right a{
-  color:#fff;text-decoration:none;margin-left:12px;padding:10px 22px;
-  border-radius:30px;background:#111;border:1px solid #00ffff55;transition:0.3s;font-weight:500;
+  color:#fff;
+  text-decoration:none;
+  margin-left:12px;
+  padding:10px 22px;
+  border-radius:30px;
+  background:#111;
+  border:1px solid #00ffff55;
+  transition:0.3s;
 }
-.header-right a:hover{background:#00ffff;color:#000;box-shadow:0 0 15px #00ffff;}
+.header-right a:hover{
+  background:#00ffff;
+  color:#000;
+  box-shadow:0 0 15px #00ffff;
+}
 
 @media(max-width:768px){
   .header-inner{flex-direction:column;}
-  .header-text h1{font-size:22px;}
-  .header-text p{font-size:13px;}
   .header-right{margin-top:10px;}
 }
 
-/* SEARCH */
+/* ================= SEARCH ================= */
 .search-container{
-  max-width:520px;width:100%;margin:25px auto;
+  max-width:520px;
+  width:100%;
+  margin:25px auto;
+  padding:0 16px;
 }
 .search-container input{
-  width:100%;padding:14px 22px;border-radius:35px;border:none;outline:none;
-  background:#161616;color:#fff;font-size:15px;
+  width:100%;
+  padding:14px 22px;
+  border-radius:35px;
+  border:none;
+  outline:none;
+  background:#161616;
+  color:#fff;
 }
 
-/* CATEGORY SLIDER */
+/* ================= CATEGORY SLIDER ================= */
 .category-slider{
   display:flex;
-  overflow-x:auto;
   gap:12px;
-  max-width:950px;
-  margin:10px auto 20px auto;
-  padding:10px 0;
+  overflow-x:auto;
+  overflow-y:hidden;
+  max-width:100%;
+  margin:10px auto 20px;
+  padding:10px 16px;
   scrollbar-width:none;
 }
 .category-slider::-webkit-scrollbar{display:none;}
+
 .category-card{
   min-width:110px;
   padding:10px 22px;
   border-radius:50px;
   background:#141414;
   border:1px solid #00ffff55;
-  text-align:center;
   cursor:pointer;
   white-space:nowrap;
   transition:0.3s;
@@ -75,21 +127,68 @@ body{background:#0d0d0d;color:#fff;min-height:100vh;display:flex;flex-direction:
   box-shadow:0 0 12px #00ffff80;
 }
 
-/* OPTION CARDS (HOUSES) */
-.option-container{max-width:1200px;margin:0 auto;padding:20px;display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
-.option-card{
-  display:flex;flex-direction:column;gap:15px;background:#121212;border-radius:20px;
-  overflow:hidden;cursor:pointer;border:1px solid #00ffff40;box-shadow:0 12px 35px rgba(0,255,255,0.18);
-  transition:0.35s;text-decoration:none;color:white;
+/* ================= OPTION CARDS ================= */
+.option-container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:20px;
+  display:grid;
+  gap:22px;
+  grid-template-columns:repeat(3,1fr); /* 💻 Desktop */
 }
-.option-card:hover{transform:translateY(-6px);box-shadow:0 25px 60px rgba(0,255,255,0.35);}
-.option-card img{width:100%;height:180px;object-fit:cover;}
-.option-content{padding:20px;display:flex;flex-direction:column;justify-content:center;}
-.option-content h2{font-size:22px;color:#00ffff;margin-bottom:8px;}
-.option-content p{font-size:14px;color:#cfcfcf;line-height:1.4;}
-.option-content span{margin-top:10px;background:#00ffff;color:#000;padding:6px 15px;border-radius:25px;width:max-content;font-weight:600;}
 
-/* FOOTER */
+.option-card{
+  background:#121212;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid #00ffff40;
+  box-shadow:0 12px 35px rgba(0,255,255,0.18);
+  transition:0.35s;
+  text-decoration:none;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+}
+.option-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 25px 60px rgba(0,255,255,0.35);
+}
+.option-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+.option-content{
+  padding:20px;
+}
+.option-content h2{
+  font-size:22px;
+  color:#00ffff;
+}
+.option-content p{
+  font-size:14px;
+  color:#cfcfcf;
+  margin-top:6px;
+}
+.option-content span{
+  margin-top:10px;
+  display:inline-block;
+  background:#00ffff;
+  color:#000;
+  padding:6px 15px;
+  border-radius:25px;
+  font-weight:600;
+}
+
+/* 📱 MOBILE = 1 CARD */
+@media(max-width:768px){
+  .option-container{
+    grid-template-columns:1fr;
+    padding:16px;
+  }
+}
+
+/* ================= FOOTER ================= */
 footer{
   background:#0a0a0a;
   color:#aaa;
@@ -97,16 +196,12 @@ footer{
   padding:40px 20px;
   margin-top:auto;
   border-top:2px solid #00ffff55;
-  box-shadow:0 -5px 25px rgba(0,255,255,0.25);
 }
 footer img{
   width:100px;
-  margin:10px;
   border-radius:12px;
   box-shadow:0 0 15px #00ffff80;
-  transition: transform 0.3s;
 }
-footer img:hover{transform: scale(1.1) rotate(5deg);}
 .footer-links{
   display:flex;
   justify-content:center;
@@ -114,38 +209,27 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
   margin-top:15px;
 }
 .footer-links a{
-  display:inline-flex;
-  align-items:center;
   margin:10px 15px;
   color:#00ffff;
   text-decoration:none;
-  font-weight:500;
-  transition:0.3s;
+  display:flex;
+  align-items:center;
 }
-.footer-links a:hover{
-  color:#fff;
-  text-shadow: 0 0 8px #00ffff;
-}
-.footer-links a img{
+.footer-links img{
   width:24px;
-  height:24px;
   margin-right:6px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .option-card{flex-direction:column;}
-  .option-card img{width:100%;height:180px;}
-  .option-content h2{font-size:18px;}
 }
 </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
 <div class="header">
   <div class="header-inner">
-    <div class="header-logo"><img src="ghar/gharimages/QR1.png" alt="OK VARANASI Logo"></div>
+    <div class="header-logo">
+      <img src="ghar/gharimages/QR1.png">
+    </div>
     <div class="header-text">
       <h1>Available Houses in Varanasi</h1>
       <p>Search verified rental homes in Varanasi & nearby cities</p>
@@ -159,11 +243,11 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
 
 <!-- SEARCH -->
 <div class="search-container">
-  <input type="text" id="searchInput" placeholder="Type to search homes..." onkeyup="searchHouses()"/>
+  <input type="text" id="searchInput" placeholder="Type to search homes..." onkeyup="searchHouses()">
 </div>
 
-<!-- CATEGORY SLIDER -->
-<div class="category-slider" id="categorySlider">
+<!-- CATEGORY -->
+<div class="category-slider">
   <div class="category-card active" data-filter="all">All</div>
   <div class="category-card" data-filter="Gautamnagar">Gautamnagar</div>
   <div class="category-card" data-filter="Lanka">Lanka</div>
@@ -172,118 +256,69 @@ footer img:hover{transform: scale(1.1) rotate(5deg);}
   <div class="category-card" data-filter="Hyderabad Gate">Hyderabad Gate</div>
 </div>
 
-<!-- HOUSES -->
+<!-- CARDS -->
 <div class="option-container" id="optionContainer">
 
   <a href="ghar/ghar1.html" class="option-card" data-location="Gautamnagar">
-    <img src="../images/varanasi.jpg" alt="Varanasi 2 BHK">
+    <img src="../images/varanasi.jpg">
     <div class="option-content">
       <h2>Varanasi</h2>
       <p>₹ 23,000 / month | 2 BHK</p>
-      <p>Clean and peaceful neighborhood</p>
       <span>Explore</span>
     </div>
   </a>
 
   <a href="ghar/ghar2.html" class="option-card" data-location="Lanka">
-    <img src="../images/kota.jpg" alt="Kota 3 BHK">
+    <img src="../images/kota.jpg">
     <div class="option-content">
       <h2>Kota</h2>
       <p>₹ 15,000 / month | 3 BHK</p>
-      <p>Near Dakhaniya Railway Station</p>
       <span>Explore</span>
     </div>
   </a>
 
   <a href="ghar/ghar3.html" class="option-card" data-location="Durgakund">
-    <img src="../images/chandauli.webp" alt="Chandauli 2 BHK">
+    <img src="../images/chandauli.webp">
     <div class="option-content">
       <h2>Chandauli</h2>
       <p>₹ 10,000 / month | 2 BHK</p>
-      <p>Clean and peaceful neighborhood</p>
-      <span>Explore</span>
-    </div>
-  </a>
-
-  <a href="ghar/ghar4.html" class="option-card" data-location="Chittupur">
-    <img src="../images/lucknow.jpg" alt="Lucknow 3 BHK">
-    <div class="option-content">
-      <h2>Lucknow</h2>
-      <p>₹ 22,000 / month | 3 BHK</p>
-      <p>Close to metro and market</p>
-      <span>Explore</span>
-    </div>
-  </a>
-
-  <a href="ghar/ghar5.html" class="option-card" data-location="Hyderabad Gate">
-    <img src="../images/allahabad.webp" alt="Allahabad 2 BHK">
-    <div class="option-content">
-      <h2>Allahabad</h2>
-      <p>₹ 13,000 / month | 2 BHK</p>
-      <p>Close to airport</p>
       <span>Explore</span>
     </div>
   </a>
 
 </div>
 
-<!-- FOOTER -->
+<script>
+function searchHouses(){
+  let val = searchInput.value.toLowerCase();
+  document.querySelectorAll('.option-card').forEach(card=>{
+    card.style.display =
+      card.innerText.toLowerCase().includes(val) ? 'flex' : 'none';
+  });
+}
+</script>
 <footer>
-  <div style="margin-bottom:20px;">
-    <img src="ghar/gharimages/QR1.png" alt="OK VARANASI Logo">
-  </div>
+  <img src="ghar/gharimages/QR1.png">
+  <!-- <img src="coaching/coachingimages/qr2.png"> -->
+
   <p>🙏 IF YOU LIKED MY WORK AND FOUND IT HELPFUL, YOU CAN SUPPORT ME!</p>
-  <p style=" color: #ff001e;">THANKS FOR VISITING OK VARANASI !</p>
-  <p style=" color: #00ffaa;">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
+  <p style="color:#ff001e">THANKS FOR VISITING OK VARANASI!</p>
+  <p style="color:#00ffaa">FOR ANY SUGGESTIONS OR FEEDBACK, PLEASE CONTACT ME</p>
+
   <div class="footer-links">
-    <a href="https://t.me/okvaranasi" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">Telegram</a>
-    <a href="https://wa.me/919118717157" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">WhatsApp</a>
-    <a href="mailto:okvaranasii@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">Gmail</a>
-    <a href="https://www.youtube.com/@OKVARANASI" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">YouTube</a>
+    <a href="https://t.me/okvaranasi" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">Telegram
+    </a>
+    <a href="https://wa.me/919118717157" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">WhatsApp
+    </a>
+    <a href="mailto:okvaranasii@gmail.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">Gmail
+    </a>
+    <a href="https://www.youtube.com/@OKVARANASI" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">YouTube
+    </a>
   </div>
 </footer>
-
-<script>
-// FISHER-YATES SHUFFLE
-function shuffleHouses(containerId){
-  const container = document.getElementById(containerId);
-  const cards = Array.from(container.children);
-  for(let i = cards.length - 1; i > 0; i--){
-    const j = Math.floor(Math.random() * (i + 1));
-    [cards[i], cards[j]] = [cards[j], cards[i]];
-  }
-  container.innerHTML = '';
-  cards.forEach(card => container.appendChild(card));
-}
-
-// LIVE SEARCH
-function searchHouses() {
-  const input = document.getElementById('searchInput').value.toLowerCase();
-  document.querySelectorAll('.option-card').forEach(card=>{
-    const location = card.dataset.location.toLowerCase();
-    card.style.display = (location.includes(input) || card.innerText.toLowerCase().includes(input)) ? 'flex':'none';
-  });
-}
-
-// CATEGORY FILTER
-const categoryCards = document.querySelectorAll('.category-card');
-categoryCards.forEach(cat=>{
-  cat.addEventListener('click', ()=>{
-    categoryCards.forEach(c=>c.classList.remove('active'));
-    cat.classList.add('active');
-    const filter = cat.dataset.filter.toLowerCase();
-    document.querySelectorAll('.option-card').forEach(card=>{
-      card.style.display = (filter === 'all' || card.dataset.location.toLowerCase() === filter) ? 'flex' : 'none';
-    });
-    shuffleHouses('optionContainer'); // shuffle after filter
-  });
-});
-
-// INITIAL SHUFFLE ON PAGE LOAD
-window.addEventListener('DOMContentLoaded', ()=>{
-  shuffleHouses('optionContainer');
-});
-</script>
-
 </body>
 </html>
